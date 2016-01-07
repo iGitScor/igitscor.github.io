@@ -1,0 +1,20 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>iScor - {{ page.title }}</title>
+
+  <link rel="shortcut icon" href="/assets/faviconvert.ico" type="image/x-icon" />
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
+    {% if page.css and page.css != 'index.css' %}<link href="/css/{{ page.css }}" rel="stylesheet" type="text/css">{% endif %}
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+</head>

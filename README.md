@@ -1,2 +1,9 @@
-# igitscor.github.io
-Personal blog
+Blog iGitScor
+========================
+
+The [iScor](https://github.com/iGitScor) blog
+
+Installation
+------------
+
+`jekyll build`
