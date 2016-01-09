@@ -23,7 +23,7 @@ rss_path: feed.xml
 markdown: kramdown
 excerpt_separator: ""   # Workaround for http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed
 exclude: ['README.md', 'bower.json', 'Gem*', 'Guard*', '.jekyll-metadata']
-gems: ['jekyll-paginate', 'jekyll_figure']
+gems: ['jekyll-paginate']
 
 permalink:   /:title
 paginate: 10 # pagination based on number of posts
