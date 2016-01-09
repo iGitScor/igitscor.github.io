@@ -1,6 +1,6 @@
 ---
 layout: post
-type: Article externe
+type: Article pro
 title:  "Industrialisation de l'environnement front"
 tagline: "Keep it smart !"
 description: >
@@ -36,7 +36,7 @@ Le choix de *Gulp* plutôt que *Grunt*, *npm* ou *Broccoli* s'est fait naturelle
 
 Obtenir un environnement de développement propre et fonctionnel. Il permettra la création de landing pages.
 
-![landing pages](/assets/images/kickstarter/landings.jpg){: .img-responsive}
+{% figure assets/images/kickstarter/landings jpg 'Landing pages' %}{: .text-xs-center}
 
 ### Prérequis
 
@@ -85,7 +85,7 @@ $ Kickstarter start --open
 
 ### Démonstration
 
-![demo kickstarter](/assets/images/kickstarter/kickstarter_launch.gif)
+{% figure assets/images/kickstarter/kickstarter_launch gif 'Démonstration kickstarter' %}{: .text-xs-center}
 
 Dans ce projet nous avons de multiples sous-projets avec un core commun. Il est donc facile de switcher de sous-projets :
 

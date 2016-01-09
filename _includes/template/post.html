@@ -1,4 +1,37 @@
+<span class="pull-xs-right label label-info">
+  <span class="h5">{{ content | reading_time }}</span>
+</span>
+
 {{ content }}
+
+<div class="line"></div>
+
+<div class="text-xs-center">
+  <a
+    class="btn btn-info"
+    href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Twitter">
+    <i class="fa fa-twitter"></i> Partager sur Twitter
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Facebook">
+    <i class="fa fa-facebook"></i> Partager sur Facebook
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Google+">
+    <i class="fa fa-google-plus"></i> Partager sur Google+
+  </a>
+</div>
 
 <div class="line"></div>
 
