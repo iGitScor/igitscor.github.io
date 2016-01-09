@@ -36,7 +36,14 @@ Le choix de *Gulp* plutôt que *Grunt*, *npm* ou *Broccoli* s'est fait naturelle
 
 Obtenir un environnement de développement propre et fonctionnel. Il permettra la création de landing pages.
 
-{% figure assets/images/kickstarter/landings jpg 'Landing pages' %}{: .text-xs-center}
+<figure id='figure-1' class='text-xs-center'>
+  <a href='/assets/images/kickstarter/landings.jpg'>
+  <img src='/assets/images/kickstarter/landings.jpg' alt='Landing pages'>
+  </a>
+  <figcaption>
+    Figure 1: Landing pages
+  </figcaption>
+</figure>
 
 ### Prérequis
 
@@ -85,7 +92,14 @@ $ Kickstarter start --open
 
 ### Démonstration
 
-{% figure assets/images/kickstarter/kickstarter_launch gif 'Démonstration kickstarter' %}{: .text-xs-center}
+<figure id='figure-1' class='text-xs-center'>
+  <a href='/assets/images/kickstarter/kickstarter_launch.gif'>
+  <img src='/assets/images/kickstarter/kickstarter_launch.gif' alt='Démonstration kickstarter'>
+  </a>
+  <figcaption>
+    Figure 2: Démonstration kickstarter
+  </figcaption>
+</figure>
 
 Dans ce projet nous avons de multiples sous-projets avec un core commun. Il est donc facile de switcher de sous-projets :
 
