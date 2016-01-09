@@ -16,7 +16,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>iScor - this.content is not defined</title>
+  <title>iScor - Industrialisation de l'environnement front</title>
 
   <link rel="shortcut icon" href="/assets/faviconvert.ico" type="image/x-icon" />
 
@@ -80,8 +80,8 @@
         <div class="bg-title">
           <div class="container">
             <div class="title">
-              <h1>this.content is not defined</h1>
-              
+              <h1>Industrialisation de l'environnement front</h1>
+              <small class="h4 text-muted">Keep it smart !</small>
             </div>
             <div class="breadcrumb">
               <ul>
@@ -100,34 +100,172 @@
           <div class="row">
            <div class="col-md-8">
              <div class="primary">
-              <div class="page-header">
-  <h1>this.content is not defined </h1>
+              <span class="pull-xs-right label label-info">
+  <span class="h5">Lecture en 3  minutes environ</span>
+</span>
+
+<h2 id="contexte-du-projet">Contexte du projet</h2>
+
+<p><strong>Le développement front et l’intégration sont de plus en plus complexes avec des <a href="https://github.com/naholyr/blendwebmix-js-stack-overdose" target="_blank">Stacks trop importantes</a>.</strong></p>
+
+<p>À 1001pharmacies, nous n’échappons pas à cette règle. Le développement back est fait avec le framework PHP Symfony 2.
+Celui-ci est contraignant pour la gestion des ressources front.</p>
+
+<p>Dans le cadre de ces projets, nous étions souvent amenés à exécuter très fréquemment des tâches répétitives pour le développement front.
+Nous avons donc très vite vu l’importance d’industrialiser des processus de développement.</p>
+
+<ul>
+  <li>Compilation de fichiers de style</li>
+  <li>Compilation de script</li>
+  <li>Optimisation d’images
+<br /><br /></li>
+</ul>
+
+<p>Le choix de <em>Gulp</em> plutôt que <em>Grunt</em>, <em>npm</em> ou <em>Broccoli</em> s’est fait naturellement. En effet, la logique de programmation de gulp, une approche Event semblable à <em>Node.js</em> et également une décision arbitraire.</p>
+
+<div class="line"></div>
+
+<h2 id="objectifs">Objectifs</h2>
+
+<p>Obtenir un environnement de développement propre et fonctionnel. Il permettra la création de landing pages.</p>
+
+<figure id="figure-1" class="text-xs-center">
+  <a href="/assets/images/kickstarter/landings.jpg">
+  <img src="/assets/images/kickstarter/landings.jpg" alt="Landing pages" />
+  </a>
+  <figcaption>
+    Figure 1: Landing pages
+  </figcaption>
+</figure>
+
+<h3 id="prrequis">Prérequis</h3>
+
+<ul>
+  <li>Symfony2, Jekyll, AngularJS, projets Starter Kit (bootstrap, foundation)</li>
+  <li>Gestion des dépendances Bower
+<br /><br /></li>
+</ul>
+
+<h3 id="qualit">Qualité</h3>
+
+<p>Parce que la qualité du code est nécessaire pour rendre les projets maintenables, il a d’abord fallu rendre le kickstarter lui-même testé et maintenable. Un outil de qualité pour faire du travail de qualité.</p>
+
+<p>L’outil Kickstarter est testé par <strong>karma</strong> (encore lui), <strong>mocha</strong> et <strong>chai</strong> pour la gestion des asserts. Les tests portent sur l’assistant de configuration et non sur les plugins gulp tiers.</p>
+
+<p>La qualité est mise en avant également par des tâches <em>gulp</em> avec l’intégration de linters (HTML, CSS, Javascript)</p>
+
+<div class="line"></div>
+
+<h2 id="dveloppement">Développement</h2>
+
+<p>Nous avons travaillé de manière itérative pour réaliser ce projet qui est toujours en amélioration continue.</p>
+
+<h3 id="sources">Sources</h3>
+
+<p>Afin de mener à bien ce projet et comprendre complètement la logique gulp et node, nous avons étudié le core de différents outils déjà grandement présents dans l’écosystème à savoir karma, gulp lui-même pour la plus grande partie.</p>
+
+<h3 id="fonctionnalits">Fonctionnalités</h3>
+
+<p>Pour voir la liste exhaustive des fonctionnalités proposées par le Kickstarter, rendez-vous sur le <a href="https://github.com/1001Pharmacies/kickstarter">dépôt Github</a>.</p>
+
+<ul>
+  <li>Compilateur CSS (Compass, Sass, Less)</li>
+  <li>Compression Javascript</li>
+  <li>Optimisation images (<em>.png</em>, <em>.jpg</em>)</li>
+  <li>Lint de la syntaxe</li>
+  <li>Compression twig (avec filter trans)</li>
+  <li>Création micro server pour développer (avec livereload)</li>
+</ul>
+
+<div class="line"></div>
+
+<h2 id="utilisation">Utilisation</h2>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="gp">$ </span>Kickstarter --help
+<span class="gp">$ </span>Kickstarter init
+<span class="gp">$ </span>Kickstarter start --open</code></pre></figure>
+
+<h3 id="dmonstration">Démonstration</h3>
+
+<figure id="figure-1" class="text-xs-center">
+  <a href="/assets/images/kickstarter/kickstarter_launch.gif">
+  <img src="/assets/images/kickstarter/kickstarter_launch.gif" alt="Démonstration kickstarter" />
+  </a>
+  <figcaption>
+    Figure 2: Démonstration kickstarter
+  </figcaption>
+</figure>
+
+<p>Dans ce projet nous avons de multiples sous-projets avec un core commun. Il est donc facile de switcher de sous-projets :</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Kickstarter start src/{projetA}/kickstarter.conf.js --port=3000</code></li>
+  <li><code class="highlighter-rouge">Kickstarter start src/{projetB}/kickstarter.conf.js --port=4000</code></li>
+</ul>
+
+<p><small>Cela permet aussi l’interaction et des configurations spécifiques.</small></p>
+
+<p>Voir la <a href="https://github.com/1001Pharmacies/kickstarter" target="_blank">documentation du kickstarter</a> pour plus d’informations.</p>
+
+<h3 id="slides">Slides</h3>
+
+<p><a class="btn btn-primary" href="slides/kickstarter.html">Voir les slides</a></p>
+
+<h2 id="liens-externes">Liens externes</h2>
+
+<ul>
+  <li>Gulp : <a href="http://gulpjs.com/" target="_blank">Site officiel</a></li>
+  <li>Karma : <a href="https://github.com/karma-runner/karma" target="_blank">Dépôt Github</a></li>
+</ul>
+
+
+
+<div class="line"></div>
+
+<div class="text-xs-center">
+  <a
+    class="btn btn-info"
+    href="https://twitter.com/intent/tweet?text=Industrialisation de l'environnement front&url=http://iscor.me/industrialisation-environnement-front&via=iTweetScor&related=iTweetScor"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Twitter">
+    <i class="fa fa-twitter"></i> Partager sur Twitter
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://facebook.com/sharer.php?u=http://iscor.me/industrialisation-environnement-front"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Facebook">
+    <i class="fa fa-facebook"></i> Partager sur Facebook
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://plus.google.com/share?url=http://iscor.me/industrialisation-environnement-front"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Google+">
+    <i class="fa fa-google-plus"></i> Partager sur Google+
+  </a>
 </div>
 
-<style>
-  blockquote {
-    color: #828282;
-    border-left: 4px solid #e8e8e8;
-    padding-left: 15px;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-  }
-</style>
+<div class="line"></div>
 
-<div>
-  <h2>Vous avez besoin de jQuery ?</h2>
-  <ul class="list-unstyled">
-    <li><code>false: { redirect(<a class="btn btn-link" href="/">'home'</a>); }</code></li>
-    <li><code>true: { detectSarcasm() &amp;&amp; kick(this, <a href="/">tags);</a> }</code></li>
-  </ul>
-  <blockquote class="text-uppercase post-blockquote"><p>You might not need jQuery</p></blockquote>
-</div>
+<div id="disqus_thread" class="p-a-2 bg-light"></div>
+<script>
+  var disqus_config = function () {
+  // this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+  // this.page.identifier = //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
 
-<div>
-  <p>Pour les non-avertis, vérifiez sur la droite les informations de contact, ou retournez sur la <a href="/">page d'accueil</a> !</p>
-</div>
-
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//iscor.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Activer JavaScript pour voir les <a href="https://disqus.com/?ref_noscript" rel="nofollow">commentaires</a>.</noscript>
 
 
             </div>
@@ -299,7 +437,7 @@
     <script src="/bower/tether/dist/js/tether.min.js"></script>
     <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
-    
+    <script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>
   </body>
 
 </html>
