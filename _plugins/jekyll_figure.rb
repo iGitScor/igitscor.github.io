@@ -1,5 +1,3 @@
-require "jekyll_figure/version"
-
 module Jekyll
 
   # Creates a Liquid figure tag. The figure tag should take this form:
