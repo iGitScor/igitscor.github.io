@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie7" lang="fr"><![endif]-->
+<!--[if IE 7]><html class="ie7" lang="fr"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="fr"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="fr"><![endif]-->
+<!--[if !IE]>-->
+<html lang="en">
+<!--<![endif]-->
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>iScor - Angularisation du web</title>
+
+  <link rel="shortcut icon" href="/assets/faviconvert.ico" type="image/x-icon" />
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <link href="/css/index.css" rel="stylesheet" type="text/css">
+  
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,700" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+</head>
+
+
+  <body>
+    <div id="site-wrapper">
+      <header id="header" class="header navbar-fixed-top">
+        <div class="container">
+  <div class="navbar" role="navigation">
+    <div class="navbar-header">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+        &#9776;
+      </button>
+      <a class="navbar-brand" href="/">iScor</a>
+    </div>
+    <div class="collapse navbar-toggleable-xs pull-sm-right" id="exCollapsingNavbar">
+      <ul class="nav navbar-nav right sm" data-smartmenus-id="14496051336555264">
+  <li class="nav-item active">
+    <a
+      href="index.html">
+      Accueil
+    </a>
+  </li>
+  <li class="nav-item">
+    <a
+      href="#"
+      class="has-submenu"
+      id="sm-14496051336555264-5"
+      aria-haspopup="true"
+      aria-controls="sm-14496051336555264-6"
+      aria-expanded="false">
+      Page <i class="fa fa-angle-down"></i>
+    </a>
+    <ul class="dropdown-menu" id="sm-14496051336555264-6" role="group" aria-hidden="true" aria-labelledby="sm-14496051336555264-5" aria-expanded="false">
+      <li><a href="categories.html">Catégories</a></li>
+      <li><a href="tags.html">Tags</a></li>
+      <li><a href="slides.html">Talks</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="about.html">A propos de moi</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+      </header>
+
+      <section id="page-title" class="page-title">
+        <div class="bg-title">
+          <div class="container">
+            <div class="title">
+              <h1>Angularisation du web</h1>
+              <small class="h4 text-muted">angular le nouveau $</small>
+            </div>
+            <div class="breadcrumb">
+              <ul>
+                
+                
+                <li><a href="/">Home</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="content">
+        <div class="container">
+          <div class="row">
+           <div class="col-md-8">
+             <div class="primary">
+              <span class="pull-xs-right label label-info">
+  <span class="h5">Lecture en 3  minutes environ</span>
+</span>
+
+<h2 id="angular-nouveau-jquery">Angular le nouveau $</h2>
+
+<p>La différence entre un développeur JavaScript et un utilisateur de jQuery réside dans ce simple savoir: la variable <code class="highlighter-rouge">$</code> n’est pas magique, il s’agit juste d’un <code class="highlighter-rouge">export $ = jQuery;</code></p>
+
+<p>Une grande majorité des développeurs web connaissent jQuery. Une part moindre l’utilise, mais de moins en moins souvent.</p>
+
+<center>
+  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Do you use jQuery in your projects (still)?</p>&mdash; Smashing Magazine (@smashingmag) <a href="https://twitter.com/smashingmag/status/702405464303280128">February 24, 2016</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+<legend>Smashing magazine - sondage jQuery</legend>
+
+<h2 id="tour-dhorizon-jquery">Tour d’horizon jQuery</h2>
+
+<blockquote class="post-blockquote" cite="http://jquery.com">
+<p>
+jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+</p>
+<cite class="blockquote-author"><a href="http://jquery.com" target="_blank" class="text-primary">jquery.com</a></cite>
+</blockquote>
+
+<p>Comme définie par le site officiel, jQuery est une librairie, ou plutôt une aide au développement accessible à tous, grâce à sa grande abstraction des concepts techniques, le problème est bien là, cette abstraction est trop importante.</p>
+
+<h2 id="angularisation-kesako">Angularisation, kesako ?</h2>
+
+<p>Le mot angularisation n’est pas un terme reconnu dans le milieu du développement Web. Il en est de ma propre création.</p>
+
+<p>Cependant, il illustre une similarité avec jQuery. En effet, il n’était pas rare lors qu’Angular 1 était très populaire — que ce soit pour des projets personnels ou professionnels — que celui-ci soit proposé instinctivement comme solution miracle.</p>
+
+<h2 id="probleme-jquery-angular">Problème du <code class="highlighter-rouge">$ = angular</code> ?</h2>
+
+<p>Le problème de l’angularisation (avant cela, celle de l’utilisation de jQuery) est la non-compréhension des algorithmes développés.</p>
+
+<ul>
+  <li>Quoi de plus génial que de remplir un formulaire et qu’une fiche contact se mette à jour automatiquement ?</li>
+  <li>Quoi de plus génial de faire une Single Page Application, et donc de ne plus se soucier des performances, des cookies ou du LocalStorage en utilisant la mémoire mise à disposition par le système ?</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="et-maintenant-quoi-">Et maintenant quoi ?</h2>
+
+<center>
+  <blockquote class="twitter-tweet"><p lang="fr" dir="ltr">&quot;Apprenez des concepts, pas des frameworks&quot; <a href="https://twitter.com/hashtag/BlendWebMix?src=hash">#BlendWebMix</a> <a href="https://twitter.com/hashtag/javascript?src=hash">#javascript</a> <a href="https://twitter.com/hashtag/angularjs?src=hash">#angularjs</a></p>&mdash; Sebastien Correaud (@iTweetScor) <a href="https://twitter.com/iTweetScor/status/659305682148196353">October 28, 2015</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
+<p>Ne soyez plus une dépendance de la technologie, mais apprenez des concepts de programmation. Vous n’en serez que meilleur et prendrez bien plus de plaisir à développer. Et avec les temps qui courent, c’est un vrai bénéfice d’être heureux dans son travail.</p>
+
+<p><strong>Ne refaisons pas nos erreurs à surévaluer des frameworks comme React ou Angular2</strong></p>
+
+
+<div class="line"></div>
+
+<div class="text-xs-center">
+  <a
+    class="btn btn-info"
+    href="https://twitter.com/intent/tweet?text=Angularisation du web&url=http://iscor.me/angularisation-du-web&via=iTweetScor&related=iTweetScor"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Twitter">
+    <i class="fa fa-twitter"></i> Partager sur Twitter
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://facebook.com/sharer.php?u=http://iscor.me/angularisation-du-web"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Facebook">
+    <i class="fa fa-facebook"></i> Partager sur Facebook
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://plus.google.com/share?url=http://iscor.me/angularisation-du-web"
+    rel="nofollow"
+    target="_blank"
+    title="Partager sur Google+">
+    <i class="fa fa-google-plus"></i> Partager sur Google+
+  </a>
+</div>
+
+<div class="line"></div>
+
+<div id="disqus_thread" class="p-a-2 bg-light"></div>
+<script>
+  var disqus_config = function () {
+  // this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+  // this.page.identifier = //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//iscor.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Activer JavaScript pour voir les <a href="https://disqus.com/?ref_noscript" rel="nofollow">commentaires</a>.</noscript>
+
+
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="sidebar">
+              <div class="widget-box">
+                <div class="card">
+                  <div class="card-block">
+                    <p class="h3 card-title">Sébastien Correaud</p>
+                    <span class="h4 card-subtitle text-muted">Full-stack developer</span>
+                  </div>
+                  <div class="card-block text-xs-center">
+                    <img src="/assets/images/me.svg" alt="About me" width="64" height="60">
+                  </div>
+                  <div class="card-block">
+                    <p class="card-text">
+                      <span><i class="fa fa-twitter"></i> Twitter: <a href="https://twitter.com/iTweetScor" class="card-link btn-link" target="_blank">@iTweetScor</a></span><br />
+                      <span><i class="fa fa-linkedin"></i> Linkedin: <a href="https://linkedin.com/in/sebastiencorreaud" class="btn-link" target="_blank">sebastiencorreaud</a></span><br />
+                      <span><i class="fa fa-github"></i> Github: <a href="https://github.com/iGitScor" class="btn-link" target="_blank">iGitScor</a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="widget-box">
+                <div class="widget-title">
+                  <span>S'abonner &amp; me suivre</span>
+                  <div class="line"></div>
+                </div>
+                <div class="widget-item">
+                  <span class="social"><a href="https://twitter.com/iTweetScor" target="_blank"><i class="fa fa-twitter"></i></a></span>
+                  <span class="social"><a href="https://instagram.com/instaScor" target="_blank"><i class="fa fa-instagram"></i></a></span>
+                  <span class="social"><a href="/feed.xml"><i class="fa fa-rss"></i></a></span>
+                </div>
+              </div>
+
+              <div class="widget-box">
+                <div class="widget-title">
+                  <span>Recherche</span>
+                  <div class="line"></div>
+                </div>
+                <div class="widget-item">
+                  <div class="sidebar-text">
+                    <div class="search-input">
+                       <input type="text" class="form-control" id="search" name="search" placeholder="Votre recherche...">
+                     </div>
+                     <div class="search-btn">
+                         <button type="submit" class="btn-dark">Rechercher</button>
+                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="widget-box">
+                <div class="widget-title">
+                  <span>Articles récents</span>
+                  <div class="line"></div>
+                </div>
+                <div class="widget-item">
+                  <ul class="sidebar-post">
+                   
+                     <li class="item">
+                       <div class="thum-img">
+                         
+                         <img src="/assets/images/workflow.jpg" alt="Small Thumbnail Image">
+                         
+                       </div>
+                       <div class="post-meta">
+                         <p class="h4"><a href="/angularisation-du-web">Angularisation du web</a></p>
+                         <p>Après jQuery, Angular devient un des frameworks JavaScript qui est installé par défaut dans un nouveau projet. Mais pourquoi ?
+</p>
+                       </div>
+                     </li>
+                   
+                     <li class="item">
+                       <div class="thum-img">
+                         
+                         <img src="/assets/images/workflow.jpg" alt="Small Thumbnail Image">
+                         
+                       </div>
+                       <div class="post-meta">
+                         <p class="h4"><a href="/industrialisation-environnement-front">Industrialisation de l'environnement front</a></p>
+                         <p>Présentation du projet Kickstarter, premier pas de l'industrialisation des projets dans l'équipe technique de 1001pharmacies
+</p>
+                       </div>
+                     </li>
+                   
+                  </ul>
+                </div>
+              </div>
+
+               <div class="widget-box">
+                <div class="widget-title">
+                  <span>Tag Cloud</span>
+                  <div class="line"></div>
+                </div>
+                <div class="widget-item">
+                  <div class="tagcloud">
+                    
+                    
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#angularjs-ref">angularjs</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#gulp-ref">gulp</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#industrialisation-ref">industrialisation</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#javascript-ref">javascript</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#jquery-ref">jquery</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#quality-ref">quality</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#symfony2-ref">symfony2</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#tech-ref">tech</a>
+                     
+                    
+                      
+                    
+                  </div>
+                </div>
+              </div>
+
+               <div class="widget-box">
+                 <div class="widget-title">
+                   <span>Catégories</span>
+                   <div class="line"></div>
+                 </div>
+                 <div class="widget-item">
+                   <ul class="category-list">
+                     
+                     
+                       
+                         <li class="cat-item"><a href="/categories.html#technique-ref">Technique <span>(2)</span></a></li>
+                       
+                         <li class="cat-item"><a href="/categories.html#industrialisation-ref">Industrialisation <span>(1)</span></a></li>
+                       
+                     
+                     
+                   </ul>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+         </div>
+       </div>
+      </section>
+
+      <footer id="footer" class="footer">
+        <div class="container">
+  <div class="footer-nav">
+    <nav class="nav navbar-nav sm">
+      <a href="/">Accueil</a>
+      <a href="">Privacy &amp; Policy</a>
+      <a href="accessibilite.html">Accessibilité</a>
+      <a href="slides.html">Slides</a>
+      <a href="about.html">A propos de moi</a>
+    </nav>
+  </div>
+  <div class="copyright">
+    <span>Copyright 2015, Tous droits réservés - iScor</span>
+  </div>
+</div>
+
+      </footer>
+    </div>
+
+    <!-- Application  Scripts -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/bower/tether/dist/js/tether.min.js"></script>
+    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>
+  </body>
+
+</html>
+

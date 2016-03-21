@@ -3,147 +3,56 @@
   <channel>
     <title></title>
     <description>Blog iGitScor - développement Web et mobile</description>
-    <link>http://iscor.me/</link>
-    <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jan 2016 00:42:37 +0100</pubDate>
-    <lastBuildDate>Sun, 10 Jan 2016 00:42:37 +0100</lastBuildDate>
+    <link>http://0.0.0.0/</link>
+    <atom:link href="http://0.0.0.0/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 21 Mar 2016 15:05:14 +0100</pubDate>
+    <lastBuildDate>Mon, 21 Mar 2016 15:05:14 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>Industrialisation de l&#39;environnement front</title>
-        <description>&lt;h2 id=&quot;contexte-du-projet&quot;&gt;Contexte du projet&lt;/h2&gt;
+        <title>From Montpellier to San Francisco</title>
+        <description>&lt;h2 id=&quot;objective-california&quot;&gt;Objective California&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Le développement front et l’intégration sont de plus en plus complexes avec des &lt;a href=&quot;https://github.com/naholyr/blendwebmix-js-stack-overdose&quot; target=&quot;_blank&quot;&gt;Stacks trop importantes&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Fascinated since my childhood by the USA, more particularly the big cities, I am finally able to realize my project and to embark for months towards the work destination of my dreams. San Francisco, here I am !&lt;/p&gt;
 
-&lt;p&gt;À 1001pharmacies, nous n’échappons pas à cette règle. Le développement back est fait avec le framework PHP Symfony 2.
-Celui-ci est contraignant pour la gestion des ressources front.&lt;/p&gt;
+&lt;h2 id=&quot;hello-san-francisco&quot;&gt;Hello “San Francisco”&lt;/h2&gt;
 
-&lt;p&gt;Dans le cadre de ces projets, nous étions souvent amenés à exécuter très fréquemment des tâches répétitives pour le développement front.
-Nous avons donc très vite vu l’importance d’industrialiser des processus de développement.&lt;/p&gt;
+&lt;p&gt;I arrived to San Francisco at the beginning of the evening. By the way, I have’t landed in an unknown place because I’ve travelled in California in 2013. But I was always surprised by the jungle of skyscraper, the crowded streets.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Compilation de fichiers de style&lt;/li&gt;
-  &lt;li&gt;Compilation de script&lt;/li&gt;
-  &lt;li&gt;Optimisation d’images
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;project&quot;&gt;Project&lt;/h2&gt;
 
-&lt;p&gt;Le choix de &lt;em&gt;Gulp&lt;/em&gt; plutôt que &lt;em&gt;Grunt&lt;/em&gt;, &lt;em&gt;npm&lt;/em&gt; ou &lt;em&gt;Broccoli&lt;/em&gt; s’est fait naturellement. En effet, la logique de programmation de gulp, une approche Event semblable à &lt;em&gt;Node.js&lt;/em&gt; et également une décision arbitraire.&lt;/p&gt;
+&lt;p&gt;Why am I here in California ?&lt;/p&gt;
 
-&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
+&lt;p&gt;I’ve decided to come here in the United States to follow my dreams and also to work in the web domain. As you can see in my &lt;a href=&quot;/about.html&quot;&gt;bio page&lt;/a&gt;, I am a frontend developer specialized in the JavaScript language.&lt;/p&gt;
 
-&lt;h2 id=&quot;objectifs&quot;&gt;Objectifs&lt;/h2&gt;
+&lt;center&gt;
 
-&lt;p&gt;Obtenir un environnement de développement propre et fonctionnel. Il permettra la création de landing pages.&lt;/p&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;New in San Francisco, motivated Web developer... a lot of promise :)&lt;a href=&quot;https://twitter.com/hashtag/SanFrancisco?src=hash&quot;&gt;#SanFrancisco&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/WebDevlopment?src=hash&quot;&gt;#WebDevlopment&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Javascript?src=hash&quot;&gt;#Javascript&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Startup?src=hash&quot;&gt;#Startup&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Web?src=hash&quot;&gt;#Web&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sebastien Correaud (@iTweetScor) &lt;a href=&quot;https://twitter.com/iTweetScor/status/710572331375206401&quot;&gt;March 17, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
-&lt;figure id=&quot;figure-1&quot; class=&quot;text-xs-center&quot;&gt;
-  &lt;a href=&quot;/assets/images/kickstarter/landings.jpg&quot;&gt;
-  &lt;img src=&quot;/assets/images/kickstarter/landings.jpg&quot; alt=&quot;Landing pages&quot; /&gt;
-  &lt;/a&gt;
-  &lt;figcaption&gt;
-    Figure 1: Landing pages
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;/center&gt;
 
-&lt;h3 id=&quot;prrequis&quot;&gt;Prérequis&lt;/h3&gt;
+&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;I have many objectives in my career in San Francisco.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Symfony2, Jekyll, AngularJS, projets Starter Kit (bootstrap, foundation)&lt;/li&gt;
-  &lt;li&gt;Gestion des dépendances Bower
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;To improve my english,&lt;/li&gt;
+  &lt;li&gt;to become a full-part member of a JavaScript community&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&quot;qualit&quot;&gt;Qualité&lt;/h3&gt;
-
-&lt;p&gt;Parce que la qualité du code est nécessaire pour rendre les projets maintenables, il a d’abord fallu rendre le kickstarter lui-même testé et maintenable. Un outil de qualité pour faire du travail de qualité.&lt;/p&gt;
-
-&lt;p&gt;L’outil Kickstarter est testé par &lt;strong&gt;karma&lt;/strong&gt; (encore lui), &lt;strong&gt;mocha&lt;/strong&gt; et &lt;strong&gt;chai&lt;/strong&gt; pour la gestion des asserts. Les tests portent sur l’assistant de configuration et non sur les plugins gulp tiers.&lt;/p&gt;
-
-&lt;p&gt;La qualité est mise en avant également par des tâches &lt;em&gt;gulp&lt;/em&gt; avec l’intégration de linters (HTML, CSS, Javascript)&lt;/p&gt;
-
-&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;dveloppement&quot;&gt;Développement&lt;/h2&gt;
-
-&lt;p&gt;Nous avons travaillé de manière itérative pour réaliser ce projet qui est toujours en amélioration continue.&lt;/p&gt;
-
-&lt;h3 id=&quot;sources&quot;&gt;Sources&lt;/h3&gt;
-
-&lt;p&gt;Afin de mener à bien ce projet et comprendre complètement la logique gulp et node, nous avons étudié le core de différents outils déjà grandement présents dans l’écosystème à savoir karma, gulp lui-même pour la plus grande partie.&lt;/p&gt;
-
-&lt;h3 id=&quot;fonctionnalits&quot;&gt;Fonctionnalités&lt;/h3&gt;
-
-&lt;p&gt;Pour voir la liste exhaustive des fonctionnalités proposées par le Kickstarter, rendez-vous sur le &lt;a href=&quot;https://github.com/1001Pharmacies/kickstarter&quot;&gt;dépôt Github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Compilateur CSS (Compass, Sass, Less)&lt;/li&gt;
-  &lt;li&gt;Compression Javascript&lt;/li&gt;
-  &lt;li&gt;Optimisation images (&lt;em&gt;.png&lt;/em&gt;, &lt;em&gt;.jpg&lt;/em&gt;)&lt;/li&gt;
-  &lt;li&gt;Lint de la syntaxe&lt;/li&gt;
-  &lt;li&gt;Compression twig (avec filter trans)&lt;/li&gt;
-  &lt;li&gt;Création micro server pour développer (avec livereload)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;utilisation&quot;&gt;Utilisation&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;Kickstarter --help
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;Kickstarter init
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;Kickstarter start --open&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;dmonstration&quot;&gt;Démonstration&lt;/h3&gt;
-
-&lt;figure id=&quot;figure-1&quot; class=&quot;text-xs-center&quot;&gt;
-  &lt;a href=&quot;/assets/images/kickstarter/kickstarter_launch.gif&quot;&gt;
-  &lt;img src=&quot;/assets/images/kickstarter/kickstarter_launch.gif&quot; alt=&quot;Démonstration kickstarter&quot; /&gt;
-  &lt;/a&gt;
-  &lt;figcaption&gt;
-    Figure 2: Démonstration kickstarter
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Dans ce projet nous avons de multiples sous-projets avec un core commun. Il est donc facile de switcher de sous-projets :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Kickstarter start src/{projetA}/kickstarter.conf.js --port=3000&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Kickstarter start src/{projetB}/kickstarter.conf.js --port=4000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;small&gt;Cela permet aussi l’interaction et des configurations spécifiques.&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;Voir la &lt;a href=&quot;https://github.com/1001Pharmacies/kickstarter&quot; target=&quot;_blank&quot;&gt;documentation du kickstarter&lt;/a&gt; pour plus d’informations.&lt;/p&gt;
-
-&lt;h3 id=&quot;slides&quot;&gt;Slides&lt;/h3&gt;
-
-&lt;p&gt;&lt;a class=&quot;btn btn-primary&quot; href=&quot;slides/kickstarter.html&quot;&gt;Voir les slides&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;liens-externes&quot;&gt;Liens externes&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gulp : &lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot;&gt;Site officiel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Karma : &lt;a href=&quot;https://github.com/karma-runner/karma&quot; target=&quot;_blank&quot;&gt;Dépôt Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 </description>
-        <pubDate>Tue, 05 Jan 2016 00:00:00 +0100</pubDate>
-        <link>http://iscor.me/industrialisation-environnement-front</link>
-        <guid isPermaLink="true">http://iscor.me/industrialisation-environnement-front</guid>
+        <pubDate>Mon, 05 Jan 2015 00:00:00 +0100</pubDate>
+        <link>http://0.0.0.0/from-montpellier-to-san-francisco</link>
+        <guid isPermaLink="true">http://0.0.0.0/from-montpellier-to-san-francisco</guid>
         
-        <category>tech</category>
+        <category>flight</category>
         
-        <category>gulp</category>
+        <category>montpellier</category>
         
-        <category>symfony2</category>
-        
-        <category>industrialisation</category>
-        
-        <category>quality</category>
+        <category>sanfrancisco</category>
         
         
-        <category>technique</category>
-        
-        <category>industrialisation</category>
+        <category>travel</category>
         
       </item>
     
