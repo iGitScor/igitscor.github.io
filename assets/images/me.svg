@@ -1,16 +1,16 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-editor-canvas" class="canvas" width="158" height="148">
   <g data-item-type="text" data-item="Business" id="logo__item--business" class="logo__item">
     <g class="logo__item__inner" transform="translate(11 0) scale(1.6105377269132555 1.6105377269132555) rotate(0 0 0)">
-      <text data-part-id="logo__item--business__0" dominant-baseline="text-before-edge" alignment-baseline="text-before-edge" font-family="Arial" font-size="32px" fill="#00ADEE" letter-spacing="0" font-weight="bold" font-style="normal">SCOR</text>
+      <text data-part-id="logo__item--business__0" dominant-baseline="text-before-edge" alignment-baseline="text-before-edge" font-family="Arial" font-size="32px" fill="#05B4C9" letter-spacing="0" font-weight="bold" font-style="normal">SCOR</text>
     </g>
   </g>
   <g data-item-type="image" data-item="Image" data-logo-item="" id="logo__item--logo_0" class="logo__item">
     <g class="logo__item__inner" transform="translate(0 15) scale(1.537672970171942 1.537672970171942) rotate(0 0 0)">
       <g>
-        <rect x="39.551" y="76.664" fill="#00ADEE" width="22.544" height="4.959" data-part-id="logo__item--logo_0__0"></rect>
+        <rect x="39.551" y="76.664" fill="#05B4C9" width="22.544" height="4.959" data-part-id="logo__item--logo_0__0"></rect>
         <g>
           <polygon fill="#231F20" points="82.749,70.316 18.9,70.316 18.9,59.146 21.256,59.146 16.53,50.961 11.804,59.146 14.158,59.146     14.158,75.053 87.489,75.053 87.489,50.961 82.749,50.961   " data-part-id="logo__item--logo_0__1"></polygon>
-          <polygon fill="#00ADEE" points="18.9,25.055 82.749,25.055 82.749,36.221 80.392,36.221 85.122,44.407 89.844,36.221     87.489,36.221 87.489,20.315 14.158,20.315 14.158,44.407 18.9,44.407   " data-part-id="logo__item--logo_0__2"></polygon>
+          <polygon fill="#05B4C9" points="18.9,25.055 82.749,25.055 82.749,36.221 80.392,36.221 85.122,44.407 89.844,36.221     87.489,36.221 87.489,20.315 14.158,20.315 14.158,44.407 18.9,44.407   " data-part-id="logo__item--logo_0__2"></polygon>
         </g>
         <g>
           <g>
