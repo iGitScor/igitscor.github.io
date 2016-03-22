@@ -23,8 +23,8 @@
 @import "../bower/bootstrap/scss/buttons";
 
 // Components
-@import "../bower/bootstrap/scss/animation";
-@import "../bower/bootstrap/scss/dropdown";
+// @import "../bower/bootstrap/scss/animation";
+// @import "../bower/bootstrap/scss/dropdown";
 @import "../bower/bootstrap/scss/button-group";
 @import "../bower/bootstrap/scss/input-group";
 @import "../bower/bootstrap/scss/custom-forms";
@@ -35,19 +35,13 @@
 @import "../bower/bootstrap/scss/pagination";
 @import "../bower/bootstrap/scss/pager";
 @import "../bower/bootstrap/scss/labels";
-@import "../bower/bootstrap/scss/jumbotron";
-@import "../bower/bootstrap/scss/alert";
-@import "../bower/bootstrap/scss/progress";
+// @import "../bower/bootstrap/scss/jumbotron";
+// @import "../bower/bootstrap/scss/alert";
+// @import "../bower/bootstrap/scss/progress";
 @import "../bower/bootstrap/scss/media";
 @import "../bower/bootstrap/scss/list-group";
 @import "../bower/bootstrap/scss/responsive-embed";
-@import "../bower/bootstrap/scss/close";
-
-// Components w/ JavaScript
-@import "../bower/bootstrap/scss/modal";
-@import "../bower/bootstrap/scss/tooltip";
-@import "../bower/bootstrap/scss/popover";
-@import "../bower/bootstrap/scss/carousel";
+// @import "../bower/bootstrap/scss/close";
 
 // Utility classes
 @import "../bower/bootstrap/scss/utilities";
@@ -56,7 +50,176 @@
 @import "../bower/bootstrap/scss/utilities-responsive";
 
 // Tether
-@import "../bower/tether/src/css/tether";
+//@import "../bower/tether/src/css/tether";
 
 // OVERRIDE font-awesome
 @import "fonts";
+
+.boarding-pass{
+
+  margin-bottom: 50px;
+
+  .ticket{
+    background: $brand-primary; //#FFB300;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #aaa;
+    border-top: 1px solid #E89F3D;
+    border-bottom: 1px solid #E89F3D;
+  }
+
+  .content{
+    width: 100%;
+    background: #eee;
+  }
+
+  .airline{
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .boarding{
+    font-family: Arial;
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .flight {
+    padding: 0 15px;
+  }
+
+  .jfk{
+    font-family: Arial;
+    font-size: 38px;
+    color: #222;
+  }
+
+  .sfo{
+    font-family: Arial;
+    font-size: 38px;
+    color: #222;
+  }
+
+  .name {
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .name span {
+    color: #555;
+    font-size: 17px;
+  }
+
+  .flight {
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .flight span {
+    color: #555;
+    font-size: 17px;
+  }
+
+  .gate {
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .gate span {
+    color: #555;
+    font-size: 17px;
+  }
+
+  .seat {
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .seat span {
+    color: #555;
+    font-size: 17px;
+  }
+
+  .boardingtime {
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .boardingtime span {
+    color: #555;
+    font-size: 17px;
+  }
+
+  .barcode {
+  margin: 10px;
+  height: 30px;
+  width: 90px;
+  background: #222;
+  box-shadow: inset 0 1px 0 $brand-primary, inset -2px 0 0 $brand-primary,
+    inset -4px 0 0 #222,
+    inset -5px 0 0 $brand-primary,
+    inset -6px 0 0 #222,
+    inset -9px 0 0 $brand-primary,
+    inset -12px 0 0 #222,
+    inset -13px 0 0 $brand-primary,
+    inset -14px 0 0 #222,
+    inset -15px 0 0 $brand-primary,
+    inset -16px 0 0 #222,
+    inset -17px 0 0 $brand-primary,
+    inset -19px 0 0 #222,
+    inset -20px 0 0 $brand-primary,
+    inset -23px 0 0 #222,
+    inset -25px 0 0 $brand-primary,
+    inset -26px 0 0 #222,
+    inset -26px 0 0 $brand-primary,
+    inset -27px 0 0 #222,
+    inset -30px 0 0 $brand-primary,
+    inset -31px 0 0 #222,
+    inset -33px 0 0 $brand-primary,
+    inset -35px 0 0 #222,
+    inset -37px 0 0 $brand-primary,
+    inset -40px 0 0 #222,
+    inset -43px 0 0 $brand-primary,
+    inset -44px 0 0 #222,
+    inset -45px 0 0 $brand-primary,
+    inset -46px 0 0 #222,
+    inset -48px 0 0 $brand-primary,
+    inset -49px 0 0 #222,
+    inset -50px 0 0 $brand-primary,
+    inset -52px 0 0 #222,
+    inset -54px 0 0 $brand-primary,
+    inset -55px 0 0 #222,
+    inset -57px 0 0 $brand-primary,
+    inset -59px 0 0 #222,
+    inset -61px 0 0 $brand-primary,
+    inset -64px 0 0 #222,
+    inset -66px 0 0 $brand-primary,
+    inset -67px 0 0 #222,
+    inset -68px 0 0 $brand-primary,
+    inset -69px 0 0 #222,
+    inset -71px 0 0 $brand-primary,
+    inset -72px 0 0 #222,
+    inset -73px 0 0 $brand-primary,
+    inset -75px 0 0 #222,
+    inset -77px 0 0 $brand-primary,
+    inset -80px 0 0 #222,
+    inset -82px 0 0 $brand-primary,
+    inset -83px 0 0 #222,
+    inset -84px 0 0 $brand-primary,
+    inset -86px 0 0 #222,
+    inset -88px 0 0 $brand-primary,
+    inset -89px 0 0 #222,
+    inset -90px 0 0 $brand-primary;
+  }
+}

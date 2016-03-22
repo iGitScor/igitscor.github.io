@@ -5,7 +5,7 @@
 /*
   Set values to variables
 */
-$enable-flex: true;
+$enable-flex: false;
 
 /*
 link: #000000;
@@ -640,7 +640,6 @@ input, textarea {
               margin-left: 120px;
               font-size: 11px;
               line-height: 22px;
-              text-transform: uppercase;
               margin-bottom: 0;
           }
         }

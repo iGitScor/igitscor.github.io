@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tags
-header: Articles par tag
+header: Articles by tag
 group: navigation
 ---
 
@@ -28,29 +28,13 @@ group: navigation
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
     <div class="tab-pane" id="{{ this_word | replace:' ','-' }}-ref">
-      <h2 style="margin-top: 0px">Articles tagués avec {{ this_word }}</h2>
+      <h2 style="margin-top: 0px">Articles tagged with {{ this_word }}</h2>
       <ul class="list-unstyled">
         {% for post in site.tags[this_word] %}{% if post.title != null %}
           <li style="line-height: 35px;"><a href="{{ site.baseurl }}{{post.url}}">{{post.title}}</a>
-            <span class="text-muted">- 
+            <span class="text-muted">-
             <!-- Whitespace added for readability -->
-            {% assign m = post.date | date: "%-m" %}
-            {{ post.date | date: "%-d" }}
-            {% case m %}
-              {% when '1' %}Janvier
-              {% when '2' %}Février
-              {% when '3' %}Mars
-              {% when '4' %}Avril
-              {% when '5' %}Mai
-              {% when '6' %}Juin
-              {% when '7' %}Juillet
-              {% when '8' %}Août
-              {% when '9' %}Septembre
-              {% when '10' %}Octobre
-              {% when '11' %}Novembre
-              {% when '12' %}Décembre
-            {% endcase %}
-            {{ post.date | date: "%Y" }}</span>
+            {{{ post.date | date: '%B %d, %Y' }}</span>
           </li>
         {% endif %}{% endfor %}
       </ul>

@@ -11,6 +11,7 @@ tags: [tech, gulp, symfony2, industrialisation, quality]
 fullview: true
 author: iScor
 image: workflow.jpg
+location: sfo
 ---
 
 ## Contexte du projet

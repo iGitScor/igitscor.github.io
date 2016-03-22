@@ -13,7 +13,7 @@ module ReadingTimeFilter
     minutes = ( words / words_per_minute ).floor
     minutes = minutes + 1
     minutes_label = minutes === 1 ? " minute" : " minutes"
-    "Lecture en #{minutes} #{minutes_label} environ"
+    "Reading in about #{minutes} #{minutes_label}"
   end
 end
 

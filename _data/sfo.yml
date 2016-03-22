@@ -1,0 +1,10 @@
+location:
+  code: SFO
+  city: San Francisco
+from:
+  code: MPL
+  city: Montpellier
+flight: CA-S710
+gate  : 11B
+seat  : 34A
+boarding: 10:03PM ON MARCH 2016, 17

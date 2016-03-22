@@ -1,13 +1,10 @@
-<!--
-    @ all recruiters : Hire me :)
--->
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="lt-ie7" lang="fr"><![endif]-->
 <!--[if IE 7]><html class="ie7" lang="fr"><![endif]-->
 <!--[if IE 8]><html class="ie8" lang="fr"><![endif]-->
 <!--[if IE 9]><html class="ie9" lang="fr"><![endif]-->
 <!--[if !IE]>-->
-<html lang="fr">
+<html lang="en">
 <!--<![endif]-->
 
   {% include layout/head.html %}
@@ -55,10 +52,10 @@
               <div class="widget-box">
                 <div class="card">
                   <div class="card-block">
-                    <p class="h3 card-title">Sébastien Correaud</p>
+                    <p class="h3 card-title">Sebastien Correaud</p>
                     <span class="h4 card-subtitle text-muted">Full-stack developer</span>
                   </div>
-                  <div class="card-block text-xs-center">
+                  <div class="card-block hidden-md-down text-md-center">
                     <img src="/assets/images/me.svg" alt="About me" width="64" height="60">
                   </div>
                   <div class="card-block">
@@ -73,7 +70,7 @@
 
               <div class="widget-box">
                 <div class="widget-title">
-                  <span>S'abonner &amp; me suivre</span>
+                  <span>Subscribe &amp; follow me</span>
                   <div class="line"></div>
                 </div>
                 <div class="widget-item">
@@ -85,24 +82,7 @@
 
               <div class="widget-box">
                 <div class="widget-title">
-                  <span>Recherche</span>
-                  <div class="line"></div>
-                </div>
-                <div class="widget-item">
-                  <div class="sidebar-text">
-                    <div class="search-input">
-                       <input type="text" class="form-control" id="search" name="search" placeholder="Votre recherche...">
-                     </div>
-                     <div class="search-btn">
-                         <button type="submit" class="btn-dark">Rechercher</button>
-                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="widget-box">
-                <div class="widget-title">
-                  <span>Articles récents</span>
+                  <span>Recent articles</span>
                   <div class="line"></div>
                 </div>
                 <div class="widget-item">
@@ -111,7 +91,7 @@
                      <li class="item">
                        <div class="thum-img">
                          {% if post.image %}
-                         <img src="/assets/images/{{ post.image }}" alt="Small Thumbnail Image">
+                         <img src="/assets/images/{{ post.image }}" {% if post.image contains '.svg' %}height="80" width="80"{% endif %} alt="Small Thumbnail Image">
                          {% endif %}
                        </div>
                        <div class="post-meta">
@@ -145,7 +125,7 @@
 
                <div class="widget-box">
                  <div class="widget-title">
-                   <span>Catégories</span>
+                   <span>Categories</span>
                    <div class="line"></div>
                  </div>
                  <div class="widget-item">
@@ -176,12 +156,9 @@
       </footer>
     </div>
 
-    <!-- Application  Scripts -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="/bower/tether/dist/js/tether.min.js"></script>
-    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/js/main.js"></script>
-    {% if page.is_post %}<script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>{% endif %}
+    {% if page.is_post %}
+    <script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>
+    {% endif %}
   </body>
 
 </html>

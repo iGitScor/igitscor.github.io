@@ -1,18 +1,57 @@
 ---
 layout: default
 css: index.css
-title: Accueil
+title: Home
 data:
   head:
-    title: "Blog d'iScor"
+    title: "iScor's Blog"
 ---
 
 {% assign offsetPosts = paginator.page | minus:1 | times:paginator.per_page %}
 {% for post in site.posts offset:offsetPosts limit:paginator.per_page %}
+
+{% if site.data[post.location] %}
+  {% if location != post.location %}
+  <div class="boarding-pass">
+    <div class="ticket">
+      <div class="clearfix">
+        <div class="col-xs-4 text-xs-left airline">JS Airways</div>
+        <div class="col-xs-8 text-xs-right boarding">Boarding pass</div>
+      </div>
+      <div class="content">
+        <div class="flight">
+          <span class="jfk">{{ site.data[post.location].from.code }}</span>
+          <span class="plane"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+          <span class="sfo">{{ site.data[post.location].location.code }}</span>
+        </div>
+
+        <div>
+          <div class="col-sm-5 col-xs-6 name">
+            PASSENGER NAME<br><span>iScor</span>
+          </div>
+          <div class="col-sm-3 col-xs-6 flight">
+            FLIGHT N&deg;<br><span>{{ site.data[post.location].flight }}</span>
+          </div>
+          <div class="col-sm-2 col-xs-3 gate">
+            GATE<br><span>{{ site.data[post.location].gate }}</span>
+          </div>
+          <div class="col-sm-2 col-xs-3 seat">
+            SEAT<br><span>{{ site.data[post.location].seat }}</span>
+          </div>
+          <div class="col-sm-6 col-xs-6 boardingtime">
+            BOARDING TIME<br><span>{{ site.data[post.location].boarding }}</span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="barcode"></div>
+    </div>
+  </div>
+  {% endif %}
+  {% assign location = post.location %}
+{% endif %}
+
  <div class="blog-post">
-   <!-- <div class="thum-item">
-     <img src="images/post-thum-1.jpg" alt="Post Thumnail Image">
-   </div> -->
    <div class="post">
      <div class="blog-title">
        <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
@@ -20,25 +59,9 @@ data:
      <div class="meta">
         <ul>
           <li class="category">{{ post.type }}</li>
-          <li class="author">par <span class="font-weight-bold">{{ post.author }}</span></li>
+          <li class="author">by <span class="font-weight-bold">{{ post.author }}</span></li>
           <li class="date">
-            {% assign m = post.date | date: "%-m" %}
-            {{ post.date | date: "%-d" }}
-            {% case m %}
-              {% when '1' %}Janvier
-              {% when '2' %}Février
-              {% when '3' %}Mars
-              {% when '4' %}Avril
-              {% when '5' %}Mai
-              {% when '6' %}Juin
-              {% when '7' %}Juillet
-              {% when '8' %}Août
-              {% when '9' %}Septembre
-              {% when '10' %}Octobre
-              {% when '11' %}Novembre
-              {% when '12' %}Décembre
-            {% endcase %}
-            {{ post.date | date: "%Y" }}
+            {{ post.date | date: '%B %d, %Y' }}
           </li>
         </ul>
      </div>
@@ -51,10 +74,10 @@ data:
      <div class="share">
       <div class="post-bottom">
        <div class="continue">
-         <a href="{{ post.url | prepend: site.baseurl }}">Voir la suite <span><i class="fa fa-long-arrow-right"></i></span></a>
+         <a href="{{ post.url | prepend: site.baseurl }}">Read the article <span><i class="fa fa-long-arrow-right"></i></span></a>
        </div>
        <div class="share-iocn">
-         <span class="share">Partager :</span>
+         <span class="share">Share :</span>
          <span class="icon">
            <a
             href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ post.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}"

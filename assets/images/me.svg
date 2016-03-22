@@ -1,7 +1,7 @@
 ---
 layout: null
 data:
-  color: "#00ADEE"
+  color: "#05B4C9"
   secondaryColor: "#00ADEE"
 ---
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-editor-canvas" class="canvas" width="158" height="148">
