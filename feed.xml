@@ -3,47 +3,51 @@
   <channel>
     <title></title>
     <description>Blog iGitScor - développement Web et mobile</description>
-    <link>http://0.0.0.0/</link>
-    <atom:link href="http://0.0.0.0/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Mar 2016 20:19:15 +0100</pubDate>
-    <lastBuildDate>Mon, 21 Mar 2016 20:19:15 +0100</lastBuildDate>
+    <link>http://iscor.me/</link>
+    <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 28 Mar 2016 19:11:38 +0200</pubDate>
+    <lastBuildDate>Mon, 28 Mar 2016 19:11:38 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>From Montpellier to San Francisco</title>
-        <description>&lt;h2 id=&quot;objective-california&quot;&gt;Objective California&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;objective-california--san-francisco&quot;&gt;Objective California : San Francisco&lt;/h2&gt;
 
-&lt;p&gt;Fascinated since my childhood by the USA, more particularly the big cities, I am finally able to realize my project and to embark for months towards the work destination of my dreams. San Francisco, here I am !&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;In the land of the &lt;em&gt;burgers&lt;/em&gt;’ eaters, time plays tricks on &lt;em&gt;me&lt;/em&gt;. One day, &lt;em&gt;I’m&lt;/em&gt; dreaming. The next, &lt;em&gt;my&lt;/em&gt; dream’s becoming reality.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2 id=&quot;hello-san-francisco&quot;&gt;Hello “San Francisco”&lt;/h2&gt;
+&lt;p&gt;Fascinated since my childhood by the USA, more particularly the big cities, I am finally able to realize my project and to embark, for months, towards the work destination of my dreams. San Francisco, here I am !&lt;/p&gt;
 
-&lt;p&gt;I arrived to San Francisco at the beginning of the evening. By the way, I have’t landed in an unknown place because I’ve travelled in California in 2013. But I was always surprised by the jungle of skyscraper, the crowded streets.&lt;/p&gt;
+&lt;h2 id=&quot;hello-san-francisco&quot;&gt;Hello San Francisco&lt;/h2&gt;
+
+&lt;p&gt;I arrived in San Francisco at the beginning of the evening. By the way, I haven’t landed in an unknown place because I’ve already travelled in California in 2013. But it’s always a surprise to see the jungle of skyscraper, the crowded streets.&lt;/p&gt;
 
 &lt;h2 id=&quot;where-i-come&quot;&gt;Where I come&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/map__sfo-mpl.png&quot; alt=&quot;Map from Montpellier to San Francisco&quot; /&gt;&lt;/p&gt;
-&lt;legend class=&quot;mark text-xs-center&quot;&gt;Route Montpellier-SanFrancisco&lt;/legend&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/map__sfo-mpl.png&quot; alt=&quot;Map from Montpellier to San Francisco&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Montpellier - San Francisco&lt;/legend&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;I’m a french guy and I come from Montpellier.&lt;/p&gt;
+&lt;p&gt;I’m a french guy and I come from Montpellier, a small city compared to Sacramento, even if it’s a state capital.&lt;/p&gt;
 
 &lt;blockquote class=&quot;post-blockquote&quot;&gt;
-&lt;p&gt;Montpellier is a city in southern France. It is the capital of the Languedoc-Roussillon region, as well as the Hérault department. Montpellier is the 8th largest city of France, and is also the fastest growing city in the country over the past 25 years. Nearly one third of the population is students from 3 universities and 3 higher education institutions that are outside the university framework in the city. Located on the south coast of France on the Mediterranean Sea, it is the third-largest French city on the Mediterranean coast after Marseille and Nice.&lt;/p&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Montpellier&quot; target=&quot;_blank&quot; class=&quot;blockquote-author&quot;&gt;Wikipedia&lt;/a&gt;
+  &lt;p&gt;
+  Montpellier is a city in southern France. It is the capital of the Languedoc-Roussillon region, as well as the Hérault department. Montpellier is the 8th largest city of France, and is also the fastest growing city in the country over the past 25 years. Nearly one third of the population is students from 3 universities and 3 higher education institutions that are outside the university framework in the city. Located on the south coast of France on the Mediterranean Sea, it is the third-largest French city on the Mediterranean coast after Marseille and Nice.
+  &lt;/p&gt;
+  &lt;a href=&quot;https://en.wikipedia.org/wiki/Montpellier&quot; target=&quot;_blank&quot; class=&quot;blockquote-author&quot;&gt;Wikipedia&lt;/a&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;project&quot;&gt;Project&lt;/h2&gt;
+&lt;h2 id=&quot;web-development-project&quot;&gt;Web development project&lt;/h2&gt;
 
-&lt;p&gt;Why am I here in California ?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why am I here in California ?&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;I’ve decided to come here in the United States to follow my dreams and also to work in the web domain. As you can see in my &lt;a href=&quot;/about.html&quot;&gt;bio page&lt;/a&gt;, I am a frontend developer specialized in the JavaScript language.&lt;/p&gt;
+&lt;p&gt;I’ve decided to come here in the United States to follow my dreams and also to work in the web development domain. As you can see in my &lt;a href=&quot;/about.html&quot;&gt;bio page&lt;/a&gt;, I am a front-end developer specialized in the JavaScript language.&lt;/p&gt;
 
 &lt;center&gt;
-
   &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;New in San Francisco, motivated Web developer... a lot of promise :)&lt;a href=&quot;https://twitter.com/hashtag/SanFrancisco?src=hash&quot;&gt;#SanFrancisco&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/WebDevlopment?src=hash&quot;&gt;#WebDevlopment&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Javascript?src=hash&quot;&gt;#Javascript&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Startup?src=hash&quot;&gt;#Startup&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Web?src=hash&quot;&gt;#Web&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sebastien Correaud (@iTweetScor) &lt;a href=&quot;https://twitter.com/iTweetScor/status/710572331375206401&quot;&gt;March 17, 2016&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
 &lt;/center&gt;
 
 &lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
@@ -52,18 +56,49 @@
 
 &lt;ul&gt;
   &lt;li&gt;To improve my english,&lt;/li&gt;
-  &lt;li&gt;to become a full-part member of a JavaScript community&lt;/li&gt;
+  &lt;li&gt;to become a full-part member of a JavaScript community,&lt;/li&gt;
+  &lt;li&gt;to discover another culture and enjoy life&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I really aim to focus on teaching in the future, to share knowledge about development or about different domains.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/picture__sfo--mini.jpg&quot; alt=&quot;San Francisco break&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Sunny evening near Levi&#39;s Plaza&lt;/legend&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;javascript-community&quot;&gt;JavaScript community&lt;/h2&gt;
+
+&lt;p&gt;As I said before, I am a front-end developer, even a JavaScript full stack developer. You can discover my projects on &lt;a href=&quot;github&quot;&gt;my Github page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I hate enumerate all the frameworks or library I’ve used or I excelled in but I can say that I’m able to develop the back-end and also the front-end part of a website or web application.&lt;/p&gt;
+
+&lt;p&gt;I chosen to focus to &lt;strong&gt;&lt;a href=&quot;meteor&quot; target=&quot;_blank&quot;&gt;meteor&lt;/a&gt;&lt;/strong&gt; because I like the isomorphic principle. I often develop with &lt;strong&gt;node.js&lt;/strong&gt; as a back-end and &lt;strong&gt;Angular&lt;/strong&gt; as a front-end framework.&lt;/p&gt;
+
+&lt;p&gt;I love to integrate the fact that all developers should learn concepts, not languages.&lt;/p&gt;
+
+&lt;center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;fr&quot; dir=&quot;ltr&quot;&gt;&amp;quot;Apprenez des concepts, pas des frameworks&amp;quot; &lt;a href=&quot;https://twitter.com/hashtag/BlendWebMix?src=hash&quot;&gt;#BlendWebMix&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/javascript?src=hash&quot;&gt;#javascript&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/angularjs?src=hash&quot;&gt;#angularjs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sebastien Correaud (@iTweetScor) &lt;a href=&quot;https://twitter.com/iTweetScor/status/659305682148196353&quot;&gt;October 28, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;cite&gt;(English) Learn concepts, not frameworks&lt;/cite&gt;
+&lt;/center&gt;
+
 </description>
         <pubDate>Mon, 05 Jan 2015 00:00:00 +0100</pubDate>
-        <link>http://0.0.0.0/from-montpellier-to-san-francisco</link>
-        <guid isPermaLink="true">http://0.0.0.0/from-montpellier-to-san-francisco</guid>
+        <link>http://iscor.me/from-montpellier-to-san-francisco</link>
+        <guid isPermaLink="true">http://iscor.me/from-montpellier-to-san-francisco</guid>
         
         <category>flight</category>
         
         <category>montpellier</category>
         
         <category>sanfrancisco</category>
+        
+        <category>javascript community</category>
+        
+        <category>meteor</category>
         
         
         <category>travel</category>
