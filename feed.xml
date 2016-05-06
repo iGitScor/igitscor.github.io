@@ -3,11 +3,113 @@
   <channel>
     <title></title>
     <description>Blog iGitScor - développement Web et mobile</description>
-    <link>http://iscor.me/</link>
-    <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Mar 2016 19:24:07 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2016 19:24:07 +0200</lastBuildDate>
+    <link>http://0.0.0.0/</link>
+    <atom:link href="http://0.0.0.0/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 06 May 2016 11:17:04 +0200</pubDate>
+    <lastBuildDate>Fri, 06 May 2016 11:17:04 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>UX Workshop</title>
+        <description>&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
+
+&lt;p&gt;During weeks, I went to workshops about user exeperience or frontend development… and I learned a lot !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/intro_flupa.jpg&quot; alt=&quot;FLUPA Workshop&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;User experience workshop presentation&lt;/legend&gt;
+
+&lt;h2 id=&quot;ux-design&quot;&gt;UX Design&lt;/h2&gt;
+
+&lt;p&gt;The first workshop lasted the 6th of April.&lt;/p&gt;
+
+&lt;h3 id=&quot;context&quot;&gt;Context&lt;/h3&gt;
+
+&lt;p&gt;Based on the &lt;strong&gt;&lt;a href=&quot;https://www.amazon.com/M%C3%A9thodes-design-fondamentales-concevoir-interactifs-ebook/dp/B017OFZQMU&quot; target=&quot;_blank&quot;&gt;Carine Lallemand’s book&lt;/a&gt;&lt;/strong&gt;, we initiated passionate about user testing.&lt;/p&gt;
+
+&lt;p&gt;Carine Lallemand is a :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;post-doc UX Researcher at &lt;em&gt;&lt;a href=&quot;https://twitter.com/uni_lu&quot; target=&quot;_blank&quot;&gt;@uni_lu&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;membre board for &lt;em&gt;&lt;a href=&quot;http://flupa.eu/&quot; target=&quot;_blank&quot;&gt;@FLUPA (French UX professionals’ association)&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;UX designer/speaker/trainer&lt;/li&gt;
+  &lt;li&gt;Co-author of “Méthodes de design UX”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can follow her &lt;em&gt;&lt;a href=&quot;https://twitter.com/Carilall&quot; target=&quot;_blank&quot;&gt;on Twitter&lt;/a&gt;&lt;/em&gt; or see her in UX conferences.&lt;/p&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+
+&lt;p&gt;The session was splitted into 3 interviews. I’ll describe each test in the following paragraphs.&lt;/p&gt;
+
+&lt;h4 id=&quot;exploratory-survey&quot;&gt;Exploratory survey&lt;/h4&gt;
+
+&lt;p&gt;This test is very simple. We have, binomial, an interviewer and an interviewee. The first one asks some questions on the second one about the context of the tested system.&lt;/p&gt;
+
+&lt;p&gt;For example, in the context of a marketplace, we should ask these questions :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How old are you ?&lt;/li&gt;
+  &lt;li&gt;Do you buy frequently online ?&lt;/li&gt;
+  &lt;li&gt;What kind of product do you buy online ?&lt;/li&gt;
+  &lt;li&gt;What kind of product do you buy only offline ?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;attrakdiff&quot;&gt;Attrak’diff&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The &lt;strong&gt;AttrakDiff&lt;/strong&gt; questionnaire developed by Hassenzahl and his colleagues in 2003, is a reference tool for researchers in UX. It assesses the hedonic and pragmatic qualities of interactive systems.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The tested system was a checkout process in a marketplace project. Depends on the system, the result has to be analyzed.&lt;/p&gt;
+
+&lt;p&gt;For example an e-commerce website selling beauty products should have hedonic qualities and a checkout should have pragmatic qualities. It is a good objective indicator of success for a Scrum project.&lt;/p&gt;
+
+&lt;p&gt;Everybody played the game and answered approx 30 questions. Example :&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Simple | o | X | o | o | o | o | o | Complicated&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;scenario&quot;&gt;Scenario&lt;/h4&gt;
+
+&lt;p&gt;For this user test we prepared a unique scenario in order to compare behavior and make a correlation with the previous tests.&lt;/p&gt;
+
+&lt;p&gt;This time there was a test subject and several observers. They were not to influence the tester, only get his impressions, whether good or bad and help him only if he did not find a way to resolve the scenario.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/ux.jpg&quot; alt=&quot;Workshop&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;review&quot;&gt;Review&lt;/h3&gt;
+
+&lt;p&gt;I was proud to assist to this workshop and to help to organize it.&lt;/p&gt;
+
+&lt;p&gt;On the test results point of view, the team was satisfied of the pragmatism even if the scenario traces the needs and problems.
+On the organizational point of view, the workshop was a real success with the presence of different profiles (students, marketers, developers, psychologists…)&lt;/p&gt;
+
+&lt;h2 id=&quot;web-development&quot;&gt;Web development&lt;/h2&gt;
+
+&lt;h3 id=&quot;smashing-conf&quot;&gt;Smashing conf&lt;/h3&gt;
+
+&lt;p&gt;I’ll write another post to summarize my journey at the Smashing Magazine Conference.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 06 May 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0/user-experience-workshop</link>
+        <guid isPermaLink="true">http://0.0.0.0/user-experience-workshop</guid>
+        
+        <category>user experience</category>
+        
+        <category>ux community</category>
+        
+        <category>uxdesign</category>
+        
+        <category>flupa</category>
+        
+        
+        <category>workshop</category>
+        
+      </item>
     
       <item>
         <title>From Montpellier to San Francisco</title>
@@ -86,9 +188,9 @@
 &lt;/center&gt;
 
 </description>
-        <pubDate>Sat, 28 Mar 2015 00:00:00 +0100</pubDate>
-        <link>http://iscor.me/from-montpellier-to-san-francisco</link>
-        <guid isPermaLink="true">http://iscor.me/from-montpellier-to-san-francisco</guid>
+        <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0/from-montpellier-to-san-francisco</link>
+        <guid isPermaLink="true">http://0.0.0.0/from-montpellier-to-san-francisco</guid>
         
         <category>flight</category>
         

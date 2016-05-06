@@ -8,24 +8,49 @@
 <!--<![endif]-->
 
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>iScor - From Montpellier to San Francisco</title>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
-  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+  <title>iScor - Industrialisation de l'environnement front</title>
+  
+  <meta name="description" content="Présentation du projet Kickstarter, premier pas de l'industrialisation des projets dans l'équipe technique de 1001pharmacies
+" />
+  
+  <meta name="author" content="Sebastien Correaud"/>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@iTweetScor" />
+  <meta name="twitter:creator" content="@iTweetScor" />
+  <meta name="twitter:title" content="Sebastien Correaud | Blog" />
+  <meta name="twitter:description" content="The blog of a travel of code with JavaScript airlines by iScor. From Montpellier to San Francisco, with a lot of promises and web development." />
+  <meta name="twitter:image:src" content="http://sebastien-correaud.herokuapp.com/img/apple/apple-touch-icon.png" />
+  <meta name="twitter:image:width" content="57" />
+  <meta name="twitter:image:height" content="57" />
+  <meta name="twitter:url" content="http://sebastien-correaud.herokuapp.com/" />
+
+  <meta property="og:title" content="Sebastien Correaud | Blog" />
+  <meta property="og:site_name" content="iScor Blog" />
+  <meta property="og:url" content="http://iscor.me" />
+  <meta property="og:description" content="The blog of a travel of code with JavaScript airlines by iScor. From Montpellier to San Francisco, with a lot of promises and web development." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://sebastien-correaud.herokuapp.com/img/apple/apple-touch-icon.png" />
+
+  <meta name="robots" content="index, follow" />
 
   <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <link href="/css/index.css" rel="stylesheet" type="text/css">
+  <link href="/css/index.css" rel="stylesheet" type="text/css" />
   
-  <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,700" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Roboto:400,100,700" rel="stylesheet" type="text/css" />
 </head>
 
 
@@ -34,22 +59,27 @@
       <header id="header" class="header navbar-fixed-top">
         <div class="container">
   <div class="navbar" role="navigation">
-    <div class="navbar-header">
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-        &#9776;
-      </button>
+    <div class="navbar-header clearfix">
       <a class="navbar-brand" href="/">iScor</a>
     </div>
     <div class="collapse navbar-toggleable-xs pull-sm-right" id="exCollapsingNavbar">
       <ul class="nav navbar-nav right sm">
-  <li class="nav-item active">
+  <li class="nav-item">
     <a
       href="index.html">
       Home
     </a>
   </li>
-  <li class="nav-item"><a href="slides/web-performance.html">Talks</a></li>
-  <li class="nav-item"><a href="about.html">About me</a></li>
+  <li class="nav-item">
+    <a href="slides/web-performance.html">
+      Talks
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="about.html">
+      About me
+    </a>
+  </li>
 </ul>
 
     </div>
@@ -62,8 +92,8 @@
         <div class="bg-title">
           <div class="container">
             <div class="title">
-              <h1>From Montpellier to San Francisco</h1>
-              <small class="h4 text-muted">Golden rush</small>
+              <h1>Industrialisation de l'environnement front</h1>
+              <small class="h4 text-muted">Keep it smart !</small>
             </div>
             <div class="breadcrumb">
               <ul>
@@ -83,21 +113,123 @@
            <div class="col-md-8">
              <div class="primary">
               <span class="pull-xs-right label label-info">
-  <span class="h5">Lecture en 1  minute environ</span>
+  <span class="h5">Reading in about 3  minutes</span>
 </span>
 
-<h2 id="flight">Flight</h2>
+<h2 id="contexte-du-projet">Contexte du projet</h2>
 
-<h2 id="project">Project</h2>
+<p><strong>Le développement front et l’intégration sont de plus en plus complexes avec des <a href="https://github.com/naholyr/blendwebmix-js-stack-overdose" target="_blank">Stacks trop importantes</a>.</strong></p>
 
-<h2 id="goals">Goals</h2>
+<p>À 1001pharmacies, nous n’échappons pas à cette règle. Le développement back est fait avec le framework PHP Symfony 2.
+Celui-ci est contraignant pour la gestion des ressources front.</p>
 
-<center>
+<p>Dans le cadre de ces projets, nous étions souvent amenés à exécuter très fréquemment des tâches répétitives pour le développement front.
+Nous avons donc très vite vu l’importance d’industrialiser des processus de développement.</p>
 
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">New in San Francisco, motivated Web developer... a lot of promise :)<a href="https://twitter.com/hashtag/SanFrancisco?src=hash">#SanFrancisco</a> <a href="https://twitter.com/hashtag/WebDevlopment?src=hash">#WebDevlopment</a> <a href="https://twitter.com/hashtag/Javascript?src=hash">#Javascript</a> <a href="https://twitter.com/hashtag/Startup?src=hash">#Startup</a> <a href="https://twitter.com/hashtag/Web?src=hash">#Web</a></p>&mdash; Sebastien Correaud (@iTweetScor) <a href="https://twitter.com/iTweetScor/status/710572331375206401">March 17, 2016</a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<ul>
+  <li>Compilation de fichiers de style</li>
+  <li>Compilation de script</li>
+  <li>Optimisation d’images
+<br /><br /></li>
+</ul>
 
-</center>
+<p>Le choix de <em>Gulp</em> plutôt que <em>Grunt</em>, <em>npm</em> ou <em>Broccoli</em> s’est fait naturellement. En effet, la logique de programmation de gulp, une approche Event semblable à <em>Node.js</em> et également une décision arbitraire.</p>
+
+<div class="line"></div>
+
+<h2 id="objectifs">Objectifs</h2>
+
+<p>Obtenir un environnement de développement propre et fonctionnel. Il permettra la création de landing pages.</p>
+
+<figure id="figure-1" class="text-xs-center">
+  <a href="/assets/images/kickstarter/landings.jpg">
+  <img src="/assets/images/kickstarter/landings.jpg" alt="Landing pages" />
+  </a>
+  <figcaption>
+    Figure 1: Landing pages
+  </figcaption>
+</figure>
+
+<h3 id="prrequis">Prérequis</h3>
+
+<ul>
+  <li>Symfony2, Jekyll, AngularJS, projets Starter Kit (bootstrap, foundation)</li>
+  <li>Gestion des dépendances Bower
+<br /><br /></li>
+</ul>
+
+<h3 id="qualit">Qualité</h3>
+
+<p>Parce que la qualité du code est nécessaire pour rendre les projets maintenables, il a d’abord fallu rendre le kickstarter lui-même testé et maintenable. Un outil de qualité pour faire du travail de qualité.</p>
+
+<p>L’outil Kickstarter est testé par <strong>karma</strong> (encore lui), <strong>mocha</strong> et <strong>chai</strong> pour la gestion des asserts. Les tests portent sur l’assistant de configuration et non sur les plugins gulp tiers.</p>
+
+<p>La qualité est mise en avant également par des tâches <em>gulp</em> avec l’intégration de linters (HTML, CSS, Javascript)</p>
+
+<div class="line"></div>
+
+<h2 id="dveloppement">Développement</h2>
+
+<p>Nous avons travaillé de manière itérative pour réaliser ce projet qui est toujours en amélioration continue.</p>
+
+<h3 id="sources">Sources</h3>
+
+<p>Afin de mener à bien ce projet et comprendre complètement la logique gulp et node, nous avons étudié le core de différents outils déjà grandement présents dans l’écosystème à savoir karma, gulp lui-même pour la plus grande partie.</p>
+
+<h3 id="fonctionnalits">Fonctionnalités</h3>
+
+<p>Pour voir la liste exhaustive des fonctionnalités proposées par le Kickstarter, rendez-vous sur le <a href="https://github.com/1001Pharmacies/kickstarter">dépôt Github</a>.</p>
+
+<ul>
+  <li>Compilateur CSS (Compass, Sass, Less)</li>
+  <li>Compression Javascript</li>
+  <li>Optimisation images (<em>.png</em>, <em>.jpg</em>)</li>
+  <li>Lint de la syntaxe</li>
+  <li>Compression twig (avec filter trans)</li>
+  <li>Création micro server pour développer (avec livereload)</li>
+</ul>
+
+<div class="line"></div>
+
+<h2 id="utilisation">Utilisation</h2>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="gp">$ </span>Kickstarter --help
+<span class="gp">$ </span>Kickstarter init
+<span class="gp">$ </span>Kickstarter start --open</code></pre></figure>
+
+<h3 id="dmonstration">Démonstration</h3>
+
+<figure id="figure-1" class="text-xs-center">
+  <a href="/assets/images/kickstarter/kickstarter_launch.gif">
+  <img src="/assets/images/kickstarter/kickstarter_launch.gif" alt="Démonstration kickstarter" />
+  </a>
+  <figcaption>
+    Figure 2: Démonstration kickstarter
+  </figcaption>
+</figure>
+
+<p>Dans ce projet nous avons de multiples sous-projets avec un core commun. Il est donc facile de switcher de sous-projets :</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Kickstarter start src/{projetA}/kickstarter.conf.js --port=3000</code></li>
+  <li><code class="highlighter-rouge">Kickstarter start src/{projetB}/kickstarter.conf.js --port=4000</code></li>
+</ul>
+
+<p><small>Cela permet aussi l’interaction et des configurations spécifiques.</small></p>
+
+<p>Voir la <a href="https://github.com/1001Pharmacies/kickstarter" target="_blank">documentation du kickstarter</a> pour plus d’informations.</p>
+
+<h3 id="slides">Slides</h3>
+
+<p><a class="btn btn-primary" href="slides/kickstarter.html">Voir les slides</a></p>
+
+<h2 id="liens-externes">Liens externes</h2>
+
+<ul>
+  <li>Gulp : <a href="http://gulpjs.com/" target="_blank">Site officiel</a></li>
+  <li>Karma : <a href="https://github.com/karma-runner/karma" target="_blank">Dépôt Github</a></li>
+</ul>
+
 
 
 <div class="line"></div>
@@ -105,7 +237,7 @@
 <div class="text-xs-center">
   <a
     class="btn btn-info"
-    href="https://twitter.com/intent/tweet?text=From Montpellier to San Francisco&url=http://0.0.0.0/industrialisation-environnement-front&via=iTweetScor&related=iTweetScor"
+    href="https://twitter.com/intent/tweet?text=Industrialisation de l'environnement front&url=http://iscor.me/industrialisation-environnement-front&via=iTweetScor&related=iTweetScor"
     rel="nofollow"
     target="_blank"
     title="Partager sur Twitter">
@@ -113,7 +245,7 @@
   </a>
   <a
     class="btn btn-info"
-    href="https://facebook.com/sharer.php?u=http://0.0.0.0/industrialisation-environnement-front"
+    href="https://facebook.com/sharer.php?u=http://iscor.me/industrialisation-environnement-front"
     rel="nofollow"
     target="_blank"
     title="Partager sur Facebook">
@@ -121,7 +253,7 @@
   </a>
   <a
     class="btn btn-info"
-    href="https://plus.google.com/share?url=http://0.0.0.0/industrialisation-environnement-front"
+    href="https://plus.google.com/share?url=http://iscor.me/industrialisation-environnement-front"
     rel="nofollow"
     target="_blank"
     title="Partager sur Google+">
@@ -159,7 +291,7 @@
                     <p class="h3 card-title">Sebastien Correaud</p>
                     <span class="h4 card-subtitle text-muted">Full-stack developer</span>
                   </div>
-                  <div class="card-block text-xs-center">
+                  <div class="card-block hidden-md-down text-md-center">
                     <img src="/assets/images/me.svg" alt="About me" width="64" height="60">
                   </div>
                   <div class="card-block">
@@ -184,23 +316,6 @@
                 </div>
               </div>
 
-              <!-- <div class="widget-box">
-                <div class="widget-title">
-                  <span>Search</span>
-                  <div class="line"></div>
-                </div>
-                <div class="widget-item">
-                  <div class="sidebar-text">
-                    <div class="search-input">
-                       <input type="text" class="form-control" id="search" name="search" placeholder="Your search...">
-                     </div>
-                     <div class="search-btn">
-                         <button type="submit" class="btn-dark">Search</button>
-                     </div>
-                  </div>
-                </div>
-              </div> -->
-
               <div class="widget-box">
                 <div class="widget-title">
                   <span>Recent articles</span>
@@ -212,10 +327,38 @@
                      <li class="item">
                        <div class="thum-img">
                          
+                         <img src="/assets/images/sfo.svg" height="80" width="80" alt="Small Thumbnail Image">
+                         
                        </div>
                        <div class="post-meta">
-                         <p class="h4"><a href="/industrialisation-environnement-front">From Montpellier to San Francisco</a></p>
-                         <p>Presentation of the professional travel from Montpellier (France) to San Francisco (USA)
+                         <p class="h4"><a href="/user-experience-workshop">UX Workshop</a></p>
+                         <p>UX meetup around practical workshop
+</p>
+                       </div>
+                     </li>
+                   
+                     <li class="item">
+                       <div class="thum-img">
+                         
+                         <img src="/assets/images/sfo.svg" height="80" width="80" alt="Small Thumbnail Image">
+                         
+                       </div>
+                       <div class="post-meta">
+                         <p class="h4"><a href="/from-montpellier-to-san-francisco">From Montpellier to San Francisco</a></p>
+                         <p>Presentation of the professional travel from Montpellier (France) to San Francisco (USA) of a front-end developer specialized in JavaScript.
+</p>
+                       </div>
+                     </li>
+                   
+                     <li class="item">
+                       <div class="thum-img">
+                         
+                         <img src="/assets/images/workflow.jpg"  alt="Small Thumbnail Image">
+                         
+                       </div>
+                       <div class="post-meta">
+                         <p class="h4"><a href="/industrialisation-environnement-front">Industrialisation de l'environnement front</a></p>
+                         <p>Présentation du projet Kickstarter, premier pas de l'industrialisation des projets dans l'équipe technique de 1001pharmacies
 </p>
                        </div>
                      </li>
@@ -241,12 +384,62 @@
                     
                       
                       
+                      <a class="btn-light-sm" href="/tags.html#flupa-ref">flupa</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#gulp-ref">gulp</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#industrialisation-ref">industrialisation</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#javascript-community-ref">javascript community</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#meteor-ref">meteor</a>
+                     
+                    
+                      
+                      
                       <a class="btn-light-sm" href="/tags.html#montpellier-ref">montpellier</a>
                      
                     
                       
                       
+                      <a class="btn-light-sm" href="/tags.html#quality-ref">quality</a>
+                     
+                    
+                      
+                      
                       <a class="btn-light-sm" href="/tags.html#sanfrancisco-ref">sanfrancisco</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#symfony2-ref">symfony2</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#tech-ref">tech</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#user-experience-ref">user experience</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#ux-community-ref">ux community</a>
                      
                     
                       
@@ -269,6 +462,10 @@
                        
                          <li class="cat-item"><a href="/categories.html#industrialisation-ref">Industrialisation <span>(1)</span></a></li>
                        
+                         <li class="cat-item"><a href="/categories.html#travel-ref">Travel <span>(1)</span></a></li>
+                       
+                         <li class="cat-item"><a href="/categories.html#workshop-ref">Workshop <span>(1)</span></a></li>
+                       
                      
                      
                    </ul>
@@ -286,8 +483,6 @@
   <div class="footer-nav">
     <nav class="nav navbar-nav sm">
       <a href="/">Home</a>
-      <!-- <a href="">Privacy &amp; Policy</a>
-      <a href="accessibilite.html">Accessibilité</a> -->
       <a href="slides/web-performance.html">Slides</a>
       <a href="about.html">About me</a>
     </nav>
@@ -300,9 +495,9 @@
       </footer>
     </div>
 
-    <!-- Application  Scripts -->
-    <script src="/js/main.js"></script>
+    
     <script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>
+    
   </body>
 
 </html>
