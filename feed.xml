@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>Blog iGitScor - développement Web et mobile</description>
-    <link>http://0.0.0.0/</link>
-    <atom:link href="http://0.0.0.0/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 May 2016 11:20:26 +0200</pubDate>
-    <lastBuildDate>Fri, 06 May 2016 11:20:26 +0200</lastBuildDate>
+    <link>http://iscor.me/</link>
+    <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 06 May 2016 11:25:56 +0200</pubDate>
+    <lastBuildDate>Fri, 06 May 2016 11:25:56 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -78,7 +78,7 @@
 
 &lt;p&gt;This time there was a test subject and several observers. They were not to influence the tester, only get his impressions, whether good or bad and help him only if he did not find a way to resolve the scenario.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/ux.jpg&quot; alt=&quot;Workshop&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ux-scenario.jpg&quot; alt=&quot;Workshop&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;review&quot;&gt;Review&lt;/h3&gt;
 
@@ -95,8 +95,8 @@ On the organizational point of view, the workshop was a real success with the pr
 
 </description>
         <pubDate>Fri, 06 May 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0/user-experience-workshop</link>
-        <guid isPermaLink="true">http://0.0.0.0/user-experience-workshop</guid>
+        <link>http://iscor.me/user-experience-workshop</link>
+        <guid isPermaLink="true">http://iscor.me/user-experience-workshop</guid>
         
         <category>user experience</category>
         
@@ -189,8 +189,8 @@ On the organizational point of view, the workshop was a real success with the pr
 
 </description>
         <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0/from-montpellier-to-san-francisco</link>
-        <guid isPermaLink="true">http://0.0.0.0/from-montpellier-to-san-francisco</guid>
+        <link>http://iscor.me/from-montpellier-to-san-francisco</link>
+        <guid isPermaLink="true">http://iscor.me/from-montpellier-to-san-francisco</guid>
         
         <category>flight</category>
         
