@@ -26,8 +26,10 @@
               <ul>
                 {% assign crumbs = page.url | split: '/' %}
                 {% assign crumbstotal = crumbs | size %}
-                <li{% if crumbstotal == 0 %} class="active"{% endif %}><a href="/">Home</a></li>
-                {% for crumb in crumbs offset:2 %}
+                {% if crumbstotal > 0 %}
+                <li><a href="/">Home</a></li>
+                {% endif %}
+                {% for crumb in crumbs offset:1 %}
                   {% unless crumb == 'index.html' %}
                   <li {% if forloop.last %} class="active"{% endif %}><span>{{ crumb | remove: '.html' | replace: '-',' ' }}</span></li>
                   {% endunless %}
