@@ -15,9 +15,10 @@
 
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
-  <title>iScor - About me</title>
+  <title>iScor - How to migrate front technologies</title>
   
-  <meta name="description" content="Blog sur mes travaux et recherches en développement Web et mobile" />
+  <meta name="description" content="Sometimes you have to migrate front architecture, especially when you want to optimize web performance or to create a new brand image.
+" />
   
   <meta name="author" content="Sebastien Correaud"/>
 
@@ -70,8 +71,8 @@
         <div class="bg-title">
           <div class="container">
             <div class="title">
-              <h1>About me</h1>
-              
+              <h1>How to migrate front technologies</h1>
+              <small class="h4 text-muted">Direction Webpack</small>
             </div>
             <div class="breadcrumb">
               <ul>
@@ -82,7 +83,7 @@
                 
                 
                   
-                  <li  class="active"><span>about</span></li>
+                  <li  class="active"><span>how to migrate front technologies</span></li>
                   
                 
               </ul>
@@ -96,45 +97,202 @@
           <div class="row">
            <div class="col-md-8">
              <div class="primary">
-              <div class="about-me">
-  <h2>Hello !</h2>
-  <p itemscope="" itemtype="http://data-vocabulary.org/Person" id="person">
-    My name is <span itemprop="name">Sebastien Correaud</span>, Web IT Engineer in San Francisco (California) in the areas of open source and cross-platform.
-  </p>
-  <p>
-    I joined the CGI's Webfactory Team (formerly Logica) for analysis and development tasks within various web projects, with a technologic LAMP platform (eZ Publish, Drupal, Symfony).
-    Subsequently I have contributed to the birth and evolution of a mobile development pole (iOS, HTML5 Cross-Platform, Android)
-  </p>
-  <p>
-    I also contribute to the evolution of the Webfactory team by achieving various missions like training junior staff, technical audits and technology watch.
-  </p>
-  <p>
-    Nowadays I am a Frontend Web Developer for <a href="http://www.1001pharmacies.com">1001pharmacies</a>. I'm specialized in <span class="font-weight-bold">AngularJS</span>.
-  </p>
-  <div class="row">
-    <div class="col-md-4">
-      <h2>My vision</h2>
-      <p>Interested by an evolution in the technical domain as a Frontend Developer (full stack Node.JS, AngularJS, Express)</p>
-    </div>
-    <div class="col-md-4">
-      <h2>My achievements</h2>
-      <div class="list-group">
-        <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">Skills</h4>
-          <p class="list-group-item-text">Description and skill level</p>
-        </a>
-        <a href="#" class="list-group-item active">
-          <h4 class="list-group-item-heading">Projects</h4>
-          <p class="list-group-item-text">Presentation of my projects</p>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h2>My career</h2>
-      <p>See my described career and my studies</p>
-    </div>
-  </div>
+              <span class="pull-xs-right label label-info">
+  <span class="h5">Reading in about 5  minutes</span>
+</span>
+
+<h1 id="briefing">Briefing</h1>
+
+<p>There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.</p>
+
+<p>The main complex problem was to include a sub module into the new site. The fact is the two projects didn’t have the same tech stack.</p>
+
+<h2 id="concrete-case">Concrete case</h2>
+
+<p>Here are the migration technologies details.
+The submodule has the following stack :</p>
+
+<ul>
+  <li>Bootstrap</li>
+  <li>Symfony</li>
+  <li>Less</li>
+  <li>Selenium IDE functional tests</li>
+</ul>
+
+<p><br /></p>
+
+<p>And the new website is developed with these technology choices :</p>
+
+<ul>
+  <li>ITCSS with Bootstrap 4 grid</li>
+  <li>Symfony</li>
+  <li>Sass</li>
+  <li>Nightwatch.js automated tests</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="migration">Migration</h1>
+
+<h2 id="template-migration">Template migration</h2>
+
+<p>First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
+the principal problem was the css framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.</p>
+
+<h2 id="style-migration">Style migration</h2>
+
+<p>The second big impact was the change of preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.</p>
+
+<h3 id="the-new-project-architecture">The new project architecture</h3>
+
+<p>My SCSS is split up in different files or so called Sass partials. Working with Sass partials makes it more flexible and easier to maintain. Working like this is a way to keep a good overview on things which makes it more efficient to maintain.</p>
+
+<p>I split things up like this :</p>
+
+<p><img src="/assets/images/itcss.png" alt="ITCSS structure" aria-label="Assets + Scripts, Settings, Tools, Generic, Elements, Objects, Components and Trumps" class="center-block img-fluid" /></p>
+
+<p>My <code class="highlighter-rouge">main</code> CSS file is <code class="highlighter-rouge">styles.scss</code>. The only lines of code, in this file, imports the other files. Example :</p>
+
+<figure class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="cm">/*------------------------------------*\
+</span>    <span class="cm">#SETTINGS
+</span><span class="err">\</span><span class="o">*</span><span class="nt">------------------------------------</span><span class="o">*/</span>
+
+<span class="k">@import</span> <span class="s">'01-Settings/colors';</span>
+<span class="k">@import</span> <span class="s">'01-Settings/typography';</span>
+<span class="k">@import</span> <span class="s">'01-Settings/spacing';</span>
+<span class="k">@import</span> <span class="s">'01-Settings/responsive';</span>
+
+<span class="cm">/*------------------------------------*\
+</span>    <span class="cm">#TOOLS
+</span><span class="err">\</span><span class="o">*</span><span class="nt">------------------------------------</span><span class="o">*/</span>
+
+<span class="k">@import</span> <span class="s">'02-Tools/mixins';</span>
+<span class="k">@import</span> <span class="s">'02-Tools/functions';</span>
+<span class="k">@import</span> <span class="s">'02-Tools/responsive';</span>
+<span class="k">@import</span> <span class="s">'02-Tools/images';</span>
+<span class="k">@import</span> <span class="s">'02-Tools/animations';</span>
+<span class="k">@import</span> <span class="s">'02-Tools/transitions';</span></code></pre></figure>
+
+<p>I take the <strong>7-1 pattern</strong> approach but I include manually all the parts because some of them are environment dependencies.</p>
+
+<h3 id="the-old-project-approach">The old project approach</h3>
+
+<p>I won’t describe the old structure but how I migrate less components in the sass structure.</p>
+
+<p>The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as component or trump in the new sass style for the submodule.</p>
+
+<figure class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="cm">/*------------------------------------*\
+</span>    <span class="cm">#COMPONENTS
+</span><span class="err">\</span><span class="o">*</span><span class="nt">------------------------------------</span><span class="o">*/</span>
+
+<span class="k">@import</span> <span class="s">'06-Components/payment-block';</span></code></pre></figure>
+
+<p>The main reason for success is to not stop at the first failure display, due to pixel-perfect design !</p>
+
+<h2 id="bundle-webpack">Bundle webpack</h2>
+
+<p>Creation of a webpack bundle permits to migrate step by step.</p>
+
+<p>The main files are located in the <code class="highlighter-rouge">00-Assets</code> folder.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Load internationalization library</span>
+<span class="kd">var</span> <span class="nx">I18N</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./i18n'</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+<span class="c1">// Instanciate translator</span>
+<span class="kd">var</span> <span class="nx">translator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">I18N</span><span class="p">();</span>
+
+<span class="c1">// Translate the document</span>
+<span class="nx">translator</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">I18N</span><span class="p">.</span><span class="nx">french</span><span class="p">);</span></code></pre></figure>
+
+<p>With <em>webpack-loader</em>, the migration is easier to do. In fact I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.</p>
+
+<p>After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optmized code.</p>
+
+<h2 id="functional-tests">Functional tests</h2>
+
+<p>Another big change was to migrate from <em>Selenium static tests</em> to automated tests (with Nightwatch.js)</p>
+
+<p>I used a node module to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior.</p>
+
+<h1 id="environments">Environments</h1>
+
+<p>In webpack, one of the most important problem is to have multiple environments. I split the configuration into 3 parts :</p>
+
+<h2 id="common-environment">Common environment</h2>
+
+<p>In the common part, we can retrieve common webpack plugins and specific configuration (shared between environments)</p>
+
+<h2 id="production-environment">Production environment</h2>
+
+<p>In this case, I minify assets, compress and upload them to an Amazon S3 instance.</p>
+
+<h2 id="development-environment">Development environment</h2>
+
+<p>In this case, I don’t minify assets and use the dev version of the webpack bundle asset. I also add watch mode (for Docker or Vagrant issue) to be focused on the code.</p>
+
+<p>I also generate automatically a styleguide directly with dev source code.</p>
+
+<p><img src="/assets/images/styleguide_index.png" alt="Styleguide menu" />
+<img src="/assets/images/styleguide_example.png" alt="Styleguide example" /></p>
+
+<h1 id="github">Github</h1>
+
+<p>Go to the demonstration repo for code example. All of them will be updated all along my researches so you can use them as project dependencies.</p>
+
+<p><a class="btn btn-link btn-block" href="https://github.com/iGitScor/how-to-migrate-front" rel="nofollow" target="_blank" title="Fork it">
+    <i class="fa fa-github"></i> Fork it
+  </a></p>
+
+<p>You can also contribute to it by <strong>fork the project</strong> and make a pull request ;-)</p>
+
+
+<div class="line"></div>
+
+<div class="text-xs-center">
+  <a
+    class="btn btn-info"
+    href="https://twitter.com/intent/tweet?text=How to migrate front technologies&url=http://iscor.me/how-to-migrate-front-technologies&via=iTweetScor&related=iTweetScor"
+    rel="nofollow"
+    target="_blank"
+    title="Share on Twitter">
+    <i class="fa fa-twitter"></i> Share on Twitter
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://facebook.com/sharer.php?u=http://iscor.me/how-to-migrate-front-technologies"
+    rel="nofollow"
+    target="_blank"
+    title="Share on Facebook">
+    <i class="fa fa-facebook"></i> Share on Facebook
+  </a>
+  <a
+    class="btn btn-info"
+    href="https://plus.google.com/share?url=http://iscor.me/how-to-migrate-front-technologies"
+    rel="nofollow"
+    target="_blank"
+    title="Share on Google+">
+    <i class="fa fa-google-plus"></i> Share on Google+
+  </a>
 </div>
+
+<div class="line"></div>
+
+<div id="disqus_thread" class="p-a-2 bg-light"></div>
+<script>
+  var disqus_config = function () {
+  // this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+  // this.page.identifier = //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//iscor.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Activate JavaScript to see the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments</a>.</noscript>
+
 
             </div>
           </div>
@@ -349,6 +507,8 @@
       </footer>
     </div>
 
+    
+    <script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>
     
   </body>
 
