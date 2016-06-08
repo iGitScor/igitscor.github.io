@@ -158,4 +158,4 @@ Go to the demonstration repo for code example. All of them will be updated all a
     <i class="fa fa-github"></i> Fork it
   </a>
 
-You can also contribute to it by **fork the project** and make a pull request ;-)
+You can also contribute to it by **forking the project** and make a pull request ;-)
