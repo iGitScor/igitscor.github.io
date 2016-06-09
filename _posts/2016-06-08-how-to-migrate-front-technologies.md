@@ -14,9 +14,9 @@ location: sfo
 
 # Briefing
 
-There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.
+There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.
 
-The main complex problem was to include a sub module into the new site. The fact is the two projects didn't have the same tech stack.
+The main complex problem was to include a sub module into the new site. The fact is, the two projects didn't have the same tech stack.
 
 ## Concrete case
 
@@ -35,7 +35,7 @@ And the new website is developed with these technology choices :
 * ITCSS with Bootstrap 4 grid
 * Symfony
 * Sass
-* Nightwatch.js automated tests
+* Nightwatch.js automated testing
 
 <br />
 
@@ -44,11 +44,11 @@ And the new website is developed with these technology choices :
 ## Template migration
 
 First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
-the principal problem was the css framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.
+the principal problem was the CSS framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.
 
 ## Style migration
 
-The second big impact was the change of preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.
+The second big impact was the change of the preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.
 
 ### The new project architecture
 
@@ -84,13 +84,13 @@ My `main` CSS file is `styles.scss`. The only lines of code, in this file, impor
 
 {% endhighlight %}
 
-I take the **7-1 pattern** approach but I include manually all the parts because some of them are environment dependencies.
+I've chosen the **7-1 pattern** approach, but I include manually all the parts because some of them are environment dependencies.
 
 ### The old project approach
 
-I won't describe the old structure but how I migrate less components in the sass structure.
+I won't describe the old structure, but how I migrate less components in the sass structure.
 
-The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as component or trump in the new sass style for the submodule.
+The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as a component or trump in the new sass style for the submodule.
 
 {% highlight sass %}
 /*------------------------------------*\
@@ -100,7 +100,7 @@ The first step was to extract the leanest part of the sass-framework to include 
 @import '06-Components/payment-block';
 {% endhighlight %}
 
-The main reason for success is to not stop at the first failure display, due to pixel-perfect design !
+**The main reason for success is to not stop at the first failure display, due to pixel-perfect design !**
 
 ## Bundle webpack
 
@@ -119,13 +119,13 @@ var translator = new I18N();
 translator.translate(I18N.french);
 {% endhighlight %}
 
-With *webpack-loader*, the migration is easier to do. In fact I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.
+With *webpack-loader*, the migration is easier to do. In fact, I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.
 
-After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optmized code.
+After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optimized code.
 
 ## Functional tests
 
-Another big change was to migrate from *Selenium static tests* to automated tests (with Nightwatch.js)
+Another big change was to migrate from *Selenium static tests* to an automated test process (with Nightwatch.js)
 
 I used a node module to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior.
 
@@ -152,7 +152,7 @@ I also generate automatically a styleguide directly with dev source code.
 
 # Github
 
-Go to the demonstration repo for code example. All of them will be updated all along my researches so you can use them as project dependencies.
+Go to the demonstration repo for a code example. All of them will be updated all along my researches so you can use them as project dependencies.
 
 <a class="btn btn-link btn-block" href="https://github.com/iGitScor/how-to-migrate-front" rel="nofollow" target="_blank" title="Fork it">
     <i class="fa fa-github"></i> Fork it

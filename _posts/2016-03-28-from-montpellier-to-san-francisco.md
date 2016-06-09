@@ -53,7 +53,7 @@ I've decided to come here in the United States to follow my dreams and also to w
 
 I have many objectives in my career in San Francisco.
 
-* To improve my english,
+* To improve my English,
 * to become a full-part member of a JavaScript community,
 * to discover another culture and enjoy life
 
@@ -72,7 +72,7 @@ As I said before, I am a front-end developer, even a JavaScript full stack devel
 
 I hate enumerate all the frameworks or library I've used or I excelled in but I can say that I'm able to develop the back-end and also the front-end part of a website or web application.
 
-I chosen to focus to **[meteor][meteor]{:target="_blank"}** because I like the isomorphic principle. I often develop with **node.js** as a back-end and **Angular** as a front-end framework. I also love to create small prototypes in a few days with so many possibilities.
+I've chosen to focus to **[meteor][meteor]{:target="_blank"}** because I like the isomorphic principle. I often develop with **node.js** as a back-end and **Angular** as a front-end framework. I also love to create small prototypes in a few days with so many possibilities.
 
 I love to integrate the fact that all developers should learn concepts, not languages.
 

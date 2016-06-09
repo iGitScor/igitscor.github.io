@@ -14,7 +14,7 @@ location: sfo
 
 # April - Workshop month
 
-During weeks, I went to workshops about user exeperience or frontend development... and I learned a lot !
+During weeks, I went to workshops about user experience or front-end development... and I learned a lot !
 
 ![FLUPA Workshop](/assets/images/intro_flupa.jpg){: .center-block .img-fluid}
 <legend class="mark text-xs-center">User experience workshop presentation</legend>
@@ -30,17 +30,17 @@ Based on the **[Carine Lallemand's book][methode-ux]{:target="_blank"}**, we ini
 Carine Lallemand is a :
 
 * post-doc UX Researcher at *[@uni_lu][uni-lu]{:target="_blank"}*
-* membre board for *[@FLUPA (French UX professionals' association)][flupa]{:target="_blank"}*
+* member board for *[@FLUPA (French UX professionals' association)][flupa]{:target="_blank"}*
 * UX designer/speaker/trainer
 * Co-author of "Méthodes de design UX"
 
 <br />
 
-You can follow her *[on Twitter][cl-twitter]{:target="_blank"}* or see her in UX conferences.
+You can follow her *[on Twitter][cl-twitter]{:target="_blank"}* or see her at UX conferences.
 
 ### Description
 
-The session was splitted into 3 interviews. I'll describe each test in the following paragraphs.
+The session was split into 3 interviews. I'll describe each test in the following paragraphs.
 
 #### Exploratory survey
 
@@ -63,7 +63,7 @@ The tested system was a checkout process in a marketplace project. Depends on th
 
 For example an e-commerce website selling beauty products should have hedonic qualities and a checkout should have pragmatic qualities. It is a good objective indicator of success for a Scrum project.
 
-Everybody played the game and answered approx 30 questions. Example :
+Everybody played the game and answered approximately 30 questions. Example :
 
 `Simple | o | X | o | o | o | o | o | Complicated`
 
@@ -79,7 +79,7 @@ This time there was a test subject and several observers. They were not to influ
 
 I was proud to assist to this workshop and to help to organize it.
 
-On the test results point of view, the team was satisfied of the pragmatism even if the scenario traces the needs and problems.
+On the test results point of view, the team was satisfied of the pragmatism, even if the scenario traces the needs and problems.
 On the organizational point of view, the workshop was a real success with the presence of different profiles (students, marketers, developers, psychologists...)
 
 ## Web development
