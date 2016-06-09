@@ -103,9 +103,9 @@
 
 <h1 id="briefing">Briefing</h1>
 
-<p>There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.</p>
+<p>There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.</p>
 
-<p>The main complex problem was to include a sub module into the new site. The fact is the two projects didn’t have the same tech stack.</p>
+<p>The main complex problem was to include a sub module into the new site. The fact is, the two projects didn’t have the same tech stack.</p>
 
 <h2 id="concrete-case">Concrete case</h2>
 
@@ -127,7 +127,7 @@ The submodule has the following stack :</p>
   <li>ITCSS with Bootstrap 4 grid</li>
   <li>Symfony</li>
   <li>Sass</li>
-  <li>Nightwatch.js automated tests</li>
+  <li>Nightwatch.js automated testing</li>
 </ul>
 
 <p><br /></p>
@@ -137,11 +137,11 @@ The submodule has the following stack :</p>
 <h2 id="template-migration">Template migration</h2>
 
 <p>First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
-the principal problem was the css framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.</p>
+the principal problem was the CSS framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.</p>
 
 <h2 id="style-migration">Style migration</h2>
 
-<p>The second big impact was the change of preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.</p>
+<p>The second big impact was the change of the preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.</p>
 
 <h3 id="the-new-project-architecture">The new project architecture</h3>
 
@@ -173,13 +173,13 @@ the principal problem was the css framework change. Even if the grid is the same
 <span class="k">@import</span> <span class="s">'02-Tools/animations';</span>
 <span class="k">@import</span> <span class="s">'02-Tools/transitions';</span></code></pre></figure>
 
-<p>I take the <strong>7-1 pattern</strong> approach but I include manually all the parts because some of them are environment dependencies.</p>
+<p>I’ve chosen the <strong>7-1 pattern</strong> approach, but I include manually all the parts because some of them are environment dependencies.</p>
 
 <h3 id="the-old-project-approach">The old project approach</h3>
 
-<p>I won’t describe the old structure but how I migrate less components in the sass structure.</p>
+<p>I won’t describe the old structure, but how I migrate less components in the sass structure.</p>
 
-<p>The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as component or trump in the new sass style for the submodule.</p>
+<p>The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as a component or trump in the new sass style for the submodule.</p>
 
 <figure class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="cm">/*------------------------------------*\
 </span>    <span class="cm">#COMPONENTS
@@ -187,7 +187,7 @@ the principal problem was the css framework change. Even if the grid is the same
 
 <span class="k">@import</span> <span class="s">'06-Components/payment-block';</span></code></pre></figure>
 
-<p>The main reason for success is to not stop at the first failure display, due to pixel-perfect design !</p>
+<p><strong>The main reason for success is to not stop at the first failure display, due to pixel-perfect design !</strong></p>
 
 <h2 id="bundle-webpack">Bundle webpack</h2>
 
@@ -204,13 +204,13 @@ the principal problem was the css framework change. Even if the grid is the same
 <span class="c1">// Translate the document</span>
 <span class="nx">translator</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">I18N</span><span class="p">.</span><span class="nx">french</span><span class="p">);</span></code></pre></figure>
 
-<p>With <em>webpack-loader</em>, the migration is easier to do. In fact I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.</p>
+<p>With <em>webpack-loader</em>, the migration is easier to do. In fact, I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.</p>
 
-<p>After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optmized code.</p>
+<p>After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optimized code.</p>
 
 <h2 id="functional-tests">Functional tests</h2>
 
-<p>Another big change was to migrate from <em>Selenium static tests</em> to automated tests (with Nightwatch.js)</p>
+<p>Another big change was to migrate from <em>Selenium static tests</em> to an automated test process (with Nightwatch.js)</p>
 
 <p>I used a node module to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior.</p>
 
@@ -237,7 +237,7 @@ the principal problem was the css framework change. Even if the grid is the same
 
 <h1 id="github">Github</h1>
 
-<p>Go to the demonstration repo for code example. All of them will be updated all along my researches so you can use them as project dependencies.</p>
+<p>Go to the demonstration repo for a code example. All of them will be updated all along my researches so you can use them as project dependencies.</p>
 
 <p><a class="btn btn-link btn-block" href="https://github.com/iGitScor/how-to-migrate-front" rel="nofollow" target="_blank" title="Fork it">
     <i class="fa fa-github"></i> Fork it
