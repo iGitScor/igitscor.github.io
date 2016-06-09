@@ -8,9 +8,14 @@ group: navigation
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tag_words = site_tags | split:',' | sort %}
 
+<style>
+.split-2 {
+  columns: 2;
+}
+</style>
 
-<div class="col-sm-3 col-xs-6">
-  <ul class="nav nav-tabs-vertical">
+<div class="split-2">
+  <ul class="list-unstyled">
   {% for item in (0..site.tags.size) %}
     {% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
@@ -24,11 +29,11 @@ group: navigation
   </ul>
 </div>
 <!-- Tab panes -->
-<div class="tab-content col-sm-9 col-xs-6">
+<div>
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-    <div class="tab-pane" id="{{ this_word | replace:' ','-' }}-ref">
-      <h2 style="margin-top: 0px">Articles tagged with {{ this_word }}</h2>
+    <div id="{{ this_word | replace:' ','-' }}-ref">
+      <h2>{{ this_word }} &gt;</h2>
       <ul class="list-unstyled">
         {% for post in site.tags[this_word] %}{% if post.title != null %}
           <li style="line-height: 35px;"><a href="{{ site.baseurl }}{{post.url}}">{{post.title}}</a>
