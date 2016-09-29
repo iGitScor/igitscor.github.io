@@ -5,170 +5,80 @@
     <description>Blog iGitScor - développement Web et mobile</description>
     <link>http://iscor.me/</link>
     <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Sep 2016 14:51:38 +0200</pubDate>
-    <lastBuildDate>Mon, 26 Sep 2016 14:51:38 +0200</lastBuildDate>
+    <pubDate>Thu, 29 Sep 2016 11:20:12 +0200</pubDate>
+    <lastBuildDate>Thu, 29 Sep 2016 11:20:12 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>How to migrate front technologies</title>
-        <description>&lt;h1 id=&quot;briefing&quot;&gt;Briefing&lt;/h1&gt;
+        <title>Smashing Conf&#39; San Francisco</title>
+        <description>&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
 
-&lt;p&gt;There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.&lt;/p&gt;
+&lt;p&gt;During weeks, I went to workshops about user experience or front-end development… and I learned a lot !&lt;/p&gt;
 
-&lt;p&gt;The main complex problem was to include a sub module into the new site. The fact is, the two projects didn’t have the same tech stack.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://smashingconf.com/sf-2016/content/01-home/sf16.png&quot; alt=&quot;Patty Toland&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Smashing Conference - San Francisco 2016&lt;/legend&gt;
 
-&lt;h2 id=&quot;concrete-case&quot;&gt;Concrete case&lt;/h2&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;Here are the migration technologies details.
-The submodule has the following stack :&lt;/p&gt;
+&lt;blockquote class=&quot;post-blockquote&quot;&gt;
+  &lt;p&gt;
+  As the numbers of people who access the internet continually grow, and the devices they use diversify, one thing is clear: speed and performance are a top priority.
+  Despite this, the average web page size has more than tripled in the past 5 years, and many web techniques, platforms, tools and practices don’t seem to champion performance, or consider its implications. One of the biggest challenges, especially in the early days of mobile and responsive, was simply the absence of good information to build awareness about performance impacts.
+  Luckily, our conversations about performance-related choices are getting better-informed: in the past few years especially, compelling tools and data are being shared that help us measure, track and understand the real state of performance and how it affects our audiences; and techniques are emerging to help make insightful and responsible design and coding choices.
+  &lt;/p&gt;
+  &lt;span class=&quot;blockquote-author&quot;&gt;Smashing Conference - San Francisco 2016&lt;/span&gt;
+&lt;/blockquote&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Bootstrap&lt;/li&gt;
-  &lt;li&gt;Symfony&lt;/li&gt;
-  &lt;li&gt;Less&lt;/li&gt;
-  &lt;li&gt;Selenium IDE functional tests&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;speaker&quot;&gt;Speaker&lt;/h2&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Patty Toland is the founder and a partner at Filament Group in Boston.&lt;/p&gt;
 
-&lt;p&gt;And the new website is developed with these technology choices :&lt;/p&gt;
+&lt;p&gt;You can follow her &lt;em&gt;&lt;a href=&quot;https://twitter.com/pattytoland&quot; target=&quot;_blank&quot;&gt;on Twitter&lt;/a&gt;&lt;/em&gt; or see her at conferences all around the world.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;ITCSS with Bootstrap 4 grid&lt;/li&gt;
-  &lt;li&gt;Symfony&lt;/li&gt;
-  &lt;li&gt;Sass&lt;/li&gt;
-  &lt;li&gt;Nightwatch.js automated testing&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/patty-toland-smashing-conf.jpg&quot; alt=&quot;Patty Toland&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Patty Toland&#39;s conference&lt;/legend&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;conference&quot;&gt;Conference&lt;/h2&gt;
 
-&lt;h1 id=&quot;migration&quot;&gt;Migration&lt;/h1&gt;
+&lt;p&gt;The conference talks about :&lt;/p&gt;
 
-&lt;h2 id=&quot;template-migration&quot;&gt;Template migration&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Make the web work for everyone&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
-the principal problem was the CSS framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/train-performance.jpg&quot; alt=&quot;Web performance&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Slide preview&lt;/legend&gt;
 
-&lt;h2 id=&quot;style-migration&quot;&gt;Style migration&lt;/h2&gt;
+&lt;p&gt;I won’t speak about the conference content (you can &lt;strong&gt;&lt;a href=&quot;https://vimeo.com/163510675&quot; target=&quot;_blank&quot;&gt;watch it here&lt;/a&gt;&lt;/strong&gt;)&lt;/p&gt;
 
-&lt;p&gt;The second big impact was the change of the preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.&lt;/p&gt;
+&lt;h2 id=&quot;my-opinion&quot;&gt;My opinion&lt;/h2&gt;
 
-&lt;h3 id=&quot;the-new-project-architecture&quot;&gt;The new project architecture&lt;/h3&gt;
+&lt;p&gt;I really enjoyed this talk because Patty is a good speaker, who know perfectly her subject.
+I usually don’t like conference which topic is about my job especially when the conference is in a generic event about the web.&lt;/p&gt;
 
-&lt;p&gt;My SCSS is split up in different files or so called Sass partials. Working with Sass partials makes it more flexible and easier to maintain. Working like this is a way to keep a good overview on things which makes it more efficient to maintain.&lt;/p&gt;
+&lt;p&gt;But I had already been seduced by Patty conference at the FrontendConf Zurich in 2015. Her approach and her ability are outstanding.&lt;/p&gt;
 
-&lt;p&gt;I split things up like this :&lt;/p&gt;
+&lt;p&gt;Although the examples given to illustrate her regularly from those data site or American studies, they are suitable and easily transferable in an European context, for example.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/itcss.png&quot; alt=&quot;ITCSS structure&quot; aria-label=&quot;Assets + Scripts, Settings, Tools, Generic, Elements, Objects, Components and Trumps&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The example of the slide I’ve extracted is typically a case that a speaker could present in France with the difficulty of access to the web during business travel. Because yes, the Web performance is not just about developing countries but especially accentuated in affluent countries. The contrast is strong between technological advances and the lack of web performance mastery in any position.&lt;/p&gt;
 
-&lt;p&gt;My &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; CSS file is &lt;code class=&quot;highlighter-rouge&quot;&gt;styles.scss&lt;/code&gt;. The only lines of code, in this file, imports the other files. Example :&lt;/p&gt;
+&lt;p&gt;Indeed, the SNCF in France, has always faced these user requests for access to a phone or wireless network especially for long trips. Network quality is also poor in stations and lead us to the question: why are we so behind this ?&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
-&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#SETTINGS
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+&lt;p&gt;The web performance suffers from the same problem as accessibility. Stereotypes come, all make the link between accessibility and handicapped people, poor neighborhoods and access performance.&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;01-Settings/colors&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;01-Settings/typography&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;01-Settings/spacing&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;01-Settings/responsive&#39;;&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
-&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#TOOLS
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;02-Tools/mixins&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;02-Tools/functions&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;02-Tools/responsive&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;02-Tools/images&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;02-Tools/animations&#39;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;02-Tools/transitions&#39;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;I’ve chosen the &lt;strong&gt;7-1 pattern&lt;/strong&gt; approach, but I include manually all the parts because some of them are environment dependencies.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-old-project-approach&quot;&gt;The old project approach&lt;/h3&gt;
-
-&lt;p&gt;I won’t describe the old structure, but how I migrate less components in the sass structure.&lt;/p&gt;
-
-&lt;p&gt;The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as a component or trump in the new sass style for the submodule.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
-&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#COMPONENTS
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;06-Components/payment-block&#39;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;The main reason for success is to not stop at the first failure display, due to pixel-perfect design !&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;bundle-webpack&quot;&gt;Bundle webpack&lt;/h2&gt;
-
-&lt;p&gt;Creation of a webpack bundle permits to migrate step by step.&lt;/p&gt;
-
-&lt;p&gt;The main files are located in the &lt;code class=&quot;highlighter-rouge&quot;&gt;00-Assets&lt;/code&gt; folder.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Load internationalization library&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./i18n&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Instanciate translator&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;translator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Translate the document&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;translator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;With &lt;em&gt;webpack-loader&lt;/em&gt;, the migration is easier to do. In fact, I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.&lt;/p&gt;
-
-&lt;p&gt;After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optimized code.&lt;/p&gt;
-
-&lt;h2 id=&quot;functional-tests&quot;&gt;Functional tests&lt;/h2&gt;
-
-&lt;p&gt;Another big change was to migrate from &lt;em&gt;Selenium static tests&lt;/em&gt; to an automated test process (with Nightwatch.js)&lt;/p&gt;
-
-&lt;p&gt;I used a node module to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior.&lt;/p&gt;
-
-&lt;h1 id=&quot;environments&quot;&gt;Environments&lt;/h1&gt;
-
-&lt;p&gt;In webpack, one of the most important problem is to have multiple environments. I split the configuration into 3 parts :&lt;/p&gt;
-
-&lt;h2 id=&quot;common-environment&quot;&gt;Common environment&lt;/h2&gt;
-
-&lt;p&gt;In the common part, we can retrieve common webpack plugins and specific configuration (shared between environments)&lt;/p&gt;
-
-&lt;h2 id=&quot;production-environment&quot;&gt;Production environment&lt;/h2&gt;
-
-&lt;p&gt;In this case, I minify assets, compress and upload them to an Amazon S3 instance.&lt;/p&gt;
-
-&lt;h2 id=&quot;development-environment&quot;&gt;Development environment&lt;/h2&gt;
-
-&lt;p&gt;In this case, I don’t minify assets and use the dev version of the webpack bundle asset. I also add watch mode (for Docker or Vagrant issue) to be focused on the code.&lt;/p&gt;
-
-&lt;p&gt;I also generate automatically a styleguide directly with dev source code.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/styleguide_index.png&quot; alt=&quot;Styleguide menu&quot; /&gt;
-&lt;img src=&quot;/assets/images/styleguide_example.png&quot; alt=&quot;Styleguide example&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;github&quot;&gt;Github&lt;/h1&gt;
-
-&lt;p&gt;Go to the demonstration repo for a code example. All of them will be updated all along my researches so you can use them as project dependencies.&lt;/p&gt;
-
-&lt;p&gt;&lt;a class=&quot;btn btn-link btn-block&quot; href=&quot;https://github.com/iGitScor/how-to-migrate-front&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Fork it&quot;&gt;
-    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Fork it
-  &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can also contribute to it by &lt;strong&gt;forking the project&lt;/strong&gt; and make a pull request ;-)&lt;/p&gt;
 </description>
-        <pubDate>Wed, 08 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://iscor.me/how-to-migrate-front-technologies</link>
-        <guid isPermaLink="true">http://iscor.me/how-to-migrate-front-technologies</guid>
-        
-        <category>front</category>
-        
-        <category>migration</category>
-        
-        <category>webpack</category>
+        <pubDate>Wed, 01 Jun 2016 00:00:00 +0200</pubDate>
+        <link>http://iscor.me/smashing-conf-san-francisco</link>
+        <guid isPermaLink="true">http://iscor.me/smashing-conf-san-francisco</guid>
         
         <category>web performance</category>
         
+        <category>smashing conf</category>
         
-        <category>technical</category>
+        <category>patty toland</category>
+        
+        
+        <category>workshop</category>
         
       </item>
     
