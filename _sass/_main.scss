@@ -52,6 +52,17 @@
 // Tether
 //@import "../bower/tether/src/css/tether";
 
+// OVERRIDE bootstrap
+.card-block {
+  &.primary {
+    background-color: rgb(255,64,129) !important;
+
+    p {
+      color: white !important;
+    }
+  }
+}
+
 // OVERRIDE font-awesome
 @import "fonts";
 
