@@ -22,19 +22,19 @@ group: navigation
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
     <li>
       <a href="#{{ this_word | replace:' ','-' }}-ref">
-        {{ this_word }}<span class="badge pull-right">{{ site.tags[this_word].size }}</span>
+        {{ this_word | capitalize }}<span class="badge pull-right">{{ site.tags[this_word].size }}</span>
       </a>
     </li>
    {% endunless %}
   {% endfor %}
   </ul>
 </div>
-<!-- Tab panes -->
+
 <div>
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
     <div id="{{ this_word | replace:' ','-' }}-ref" style="border-bottom: 1px solid #05B4C9; margin-bottom: 50px">
-      <h2>{{ this_word }} &gt;</h2>
+      <h2>{{ this_word | capitalize }} &gt;</h2>
       <ul class="list-unstyled">
         {% for post in site.tags[this_word] %}{% if post.title != null %}
           <li style="line-height: 35px;">
