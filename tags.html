@@ -11,6 +11,7 @@ group: navigation
 <style>
 .split-2 {
   columns: 2;
+  margin-bottom: 20px;
 }
 </style>
 
@@ -20,7 +21,7 @@ group: navigation
     {% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
     <li>
-      <a href="#{{ this_word | replace:' ','-' }}-ref" data-toggle="tab">
+      <a href="#{{ this_word | replace:' ','-' }}-ref">
         {{ this_word }}<span class="badge pull-right">{{ site.tags[this_word].size }}</span>
       </a>
     </li>
@@ -32,14 +33,15 @@ group: navigation
 <div>
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-    <div id="{{ this_word | replace:' ','-' }}-ref">
+    <div id="{{ this_word | replace:' ','-' }}-ref" style="border-bottom: 1px solid #05B4C9; margin-bottom: 50px">
       <h2>{{ this_word }} &gt;</h2>
       <ul class="list-unstyled">
         {% for post in site.tags[this_word] %}{% if post.title != null %}
-          <li style="line-height: 35px;"><a href="{{ site.baseurl }}{{post.url}}">{{post.title}}</a>
+          <li style="line-height: 35px;">
+            <a href="{{ site.baseurl }}{{post.url}}">{{post.title}}</a>
             <span class="text-muted">-
             <!-- Whitespace added for readability -->
-            {{{ post.date | date: '%B %d, %Y' }}</span>
+            {{ post.date | date: '%B %d, %Y' }}</span>
           </li>
         {% endif %}{% endfor %}
       </ul>

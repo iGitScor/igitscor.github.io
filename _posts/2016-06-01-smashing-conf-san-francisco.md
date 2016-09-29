@@ -6,7 +6,7 @@ tagline: ""
 description: >
   Summary of a specific conference at the Smashing Conf located in San Francisco (April 2016)
 categories: [workshop]
-tags: [web performance, smashing conf, patty toland]
+tags: [web performance, smashing conf, sanfrancisco, accessibility]
 author: iScor
 image: ux.svg
 location: sfo
