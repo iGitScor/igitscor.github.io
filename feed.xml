@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>Blog iGitScor - développement Web et mobile</description>
-    <link>http://0.0.0.0/</link>
-    <atom:link href="http://0.0.0.0/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Sep 2016 16:46:17 +0200</pubDate>
-    <lastBuildDate>Thu, 29 Sep 2016 16:46:17 +0200</lastBuildDate>
+    <link>http://iscor.me/</link>
+    <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 29 Sep 2016 17:00:44 +0200</pubDate>
+    <lastBuildDate>Thu, 29 Sep 2016 17:00:44 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -68,8 +68,8 @@ I usually don’t like conference which topic is about my job especially when th
 
 </description>
         <pubDate>Wed, 01 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0/smashing-conf-san-francisco</link>
-        <guid isPermaLink="true">http://0.0.0.0/smashing-conf-san-francisco</guid>
+        <link>http://iscor.me/smashing-conf-san-francisco</link>
+        <guid isPermaLink="true">http://iscor.me/smashing-conf-san-francisco</guid>
         
         <category>web performance</category>
         
@@ -170,8 +170,8 @@ On the organizational point of view, the workshop was a real success with the pr
 
 </description>
         <pubDate>Fri, 06 May 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0/user-experience-workshop</link>
-        <guid isPermaLink="true">http://0.0.0.0/user-experience-workshop</guid>
+        <link>http://iscor.me/user-experience-workshop</link>
+        <guid isPermaLink="true">http://iscor.me/user-experience-workshop</guid>
         
         <category>user experience</category>
         
@@ -264,8 +264,8 @@ On the organizational point of view, the workshop was a real success with the pr
 
 </description>
         <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0/from-montpellier-to-san-francisco</link>
-        <guid isPermaLink="true">http://0.0.0.0/from-montpellier-to-san-francisco</guid>
+        <link>http://iscor.me/from-montpellier-to-san-francisco</link>
+        <guid isPermaLink="true">http://iscor.me/from-montpellier-to-san-francisco</guid>
         
         <category>flight</category>
         

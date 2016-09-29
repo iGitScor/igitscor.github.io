@@ -100,32 +100,39 @@
   <h1>Categories </h1>
 </div>
 
-<div class="col-sm-3 col-xs-6">
-  <ul class="nav nav-tabs-vertical">
+<style>
+.split-2 {
+  columns: 2;
+  margin-bottom: 20px;
+}
+</style>
+
+<div class="split-2">
+  <ul class="list-unstyled">
     
     
-    
-    <li>
-      <a href="/#travel-ref" data-toggle="tab">
-        Travel <span class="badge pull-right">1</span>
-      </a>
-    </li>
-    
-    <li>
-      <a href="/#workshop-ref" data-toggle="tab">
-        Workshop <span class="badge pull-right">2</span>
-      </a>
-    </li>
-    
+      
+      <li>
+        <a href="#travel-ref">
+          Travel <span class="badge pull-right">1</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="#workshop-ref">
+          Workshop <span class="badge pull-right">2</span>
+        </a>
+      </li>
+      
     
     
   </ul>
 </div>
-<!-- Tab panes -->
-<div class="tab-content col-sm-9 col-xs-6">
+
+<div>
   
-  <div class="tab-pane" id="travel-ref">
-    <h2 style="margin-top: 0px">Articles from the category Travel</h2>
+  <div id="travel-ref" style="border-bottom: 1px solid #05B4C9; margin-bottom: 50px">
+    <h2 style="margin-top: 0px">Travel &gt;</h2>
     <ul class="list-unstyled">
       
       
@@ -141,8 +148,8 @@
     </ul>
   </div>
   
-  <div class="tab-pane" id="workshop-ref">
-    <h2 style="margin-top: 0px">Articles from the category Workshop</h2>
+  <div id="workshop-ref" style="border-bottom: 1px solid #05B4C9; margin-bottom: 50px">
+    <h2 style="margin-top: 0px">Workshop &gt;</h2>
     <ul class="list-unstyled">
       
       
@@ -167,7 +174,6 @@
   </div>
   
 </div>
-
 <div class="clearfix"></div>
 
 
