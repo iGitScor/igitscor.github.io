@@ -65,5 +65,11 @@ Indeed, the SNCF in France, has always faced these user requests for access to a
 
 The web performance suffers from the same problem as accessibility. Stereotypes come, all make the link between accessibility and handicapped people, poor neighborhoods and access performance.
 
+## Going further
+
+I would add a review to conclude this article.
+
+Indeed, during months and months in San Francisco, I've practised many formats of workshops and conferences, more or less adapted to my profile and my expectation. This review is a satire of those who are web professionals but whom fully discover whole sections of our job during these events. I would just like to express a request to them, can you learn to learn, by yourself and for yourself ?
+
 [pt-twitter]:      https://twitter.com/pattytoland
 [conf]:            https://vimeo.com/163510675
