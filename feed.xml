@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <description>Blog iGitScor - développement Web et mobile</description>
+    <description>iScor&#39;s Blog - web &amp; mobile development</description>
     <link>http://iscor.me/</link>
     <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Oct 2016 13:28:18 +0200</pubDate>
-    <lastBuildDate>Mon, 03 Oct 2016 13:28:18 +0200</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2016 13:22:10 +0100</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2016 13:22:10 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
