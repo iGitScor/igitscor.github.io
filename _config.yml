@@ -29,6 +29,7 @@ exclude:
   - bower.json
   - package.json
   - yarn.lock
+  - node_modules
   - README.md
   - scripts
   - .travis.yml
