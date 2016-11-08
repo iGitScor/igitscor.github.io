@@ -18,7 +18,9 @@
     "url": "https://github.com/iGitScor/igitscor.github.io/issues"
   },
   "homepage": "https://github.com/iGitScor/igitscor.github.io#readme",
-  "dependencies": {},
+  "dependencies": {
+    "bower": "^1.8.0"
+  },
   "devDependencies": {
     "glob": "^7.1.1",
     "markdownlint": "^0.3.0"
