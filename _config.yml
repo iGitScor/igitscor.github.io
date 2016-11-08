@@ -30,3 +30,5 @@ exclude:
   - package.json
   - yarn.lock
   - README.md
+  - scripts
+  - .travis.yml
