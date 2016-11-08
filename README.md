@@ -4,6 +4,10 @@
 
 My personal blog powered by Jekyll hosted on [http://pages.github.com/](GitHub Pages)
 
+![Build Status](https://travis-ci.org/iGitScor/igitscor.github.io.svg?branch=develop)](https://travis-ci.org/iGitScor/igitscor.github.io)
+[![dependencies Status](https://david-dm.org/iGitScor/igitscor.github.io/develop/status.svg)](https://david-dm.org/iGitScor/igitscor.github.io/develop)
+[![devDependencies Status](https://david-dm.org/iGitScor/igitscor.github.io/develop/dev-status.svg)](https://david-dm.org/iGitScor/igitscor.github.io/develop?type=dev)
+
 ## Installation
 
 - `bundle exec jekyll serve`
