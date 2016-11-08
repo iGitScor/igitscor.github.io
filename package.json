@@ -4,6 +4,7 @@
   "description": "> Notes, thoughts and Open-source web development",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bower install",
     "test": "node scripts/markdown-linter"
   },
   "repository": {
