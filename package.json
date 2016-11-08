@@ -1,0 +1,25 @@
+{
+  "name": "igitscor.github.io",
+  "version": "1.0.0",
+  "description": "> Notes, thoughts and Open-source web development",
+  "main": "index.js",
+  "scripts": {
+    "test": "node scripts/markdown-linter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iGitScor/igitscor.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iGitScor/igitscor.github.io/issues"
+  },
+  "homepage": "https://github.com/iGitScor/igitscor.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "glob": "^7.1.1",
+    "markdownlint": "^0.3.0"
+  }
+}

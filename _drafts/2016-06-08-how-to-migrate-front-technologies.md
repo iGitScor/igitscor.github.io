@@ -28,16 +28,12 @@ The submodule has the following stack :
 * Less
 * Selenium IDE functional tests
 
-<br />
-
 And the new website is developed with these technology choices :
 
 * ITCSS with Bootstrap 4 grid
 * Symfony
 * Sass
 * Nightwatch.js automated testing
-
-<br />
 
 # Migration
 
