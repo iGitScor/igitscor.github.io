@@ -6,6 +6,10 @@ My personal blog powered by Jekyll hosted on [http://pages.github.com/](GitHub P
 
 ## Installation
 
+- `bundle exec jekyll serve`
+
+## Build
+
 - `bundle exec jekyll build`
 
 ## Testing

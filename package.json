@@ -4,6 +4,7 @@
   "description": "> Notes, thoughts and Open-source web development",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bower install",
     "test": "node scripts/markdown-linter"
   },
   "repository": {
@@ -12,7 +13,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iGitScor/igitscor.github.io/issues"
   },
