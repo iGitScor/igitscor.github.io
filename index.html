@@ -1,12 +1,7 @@
 ---
 layout: default
-css: index.css
 title: Home
-data:
-  head:
-    title: "iScor's Blog"
 ---
-
 {% assign offsetPosts = paginator.page | minus:1 | times:paginator.per_page %}
 {% for post in site.posts offset:offsetPosts limit:paginator.per_page %}
 
