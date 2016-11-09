@@ -10,7 +10,7 @@ const config = {
 
 const files = glob.sync('+(_posts|_drafts)/**/*.md');
 
-let codeStatus = 0;
+var codeStatus = 0;
 markdownlint({ files, config }, (err, result) => {
   if (!err) {
     const resultString = result.toString();
