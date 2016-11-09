@@ -11,7 +11,6 @@ author: iScor
 image: ux.svg
 location: sfo
 ---
-
 # JS13kgames - a javascript game contest
 
 Independent video game development is the video game development process of creating indie games; these are video games, commonly created by individual or small teams of video game developers and usually without significant financial support of a video game publisher or other outside source. These games may take years to be built from the ground up or can be completed in a matter of days or even hours depending on complexity, participants, and design goal.

@@ -11,7 +11,6 @@ author: iScor
 image: ux.svg
 location: sfo
 ---
-
 # April - Workshop month
 
 During weeks, I went to workshops about user experience or front-end development... and I learned a lot !

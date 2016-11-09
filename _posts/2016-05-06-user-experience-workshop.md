@@ -11,7 +11,6 @@ author: iScor
 image: ux.svg
 location: sfo
 ---
-
 # April - Workshop month
 
 During weeks, I went to workshops about user experience or front-end development... and I learned a lot !
@@ -34,8 +33,6 @@ Carine Lallemand is a :
 * UX designer/speaker/trainer
 * Co-author of "Méthodes de design UX"
 
-<br />
-
 You can follow her *[on Twitter][cl-twitter]{:target="_blank"}* or see her at UX conferences.
 
 ### Description
@@ -52,8 +49,6 @@ For example, in the context of a marketplace, we should ask these questions :
 * Do you buy frequently online ?
 * What kind of product do you buy online ?
 * What kind of product do you buy only offline ?
-
-<br />
 
 #### Attrak'diff
 

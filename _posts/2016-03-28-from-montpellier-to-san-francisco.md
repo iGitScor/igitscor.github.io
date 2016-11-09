@@ -11,8 +11,7 @@ author: iScor
 image: sfo.svg
 location: sfo
 ---
-
-## Objective California : San Francisco
+# Objective California : San Francisco
 
 > In the land of the *burgers*' eaters, time plays tricks on *me*. One day, *I'm* dreaming. The next, *my* dream's becoming reality.
 
@@ -27,8 +26,6 @@ I arrived in San Francisco at the beginning of the evening. By the way, I haven'
 ![Map from Montpellier to San Francisco](/assets/images/map__sfo-mpl.png){: .center-block .img-fluid}
 <legend class="mark text-xs-center">Montpellier - San Francisco</legend>
 
-<br />
-
 I'm a french guy and I come from Montpellier, a small city compared to Sacramento, even if it's a state capital.
 
 <blockquote class="post-blockquote">
@@ -37,7 +34,6 @@ I'm a french guy and I come from Montpellier, a small city compared to Sacrament
   </p>
   <a href="https://en.wikipedia.org/wiki/Montpellier" target="_blank" class="blockquote-author">Wikipedia</a>
 </blockquote>
-
 
 ## Web development project
 
@@ -57,14 +53,10 @@ I have many objectives in my career in San Francisco.
 * to become a full-part member of a JavaScript community,
 * to discover another culture and enjoy life
 
-<br />
-
 I really aim to focus on teaching in the future, to share knowledge about development or about different domains.
 
 ![San Francisco break](/assets/images/picture__sfo--mini.jpg){: .center-block .img-fluid}
 <legend class="mark text-xs-center">Sunny evening near Levi's Plaza</legend>
-
-<br />
 
 ## JavaScript community
 
@@ -80,7 +72,6 @@ I love to integrate the fact that all developers should learn concepts, not lang
   https://twitter.com/iTweetScor/status/659305682148196353
   <cite>(English) Learn concepts, not frameworks</cite>
 </center>
-
 
 [github]:      https://www.github.com/iGitScor
 [meteor]:      https://www.meteor.com/

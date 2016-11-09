@@ -20,9 +20,15 @@ markdownlint({ files, config }, (err, result) => {
       console.log('== Linting Markdown Files...');
 
       for (var i = 0; i < resultArray.length; i++) {
-        if (resultArray[i].indexOf(allowedRule) < 0)
+        if (resultArray[i].indexOf(allowedRule) < 0) {
           codeStatus = 1;
-        console.log('\x1b[1m\x1b[31m%s\x1b[0m', resultArray[i]);
+
+          // Error - log in red
+          console.log('\x1b[1m\x1b[31m\t%s\x1b[0m', resultArray[i]);
+        } else {
+          // Warning - log in yellow
+          console.log('\x1b[1m\x1b[33m\t%s\x1b[0m', resultArray[i]);
+        }
       }
 
       process.exit(codeStatus);
