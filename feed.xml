@@ -1,17 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <description>iScor&#39;s Blog - web &amp; mobile development</description>
-    <link>http://iscor.me/</link>
-    <atom:link href="http://iscor.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Nov 2016 13:22:10 +0100</pubDate>
-    <lastBuildDate>Tue, 08 Nov 2016 13:22:10 +0100</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
-    
-      <item>
-        <title>Smashing Conf&#39; San Francisco</title>
-        <description>&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://iscor.me/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2016-11-09T12:56:58+01:00</updated><id>http://iscor.me//</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
+</subtitle><entry><title type="html">Smashing Conf’ San Francisco</title><link href="http://iscor.me/smashing-conf-san-francisco" rel="alternate" type="text/html" title="Smashing Conf' San Francisco" /><published>2016-06-01T00:00:00+02:00</published><updated>2016-06-01T00:00:00+02:00</updated><id>http://iscor.me/smashing-conf-san-francisco</id><content type="html" xml:base="http://iscor.me/smashing-conf-san-francisco">&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
 
 &lt;p&gt;During weeks, I went to workshops about user experience or front-end development… and I learned a lot !&lt;/p&gt;
 
@@ -36,7 +24,7 @@
 &lt;p&gt;You can follow her &lt;em&gt;&lt;a href=&quot;https://twitter.com/pattytoland&quot; target=&quot;_blank&quot;&gt;on Twitter&lt;/a&gt;&lt;/em&gt; or see her at conferences all around the world.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/patty-toland-smashing-conf.jpg&quot; alt=&quot;Patty Toland&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
-&lt;legend class=&quot;mark text-xs-center&quot;&gt;Patty Toland&#39;s conference&lt;/legend&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Patty Toland's conference&lt;/legend&gt;
 
 &lt;h2 id=&quot;conference&quot;&gt;Conference&lt;/h2&gt;
 
@@ -70,29 +58,7 @@ I usually don’t like conference which topic is about my job especially when th
 
 &lt;p&gt;I would add a review to conclude this article.&lt;/p&gt;
 
-&lt;p&gt;Indeed, during months and months in San Francisco, I’ve practised many formats of workshops and conferences, more or less adapted to my profile and my expectation. This review is a satire of those who are web professionals but whom fully discover whole sections of our job during these events. I would just like to express a request to them, can you learn to learn, by yourself and for yourself ?&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 01 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://iscor.me/smashing-conf-san-francisco</link>
-        <guid isPermaLink="true">http://iscor.me/smashing-conf-san-francisco</guid>
-        
-        <category>web performance</category>
-        
-        <category>smashing conf</category>
-        
-        <category>sanfrancisco</category>
-        
-        <category>accessibility</category>
-        
-        
-        <category>workshop</category>
-        
-      </item>
-    
-      <item>
-        <title>UX Workshop</title>
-        <description>&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
+&lt;p&gt;Indeed, during months and months in San Francisco, I’ve practised many formats of workshops and conferences, more or less adapted to my profile and my expectation. This review is a satire of those who are web professionals but whom fully discover whole sections of our job during these events. I would just like to express a request to them, can you learn to learn, by yourself and for yourself ?&lt;/p&gt;</content><author><name>iScor</name></author><category term="web performance" /><category term="smashing conf" /><category term="sanfrancisco" /><category term="accessibility" /><summary type="html">April - Workshop month</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/ux.svg" /></entry><entry><title type="html">UX Workshop</title><link href="http://iscor.me/user-experience-workshop" rel="alternate" type="text/html" title="UX Workshop" /><published>2016-05-06T00:00:00+02:00</published><updated>2016-05-06T00:00:00+02:00</updated><id>http://iscor.me/user-experience-workshop</id><content type="html" xml:base="http://iscor.me/user-experience-workshop">&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
 
 &lt;p&gt;During weeks, I went to workshops about user experience or front-end development… and I learned a lot !&lt;/p&gt;
 
@@ -116,8 +82,6 @@ I usually don’t like conference which topic is about my job especially when th
   &lt;li&gt;Co-author of “Méthodes de design UX”&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;p&gt;You can follow her &lt;em&gt;&lt;a href=&quot;https://twitter.com/Carilall&quot; target=&quot;_blank&quot;&gt;on Twitter&lt;/a&gt;&lt;/em&gt; or see her at UX conferences.&lt;/p&gt;
 
 &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
@@ -136,8 +100,6 @@ I usually don’t like conference which topic is about my job especially when th
   &lt;li&gt;What kind of product do you buy online ?&lt;/li&gt;
   &lt;li&gt;What kind of product do you buy only offline ?&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;attrakdiff&quot;&gt;Attrak’diff&lt;/h4&gt;
 
@@ -172,29 +134,7 @@ On the organizational point of view, the workshop was a real success with the pr
 
 &lt;h3 id=&quot;smashing-conf&quot;&gt;Smashing conf&lt;/h3&gt;
 
-&lt;p&gt;I’ll write another post to summarize my journey at the Smashing Magazine Conference.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 06 May 2016 00:00:00 +0200</pubDate>
-        <link>http://iscor.me/user-experience-workshop</link>
-        <guid isPermaLink="true">http://iscor.me/user-experience-workshop</guid>
-        
-        <category>user experience</category>
-        
-        <category>ux community</category>
-        
-        <category>uxdesign</category>
-        
-        <category>flupa</category>
-        
-        
-        <category>workshop</category>
-        
-      </item>
-    
-      <item>
-        <title>From Montpellier to San Francisco</title>
-        <description>&lt;h2 id=&quot;objective-california--san-francisco&quot;&gt;Objective California : San Francisco&lt;/h2&gt;
+&lt;p&gt;I’ll write another post to summarize my journey at the Smashing Magazine Conference.&lt;/p&gt;</content><author><name>iScor</name></author><category term="user experience" /><category term="ux community" /><category term="uxdesign" /><category term="flupa" /><summary type="html">April - Workshop month</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/ux.svg" /></entry><entry><title type="html">From Montpellier to San Francisco</title><link href="http://iscor.me/from-montpellier-to-san-francisco" rel="alternate" type="text/html" title="From Montpellier to San Francisco" /><published>2016-03-28T00:00:00+02:00</published><updated>2016-03-28T00:00:00+02:00</updated><id>http://iscor.me/from-montpellier-to-san-francisco</id><content type="html" xml:base="http://iscor.me/from-montpellier-to-san-francisco">&lt;h1 id=&quot;objective-california--san-francisco&quot;&gt;Objective California : San Francisco&lt;/h1&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;In the land of the &lt;em&gt;burgers&lt;/em&gt;’ eaters, time plays tricks on &lt;em&gt;me&lt;/em&gt;. One day, &lt;em&gt;I’m&lt;/em&gt; dreaming. The next, &lt;em&gt;my&lt;/em&gt; dream’s becoming reality.&lt;/p&gt;
@@ -210,8 +150,6 @@ On the organizational point of view, the workshop was a real success with the pr
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/map__sfo-mpl.png&quot; alt=&quot;Map from Montpellier to San Francisco&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
 &lt;legend class=&quot;mark text-xs-center&quot;&gt;Montpellier - San Francisco&lt;/legend&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;I’m a french guy and I come from Montpellier, a small city compared to Sacramento, even if it’s a state capital.&lt;/p&gt;
 
@@ -243,14 +181,10 @@ On the organizational point of view, the workshop was a real success with the pr
   &lt;li&gt;to discover another culture and enjoy life&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;p&gt;I really aim to focus on teaching in the future, to share knowledge about development or about different domains.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/picture__sfo--mini.jpg&quot; alt=&quot;San Francisco break&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
-&lt;legend class=&quot;mark text-xs-center&quot;&gt;Sunny evening near Levi&#39;s Plaza&lt;/legend&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Sunny evening near Levi's Plaza&lt;/legend&gt;
 
 &lt;h2 id=&quot;javascript-community&quot;&gt;JavaScript community&lt;/h2&gt;
 
@@ -266,27 +200,4 @@ On the organizational point of view, the workshop was a real success with the pr
   &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;fr&quot; dir=&quot;ltr&quot;&gt;&amp;quot;Apprenez des concepts, pas des frameworks&amp;quot; &lt;a href=&quot;https://twitter.com/hashtag/BlendWebMix?src=hash&quot;&gt;#BlendWebMix&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/javascript?src=hash&quot;&gt;#javascript&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/angularjs?src=hash&quot;&gt;#angularjs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sebastien Correaud (@iTweetScor) &lt;a href=&quot;https://twitter.com/iTweetScor/status/659305682148196353&quot;&gt;October 28, 2015&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
   &lt;cite&gt;(English) Learn concepts, not frameworks&lt;/cite&gt;
-&lt;/center&gt;
-
-</description>
-        <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://iscor.me/from-montpellier-to-san-francisco</link>
-        <guid isPermaLink="true">http://iscor.me/from-montpellier-to-san-francisco</guid>
-        
-        <category>flight</category>
-        
-        <category>montpellier</category>
-        
-        <category>sanfrancisco</category>
-        
-        <category>javascript community</category>
-        
-        <category>meteor</category>
-        
-        
-        <category>travel</category>
-        
-      </item>
-    
-  </channel>
-</rss>
+&lt;/center&gt;</content><author><name>iScor</name></author><category term="flight" /><category term="montpellier" /><category term="sanfrancisco" /><category term="javascript community" /><category term="meteor" /><summary type="html">Objective California : San Francisco</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/sfo.svg" /></entry></feed>
