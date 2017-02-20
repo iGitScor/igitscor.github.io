@@ -16,7 +16,6 @@ author: iScor
 image: webpack.svg
 location: sfo
 ---
-
 # Study case
 
 There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.
