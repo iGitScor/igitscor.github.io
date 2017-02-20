@@ -1,21 +1,27 @@
 ---
+title: How to migrate front technologies
 layout: post
 type: Technical
-title:  "How to migrate front technologies"
-tagline: "Direction Webpack"
-description: >
+tagline: Direction Webpack
+description: |
   Sometimes you have to migrate front architecture, especially when you want to optimize web performance or to create a new brand image.
-categories: [technical]
-tags: [front, migration, webpack, web performance]
+categories:
+- technical
+tags:
+- front
+- migration
+- webpack
+- web performance
 author: iScor
 image: webpack.svg
 location: sfo
 ---
+
 # Study case
 
 There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.
 
-The main complex problem was to include a sub module into the new site. The fact is, the two projects didn't have the same tech stack.
+The main complex problem was to include a sub module (the checkout) into the new site. The fact is, the two projects didn't have the same tech stack.
 
 ## Details
 
@@ -79,7 +85,7 @@ My `main` CSS file is `styles.scss`. The only lines of code, in this file, impor
 
 {% endhighlight %}
 
-I've chosen the **7-1 pattern** approach, but I include manually all the parts because some of them are environment dependencies.
+I've chosen the **7-1 pattern** approach, but I include manually all the parts because some of them are environment-dependencies.
 
 #### The old project approach
 
@@ -96,6 +102,8 @@ The first step was to extract the leanest part of the sass-framework to include 
 {% endhighlight %}
 
 **The main reason for success is to not stop at the first failure display, due to pixel-perfect design !**
+
+The success has been achieved especially since the main core, namely the grid, is the same. This is the bootstrap grid, which has been simplified to keep only the necessary but the consistency remains unchanged.
 
 ### Bundle webpack
 
@@ -122,7 +130,7 @@ After style migration, the javascript logic was all integrated in the webpack fl
 
 Another big change was to migrate from *Selenium static tests* to an automated test process (with Nightwatch.js)
 
-I used a node module to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior.
+I used a [node module](https://github.com/timjrobinson/seleniumide2nightwatch) to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior. The generated code is not perfect but the cleaning does not take too many time (switching from xpath to css selector for example)
 
 ## Environments
 
@@ -154,3 +162,7 @@ Go to the demonstration repo for a code example. All of them will be updated all
   </a>
 
 You can also contribute to it by **forking the project** and make a pull request ;-)
+
+## Going further
+
+In the next article, I'll present the design migration and I'll specify migration tools
