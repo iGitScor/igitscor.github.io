@@ -1,5 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://iscor.me/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2016-11-09T12:56:58+01:00</updated><id>http://iscor.me//</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
-</subtitle><entry><title type="html">Smashing Conf’ San Francisco</title><link href="http://iscor.me/smashing-conf-san-francisco" rel="alternate" type="text/html" title="Smashing Conf' San Francisco" /><published>2016-06-01T00:00:00+02:00</published><updated>2016-06-01T00:00:00+02:00</updated><id>http://iscor.me/smashing-conf-san-francisco</id><content type="html" xml:base="http://iscor.me/smashing-conf-san-francisco">&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://iscor.me/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-02-20T14:38:46+01:00</updated><id>http://iscor.me//</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
+</subtitle><entry><title type="html">How to migrate front technologies</title><link href="http://iscor.me/how-to-migrate-front-technologies" rel="alternate" type="text/html" title="How to migrate front technologies" /><published>2017-02-10T00:00:00+01:00</published><updated>2017-02-10T00:00:00+01:00</updated><id>http://iscor.me/how-to-migrate-front-technologies</id><content type="html" xml:base="http://iscor.me/how-to-migrate-front-technologies">&lt;h1 id=&quot;study-case&quot;&gt;Study case&lt;/h1&gt;
+
+&lt;p&gt;There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.&lt;/p&gt;
+
+&lt;p&gt;The main complex problem was to include a sub module (the checkout) into the new site. The fact is, the two projects didn’t have the same tech stack.&lt;/p&gt;
+
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;
+
+&lt;p&gt;Here are the migration technologies details.
+The submodule has the following stack :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap&lt;/li&gt;
+  &lt;li&gt;Symfony&lt;/li&gt;
+  &lt;li&gt;Less&lt;/li&gt;
+  &lt;li&gt;Selenium IDE functional tests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And the new website is developed with these technology choices :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ITCSS with Bootstrap 4 grid&lt;/li&gt;
+  &lt;li&gt;Symfony&lt;/li&gt;
+  &lt;li&gt;Sass&lt;/li&gt;
+  &lt;li&gt;Nightwatch.js automated testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;migration&quot;&gt;Migration&lt;/h2&gt;
+
+&lt;h3 id=&quot;template-migration&quot;&gt;Template migration&lt;/h3&gt;
+
+&lt;p&gt;First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
+the principal problem was the CSS framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.&lt;/p&gt;
+
+&lt;h3 id=&quot;style-migration&quot;&gt;Style migration&lt;/h3&gt;
+
+&lt;p&gt;The second big impact was the change of the preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-new-project-architecture&quot;&gt;The new project architecture&lt;/h4&gt;
+
+&lt;p&gt;My SCSS is split up in different files or so called Sass partials. Working with Sass partials makes it more flexible and easier to maintain. Working like this is a way to keep a good overview on things which makes it more efficient to maintain.&lt;/p&gt;
+
+&lt;p&gt;I split things up like this :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/itcss.png&quot; alt=&quot;ITCSS structure&quot; aria-label=&quot;Assets + Scripts, Settings, Tools, Generic, Elements, Objects, Components and Trumps&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; CSS file is &lt;code class=&quot;highlighter-rouge&quot;&gt;styles.scss&lt;/code&gt;. The only lines of code, in this file, imports the other files. Example :&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
+&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#SETTINGS
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/colors';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/typography';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/spacing';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/responsive';&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
+&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#TOOLS
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/mixins';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/functions';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/responsive';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/images';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/animations';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/transitions';&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I’ve chosen the &lt;strong&gt;7-1 pattern&lt;/strong&gt; approach, but I include manually all the parts because some of them are environment-dependencies.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-old-project-approach&quot;&gt;The old project approach&lt;/h4&gt;
+
+&lt;p&gt;I won’t describe the old structure, but how I migrate less components in the sass structure.&lt;/p&gt;
+
+&lt;p&gt;The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as a component or trump in the new sass style for the submodule.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
+&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#COMPONENTS
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'06-Components/payment-block';&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;The main reason for success is to not stop at the first failure display, due to pixel-perfect design !&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The success has been achieved especially since the main core, namely the grid, is the same. This is the bootstrap grid, which has been simplified to keep only the necessary but the consistency remains unchanged.&lt;/p&gt;
+
+&lt;h3 id=&quot;bundle-webpack&quot;&gt;Bundle webpack&lt;/h3&gt;
+
+&lt;p&gt;Creation of a webpack bundle permits to migrate step by step.&lt;/p&gt;
+
+&lt;p&gt;The main files are located in the &lt;code class=&quot;highlighter-rouge&quot;&gt;00-Assets&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Load internationalization library&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./i18n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Instanciate translator&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;translator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Translate the document&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;translator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;With &lt;em&gt;webpack-loader&lt;/em&gt;, the migration is easier to do. In fact, I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.&lt;/p&gt;
+
+&lt;p&gt;After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optimized code.&lt;/p&gt;
+
+&lt;h3 id=&quot;functional-tests&quot;&gt;Functional tests&lt;/h3&gt;
+
+&lt;p&gt;Another big change was to migrate from &lt;em&gt;Selenium static tests&lt;/em&gt; to an automated test process (with Nightwatch.js)&lt;/p&gt;
+
+&lt;p&gt;I used a &lt;a href=&quot;https://github.com/timjrobinson/seleniumide2nightwatch&quot;&gt;node module&lt;/a&gt; to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior. The generated code is not perfect but the cleaning does not take too many time (switching from xpath to css selector for example)&lt;/p&gt;
+
+&lt;h2 id=&quot;environments&quot;&gt;Environments&lt;/h2&gt;
+
+&lt;p&gt;In webpack, one of the most important problem is to have multiple environments. I split the configuration into 3 parts :&lt;/p&gt;
+
+&lt;h3 id=&quot;common-environment&quot;&gt;Common environment&lt;/h3&gt;
+
+&lt;p&gt;In the common part, we can retrieve common webpack plugins and specific configuration (shared between environments)&lt;/p&gt;
+
+&lt;h3 id=&quot;production-environment&quot;&gt;Production environment&lt;/h3&gt;
+
+&lt;p&gt;In this case, I minify assets, compress and upload them to an Amazon S3 instance.&lt;/p&gt;
+
+&lt;h3 id=&quot;development-environment&quot;&gt;Development environment&lt;/h3&gt;
+
+&lt;p&gt;In this case, I don’t minify assets and use the dev version of the webpack bundle asset. I also add watch mode (for Docker or Vagrant issue) to be focused on the code.&lt;/p&gt;
+
+&lt;p&gt;I also generate automatically a styleguide directly with dev source code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/styleguide_index.png&quot; alt=&quot;Styleguide menu&quot; /&gt;
+&lt;img src=&quot;/assets/images/styleguide_example.png&quot; alt=&quot;Styleguide example&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+
+&lt;p&gt;Go to the demonstration repo for a code example. All of them will be updated all along my researches so you can use them as project dependencies.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn btn-link btn-block&quot; href=&quot;https://github.com/iGitScor/how-to-migrate-front&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Fork it&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Fork it
+  &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also contribute to it by &lt;strong&gt;forking the project&lt;/strong&gt; and make a pull request ;-)&lt;/p&gt;
+
+&lt;h2 id=&quot;going-further&quot;&gt;Going further&lt;/h2&gt;
+
+&lt;p&gt;In the next article, I’ll present the design migration and I’ll specify migration tools&lt;/p&gt;</content><author><name>iScor</name></author><category term="front" /><category term="migration" /><category term="webpack" /><category term="web performance" /><summary type="html">Study case</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/webpack.svg" /></entry><entry><title type="html">Smashing Conf’ San Francisco</title><link href="http://iscor.me/smashing-conf-san-francisco" rel="alternate" type="text/html" title="Smashing Conf' San Francisco" /><published>2016-06-01T00:00:00+02:00</published><updated>2016-06-01T00:00:00+02:00</updated><id>http://iscor.me/smashing-conf-san-francisco</id><content type="html" xml:base="http://iscor.me/smashing-conf-san-francisco">&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
 
 &lt;p&gt;During weeks, I went to workshops about user experience or front-end development… and I learned a lot !&lt;/p&gt;
 

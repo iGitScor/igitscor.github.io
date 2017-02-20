@@ -97,17 +97,17 @@
           <div class="row">
            <div class="col-md-8">
              <div class="primary">
-              <span class="pull-xs-right label label-info">
-  <span class="h5">Reading in about 5  minutes</span>
+              <span class="label label-info">
+  <span class="h5">Reading in about 6  minutes</span>
 </span>
 
-<h1 id="briefing">Briefing</h1>
+<h1 id="study-case">Study case</h1>
 
 <p>There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.</p>
 
-<p>The main complex problem was to include a sub module into the new site. The fact is, the two projects didn’t have the same tech stack.</p>
+<p>The main complex problem was to include a sub module (the checkout) into the new site. The fact is, the two projects didn’t have the same tech stack.</p>
 
-<h2 id="concrete-case">Concrete case</h2>
+<h2 id="details">Details</h2>
 
 <p>Here are the migration technologies details.
 The submodule has the following stack :</p>
@@ -119,8 +119,6 @@ The submodule has the following stack :</p>
   <li>Selenium IDE functional tests</li>
 </ul>
 
-<p><br /></p>
-
 <p>And the new website is developed with these technology choices :</p>
 
 <ul>
@@ -130,20 +128,18 @@ The submodule has the following stack :</p>
   <li>Nightwatch.js automated testing</li>
 </ul>
 
-<p><br /></p>
+<h2 id="migration">Migration</h2>
 
-<h1 id="migration">Migration</h1>
-
-<h2 id="template-migration">Template migration</h2>
+<h3 id="template-migration">Template migration</h3>
 
 <p>First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
 the principal problem was the CSS framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.</p>
 
-<h2 id="style-migration">Style migration</h2>
+<h3 id="style-migration">Style migration</h3>
 
 <p>The second big impact was the change of the preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.</p>
 
-<h3 id="the-new-project-architecture">The new project architecture</h3>
+<h4 id="the-new-project-architecture">The new project architecture</h4>
 
 <p>My SCSS is split up in different files or so called Sass partials. Working with Sass partials makes it more flexible and easier to maintain. Working like this is a way to keep a good overview on things which makes it more efficient to maintain.</p>
 
@@ -173,9 +169,9 @@ the principal problem was the CSS framework change. Even if the grid is the same
 <span class="k">@import</span> <span class="s">'02-Tools/animations';</span>
 <span class="k">@import</span> <span class="s">'02-Tools/transitions';</span></code></pre></figure>
 
-<p>I’ve chosen the <strong>7-1 pattern</strong> approach, but I include manually all the parts because some of them are environment dependencies.</p>
+<p>I’ve chosen the <strong>7-1 pattern</strong> approach, but I include manually all the parts because some of them are environment-dependencies.</p>
 
-<h3 id="the-old-project-approach">The old project approach</h3>
+<h4 id="the-old-project-approach">The old project approach</h4>
 
 <p>I won’t describe the old structure, but how I migrate less components in the sass structure.</p>
 
@@ -189,7 +185,9 @@ the principal problem was the CSS framework change. Even if the grid is the same
 
 <p><strong>The main reason for success is to not stop at the first failure display, due to pixel-perfect design !</strong></p>
 
-<h2 id="bundle-webpack">Bundle webpack</h2>
+<p>The success has been achieved especially since the main core, namely the grid, is the same. This is the bootstrap grid, which has been simplified to keep only the necessary but the consistency remains unchanged.</p>
+
+<h3 id="bundle-webpack">Bundle webpack</h3>
 
 <p>Creation of a webpack bundle permits to migrate step by step.</p>
 
@@ -208,25 +206,25 @@ the principal problem was the CSS framework change. Even if the grid is the same
 
 <p>After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optimized code.</p>
 
-<h2 id="functional-tests">Functional tests</h2>
+<h3 id="functional-tests">Functional tests</h3>
 
 <p>Another big change was to migrate from <em>Selenium static tests</em> to an automated test process (with Nightwatch.js)</p>
 
-<p>I used a node module to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior.</p>
+<p>I used a <a href="https://github.com/timjrobinson/seleniumide2nightwatch">node module</a> to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior. The generated code is not perfect but the cleaning does not take too many time (switching from xpath to css selector for example)</p>
 
-<h1 id="environments">Environments</h1>
+<h2 id="environments">Environments</h2>
 
 <p>In webpack, one of the most important problem is to have multiple environments. I split the configuration into 3 parts :</p>
 
-<h2 id="common-environment">Common environment</h2>
+<h3 id="common-environment">Common environment</h3>
 
 <p>In the common part, we can retrieve common webpack plugins and specific configuration (shared between environments)</p>
 
-<h2 id="production-environment">Production environment</h2>
+<h3 id="production-environment">Production environment</h3>
 
 <p>In this case, I minify assets, compress and upload them to an Amazon S3 instance.</p>
 
-<h2 id="development-environment">Development environment</h2>
+<h3 id="development-environment">Development environment</h3>
 
 <p>In this case, I don’t minify assets and use the dev version of the webpack bundle asset. I also add watch mode (for Docker or Vagrant issue) to be focused on the code.</p>
 
@@ -235,7 +233,7 @@ the principal problem was the CSS framework change. Even if the grid is the same
 <p><img src="/assets/images/styleguide_index.png" alt="Styleguide menu" />
 <img src="/assets/images/styleguide_example.png" alt="Styleguide example" /></p>
 
-<h1 id="github">Github</h1>
+<h2 id="github">Github</h2>
 
 <p>Go to the demonstration repo for a code example. All of them will be updated all along my researches so you can use them as project dependencies.</p>
 
@@ -245,13 +243,17 @@ the principal problem was the CSS framework change. Even if the grid is the same
 
 <p>You can also contribute to it by <strong>forking the project</strong> and make a pull request ;-)</p>
 
+<h2 id="going-further">Going further</h2>
+
+<p>In the next article, I’ll present the design migration and I’ll specify migration tools</p>
+
 
 <div class="line"></div>
 
 <div class="text-xs-center">
   <a
     class="btn btn-info"
-    href="https://twitter.com/intent/tweet?text=How to migrate front technologies&url=http://0.0.0.0/how-to-migrate-front-technologies&via=iTweetScor&related=iTweetScor"
+    href="https://twitter.com/intent/tweet?text=How to migrate front technologies&url=http://iscor.me/how-to-migrate-front-technologies&via=iTweetScor&related=iTweetScor"
     rel="nofollow"
     target="_blank"
     title="Share on Twitter">
@@ -259,7 +261,7 @@ the principal problem was the CSS framework change. Even if the grid is the same
   </a>
   <a
     class="btn btn-info"
-    href="https://facebook.com/sharer.php?u=http://0.0.0.0/how-to-migrate-front-technologies"
+    href="https://facebook.com/sharer.php?u=http://iscor.me/how-to-migrate-front-technologies"
     rel="nofollow"
     target="_blank"
     title="Share on Facebook">
@@ -267,7 +269,7 @@ the principal problem was the CSS framework change. Even if the grid is the same
   </a>
   <a
     class="btn btn-info"
-    href="https://plus.google.com/share?url=http://0.0.0.0/how-to-migrate-front-technologies"
+    href="https://plus.google.com/share?url=http://iscor.me/how-to-migrate-front-technologies"
     rel="nofollow"
     target="_blank"
     title="Share on Google+">
@@ -358,8 +360,8 @@ the principal problem was the CSS framework change. Even if the grid is the same
                          
                        </div>
                        <div class="post-meta">
-                         <p class="h4"><a href="/user-experience-workshop">UX Workshop</a></p>
-                         <p>User experience meetup around practical workshop to teach UX techniques to passionate using Carine Lallemand's book user tests.
+                         <p class="h4"><a href="/smashing-conf-san-francisco">Smashing Conf' San Francisco</a></p>
+                         <p>Summary of a specific conference at the Smashing Conf located in San Francisco (April 2016)
 </p>
                        </div>
                      </li>
@@ -367,12 +369,12 @@ the principal problem was the CSS framework change. Even if the grid is the same
                      <li class="item">
                        <div class="thum-img">
                          
-                         <img src="/assets/articles/sfo.svg" height="80" width="80" alt="Small Thumbnail Image">
+                         <img src="/assets/articles/ux.svg" height="80" width="80" alt="Small Thumbnail Image">
                          
                        </div>
                        <div class="post-meta">
-                         <p class="h4"><a href="/from-montpellier-to-san-francisco">From Montpellier to San Francisco</a></p>
-                         <p>Presentation of the professional travel from Montpellier (France) to San Francisco (USA) of a front-end developer specialized in JavaScript.
+                         <p class="h4"><a href="/user-experience-workshop">UX Workshop</a></p>
+                         <p>User experience meetup around practical workshop to teach UX techniques to passionate using Carine Lallemand's book user tests.
 </p>
                        </div>
                      </li>
@@ -390,6 +392,11 @@ the principal problem was the CSS framework change. Even if the grid is the same
                   <div class="tagcloud">
                     
                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#accessibility-ref">accessibility</a>
+                     
                     
                       
                       
@@ -429,6 +436,11 @@ the principal problem was the CSS framework change. Even if the grid is the same
                       
                       
                       <a class="btn-light-sm" href="/tags.html#sanfrancisco-ref">sanfrancisco</a>
+                     
+                    
+                      
+                      
+                      <a class="btn-light-sm" href="/tags.html#smashing-conf-ref">smashing conf</a>
                      
                     
                       
@@ -474,7 +486,7 @@ the principal problem was the CSS framework change. Even if the grid is the same
                        
                          <li class="cat-item"><a href="/categories.html#travel-ref">Travel <span>(1)</span></a></li>
                        
-                         <li class="cat-item"><a href="/categories.html#workshop-ref">Workshop <span>(1)</span></a></li>
+                         <li class="cat-item"><a href="/categories.html#workshop-ref">Workshop <span>(2)</span></a></li>
                        
                          <li class="cat-item"><a href="/categories.html#technical-ref">Technical <span>(1)</span></a></li>
                        
@@ -495,8 +507,8 @@ the principal problem was the CSS framework change. Even if the grid is the same
   <div class="footer-nav">
     <nav class="nav navbar-nav sm">
       <a href="/">Home</a>
-      <a href="slides/web-performance.html">Slides</a>
-      <a href="about.html">About me</a>
+      <a href="/slides/web-performance.html">Slides</a>
+      <a href="/about/">About me</a>
     </nav>
   </div>
   <div class="copyright">
@@ -507,8 +519,6 @@ the principal problem was the CSS framework change. Even if the grid is the same
       </footer>
     </div>
 
-    
-    <script id="dsq-count-scr" src="//iscor.disqus.com/count.js" async></script>
     
   </body>
 
