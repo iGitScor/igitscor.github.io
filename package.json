@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/iGitScor/igitscor.github.io#readme",
   "dependencies": {
-    "bower": "^1.8.0"
+    "bower": "1.8.x"
   },
   "devDependencies": {
-    "gh-pages": "^0.11.0",
-    "glob": "^7.1.1",
-    "markdownlint": "^0.3.0"
+    "gh-pages": "0.12.x",
+    "glob": "7.1.x",
+    "markdownlint": "0.3.x"
   }
 }
