@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://iscor.me/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-02-20T14:46:09+01:00</updated><id>http://iscor.me//</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
-</subtitle><entry><title type="html">How to migrate front technologies</title><link href="http://iscor.me/how-to-migrate-front-technologies" rel="alternate" type="text/html" title="How to migrate front technologies" /><published>2017-02-10T00:00:00+01:00</published><updated>2017-02-10T00:00:00+01:00</updated><id>http://iscor.me/how-to-migrate-front-technologies</id><content type="html" xml:base="http://iscor.me/how-to-migrate-front-technologies">&lt;h1 id=&quot;study-case&quot;&gt;Study case&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://iscor.me/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-03-09T15:44:33+01:00</updated><id>http://iscor.me//</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
+</subtitle><entry><title type="html">JS13k - Why you sould participate to game contest ?</title><link href="http://iscor.me/js13k-why-you-should-participate-to-contest" rel="alternate" type="text/html" title="JS13k - Why you sould participate to game contest ?" /><published>2017-03-09T00:00:00+01:00</published><updated>2017-03-09T00:00:00+01:00</updated><id>http://iscor.me/js13k-why-you-should-participate-to-contest</id><content type="html" xml:base="http://iscor.me/js13k-why-you-should-participate-to-contest">&lt;h1 id=&quot;js13kgames---a-javascript-game-contest&quot;&gt;JS13kgames - a javascript game contest&lt;/h1&gt;
+
+&lt;p&gt;Independent video game development is the video game development process of creating indie games; these are video games, commonly created by individual or small teams of video game developers and usually without significant financial support of a video game publisher or other outside source. These games may take years to be built from the ground up or can be completed in a matter of days or even hours depending on complexity, participants, and design goal.&lt;/p&gt;
+
+&lt;p&gt;Development of indie games is the process of creating games which are not affiliated with production groups (as in cinema), generally created by a single person or a group of enthusiasts of development and video games, without financial input from institution composed of publisher or any other professional entity. These games can take years to conceive due to their complexity and / or their graphic appearance, or a couple of weeks in some cases, for example in contests and that’s one of those I’m going to tell you about.&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;A few years ago, I started web development in a professional way, but for me I missed something, an objective, a challenge, a story to tell. Luckily I has help from friends who introduced me the concept of development competition.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-contest&quot;&gt;First contest&lt;/h2&gt;
+
+&lt;p&gt;The first contest was JS1K. &lt;strong&gt;Javascript, performance, limits!&lt;/strong&gt; I finally found my challenge … yes but here, I had not enough confidence in myself and especially too little experience in the development to begin this project. The second contest was JS13k. Always avascript, less limit and an opportunity to create a video game with a small team. The first attempt was not successful, we were so busy by our work (the paid one) that we could not carry out this project. That was in 2014.&lt;/p&gt;
+
+&lt;h2 id=&quot;second-contest&quot;&gt;Second contest&lt;/h2&gt;
+
+&lt;p&gt;The team behind this project is friendly with a respectful jury. A bargain to progress, to learn, to be known and above all to have fun! So I tried the adventure in 2015, solo, proposing a game filled with personal references (Mario, Harry Potter, Memento … all more or less well hidden). The lack of time, again it, forced me not to propose my initial idea but I was proud to finish a micro game. Not enough to make addictive its players.&lt;/p&gt;
+
+&lt;p&gt;In 2016, the contest was an opportunity for me to take a new direction with this competition. And this direction is the subject of this article.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-should-a-front-end-integrator--developer-participate-in-these-contests&quot;&gt;Why should a front-end integrator / developer participate in these contests?&lt;/h2&gt;
+
+&lt;p&gt;I will debate about the difference between an integrator and a front developer, it depends on the culture of the person / group to which you are asking this question.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Integrator? Frontend developer? Let’s talk about anyone which develops in CSS3, with noJS logic and accessibility in line of sight!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My idea was to submit a game exclusively realized in CSS and HTML … idea apparently contrary to the concept of the contest, the creation of a game in Javascript. Yes but after having the confirmation of the team, I began the integration of a game. The integration … of a game.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Is it possible to submit an entry without Javascript? #JavaScript game without Javascript&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;synopsis-of-the-game&quot;&gt;Synopsis of the game&lt;/h3&gt;
+
+&lt;p&gt;Rewrite History with a text-based game (question / answer).&lt;/p&gt;
+
+&lt;p&gt;During centuries, human has always wanted to travel in time with Javascript, to correct his mistakes … without success. However, you are a robot, maybe you will have more luck, with only CSS?&lt;/p&gt;
+
+&lt;p&gt;For example, if the city of Lublin (in Poland) had never been founded, the contest’s creator would never have been born (or at least would have had a different life). Therefore the developed game could never have been done. It is therefore a temporal anomaly&lt;/p&gt;
+
+&lt;p&gt;The concept of the game is neither revolutionary nor addictive, perhaps a bit cute when seeing the little robot. No. The game was primarily intended as a proof of concept, a POC. I wanted to develop a game with a complex HTML page and advanced CSS concepts. To simplify, when the player answers, it activates the next question, and a checkbox system (yes, like in a form) “stored” the logic of the game and thus the user’s answers. So yes, of course, when you look at the page itself, the code is just illegible.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-why&quot;&gt;So, why?&lt;/h2&gt;
+
+&lt;p&gt;For all the reasons mentioned in this article, namely:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Always think a website without Javascript&lt;/li&gt;
+  &lt;li&gt;Improve or revise your CSS&lt;/li&gt;
+  &lt;li&gt;Is there really only a good reason?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://iscor.me/js13k-2016&quot;&gt;Game demo&lt;/a&gt;&lt;/p&gt;</content><author><name>iScor</name></author><category term="javascript" /><category term="indiedev" /><category term="gamedev" /><category term="web performance" /><category term="css" /><summary type="html">JS13kgames - a javascript game contest</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/ux.svg" /></entry><entry><title type="html">How to migrate front technologies</title><link href="http://iscor.me/how-to-migrate-front-technologies" rel="alternate" type="text/html" title="How to migrate front technologies" /><published>2017-02-10T00:00:00+01:00</published><updated>2017-02-10T00:00:00+01:00</updated><id>http://iscor.me/how-to-migrate-front-technologies</id><content type="html" xml:base="http://iscor.me/how-to-migrate-front-technologies">&lt;h1 id=&quot;study-case&quot;&gt;Study case&lt;/h1&gt;
 
 &lt;p&gt;There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.&lt;/p&gt;
 
