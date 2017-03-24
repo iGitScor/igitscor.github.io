@@ -5902,6 +5902,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .card-block.primary p {
     color: white !important; }
 
+.navbar-nav {
+  flex-direction: row; }
+
 /***
 TABLE OF CONTENT
 
