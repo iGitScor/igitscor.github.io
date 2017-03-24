@@ -59,6 +59,10 @@
   }
 }
 
+.navbar-nav {
+    flex-direction: row;
+}
+
 // OVERRIDE font-awesome
 @import "fonts";
 
