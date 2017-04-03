@@ -10,6 +10,7 @@ tags: [user experience, ux community, uxdesign, flupa]
 author: iScor
 image: ux.svg
 location: sfo
+redirect_from: "/user-experience-workshop"
 ---
 # April - Workshop month
 

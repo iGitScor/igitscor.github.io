@@ -10,6 +10,7 @@ tags: [javascript, indiedev, gamedev, web performance, css]
 author: iScor
 image: ux.svg
 location: sfo
+redirect_from: "/js13k-why-you-should-participate-to-contest"
 ---
 # JS13kgames - a javascript game contest
 
@@ -25,17 +26,29 @@ A few years ago, I started web development in a professional way, but for me I m
 
 The first contest was JS1K. **Javascript, performance, limits!** I finally found my challenge ... yes but here, I had not enough confidence in myself and especially too little experience in the development to begin this project. The second contest was JS13k. Always avascript, less limit and an opportunity to create a video game with a small team. The first attempt was not successful, we were so busy by our work (the paid one) that we could not carry out this project. That was in 2014.
 
+<center>
+  <p>
+    <img src="/assets/images/js1k-logo.png" alt="js1k" class="img-fluid" />
+  </p>
+</center>
+
 ## Second contest
 
 The team behind this project is friendly with a respectful jury. A bargain to progress, to learn, to be known and above all to have fun! So I tried the adventure in 2015, solo, proposing a game filled with personal references (Mario, Harry Potter, Memento ... all more or less well hidden). The lack of time, again it, forced me not to propose my initial idea but I was proud to finish a micro game. Not enough to make addictive its players.
 
 In 2016, the contest was an opportunity for me to take a new direction with this competition. And this direction is the subject of this article.
 
+<center>
+  <p>
+    <img src="/assets/images/js13k-logo.png" alt="js13k" class="img-fluid" />
+  </p>
+</center>
+
 ## Why should a front-end integrator / developer participate in these contests?
 
 I will debate about the difference between an integrator and a front developer, it depends on the culture of the person / group to which you are asking this question.
 
-> Integrator? Frontend developer? Let's talk about anyone which develops in CSS3, with noJS logic and accessibility in line of sight!
+> Integrator? Frontend developer? Let's talk about anyone whom develops in CSS3, with noJS logic and accessibility in line of sight!
 
 My idea was to submit a game exclusively realized in CSS and HTML ... idea apparently contrary to the concept of the contest, the creation of a game in Javascript. Yes but after having the confirmation of the team, I began the integration of a game. The integration ... of a game.
 
@@ -50,6 +63,8 @@ During centuries, human has always wanted to travel in time with Javascript, to 
 For example, if the city of Lublin (in Poland) had never been founded, the contest's creator would never have been born (or at least would have had a different life). Therefore the developed game could never have been done. It is therefore a temporal anomaly
 
 The concept of the game is neither revolutionary nor addictive, perhaps a bit cute when seeing the little robot. No. The game was primarily intended as a proof of concept, a POC. I wanted to develop a game with a complex HTML page and advanced CSS concepts. To simplify, when the player answers, it activates the next question, and a checkbox system (yes, like in a form) "stored" the logic of the game and thus the user's answers. So yes, of course, when you look at the page itself, the code is just illegible.
+
+![Game](/assets/images/js13k.jpg){: .center-block .img-fluid}
 
 ## So, why?
 

@@ -16,37 +16,22 @@
 @import "../bower/bootstrap/scss/_reboot";
 @import "../bower/bootstrap/scss/_type";
 @import "../bower/bootstrap/scss/_images";
-@import "../bower/bootstrap/scss/_code";
 @import "../bower/bootstrap/scss/_grid";
-@import "../bower/bootstrap/scss/_tables";
-@import "../bower/bootstrap/scss/_forms";
 @import "../bower/bootstrap/scss/_buttons";
 
 // Components
-// @import "../bower/bootstrap/scss/_animation";
-// @import "../bower/bootstrap/scss/_dropdown";
-@import "../bower/bootstrap/scss/_button-group";
-@import "../bower/bootstrap/scss/_input-group";
-@import "../bower/bootstrap/scss/_custom-forms";
 @import "../bower/bootstrap/scss/_nav";
 @import "../bower/bootstrap/scss/_navbar";
 @import "../bower/bootstrap/scss/_card";
 @import "../bower/bootstrap/scss/_breadcrumb";
 @import "../bower/bootstrap/scss/_pagination";
-// @import "../bower/bootstrap/scss/_tags";
-// @import "../bower/bootstrap/scss/_jumbotron";
-// @import "../bower/bootstrap/scss/_alert";
-// @import "../bower/bootstrap/scss/_progress";
 @import "../bower/bootstrap/scss/_media";
 @import "../bower/bootstrap/scss/_list-group";
 @import "../bower/bootstrap/scss/_responsive-embed";
-// @import "../bower/bootstrap/scss/_close";
 
 // Utility classes
 @import "../bower/bootstrap/scss/_utilities";
 
-// Tether
-//@import "../bower/tether/src/css/tether";
 
 // OVERRIDE bootstrap
 .card-block {

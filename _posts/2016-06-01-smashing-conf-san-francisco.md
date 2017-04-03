@@ -10,6 +10,7 @@ tags: [web performance, smashing conf, sanfrancisco, accessibility]
 author: iScor
 image: ux.svg
 location: sfo
+redirect_from: "/smashing-conf-san-francisco"
 ---
 # April - Workshop month
 

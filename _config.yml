@@ -13,7 +13,7 @@ baseurl: "" # the subpath of my site, e.g. /blog
 url: "http://iscor.me" # the base hostname & protocol for my site, e.g. http://example.com
 twitter_username: iTweetScor
 github_username:  iGitScor
-permalink:   /:title
+permalink:   /blog/:title
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 timezone:    Europe/Paris
@@ -33,3 +33,6 @@ exclude:
   - README.md
   - scripts
   - .travis.yml
+
+sass:
+  style: compressed

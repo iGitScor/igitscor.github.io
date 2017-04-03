@@ -10,6 +10,7 @@ tags: [flight, montpellier, sanfrancisco, javascript community, meteor]
 author: iScor
 image: sfo.svg
 location: sfo
+redirect_from: "/from-montpellier-to-san-francisco"
 ---
 # Objective California : San Francisco
 

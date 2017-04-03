@@ -15,6 +15,7 @@ tags:
 author: iScor
 image: webpack.svg
 location: sfo
+redirect_from: "/how-to-migrate-front-technologies"
 ---
 # Study case
 
