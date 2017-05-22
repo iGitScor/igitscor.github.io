@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-04-03T10:51:51+02:00</updated><id>http://iscor.me/</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-05-22T17:21:39+02:00</updated><id>http://iscor.me/</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
 </subtitle><entry><title type="html">JS13k - Why you sould participate to game contest ?</title><link href="http://iscor.me/blog/js13k-why-you-should-participate-to-contest" rel="alternate" type="text/html" title="JS13k - Why you sould participate to game contest ?" /><published>2017-03-09T00:00:00+01:00</published><updated>2017-03-09T00:00:00+01:00</updated><id>http://iscor.me/blog/js13k-why-you-should-participate-to-contest</id><content type="html" xml:base="http://iscor.me/blog/js13k-why-you-should-participate-to-contest">&lt;h1 id=&quot;js13kgames---a-javascript-game-contest&quot;&gt;JS13kgames - a javascript game contest&lt;/h1&gt;
 
 &lt;p&gt;Independent video game development is the video game development process of creating indie games; these are video games, commonly created by individual or small teams of video game developers and usually without significant financial support of a video game publisher or other outside source. These games may take years to be built from the ground up or can be completed in a matter of days or even hours depending on complexity, participants, and design goal.&lt;/p&gt;
@@ -11,7 +11,7 @@
 
 &lt;h2 id=&quot;first-contest&quot;&gt;First contest&lt;/h2&gt;
 
-&lt;p&gt;The first contest was JS1K. &lt;strong&gt;Javascript, performance, limits!&lt;/strong&gt; I finally found my challenge … yes but here, I had not enough confidence in myself and especially too little experience in the development to begin this project. The second contest was JS13k. Always avascript, less limit and an opportunity to create a video game with a small team. The first attempt was not successful, we were so busy by our work (the paid one) that we could not carry out this project. That was in 2014.&lt;/p&gt;
+&lt;p&gt;The first contest was JS1K. &lt;strong&gt;Javascript, performance, limits!&lt;/strong&gt; I finally found my challenge … yes but here, I had not enough confidence in myself and especially too little experience in the development to begin this project. The second contest was JS13k. Always Javascript, less limit and an opportunity to create a video game with a small team. The first attempt was not successful, we were so busy by our work (the paid one) that we could not carry out this project. That was in 2014.&lt;/p&gt;
 
 &lt;center&gt;
   &lt;p&gt;
@@ -21,7 +21,7 @@
 
 &lt;h2 id=&quot;second-contest&quot;&gt;Second contest&lt;/h2&gt;
 
-&lt;p&gt;The team behind this project is friendly with a respectful jury. A bargain to progress, to learn, to be known and above all to have fun! So I tried the adventure in 2015, solo, proposing a game filled with personal references (Mario, Harry Potter, Memento … all more or less well hidden). The lack of time, again it, forced me not to propose my initial idea but I was proud to finish a micro game. Not enough to make addictive its players.&lt;/p&gt;
+&lt;p&gt;The crew behind this contest is friendly with a respectful jury. A bargain to progress, to learn, to be known and above all to have fun! So I tried the adventure in 2015, solo, proposing a game filled with personal references (Mario, Harry Potter, Memento … all more or less well hidden). The lack of time, again it, forced me not to propose my initial idea but I was proud to finish a micro game. Not enough to make addictive its players.&lt;/p&gt;
 
 &lt;p&gt;In 2016, the contest was an opportunity for me to take a new direction with this competition. And this direction is the subject of this article.&lt;/p&gt;
 
@@ -33,7 +33,7 @@
 
 &lt;h2 id=&quot;why-should-a-front-end-integrator--developer-participate-in-these-contests&quot;&gt;Why should a front-end integrator / developer participate in these contests?&lt;/h2&gt;
 
-&lt;p&gt;I will debate about the difference between an integrator and a front developer, it depends on the culture of the person / group to which you are asking this question.&lt;/p&gt;
+&lt;p&gt;I will not debate about the difference between an integrator and a front developer, it depends on the culture of the person / group to which you are asking this question.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Integrator? Frontend developer? Let’s talk about anyone whom develops in CSS3, with noJS logic and accessibility in line of sight!&lt;/p&gt;
@@ -47,11 +47,13 @@
 
 &lt;h3 id=&quot;synopsis-of-the-game&quot;&gt;Synopsis of the game&lt;/h3&gt;
 
-&lt;p&gt;Rewrite History with a text-based game (question / answer).&lt;/p&gt;
+&lt;p&gt;Rewrite History with a text-based game (question / answer). Create an &lt;a href=&quot;https://en.wikipedia.org/wiki/Alternate_history&quot;&gt;alternate history&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;During centuries, human has always wanted to travel in time with Javascript, to correct his mistakes … without success. However, you are a robot, maybe you will have more luck, with only CSS?&lt;/p&gt;
 
-&lt;p&gt;For example, if the city of Lublin (in Poland) had never been founded, the contest’s creator would never have been born (or at least would have had a different life). Therefore the developed game could never have been done. It is therefore a temporal anomaly&lt;/p&gt;
+&lt;p&gt;For example, if the city of &lt;a href=&quot;https://www.google.fr/maps?q=lublin&amp;amp;um=1&amp;amp;ie=UTF-8&amp;amp;sa=X&amp;amp;ved=0ahUKEwixiILS4IPUAhUCORoKHX5tBCMQ_AUICygC&quot;&gt;Lublin&lt;/a&gt; (in Poland) had never been founded, the contest’s creator would never have been born (or at least would have had a different life). Therefore the developed game could never have been done. It is therefore a temporal anomaly.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/lublin.jpg&quot; alt=&quot;Lublin&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The concept of the game is neither revolutionary nor addictive, perhaps a bit cute when seeing the little robot. No. The game was primarily intended as a proof of concept, a POC. I wanted to develop a game with a complex HTML page and advanced CSS concepts. To simplify, when the player answers, it activates the next question, and a checkbox system (yes, like in a form) “stored” the logic of the game and thus the user’s answers. So yes, of course, when you look at the page itself, the code is just illegible.&lt;/p&gt;
 
@@ -66,6 +68,26 @@
   &lt;li&gt;Improve or revise your CSS&lt;/li&gt;
   &lt;li&gt;Is there really only a good reason?&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;going-further&quot;&gt;Going further&lt;/h2&gt;
+
+&lt;center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;How we built the real demo for our fake CSS API client&lt;a href=&quot;https://t.co/u2NhHiNPyy&quot;&gt;https://t.co/u2NhHiNPyy&lt;/a&gt;&lt;a href=&quot;https://twitter.com/hashtag/AprilFools?src=hash&quot;&gt;#AprilFools&lt;/a&gt; &lt;a href=&quot;https://t.co/3NShmiae3d&quot;&gt;pic.twitter.com/3NShmiae3d&lt;/a&gt;&lt;/p&gt;&amp;mdash; Algolia (@algolia) &lt;a href=&quot;https://twitter.com/algolia/status/849540613267574784&quot;&gt;April 5, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;cite&gt;CSS API by Algolia&lt;/cite&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A few months after submitting my game, I came across an article in the Algolia solution, which featured a CSS API (without Javascript). Intrigued, I took a look at what they meant by API CSS. Using Algolia with 1001pharmacies, and being satisfied and impressed by their libraries, I had to break through the secret. And what I discovered was simply that they use the same technique as for my game.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algolia-css-client.png&quot; alt=&quot;CSS API demo&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, in this screenshot, we can see that each chip (e.g Sales, Engineering, …) is a label and linked (in HTML) to a radio button. These radio buttons display or hide elements in the list. In other terms, each person in the list is attached to a job and if the job is selected, the information are readable… by human.&lt;/p&gt;
+
+&lt;p&gt;The main problem of this approach is that the component is not accessible. When a person with a disability try to use or read the content of your web page, they can have surprises.&lt;/p&gt;
+
+&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algolia-css-client.gif&quot; alt=&quot;CSS API demo&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
 
