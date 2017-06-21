@@ -32,11 +32,22 @@
 // Utility classes
 @import "../bower/bootstrap/scss/_utilities";
 
+.card {
+    border-radius: 0;
+}
+
+.card-lighten {
+    background-color: rgba(229, 229, 229, 0.2);
+}
+
+.card-padded {
+    margin: 15px auto;
+}
 
 // OVERRIDE bootstrap
 .card-block {
   &.primary {
-    background-color: rgb(255,64,129) !important;
+    background-color: $brand-primary !important;
 
     p {
       color: white !important;

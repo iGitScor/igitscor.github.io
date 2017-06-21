@@ -1,7 +1,9 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazyloadjs/3.2.2/lazyload.min.js" charset="utf-8"></script>
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe
-    src="{{ page.slides_url }}/embed?style=light"
+    onload="lzld(this)"
+    data-src="{{ page.slides_url }}/embed?style=light"
     class="embed-responsive-item"
     width="576"
     height="420"
@@ -11,3 +13,5 @@
     mozallowfullscreen
     allowfullscreen></iframe>
 </div>
+
+<div class="line text-primary"></div>

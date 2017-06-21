@@ -86,7 +86,8 @@ input, textarea {
   height: 1px;
   width: 100%;
   margin: 10px 0;
-  background: #e5e5e5;
+  background: currentColor;
+  color: #e5e5e5;
 }
 
 .btn-dark {
@@ -276,9 +277,16 @@ input, textarea {
   display: table;
   margin-bottom: 100px;
 }
+.primary cite {
+  display: inline-block;
+  margin-bottom: 20px;
+}
 .primary ul {
-  margin-left: 30px;
+  margin-bottom: 20px;
   color: $gray-light;
+}
+.primary ul:not(.row) {
+  margin-left: 30px;
 }
 .primary .pagination {
   font-size: 18px;
@@ -455,7 +463,8 @@ input, textarea {
 ================================ */
 
 .widget-box {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+
   .widget-title span {
     font-size: 18px;
     font-weight: bold;
