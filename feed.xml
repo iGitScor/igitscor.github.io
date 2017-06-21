@@ -1,7 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-06-20T08:33:58+02:00</updated><id>http://iscor.me/</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-06-21T09:44:27+02:00</updated><id>http://iscor.me/</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
 </subtitle><entry><title type="html">Growth hacking with America</title><link href="http://iscor.me/blog/personal-growth-hacking" rel="alternate" type="text/html" title="Growth hacking with America" /><published>2017-06-19T00:00:00+02:00</published><updated>2017-06-19T00:00:00+02:00</updated><id>http://iscor.me/blog/personal-growth-hacking</id><content type="html" xml:base="http://iscor.me/blog/personal-growth-hacking">&lt;p&gt;My Dear America,&lt;/p&gt;
 
 &lt;p&gt;I’m not living in your country, but I really want to. And I hope that the following article won’t hurt you…&lt;/p&gt;
+
+&lt;p&gt;In March, the 17th, I mentioned on Twitter, &lt;a href=&quot;http://iscor.me/blog/from-montpellier-to-san-francisco&quot;&gt;my blog&lt;/a&gt;, Github,… everywhere I could, that I was in America, especially in San Francisco. I did that for two main reasons.&lt;/p&gt;
+
+&lt;h2 id=&quot;i-have-a-dream&quot;&gt;I have a dream&lt;/h2&gt;
+
+&lt;p&gt;Since I was young (younger, I’m still young!), I’m dreaming of living in the U.S.A., even if the country does not look as beautiful as the American dream itself. But I’m convinced that realizing some dreams make the life more beautiful and travel is a so wonderful way of life that I must try to achieve it.&lt;/p&gt;
+
+&lt;p&gt;The problem is that conditions to work in America, for a stranger, is hard. Too hard. In an era of free trade, freedom, globalization, we lose the great strength of humanity: &lt;strong class=&quot;text-success&quot;&gt;sharing&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;blockquote class=&quot;post-blockquote&quot;&gt;
 
@@ -13,15 +21,7 @@ Though you refuse to admit them.
   &lt;/div&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In March, the 17th, I mentioned on Twitter, &lt;a href=&quot;http://iscor.me/blog/from-montpellier-to-san-francisco&quot;&gt;my blog&lt;/a&gt;, Github,… everywhere I could, that I was in America, especially in San Francisco. I did that for two main reasons.&lt;/p&gt;
-
-&lt;h2 id=&quot;i-have-a-dream&quot;&gt;I have a dream&lt;/h2&gt;
-
-&lt;p&gt;Since I was young (younger, I’m still young!), I’m dreaming of living in the U.S.A., even if the country does not look as beautiful as the American dream itself. But I’m convinced that realizing some dreams make the life more beautiful and travel is a so wonderful way of life that I must try to achieve it.&lt;/p&gt;
-
-&lt;p&gt;The problem is that conditions to work in America, for a stranger, is hard. Too hard. In an era of free trade, freedom, globalization, we lose the great strength of humanity: &lt;strong&gt;sharing&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Why we cannot go freely into other countries, especially by promising to work in this country?&lt;/strong&gt;. That makes me sad.&lt;/p&gt;
+&lt;p&gt;&lt;strong class=&quot;text-success&quot;&gt;Why we cannot go freely into other countries, especially by promising to work in this country?&lt;/strong&gt; That makes me sad.&lt;/p&gt;
 
 &lt;h2 id=&quot;i-am-an-engineer&quot;&gt;I am an engineer&lt;/h2&gt;
 
@@ -35,6 +35,8 @@ Though you refuse to admit them.
 
 &lt;p&gt;This is exactly the same experience I encountered. By specifying my new location, and sometimes my new company - Apple through a draw, I’ve got the same result, to a lesser extent.&lt;/p&gt;
 
+&lt;p&gt;I also &lt;a href=&quot;http://iscor.me/blog/smashing-conf-san-francisco&quot;&gt;wrote an article&lt;/a&gt; about a great topic: &lt;strong&gt;web performance&lt;/strong&gt;. I didn’t attend the conference in person but I followed the online presentation, thanks to the excellent work of &lt;a href=&quot;https://www.smashingmagazine.com&quot;&gt;Smashing Magazine&lt;/a&gt;, allowing me to thank Patty Toland for her talk.&lt;/p&gt;
+
 &lt;p&gt;Some companies, or maybe bots, sent me job opportunities. Those weren’t qualified according to my skills so I didn’t applied, but living in the American soil is one of the key factors in finding a job, a &lt;del&gt;great&lt;/del&gt; help when we are strangers.&lt;/p&gt;
 
 &lt;p&gt;Some real people, or maybe bots, began following me on social networks, surely because they appreciated my works, or my French Tech spirit… or certainly because I was working for Apple. They believed that. I especially hope that if I really work for one of these boxes, one day, I’ll be followed not for the job but for research content, debates and discussions.&lt;/p&gt;
@@ -47,11 +49,13 @@ Though you refuse to admit them.
   &lt;p&gt;Growth hacking is a process of rapid experimentation across marketing channels and product development to identify the most effective, efficient ways to grow a business. Growth hacking refers to a set of both conventional and unconventional marketing experiments that lead to growth of a business.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So, personal growth hacking is the process of experimentation to grow a personal community, and simply change his biography is a cheap and good way to reach other communities. Indeed, I’ve reached Meteor San Francisco, CEO’s and bots, I was added to lists, but the quality was not there. I didn’t go thoroughly in the process of growth hacking, however by regularly feeding the machine, who knows, maybe I could already have realized my American dream.&lt;/p&gt;
+&lt;p&gt;So, personal growth hacking is the process of experimentation to grow a personal community, and simply change his biography is a cheap and good way to reach other communities.&lt;/p&gt;
+
+&lt;p&gt;Indeed, I’ve reached Meteor San Francisco groups, CEO’s and bots, I was added to lists, but the quality was not there. I didn’t go thoroughly in the process of growth hacking, however by regularly feeding the machine, who knows, maybe I could already have realized my American dream.&lt;/p&gt;
 
 &lt;h2 id=&quot;hope-before-reality&quot;&gt;Hope before reality&lt;/h2&gt;
 
-&lt;p&gt;By this article, I do not apply for permission to work on your soil. But if these words can echo across the Atlantic, you’ll sparkle the 50 stars of my American dream.&lt;/p&gt;
+&lt;p&gt;By this article, I do not apply for permission to work on your soil. &lt;em class=&quot;text-success&quot;&gt;But if these words can echo across the Atlantic, you’ll sparkle the 50 stars of my American dream.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Here my virtual boarding pass to finally go to America and live there forever (or not):&lt;/p&gt;
 
