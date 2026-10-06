@@ -6,7 +6,8 @@ import { localizePath } from '../lib/urls';
 
 interface Props {
   locale: Locale;
-  path: string;
+  /** Hub path of the current page. Archive pages have no twin and omit it. */
+  path?: string;
 }
 
 const { locale, path } = Astro.props;
@@ -19,6 +20,6 @@ const t = useTranslations(locale);
       <span class="brand-mark" aria-hidden="true">S</span>
       iScor
     </a>
-    <LangSwitch locale={locale} path={path} />
+    {path && <LangSwitch locale={locale} path={path} />}
   </div>
 </header>

@@ -27,6 +27,12 @@ const en = {
   'work.ml.title': 'ML and modernised',
   'work.ml.text': 'Models that run in the browser, and old projects rebuilt.',
   'work.soon': 'Coming soon',
+  'archive.label': 'Archive',
+  'archive.published': 'Published in',
+  'archive.note': 'Kept as it was published; it may be out of date.',
+  'archive.back': 'Back to the home page',
+  'archive.index.title': 'Archive',
+  'archive.index.lead': 'Posts and articles written between 2015 and 2017, kept as they were published.',
   'footer.rights': 'Sébastien Correaud',
 } as const;
 
@@ -59,6 +65,12 @@ const fr: Record<Key, string> = {
   'work.ml.title': 'ML et projets modernisés',
   'work.ml.text': 'Des modèles qui tournent dans le navigateur, et d’anciens projets reconstruits.',
   'work.soon': 'Bientôt',
+  'archive.label': 'Archive',
+  'archive.published': 'Publié en',
+  'archive.note': 'Conservé tel que publié ; il peut être dépassé.',
+  'archive.back': 'Retour à l’accueil',
+  'archive.index.title': 'Archives',
+  'archive.index.lead': 'Billets et articles écrits entre 2015 et 2017, conservés tels que publiés.',
   'footer.rights': 'Sébastien Correaud',
 };
 

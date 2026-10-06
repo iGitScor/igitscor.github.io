@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.3.0">Jekyll</generator><link href="http://iscor.me/feed.xml" rel="self" type="application/atom+xml" /><link href="http://iscor.me/" rel="alternate" type="text/html" /><updated>2017-06-21T09:44:27+02:00</updated><id>http://iscor.me/</id><title type="html">iScor’s Blog</title><subtitle>Blog about my works and researches in web development
+</subtitle><entry><title type="html">Growth hacking with America</title><link href="http://iscor.me/blog/personal-growth-hacking" rel="alternate" type="text/html" title="Growth hacking with America" /><published>2017-06-19T00:00:00+02:00</published><updated>2017-06-19T00:00:00+02:00</updated><id>http://iscor.me/blog/personal-growth-hacking</id><content type="html" xml:base="http://iscor.me/blog/personal-growth-hacking">&lt;p&gt;My Dear America,&lt;/p&gt;
+
+&lt;p&gt;I’m not living in your country, but I really want to. And I hope that the following article won’t hurt you…&lt;/p&gt;
+
+&lt;p&gt;In March, the 17th, I mentioned on Twitter, &lt;a href=&quot;http://iscor.me/blog/from-montpellier-to-san-francisco&quot;&gt;my blog&lt;/a&gt;, Github,… everywhere I could, that I was in America, especially in San Francisco. I did that for two main reasons.&lt;/p&gt;
+
+&lt;h2 id=&quot;i-have-a-dream&quot;&gt;I have a dream&lt;/h2&gt;
+
+&lt;p&gt;Since I was young (younger, I’m still young!), I’m dreaming of living in the U.S.A., even if the country does not look as beautiful as the American dream itself. But I’m convinced that realizing some dreams make the life more beautiful and travel is a so wonderful way of life that I must try to achieve it.&lt;/p&gt;
+
+&lt;p&gt;The problem is that conditions to work in America, for a stranger, is hard. Too hard. In an era of free trade, freedom, globalization, we lose the great strength of humanity: &lt;strong class=&quot;text-success&quot;&gt;sharing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote class=&quot;post-blockquote&quot;&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;My dear America, call me a cynic if you wish.
+But I know your lies.
+You know them too, my dear America,
+Though you refuse to admit them.
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong class=&quot;text-success&quot;&gt;Why we cannot go freely into other countries, especially by promising to work in this country?&lt;/strong&gt; That makes me sad.&lt;/p&gt;
+
+&lt;h2 id=&quot;i-am-an-engineer&quot;&gt;I am an engineer&lt;/h2&gt;
+
+&lt;p&gt;The second one is; trust me, I’m an engineer - and I’m not dupe. I know that some companies are very well perceived worldwide (or almost) and being recruited by one of them is like having &lt;a href=&quot;https://www.instagram.com/p/BQLyK9ODnTs/&quot;&gt;the golden ticket&lt;/a&gt;. Of course, I’m talking about GAFAM (Google, Apple, Facebook, Amazon, Microsoft) and PayPal, Airbnb… The same conclusion could be made with professional experience, especially in the United States, but not only.&lt;/p&gt;
+
+&lt;p&gt;And that’s how my &lt;strong&gt;growth hacking&lt;/strong&gt; experience started.&lt;/p&gt;
+
+&lt;h3 id=&quot;growth-hacker-and-the-imposter-syndrome&quot;&gt;Growth hacker and the imposter syndrome&lt;/h3&gt;
+
+&lt;p&gt;I remember that Todd Motto &lt;a href=&quot;https://www.youtube.com/watch?v=oO0b7iplgYY&quot;&gt;talk about the imposter syndrome&lt;/a&gt; after his experience to be promoted expert in Angular.&lt;/p&gt;
+
+&lt;p&gt;This is exactly the same experience I encountered. By specifying my new location, and sometimes my new company - Apple through a draw, I’ve got the same result, to a lesser extent.&lt;/p&gt;
+
+&lt;p&gt;I also &lt;a href=&quot;http://iscor.me/blog/smashing-conf-san-francisco&quot;&gt;wrote an article&lt;/a&gt; about a great topic: &lt;strong&gt;web performance&lt;/strong&gt;. I didn’t attend the conference in person but I followed the online presentation, thanks to the excellent work of &lt;a href=&quot;https://www.smashingmagazine.com&quot;&gt;Smashing Magazine&lt;/a&gt;, allowing me to thank Patty Toland for her talk.&lt;/p&gt;
+
+&lt;p&gt;Some companies, or maybe bots, sent me job opportunities. Those weren’t qualified according to my skills so I didn’t applied, but living in the American soil is one of the key factors in finding a job, a &lt;del&gt;great&lt;/del&gt; help when we are strangers.&lt;/p&gt;
+
+&lt;p&gt;Some real people, or maybe bots, began following me on social networks, surely because they appreciated my works, or my French Tech spirit… or certainly because I was working for Apple. They believed that. I especially hope that if I really work for one of these boxes, one day, I’ll be followed not for the job but for research content, debates and discussions.&lt;/p&gt;
+
+&lt;h3 id=&quot;personal-growth-hacking&quot;&gt;Personal growth hacking&lt;/h3&gt;
+
+&lt;p&gt;Growth hacking is a set of techniques to do cheap marketing. Cheap but effective and qualitative.&lt;/p&gt;
+
+&lt;blockquote class=&quot;post-blockquote&quot;&gt;
+  &lt;p&gt;Growth hacking is a process of rapid experimentation across marketing channels and product development to identify the most effective, efficient ways to grow a business. Growth hacking refers to a set of both conventional and unconventional marketing experiments that lead to growth of a business.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, personal growth hacking is the process of experimentation to grow a personal community, and simply change his biography is a cheap and good way to reach other communities.&lt;/p&gt;
+
+&lt;p&gt;Indeed, I’ve reached Meteor San Francisco groups, CEO’s and bots, I was added to lists, but the quality was not there. I didn’t go thoroughly in the process of growth hacking, however by regularly feeding the machine, who knows, maybe I could already have realized my American dream.&lt;/p&gt;
+
+&lt;h2 id=&quot;hope-before-reality&quot;&gt;Hope before reality&lt;/h2&gt;
+
+&lt;p&gt;By this article, I do not apply for permission to work on your soil. &lt;em class=&quot;text-success&quot;&gt;But if these words can echo across the Atlantic, you’ll sparkle the 50 stars of my American dream.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here my virtual boarding pass to finally go to America and live there forever (or not):&lt;/p&gt;
+
+&lt;div class=&quot;boarding-pass&quot;&gt;
+  &lt;div class=&quot;ticket&quot;&gt;
+    &lt;div class=&quot;clearfix container-fluid&quot;&gt;
+      &lt;div class=&quot;col-xs-4 text-xs-left airline&quot;&gt;JS Airways&lt;/div&gt;
+      &lt;div class=&quot;col-xs-8 text-xs-right boarding&quot;&gt;Boarding pass&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;div class=&quot;flight&quot;&gt;
+        &lt;span class=&quot;jfk&quot;&gt;MPL&lt;/span&gt;
+        &lt;span class=&quot;plane&quot;&gt;&lt;?xml version=&quot;1.0&quot; ?&gt;&lt;svg clip-rule=&quot;evenodd&quot; fill-rule=&quot;evenodd&quot; height=&quot;60&quot; width=&quot;60&quot; image-rendering=&quot;optimizeQuality&quot; shape-rendering=&quot;geometricPrecision&quot; text-rendering=&quot;geometricPrecision&quot; viewBox=&quot;0 0 500 500&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g stroke=&quot;#222&quot;&gt;&lt;line fill=&quot;none&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;30&quot; x1=&quot;300&quot; x2=&quot;55&quot; y1=&quot;390&quot; y2=&quot;390&quot; /&gt;&lt;path d=&quot;M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z&quot; fill=&quot;#222&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;10&quot; /&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/span&gt;
+        &lt;span class=&quot;sfo&quot;&gt;SFO&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;container-fluid row&quot;&gt;
+        &lt;div class=&quot;col-sm-5 col-xs-6 name&quot;&gt;
+          PASSENGER NAME&lt;br /&gt;&lt;span&gt;iScor&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-3 col-xs-6 flight&quot;&gt;
+          FLIGHT N&amp;deg;&lt;br /&gt;&lt;span&gt;CA-S710&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-2 col-xs-3 gate&quot;&gt;
+          GATE&lt;br /&gt;&lt;span&gt;11B&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-2 col-xs-3 seat&quot;&gt;
+          SEAT&lt;br /&gt;&lt;span&gt;34A&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-12 col-xs-6 boardingtime&quot;&gt;
+          BOARDING TIME&lt;br /&gt;&lt;span&gt;10:03PM ON MARCH 2016, 17&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;barcode&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</content><author><name>iScor</name></author><category term="growth hacking" /><category term="usa" /><summary type="html">My Dear America,</summary></entry><entry><title type="html">JS13k - Why you sould participate to game contest ?</title><link href="http://iscor.me/blog/js13k-why-you-should-participate-to-contest" rel="alternate" type="text/html" title="JS13k - Why you sould participate to game contest ?" /><published>2017-03-09T00:00:00+01:00</published><updated>2017-03-09T00:00:00+01:00</updated><id>http://iscor.me/blog/js13k-why-you-should-participate-to-contest</id><content type="html" xml:base="http://iscor.me/blog/js13k-why-you-should-participate-to-contest">&lt;h1 id=&quot;js13kgames---a-javascript-game-contest&quot;&gt;JS13kgames - a javascript game contest&lt;/h1&gt;
+
+&lt;p&gt;Independent video game development is the video game development process of creating indie games; these are video games, commonly created by individual or small teams of video game developers and usually without significant financial support of a video game publisher or other outside source. These games may take years to be built from the ground up or can be completed in a matter of days or even hours depending on complexity, participants, and design goal.&lt;/p&gt;
+
+&lt;p&gt;Development of indie games is the process of creating games which are not affiliated with production groups (as in cinema), generally created by a single person or a group of enthusiasts of development and video games, without financial input from institution composed of publisher or any other professional entity. These games can take years to conceive due to their complexity and / or their graphic appearance, or a couple of weeks in some cases, for example in contests and that’s one of those I’m going to tell you about.&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;A few years ago, I started web development in a professional way, but for me I missed something, an objective, a challenge, a story to tell. Luckily I has help from friends who introduced me the concept of development competition.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-contest&quot;&gt;First contest&lt;/h2&gt;
+
+&lt;p&gt;The first contest was JS1K. &lt;strong&gt;Javascript, performance, limits!&lt;/strong&gt; I finally found my challenge … yes but here, I had not enough confidence in myself and especially too little experience in the development to begin this project. The second contest was JS13k. Always Javascript, less limit and an opportunity to create a video game with a small team. The first attempt was not successful, we were so busy by our work (the paid one) that we could not carry out this project. That was in 2014.&lt;/p&gt;
+
+&lt;center&gt;
+  &lt;p&gt;
+    &lt;img src=&quot;/assets/images/js1k-logo.png&quot; alt=&quot;js1k&quot; class=&quot;img-fluid&quot; /&gt;
+  &lt;/p&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;second-contest&quot;&gt;Second contest&lt;/h2&gt;
+
+&lt;p&gt;The crew behind this contest is friendly with a respectful jury. A bargain to progress, to learn, to be known and above all to have fun! So I tried the adventure in 2015, solo, proposing a game filled with personal references (Mario, Harry Potter, Memento … all more or less well hidden). The lack of time, again it, forced me not to propose my initial idea but I was proud to finish a micro game. Not enough to make addictive its players.&lt;/p&gt;
+
+&lt;p&gt;In 2016, the contest was an opportunity for me to take a new direction with this competition. And this direction is the subject of this article.&lt;/p&gt;
+
+&lt;center&gt;
+  &lt;p&gt;
+    &lt;img src=&quot;/assets/images/js13k-logo.png&quot; alt=&quot;js13k&quot; class=&quot;img-fluid&quot; /&gt;
+  &lt;/p&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;why-should-a-front-end-integrator--developer-participate-in-these-contests&quot;&gt;Why should a front-end integrator / developer participate in these contests?&lt;/h2&gt;
+
+&lt;p&gt;I will not debate about the difference between an integrator and a front developer, it depends on the culture of the person / group to which you are asking this question.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Integrator? Frontend developer? Let’s talk about anyone whom develops in CSS3, with noJS logic and accessibility in line of sight!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My idea was to submit a game exclusively realized in CSS and HTML … idea apparently contrary to the concept of the contest, the creation of a game in Javascript. Yes but after having the confirmation of the team, I began the integration of a game. The integration … of a game.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Is it possible to submit an entry without Javascript? #JavaScript game without Javascript&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;synopsis-of-the-game&quot;&gt;Synopsis of the game&lt;/h3&gt;
+
+&lt;p&gt;Rewrite History with a text-based game (question / answer). Create an &lt;a href=&quot;https://en.wikipedia.org/wiki/Alternate_history&quot;&gt;alternate history&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;During centuries, human has always wanted to travel in time with Javascript, to correct his mistakes … without success. However, you are a robot, maybe you will have more luck, with only CSS?&lt;/p&gt;
+
+&lt;p&gt;For example, if the city of &lt;a href=&quot;https://www.google.fr/maps?q=lublin&amp;amp;um=1&amp;amp;ie=UTF-8&amp;amp;sa=X&amp;amp;ved=0ahUKEwixiILS4IPUAhUCORoKHX5tBCMQ_AUICygC&quot;&gt;Lublin&lt;/a&gt; (in Poland) had never been founded, the contest’s creator would never have been born (or at least would have had a different life). Therefore the developed game could never have been done. It is therefore a temporal anomaly.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/lublin.jpg&quot; alt=&quot;Lublin&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The concept of the game is neither revolutionary nor addictive, perhaps a bit cute when seeing the little robot. No. The game was primarily intended as a proof of concept, a POC. I wanted to develop a game with a complex HTML page and advanced CSS concepts. To simplify, when the player answers, it activates the next question, and a checkbox system (yes, like in a form) “stored” the logic of the game and thus the user’s answers. So yes, of course, when you look at the page itself, the code is just illegible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/js13k.jpg&quot; alt=&quot;Game&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;so-why&quot;&gt;So, why?&lt;/h2&gt;
+
+&lt;p&gt;For all the reasons mentioned in this article, namely:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Always think a website without Javascript&lt;/li&gt;
+  &lt;li&gt;Improve or revise your CSS&lt;/li&gt;
+  &lt;li&gt;Is there really only a good reason?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;going-further&quot;&gt;Going further&lt;/h2&gt;
+
+&lt;center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;How we built the real demo for our fake CSS API client&lt;a href=&quot;https://t.co/u2NhHiNPyy&quot;&gt;https://t.co/u2NhHiNPyy&lt;/a&gt;&lt;a href=&quot;https://twitter.com/hashtag/AprilFools?src=hash&quot;&gt;#AprilFools&lt;/a&gt; &lt;a href=&quot;https://t.co/3NShmiae3d&quot;&gt;pic.twitter.com/3NShmiae3d&lt;/a&gt;&lt;/p&gt;&amp;mdash; Algolia (@algolia) &lt;a href=&quot;https://twitter.com/algolia/status/849540613267574784&quot;&gt;April 5, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;cite&gt;CSS API by Algolia&lt;/cite&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A few months after submitting my game, I came across an article in the Algolia solution, which featured a CSS API (without Javascript). Intrigued, I took a look at what they meant by API CSS. Using Algolia with 1001pharmacies, and being satisfied and impressed by their libraries, I had to break through the secret. And what I discovered was simply that they use the same technique as for my game.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algolia-css-client.png&quot; alt=&quot;CSS API demo&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, in this screenshot, we can see that each chip (e.g Sales, Engineering, …) is a label and linked (in HTML) to a radio button. These radio buttons display or hide elements in the list. In other terms, each person in the list is attached to a job and if the job is selected, the information are readable… by human.&lt;/p&gt;
+
+&lt;p&gt;The main problem of this approach is that the component is not accessible. When a person with a disability try to use or read the content of your web page, they can have surprises.&lt;/p&gt;
+
+&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algolia-css-client.gif&quot; alt=&quot;CSS API demo&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://iscor.me/js13k-2016&quot;&gt;Game demo&lt;/a&gt;&lt;/p&gt;</content><author><name>iScor</name></author><category term="javascript" /><category term="indiedev" /><category term="gamedev" /><category term="web performance" /><category term="css" /><summary type="html">JS13kgames - a javascript game contest</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/ux.svg" /></entry><entry><title type="html">How to migrate front technologies</title><link href="http://iscor.me/blog/how-to-migrate-front-technologies" rel="alternate" type="text/html" title="How to migrate front technologies" /><published>2017-02-10T00:00:00+01:00</published><updated>2017-02-10T00:00:00+01:00</updated><id>http://iscor.me/blog/how-to-migrate-front-technologies</id><content type="html" xml:base="http://iscor.me/blog/how-to-migrate-front-technologies">&lt;h1 id=&quot;study-case&quot;&gt;Study case&lt;/h1&gt;
+
+&lt;p&gt;There were no huge specifications for this project because it was an iterative project using the Scrum method. The need of the site was reduced to a small site, but very inviting with the logic LEAN UX, including search, listings and product sheets. Plus the fact to keep in mind that the site will be expanded at a later stage. The site had to be mobile friendly.&lt;/p&gt;
+
+&lt;p&gt;The main complex problem was to include a sub module (the checkout) into the new site. The fact is, the two projects didn’t have the same tech stack.&lt;/p&gt;
+
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;
+
+&lt;p&gt;Here are the migration technologies details.
+The submodule has the following stack :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap&lt;/li&gt;
+  &lt;li&gt;Symfony&lt;/li&gt;
+  &lt;li&gt;Less&lt;/li&gt;
+  &lt;li&gt;Selenium IDE functional tests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And the new website is developed with these technology choices :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ITCSS with Bootstrap 4 grid&lt;/li&gt;
+  &lt;li&gt;Symfony&lt;/li&gt;
+  &lt;li&gt;Sass&lt;/li&gt;
+  &lt;li&gt;Nightwatch.js automated testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;migration&quot;&gt;Migration&lt;/h2&gt;
+
+&lt;h3 id=&quot;template-migration&quot;&gt;Template migration&lt;/h3&gt;
+
+&lt;p&gt;First of all migrations, the template was the first thing to migrate. Even if the two environments are coded in Twig,
+the principal problem was the CSS framework change. Even if the grid is the same component (the bootstrap one), some utility classes are different.&lt;/p&gt;
+
+&lt;h3 id=&quot;style-migration&quot;&gt;Style migration&lt;/h3&gt;
+
+&lt;p&gt;The second big impact was the change of the preprocessor. I use SCSS which is compiled with node-sass, the compilation will be described later in the webpack part. In the submodule, all the style is written in less.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-new-project-architecture&quot;&gt;The new project architecture&lt;/h4&gt;
+
+&lt;p&gt;My SCSS is split up in different files or so called Sass partials. Working with Sass partials makes it more flexible and easier to maintain. Working like this is a way to keep a good overview on things which makes it more efficient to maintain.&lt;/p&gt;
+
+&lt;p&gt;I split things up like this :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/itcss.png&quot; alt=&quot;ITCSS structure&quot; aria-label=&quot;Assets + Scripts, Settings, Tools, Generic, Elements, Objects, Components and Trumps&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; CSS file is &lt;code class=&quot;highlighter-rouge&quot;&gt;styles.scss&lt;/code&gt;. The only lines of code, in this file, imports the other files. Example :&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
+&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#SETTINGS
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/colors';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/typography';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/spacing';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'01-Settings/responsive';&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
+&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#TOOLS
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/mixins';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/functions';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/responsive';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/images';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/animations';&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'02-Tools/transitions';&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I’ve chosen the &lt;strong&gt;7-1 pattern&lt;/strong&gt; approach, but I include manually all the parts because some of them are environment-dependencies.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-old-project-approach&quot;&gt;The old project approach&lt;/h4&gt;
+
+&lt;p&gt;I won’t describe the old structure, but how I migrate less components in the sass structure.&lt;/p&gt;
+
+&lt;p&gt;The first step was to extract the leanest part of the sass-framework to include it in the submodule. After that, the approach was to integrate less part as a component or trump in the new sass style for the submodule.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*------------------------------------*\
+&lt;/span&gt;    &lt;span class=&quot;cm&quot;&gt;#COMPONENTS
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'06-Components/payment-block';&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;The main reason for success is to not stop at the first failure display, due to pixel-perfect design !&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The success has been achieved especially since the main core, namely the grid, is the same. This is the bootstrap grid, which has been simplified to keep only the necessary but the consistency remains unchanged.&lt;/p&gt;
+
+&lt;h3 id=&quot;bundle-webpack&quot;&gt;Bundle webpack&lt;/h3&gt;
+
+&lt;p&gt;Creation of a webpack bundle permits to migrate step by step.&lt;/p&gt;
+
+&lt;p&gt;The main files are located in the &lt;code class=&quot;highlighter-rouge&quot;&gt;00-Assets&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Load internationalization library&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./i18n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Instanciate translator&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;translator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Translate the document&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;translator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;I18N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;With &lt;em&gt;webpack-loader&lt;/em&gt;, the migration is easier to do. In fact, I used less-loader and sass-loader to combine old and new components. At the end of the migration, I removed useless loaders.&lt;/p&gt;
+
+&lt;p&gt;After style migration, the javascript logic was all integrated in the webpack flow, step by step (or component by component). Plus the fact that the webpack tests code quality, I also fixed some code styling and not optimized code.&lt;/p&gt;
+
+&lt;h3 id=&quot;functional-tests&quot;&gt;Functional tests&lt;/h3&gt;
+
+&lt;p&gt;Another big change was to migrate from &lt;em&gt;Selenium static tests&lt;/em&gt; to an automated test process (with Nightwatch.js)&lt;/p&gt;
+
+&lt;p&gt;I used a &lt;a href=&quot;https://github.com/timjrobinson/seleniumide2nightwatch&quot;&gt;node module&lt;/a&gt; to convert static Selenium test case to javascript test case. I adapted them to load common configuration and not repeat behavior. The generated code is not perfect but the cleaning does not take too many time (switching from xpath to css selector for example)&lt;/p&gt;
+
+&lt;h2 id=&quot;environments&quot;&gt;Environments&lt;/h2&gt;
+
+&lt;p&gt;In webpack, one of the most important problem is to have multiple environments. I split the configuration into 3 parts :&lt;/p&gt;
+
+&lt;h3 id=&quot;common-environment&quot;&gt;Common environment&lt;/h3&gt;
+
+&lt;p&gt;In the common part, we can retrieve common webpack plugins and specific configuration (shared between environments)&lt;/p&gt;
+
+&lt;h3 id=&quot;production-environment&quot;&gt;Production environment&lt;/h3&gt;
+
+&lt;p&gt;In this case, I minify assets, compress and upload them to an Amazon S3 instance.&lt;/p&gt;
+
+&lt;h3 id=&quot;development-environment&quot;&gt;Development environment&lt;/h3&gt;
+
+&lt;p&gt;In this case, I don’t minify assets and use the dev version of the webpack bundle asset. I also add watch mode (for Docker or Vagrant issue) to be focused on the code.&lt;/p&gt;
+
+&lt;p&gt;I also generate automatically a styleguide directly with dev source code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/styleguide_index.png&quot; alt=&quot;Styleguide menu&quot; /&gt;
+&lt;img src=&quot;/assets/images/styleguide_example.png&quot; alt=&quot;Styleguide example&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;Github&lt;/h2&gt;
+
+&lt;p&gt;Go to the demonstration repo for a code example. All of them will be updated all along my researches so you can use them as project dependencies.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn btn-link btn-block&quot; href=&quot;https://github.com/iGitScor/how-to-migrate-front&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Fork it&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Fork it
+  &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also contribute to it by &lt;strong&gt;forking the project&lt;/strong&gt; and make a pull request ;-)&lt;/p&gt;
+
+&lt;h2 id=&quot;going-further&quot;&gt;Going further&lt;/h2&gt;
+
+&lt;p&gt;In the next article, I’ll present the design migration and I’ll specify migration tools&lt;/p&gt;</content><author><name>iScor</name></author><category term="front" /><category term="migration" /><category term="webpack" /><category term="web performance" /><summary type="html">Study case</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/webpack.svg" /></entry><entry><title type="html">Smashing Conf’ San Francisco</title><link href="http://iscor.me/blog/smashing-conf-san-francisco" rel="alternate" type="text/html" title="Smashing Conf' San Francisco" /><published>2016-06-01T00:00:00+02:00</published><updated>2016-06-01T00:00:00+02:00</updated><id>http://iscor.me/blog/smashing-conf-san-francisco</id><content type="html" xml:base="http://iscor.me/blog/smashing-conf-san-francisco">&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
+
+&lt;p&gt;During weeks, I went to workshops about user experience or front-end development… and I learned a lot !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://smashingconf.com/sf-2016/content/01-home/sf16.png&quot; alt=&quot;Patty Toland&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Smashing Conference - San Francisco 2016&lt;/legend&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;blockquote class=&quot;post-blockquote&quot;&gt;
+  &lt;p&gt;
+  As the numbers of people who access the internet continually grow, and the devices they use diversify, one thing is clear: speed and performance are a top priority.
+  Despite this, the average web page size has more than tripled in the past 5 years, and many web techniques, platforms, tools and practices don’t seem to champion performance, or consider its implications. One of the biggest challenges, especially in the early days of mobile and responsive, was simply the absence of good information to build awareness about performance impacts.
+  Luckily, our conversations about performance-related choices are getting better-informed: in the past few years especially, compelling tools and data are being shared that help us measure, track and understand the real state of performance and how it affects our audiences; and techniques are emerging to help make insightful and responsible design and coding choices.
+  &lt;/p&gt;
+  &lt;span class=&quot;blockquote-author&quot;&gt;Smashing Conference - San Francisco 2016&lt;/span&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;speaker&quot;&gt;Speaker&lt;/h2&gt;
+
+&lt;p&gt;Patty Toland is the founder and a partner at Filament Group in Boston.&lt;/p&gt;
+
+&lt;p&gt;You can follow her &lt;em&gt;&lt;a href=&quot;https://twitter.com/pattytoland&quot; target=&quot;_blank&quot;&gt;on Twitter&lt;/a&gt;&lt;/em&gt; or see her at conferences all around the world.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/patty-toland-smashing-conf.jpg&quot; alt=&quot;Patty Toland&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Patty Toland's conference&lt;/legend&gt;
+
+&lt;h2 id=&quot;conference&quot;&gt;Conference&lt;/h2&gt;
+
+&lt;p&gt;The conference talks about :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Make the web work for everyone&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/train-performance.jpg&quot; alt=&quot;Web performance&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Slide preview&lt;/legend&gt;
+
+&lt;p&gt;I won’t speak about the conference content (you can &lt;strong&gt;&lt;a href=&quot;https://vimeo.com/163510675&quot; target=&quot;_blank&quot;&gt;watch it here&lt;/a&gt;&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;h2 id=&quot;my-opinion&quot;&gt;My opinion&lt;/h2&gt;
+
+&lt;p&gt;I really enjoyed this talk because Patty is a good speaker, who know perfectly her subject.
+I usually don’t like conference which topic is about my job especially when the conference is in a generic event about the web.&lt;/p&gt;
+
+&lt;p&gt;But I had already been seduced by Patty conference at the FrontendConf Zurich in 2015. Her approach and her ability are outstanding.&lt;/p&gt;
+
+&lt;p&gt;Although the examples given to illustrate her regularly from those data site or American studies, they are suitable and easily transferable in an European context, for example.&lt;/p&gt;
+
+&lt;p&gt;The example of the slide I’ve extracted is typically a case that a speaker could present in France with the difficulty of access to the web during business travel. Because yes, the Web performance is not just about developing countries but especially accentuated in affluent countries. The contrast is strong between technological advances and the lack of web performance mastery in any position.&lt;/p&gt;
+
+&lt;p&gt;Indeed, the SNCF in France, has always faced these user requests for access to a phone or wireless network especially for long trips. Network quality is also poor in stations and lead us to the question: why are we so behind this ?&lt;/p&gt;
+
+&lt;p&gt;The web performance suffers from the same problem as accessibility. Stereotypes come, all make the link between accessibility and handicapped people, poor neighborhoods and access performance.&lt;/p&gt;
+
+&lt;h2 id=&quot;going-further&quot;&gt;Going further&lt;/h2&gt;
+
+&lt;p&gt;I would add a review to conclude this article.&lt;/p&gt;
+
+&lt;p&gt;Indeed, during months and months in San Francisco, I’ve practised many formats of workshops and conferences, more or less adapted to my profile and my expectation. This review is a satire of those who are web professionals but whom fully discover whole sections of our job during these events. I would just like to express a request to them, can you learn to learn, by yourself and for yourself ?&lt;/p&gt;</content><author><name>iScor</name></author><category term="web performance" /><category term="smashing conf" /><category term="sanfrancisco" /><category term="accessibility" /><summary type="html">April - Workshop month</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/ux.svg" /></entry><entry><title type="html">UX Workshop</title><link href="http://iscor.me/blog/user-experience-workshop" rel="alternate" type="text/html" title="UX Workshop" /><published>2016-05-06T00:00:00+02:00</published><updated>2016-05-06T00:00:00+02:00</updated><id>http://iscor.me/blog/user-experience-workshop</id><content type="html" xml:base="http://iscor.me/blog/user-experience-workshop">&lt;h1 id=&quot;april---workshop-month&quot;&gt;April - Workshop month&lt;/h1&gt;
+
+&lt;p&gt;During weeks, I went to workshops about user experience or front-end development… and I learned a lot !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/intro_flupa.jpg&quot; alt=&quot;FLUPA Workshop&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;User experience workshop presentation&lt;/legend&gt;
+
+&lt;h2 id=&quot;ux-design&quot;&gt;UX Design&lt;/h2&gt;
+
+&lt;p&gt;The first workshop lasted the 6th of April.&lt;/p&gt;
+
+&lt;h3 id=&quot;context&quot;&gt;Context&lt;/h3&gt;
+
+&lt;p&gt;Based on the &lt;strong&gt;&lt;a href=&quot;https://www.amazon.com/M%C3%A9thodes-design-fondamentales-concevoir-interactifs-ebook/dp/B017OFZQMU&quot; target=&quot;_blank&quot;&gt;Carine Lallemand’s book&lt;/a&gt;&lt;/strong&gt;, we initiated passionate about user testing.&lt;/p&gt;
+
+&lt;p&gt;Carine Lallemand is a :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;post-doc UX Researcher at &lt;em&gt;&lt;a href=&quot;https://twitter.com/uni_lu&quot; target=&quot;_blank&quot;&gt;@uni_lu&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;member board for &lt;em&gt;&lt;a href=&quot;http://flupa.eu/&quot; target=&quot;_blank&quot;&gt;@FLUPA (French UX professionals’ association)&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;UX designer/speaker/trainer&lt;/li&gt;
+  &lt;li&gt;Co-author of “Méthodes de design UX”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can follow her &lt;em&gt;&lt;a href=&quot;https://twitter.com/Carilall&quot; target=&quot;_blank&quot;&gt;on Twitter&lt;/a&gt;&lt;/em&gt; or see her at UX conferences.&lt;/p&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+
+&lt;p&gt;The session was split into 3 interviews. I’ll describe each test in the following paragraphs.&lt;/p&gt;
+
+&lt;h4 id=&quot;exploratory-survey&quot;&gt;Exploratory survey&lt;/h4&gt;
+
+&lt;p&gt;This test is very simple. We have, binomial, an interviewer and an interviewee. The first one asks some questions on the second one about the context of the tested system.&lt;/p&gt;
+
+&lt;p&gt;For example, in the context of a marketplace, we should ask these questions :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How old are you ?&lt;/li&gt;
+  &lt;li&gt;Do you buy frequently online ?&lt;/li&gt;
+  &lt;li&gt;What kind of product do you buy online ?&lt;/li&gt;
+  &lt;li&gt;What kind of product do you buy only offline ?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;attrakdiff&quot;&gt;Attrak’diff&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The &lt;strong&gt;AttrakDiff&lt;/strong&gt; questionnaire developed by Hassenzahl and his colleagues in 2003, is a reference tool for researchers in UX. It assesses the hedonic and pragmatic qualities of interactive systems.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The tested system was a checkout process in a marketplace project. Depends on the system, the result has to be analyzed.&lt;/p&gt;
+
+&lt;p&gt;For example an e-commerce website selling beauty products should have hedonic qualities and a checkout should have pragmatic qualities. It is a good objective indicator of success for a Scrum project.&lt;/p&gt;
+
+&lt;p&gt;Everybody played the game and answered approximately 30 questions. Example :&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Simple | o | X | o | o | o | o | o | Complicated&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;scenario&quot;&gt;Scenario&lt;/h4&gt;
+
+&lt;p&gt;For this user test we prepared a unique scenario in order to compare behavior and make a correlation with the previous tests.&lt;/p&gt;
+
+&lt;p&gt;This time there was a test subject and several observers. They were not to influence the tester, only get his impressions, whether good or bad and help him only if he did not find a way to resolve the scenario.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/ux-scenario.jpg&quot; alt=&quot;Workshop&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;review&quot;&gt;Review&lt;/h3&gt;
+
+&lt;p&gt;I was proud to assist to this workshop and to help to organize it.&lt;/p&gt;
+
+&lt;p&gt;On the test results point of view, the team was satisfied of the pragmatism, even if the scenario traces the needs and problems.
+On the organizational point of view, the workshop was a real success with the presence of different profiles (students, marketers, developers, psychologists…)&lt;/p&gt;
+
+&lt;h2 id=&quot;web-development&quot;&gt;Web development&lt;/h2&gt;
+
+&lt;h3 id=&quot;smashing-conf&quot;&gt;Smashing conf&lt;/h3&gt;
+
+&lt;p&gt;I’ll write another post to summarize my journey at the Smashing Magazine Conference.&lt;/p&gt;</content><author><name>iScor</name></author><category term="user experience" /><category term="ux community" /><category term="uxdesign" /><category term="flupa" /><summary type="html">April - Workshop month</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/ux.svg" /></entry><entry><title type="html">From Montpellier to San Francisco</title><link href="http://iscor.me/blog/from-montpellier-to-san-francisco" rel="alternate" type="text/html" title="From Montpellier to San Francisco" /><published>2016-03-28T00:00:00+02:00</published><updated>2016-03-28T00:00:00+02:00</updated><id>http://iscor.me/blog/from-montpellier-to-san-francisco</id><content type="html" xml:base="http://iscor.me/blog/from-montpellier-to-san-francisco">&lt;h1 id=&quot;objective-california--san-francisco&quot;&gt;Objective California : San Francisco&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In the land of the &lt;em&gt;burgers&lt;/em&gt;’ eaters, time plays tricks on &lt;em&gt;me&lt;/em&gt;. One day, &lt;em&gt;I’m&lt;/em&gt; dreaming. The next, &lt;em&gt;my&lt;/em&gt; dream’s becoming reality.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Fascinated since my childhood by the USA, more particularly the big cities, I am finally able to realize my project and to embark, for months, towards the work destination of my dreams. San Francisco, here I am !&lt;/p&gt;
+
+&lt;h2 id=&quot;hello-san-francisco&quot;&gt;Hello San Francisco&lt;/h2&gt;
+
+&lt;p&gt;I arrived in San Francisco at the beginning of the evening. By the way, I haven’t landed in an unknown place because I’ve already travelled in California in 2013. But it’s always a surprise to see the jungle of skyscraper, the crowded streets.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-i-come&quot;&gt;Where I come&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/map__sfo-mpl.png&quot; alt=&quot;Map from Montpellier to San Francisco&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Montpellier - San Francisco&lt;/legend&gt;
+
+&lt;p&gt;I’m a french guy and I come from Montpellier, a small city compared to Sacramento, even if it’s a state capital.&lt;/p&gt;
+
+&lt;blockquote class=&quot;post-blockquote&quot;&gt;
+  &lt;p&gt;
+  Montpellier is a city in southern France. It is the capital of the Languedoc-Roussillon region, as well as the Hérault department. Montpellier is the 8th largest city of France, and is also the fastest growing city in the country over the past 25 years. Nearly one third of the population is students from 3 universities and 3 higher education institutions that are outside the university framework in the city. Located on the south coast of France on the Mediterranean Sea, it is the third-largest French city on the Mediterranean coast after Marseille and Nice.
+  &lt;/p&gt;
+  &lt;a href=&quot;https://en.wikipedia.org/wiki/Montpellier&quot; target=&quot;_blank&quot; class=&quot;blockquote-author&quot;&gt;Wikipedia&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;web-development-project&quot;&gt;Web development project&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Why am I here in California ?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve decided to come here in the United States to follow my dreams and also to work in the web development domain. As you can see in my &lt;a href=&quot;/about.html&quot;&gt;bio page&lt;/a&gt;, I am a front-end developer specialized in the JavaScript language.&lt;/p&gt;
+
+&lt;center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;New in San Francisco, motivated Web developer... a lot of promise :)&lt;a href=&quot;https://twitter.com/hashtag/SanFrancisco?src=hash&quot;&gt;#SanFrancisco&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/WebDevlopment?src=hash&quot;&gt;#WebDevlopment&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Javascript?src=hash&quot;&gt;#Javascript&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Startup?src=hash&quot;&gt;#Startup&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Web?src=hash&quot;&gt;#Web&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sebastien Correaud (@iTweetScor) &lt;a href=&quot;https://twitter.com/iTweetScor/status/710572331375206401&quot;&gt;March 17, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;I have many objectives in my career in San Francisco.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To improve my English,&lt;/li&gt;
+  &lt;li&gt;to become a full-part member of a JavaScript community,&lt;/li&gt;
+  &lt;li&gt;to discover another culture and enjoy life&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I really aim to focus on teaching in the future, to share knowledge about development or about different domains.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/picture__sfo--mini.jpg&quot; alt=&quot;San Francisco break&quot; class=&quot;center-block img-fluid&quot; /&gt;&lt;/p&gt;
+&lt;legend class=&quot;mark text-xs-center&quot;&gt;Sunny evening near Levi's Plaza&lt;/legend&gt;
+
+&lt;h2 id=&quot;javascript-community&quot;&gt;JavaScript community&lt;/h2&gt;
+
+&lt;p&gt;As I said before, I am a front-end developer, even a JavaScript full stack developer. You can discover my projects on &lt;a href=&quot;https://www.github.com/iGitScor&quot;&gt;my Github page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I hate enumerate all the frameworks or library I’ve used or I excelled in but I can say that I’m able to develop the back-end and also the front-end part of a website or web application.&lt;/p&gt;
+
+&lt;p&gt;I’ve chosen to focus to &lt;strong&gt;&lt;a href=&quot;https://www.meteor.com/&quot; target=&quot;_blank&quot;&gt;meteor&lt;/a&gt;&lt;/strong&gt; because I like the isomorphic principle. I often develop with &lt;strong&gt;node.js&lt;/strong&gt; as a back-end and &lt;strong&gt;Angular&lt;/strong&gt; as a front-end framework. I also love to create small prototypes in a few days with so many possibilities.&lt;/p&gt;
+
+&lt;p&gt;I love to integrate the fact that all developers should learn concepts, not languages.&lt;/p&gt;
+
+&lt;center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;fr&quot; dir=&quot;ltr&quot;&gt;&amp;quot;Apprenez des concepts, pas des frameworks&amp;quot; &lt;a href=&quot;https://twitter.com/hashtag/BlendWebMix?src=hash&quot;&gt;#BlendWebMix&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/javascript?src=hash&quot;&gt;#javascript&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/angularjs?src=hash&quot;&gt;#angularjs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sebastien Correaud (@iTweetScor) &lt;a href=&quot;https://twitter.com/iTweetScor/status/659305682148196353&quot;&gt;October 28, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;cite&gt;(English) Learn concepts, not frameworks&lt;/cite&gt;
+&lt;/center&gt;</content><author><name>iScor</name></author><category term="flight" /><category term="montpellier" /><category term="sanfrancisco" /><category term="javascript community" /><category term="meteor" /><summary type="html">Objective California : San Francisco</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://iscor.me/sfo.svg" /></entry></feed>

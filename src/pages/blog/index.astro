@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import ArchiveLayout from '../../layouts/ArchiveLayout.astro';
+import { useTranslations } from '../../i18n/ui';
+
+// Unlinked entry point to the archive: reachable by URL, absent from navigation and sitemap.
+const t = useTranslations('en');
+const entries = (await getCollection('archive')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const month = new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric' });
+---
+
+<ArchiveLayout
+  lang="en"
+  title={t('archive.index.title')}
+  description={t('archive.index.lead')}
+  permalink="/blog/"
+>
+  <section class="post">
+    <header class="post-head">
+      <p class="eyebrow">2015 – 2017</p>
+      <h1>{t('archive.index.title')}</h1>
+      <p class="lead">{t('archive.index.lead')}</p>
+    </header>
+    <ul class="archive-list">
+      {
+        entries.map(({ data }) => (
+          <li>
+            <time datetime={data.date.toISOString().slice(0, 10)}>{month.format(data.date)}</time>
+            <a href={data.permalink} hreflang={data.lang} lang={data.lang}>
+              {data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="post-foot">
+      <a href="/">← {t('archive.back')}</a>
+    </p>
+  </section>
+</ArchiveLayout>

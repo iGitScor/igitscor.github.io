@@ -1,0 +1,40 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import ArchiveLayout from '../layouts/ArchiveLayout.astro';
+import { useTranslations } from '../i18n/ui';
+import { localizePath } from '../lib/urls';
+
+interface Props {
+  entry: CollectionEntry<'archive'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const t = useTranslations(data.lang);
+const { Content } = await render(entry);
+const published = new Intl.DateTimeFormat(data.lang, { month: 'long', year: 'numeric' }).format(data.date);
+---
+
+<ArchiveLayout lang={data.lang} title={data.title} description={data.description} permalink={data.permalink}>
+  <article class="post">
+    <p class="archive-note">
+      <strong>{t('archive.label')}</strong>
+      <span>
+        {t('archive.published')}
+        <time datetime={data.date.toISOString().slice(0, 10)}>{published}</time>.
+        {t('archive.note')}
+      </span>
+    </p>
+    <header class="post-head">
+      {data.type && <p class="eyebrow">{data.type}</p>}
+      <h1>{data.title}</h1>
+      {data.tagline && <p class="lead">{data.tagline}</p>}
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    <p class="post-foot">
+      <a href={localizePath('/', data.lang)}>← {t('archive.back')}</a>
+    </p>
+  </article>
+</ArchiveLayout>

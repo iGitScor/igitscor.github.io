@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // The archive stays reachable at its old URLs but is kept out of the sitemap.
-const hubPaths = new Set(['/', '/projects/', '/about/', '/fr/', '/fr/projects/', '/fr/about/']);
+const hubPaths = new Set(['/', '/projects', '/about', '/fr', '/fr/projects', '/fr/about']);
+const isHubUrl = (page) => hubPaths.has(new URL(page).pathname.replace(/(.)\/$/, '$1'));
 
 export default defineConfig({
   site: 'https://iscor.me',
@@ -18,7 +19,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => hubPaths.has(new URL(page).pathname),
+      filter: isHubUrl,
       i18n: { defaultLocale: 'en', locales: { en: 'en', fr: 'fr' } },
     }),
   ],

@@ -1,0 +1,17 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ArchiveEntry from '../../components/ArchiveEntry.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('archive', ({ data }) => data.kind === 'post');
+  return posts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+interface Props {
+  entry: CollectionEntry<'archive'>;
+}
+
+const { entry } = Astro.props;
+---
+
+<ArchiveEntry entry={entry} />

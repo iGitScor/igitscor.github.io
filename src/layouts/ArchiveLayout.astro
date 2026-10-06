@@ -1,0 +1,42 @@
+---
+import '@fontsource-variable/outfit';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/archive.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site, type Locale } from '../data/site';
+
+interface Props {
+  /** Language of the archived content, which is not the hub locale of the URL. */
+  lang: Locale;
+  title: string;
+  description: string;
+  /** Legacy path exactly as it was published, for example `/blog/<slug>`. */
+  permalink: string;
+}
+
+const { lang, title, description, permalink } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{`${title} · ${site.name}`}</title>
+    <meta name="description" content={description.trim()} />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={new URL(permalink, site.url).href} />
+    <meta name="theme-color" content="#f0f0e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e14" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+  <body>
+    <Header locale={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={lang} />
+  </body>
+</html>
