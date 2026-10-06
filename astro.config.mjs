@@ -19,6 +19,10 @@ export default defineConfig({
     defaultLocale: 'en',
     routing: { prefixDefaultLocale: false },
   },
+  markdown: {
+    // Code blocks follow the page theme; the dark half is switched on in archive.css.
+    shikiConfig: { themes: { light: 'github-light-default', dark: 'github-dark-default' } },
+  },
   integrations: [
     sitemap({
       filter: isHubUrl,

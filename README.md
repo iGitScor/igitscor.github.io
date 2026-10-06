@@ -12,6 +12,7 @@ Requires Node 22.12 or later.
 npm install
 npm run dev      # http://localhost:4321
 npm run build    # type check, build, then verify dist/ (see below)
+npm run test:e2e # after a build: accessibility and layout, light and dark, desktop and phone
 ```
 
 ## Content

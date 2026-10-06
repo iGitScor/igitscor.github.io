@@ -27,6 +27,9 @@ jobs:
       - run: npm ci
       # Type check, build, then verify legacy URLs and links in dist/.
       - run: npm run build
+      # Accessibility and layout checks in both themes, at desktop and phone widths.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist

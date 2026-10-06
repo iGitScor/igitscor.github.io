@@ -135,6 +135,18 @@
   font-size: inherit;
 }
 
+.prose pre {
+  border: 1px solid var(--border);
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+}
+
 .post-foot {
   margin-top: clamp(40px, 6vw, 64px);
   font-weight: 600;
@@ -182,13 +194,12 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 10px 16px;
-  background: #bf4e6c;
+  background: #a63c5a;
   color: #fff;
   font-size: 20px;
 }
 
 .bp-head span {
-  color: rgba(255, 255, 255, 0.75);
   font-size: 16px;
 }
 
@@ -230,12 +241,12 @@
 .bp-barcode {
   height: 34px;
   padding: 0;
-  border-top: 8px solid #bf4e6c;
-  border-bottom: 8px solid #bf4e6c;
+  border-top: 8px solid #a63c5a;
+  border-bottom: 8px solid #a63c5a;
   background:
     repeating-linear-gradient(90deg, #222 0 2px, transparent 2px 5px, #222 5px 6px, transparent 6px 10px, #222 10px 13px, transparent 13px 15px)
       16px 0 / 110px 100% no-repeat,
-    #bf4e6c;
+    #a63c5a;
 }
 
 /* Archive index */

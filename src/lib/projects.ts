@@ -1,11 +1,12 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { ProjectSection } from '../data/sections';
+import { projectSections, type ProjectSection } from '../data/sections';
 
 export type Project = CollectionEntry<'projects'>;
 
 export async function getProjects(): Promise<Project[]> {
   const projects = await getCollection('projects');
-  return projects.sort((a, b) => a.data.order - b.data.order);
+  const rank = ({ data }: Project) => projectSections.indexOf(data.section) * 100 + data.order;
+  return projects.sort((a, b) => rank(a) - rank(b));
 }
 
 /** Projects of a section. The ML section also lists every project tagged `ml`. */
