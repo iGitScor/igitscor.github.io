@@ -20,11 +20,22 @@ npm run test:e2e # after a build: accessibility and layout, light and dark, desk
 | What | Where |
 |---|---|
 | Projects | `src/content/projects/*.yaml`, one file per project, every text in `en` and `fr` |
+| Case studies | `src/content/case-studies/{en,fr}/<project id>.md`, one file per language |
 | Archived posts and articles | `src/content/archive/*.md` |
 | Interface strings | `src/i18n/ui.ts` |
 | Resume block | `src/data/resume.{en,fr}.json`, refreshed with `npm run sync:resume` from a checkout of the [resume repository](https://github.com/iGitScor/resume) next to this one |
 
 A missing translation fails the build.
+
+## Images
+
+Run these by hand when their source changes; the build never calls them.
+
+| Script | What it writes |
+|---|---|
+| `node scripts/capture-screenshots.mjs` | Project covers in `src/assets/projects/`, captured from the live sites |
+| `node scripts/build-icons.mjs` | `favicon.ico` and `apple-touch-icon.png`, from `public/favicon.svg` |
+| `node scripts/build-og.mjs` | `public/og.{en,fr}.png`, the share images, from the built home page (build first, then build again) |
 
 ## What the build verifies
 
@@ -34,7 +45,8 @@ A missing translation fails the build.
 - an internal link needs a redirect, or a redirect stub points nowhere;
 - a page would shadow one of the project pages served under the same domain (`src/data/reserved-paths.json`);
 - a link points to a GitHub repository that is not listed in `src/data/public-repos.json`;
-- a hub page lacks its twin in the other language, or ships a script.
+- an image has no width and height;
+- a hub page lacks its twin in the other language, or ships an executable script.
 
 ## Routes to leave alone
 
