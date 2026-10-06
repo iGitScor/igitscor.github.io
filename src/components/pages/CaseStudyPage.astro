@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+import type { CaseStudyProps } from '../../lib/case-studies';
+import { localizePath } from '../../lib/urls';
+
+interface Props extends CaseStudyProps {
+  locale: Locale;
+}
+
+const { locale, study, project } = Astro.props;
+const { data } = project;
+const t = useTranslations(locale);
+const { Content } = await render(study);
+const projectsUrl = localizePath('/projects/', locale);
+---
+
+<BaseLayout
+  locale={locale}
+  path={`/projects/${project.id}/`}
+  title={study.data.title}
+  description={study.data.description}
+>
+  <article>
+    <header class="page-head">
+      <div class="wrap wrap-narrow">
+        <p class="eyebrow">{t(`section.${data.section}.title`)} · {t('card.caseStudy')}</p>
+        <h1>{data.name}</h1>
+        <p class="lead">{data.tagline[locale]}</p>
+        <ul class="chips">
+          {data.stack.map((tech) => <li>{tech}</li>)}
+        </ul>
+        <p class="card-links">
+          {
+            data.url && (
+              <a class="link-arrow" href={data.url}>
+                {t('card.visit')}
+                <span class="visually-hidden"> {data.name}</span>
+              </a>
+            )
+          }
+          {
+            data.repo && (
+              <a class="link-arrow" href={`https://github.com/${data.repo}`}>
+                {t('card.source')}
+                <span class="visually-hidden"> {data.name}</span>
+              </a>
+            )
+          }
+        </p>
+      </div>
+    </header>
+
+    <div class="section">
+      <div class="wrap wrap-narrow">
+        {
+          data.cover && data.coverAlt && (
+            <Image class="study-cover" src={data.cover} alt={data.coverAlt[locale]} width={1280} />
+          )
+        }
+        <div class="prose">
+          <Content />
+        </div>
+        <p class="section-more">
+          <a href={projectsUrl}>← {t('study.back')}</a>
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

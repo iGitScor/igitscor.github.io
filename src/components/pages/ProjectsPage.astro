@@ -4,6 +4,7 @@ import ProjectCard from '../ProjectCard.astro';
 import { projectSections } from '../../data/sections';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
+import { caseStudyUrls } from '../../lib/case-studies';
 import { getProjects, inSection } from '../../lib/projects';
 
 interface Props {
@@ -13,6 +14,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const projects = await getProjects();
+const studies = await caseStudyUrls(locale);
 const sections = projectSections
   .map((section) => ({ section, entries: inSection(projects, section) }))
   .filter(({ entries }) => entries.length > 0);
@@ -62,7 +64,7 @@ const sections = projectSections
                   </div>
                 </article>
               ) : (
-                <ProjectCard project={project} locale={locale} />
+                <ProjectCard project={project} locale={locale} caseStudyUrl={studies.get(project.id)} />
               ),
             )}
           </div>

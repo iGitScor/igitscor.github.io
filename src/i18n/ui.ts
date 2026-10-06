@@ -43,6 +43,8 @@ const en = {
   'card.play': 'Play',
   'card.source': 'Source code',
   'card.details': 'Details',
+  'card.caseStudy': 'Case study',
+  'study.back': 'All projects',
   'status.source': 'Code only',
   'status.archived': 'Archived',
 
@@ -115,6 +117,8 @@ const fr: Record<UiKey, string> = {
   'card.play': 'Jouer',
   'card.source': 'Code source',
   'card.details': 'Détails',
+  'card.caseStudy': 'Étude de cas',
+  'study.back': 'Tous les projets',
   'status.source': 'Code uniquement',
   'status.archived': 'Archivé',
 

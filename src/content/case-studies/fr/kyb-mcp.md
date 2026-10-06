@@ -1,0 +1,43 @@
+---
+title: "kyb-mcp : apprendre le Model Context Protocol en l’utilisant en entier"
+description: Un serveur MCP pour les vérifications KYB (Know Your Business) d’entreprises françaises, conçu comme un projet d’apprentissage qui utilise toutes les primitives du protocole.
+---
+## Le problème
+
+Une vérification KYB (Know Your Business) commence toujours par les mêmes recherches : l’entreprise existe-t-elle, qui la dirige, que fait-elle, et qu’avions-nous conclu la dernière fois ?
+
+Le Model Context Protocol compte plus de primitives que les seuls outils. Je voulais un projet qui ait besoin de chacune pour une vraie raison ; je l’ai donc construit autour de ces recherches.
+
+## Ce que j’ai construit
+
+Un serveur MCP qui interroge le registre français des entreprises, via l’API publique [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/), et tient des dossiers de revue. Claude Code, claude.ai ou tout autre client MCP peut s’en servir, en stdio ou en Streamable HTTP.
+
+| Primitive | Noms | À quoi elle sert |
+|---|---|---|
+| Outils | `search_companies`, `get_company`, `find_by_person` | Recherches typées dans le registre |
+| Outils | `create_dossier`, `add_note`, `set_status`, `list_dossiers`, `get_dossier` | Le dossier de revue et ses notes |
+| Outil | `archive_dossier` | Demande d’abord confirmation à l’utilisateur (élicitation) |
+| Outil | `draft_risk_summary` | Demande au modèle du client de rédiger la synthèse (sampling) |
+| Outil | `bulk_check` | Indique sa progression et peut être annulé |
+| Ressources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Des vues en lecture seule qu’un client peut joindre |
+| Prompts | `kyb_review`, `compare_companies` | Un déroulé prêt à l’emploi, avec l’entreprise jointe |
+
+## Comment ça marche
+
+**Un client respectueux d’une API publique.** Chaque appel au registre passe par un seul client HTTP, limité à 5 requêtes par seconde, sous la limite publique de 7, avec un cache de 60 secondes. Les dates de naissance des dirigeants sont retirées avant que quoi que ce soit ne sorte du processus.
+
+**Un stockage derrière un port.** Les dossiers sont derrière une interface de dépôt avec deux adaptateurs : en mémoire, pour que le serveur tourne sans aucune configuration, et PostgreSQL pour un usage durable.
+
+**Pas de modèle embarqué.** Quand une synthèse est nécessaire, le serveur demande au modèle du client connecté de la rédiger, puis l’enregistre comme une note.
+
+**Un HTTP sans état.** Le transport Streamable HTTP ne garde aucune session, ce qui convient à un hébergement serverless, et il contrôle l’en-tête `Host` contre le DNS rebinding.
+
+Le serveur a 23 tests hors ligne, et chaque version étiquetée publie une image Docker.
+
+## Ce que j’ai appris
+
+- Chaque primitive a un rôle distinct. Les outils agissent, les ressources se lisent, les prompts emballent un déroulé, et l’élicitation comme le sampling rendent une décision à l’utilisateur ou au modèle du client.
+- Les contraintes d’hébergement remontent jusqu’aux choix de protocole : c’est un transport sans état qui rend possible un déploiement serverless.
+- Les compromis méritent d’être écrits : chacun a son compte rendu de décision dans le dépôt.
+
+Reste à faire avant d’exposer publiquement les outils d’écriture : OAuth 2.1, la télémétrie, et la publication dans le registre MCP.

@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // The archive stays reachable at its old URLs but is kept out of the sitemap.
-const hubPaths = new Set(['/', '/projects', '/about', '/fr', '/fr/projects', '/fr/about']);
-const isHubUrl = (page) => hubPaths.has(new URL(page).pathname.replace(/(.)\/$/, '$1'));
+const hubPath = /^(\/fr)?(|\/about|\/projects(\/[a-z0-9-]+)?)$/;
+const isHubUrl = (page) => hubPath.test(new URL(page).pathname.replace(/\/$/, ''));
 // GitHub Pages answers /fr with a redirect, so the sitemap lists /fr/.
 const withSlash = (url) => url.replace(/([^/])$/, '$1/');
 

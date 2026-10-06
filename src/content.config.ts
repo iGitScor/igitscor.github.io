@@ -51,6 +51,16 @@ const projects = defineCollection({
       .refine((project) => project.url || project.repo, { message: 'a project needs a url or a public repo' }),
 });
 
+// Long-form pages about a project, one file per language: `en/<project id>.md`
+// and `fr/<project id>.md`. src/lib/case-studies.ts checks that both exist.
+const caseStudies = defineCollection({
+  loader: glob({ base: './src/content/case-studies', pattern: '{en,fr}/*.md' }),
+  schema: z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+  }),
+});
+
 // Old posts and articles, kept at their original URLs. `entry.id` is the slug.
 const archive = defineCollection({
   loader: glob({ base: './src/content/archive', pattern: '*.md' }),
@@ -71,4 +81,4 @@ const archive = defineCollection({
   }),
 });
 
-export const collections = { projects, archive };
+export const collections = { projects, caseStudies, archive };

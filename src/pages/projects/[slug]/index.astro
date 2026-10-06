@@ -1,0 +1,10 @@
+---
+import CaseStudyPage from '../../../components/pages/CaseStudyPage.astro';
+import { caseStudyPaths, type CaseStudyProps } from '../../../lib/case-studies';
+
+export const getStaticPaths = () => caseStudyPaths('en');
+
+type Props = CaseStudyProps;
+---
+
+<CaseStudyPage locale="en" {...Astro.props} />

@@ -7,6 +7,7 @@ import { projectSections } from '../../data/sections';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
 import { getProjects, inSection } from '../../lib/projects';
+import { caseStudyUrls } from '../../lib/case-studies';
 import { getResume, yearOf } from '../../lib/resume';
 import { localizePath } from '../../lib/urls';
 
@@ -22,6 +23,7 @@ const current = work.find((job) => job.endDate === null);
 const projects = await getProjects();
 const featured = projects.filter(({ data }) => data.featured);
 const projectsUrl = localizePath('/projects/', locale);
+const studies = await caseStudyUrls(locale);
 const aboutUrl = localizePath('/about/', locale);
 const sections = projectSections.filter((section) => inSection(projects, section).length > 0);
 ---
@@ -57,7 +59,7 @@ const sections = projectSections.filter((section) => inSection(projects, section
         <h2>{t('home.featured.title')}</h2>
       </div>
       <div class="cards">
-        {featured.map((project) => <ProjectCard project={project} locale={locale} compact />)}
+        {featured.map((project) => <ProjectCard project={project} locale={locale} compact caseStudyUrl={studies.get(project.id)} />)}
       </div>
     </div>
   </section>

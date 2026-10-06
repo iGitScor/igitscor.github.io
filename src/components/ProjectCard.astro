@@ -11,9 +11,11 @@ interface Props {
   level?: 2 | 3;
   /** Leave the sub-items out, for the home page. */
   compact?: boolean;
+  /** Set when the project has a case-study page. */
+  caseStudyUrl?: string;
 }
 
-const { project, locale, level = 3, compact = false } = Astro.props;
+const { project, locale, level = 3, compact = false, caseStudyUrl } = Astro.props;
 const { data } = project;
 const t = useTranslations(locale);
 const Heading = `h${level}` as 'h2' | 'h3';
@@ -65,6 +67,14 @@ const items = compact ? [] : data.items;
     }
 
     <p class="card-links">
+      {
+        caseStudyUrl && (
+          <a class="link-arrow" href={caseStudyUrl}>
+            {t('card.caseStudy')}
+            <span class="visually-hidden"> {data.name}</span>
+          </a>
+        )
+      }
       {
         data.url && (
           <a class="link-arrow" href={data.url}>
