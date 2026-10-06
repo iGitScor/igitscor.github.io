@@ -4,8 +4,8 @@ order: 2
 status: live
 url: https://list.iscor.me
 tagline:
-  en: More than 200 bucket-list experiences to filter, explore and track.
-  fr: Plus de 200 expériences de bucket list à filtrer, explorer et suivre.
+  en: A bucket list to filter, explore and track.
+  fr: Une bucket list à filtrer, explorer et suivre.
 summary:
   en: >-
     A bucket-list app, in French, with a hidden 2D story view. Import any list and it is sorted
@@ -22,3 +22,7 @@ mlNote:
   fr: >-
     Trois niveaux de classification dans le navigateur : un lexique de mots-clés, un modèle d’embeddings de 9 Mo
     distillé depuis multilingual-e5-small, et le modèle complet en ONNX et WebAssembly.
+cover: ../../assets/projects/bucket-list.jpg
+coverAlt:
+  en: "Bucket List: the list of experiences with its category filters"
+  fr: "Bucket List : la liste d’expériences et ses filtres par catégorie"

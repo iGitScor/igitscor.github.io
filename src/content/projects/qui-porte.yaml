@@ -16,3 +16,7 @@ summary:
     Chacun évalue le poids d’une décision, et l’application choisit le rituel adapté : une roulette
     pour les choix légers, un contrat explicite pour les vrais. On rejoint par lien, sans compte.
 stack: [TypeScript, Cloudflare Workers, Durable Objects, WebSockets]
+cover: ../../assets/projects/qui-porte.jpg
+coverAlt:
+  en: "The start screen of Qui porte ?, inviting you to create a group"
+  fr: "L’écran d’accueil de Qui porte ?, qui invite à créer un groupe"

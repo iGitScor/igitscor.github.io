@@ -117,8 +117,11 @@
 }
 
 /* Long identifiers in cells break rather than push the table off a phone screen. */
-.prose :is(th, td) {
+.prose td code {
   overflow-wrap: anywhere;
+}
+
+.prose :is(th, td) {
   padding: 10px 12px;
   border-bottom: 1px solid var(--line);
   text-align: left;

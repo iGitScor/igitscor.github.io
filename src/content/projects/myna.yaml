@@ -23,3 +23,7 @@ mlNote:
   fr: >-
     Les voix neuronales (Piper VITS) tournent dans le navigateur avec ONNX Runtime Web, et un outil compagnon
     entraîne une voix à partir de vos enregistrements avec PyTorch, sur votre machine.
+cover: ../../assets/projects/myna.png
+coverAlt:
+  en: "The Myna episode editor: a script, its blocks and the export panel"
+  fr: "L’éditeur d’épisode de Myna : un script, ses blocs et le panneau d’export"

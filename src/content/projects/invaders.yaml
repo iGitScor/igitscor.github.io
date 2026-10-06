@@ -15,3 +15,7 @@ summary:
     sur la carte de tous les invaders, retrouvez ceux qui vous manquent, puis planifiez et optimisez
     un parcours avec export GPX.
 stack: [TypeScript, Vite, Leaflet]
+cover: ../../assets/projects/invaders.jpg
+coverAlt:
+  en: "The start screen of Flash Invaders Tracker"
+  fr: "L’écran d’accueil de Flash Invaders Tracker"
