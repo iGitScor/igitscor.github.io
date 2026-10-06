@@ -1,0 +1,18 @@
+name: Qui porte ?
+section: personal
+order: 3
+status: live
+url: https://mental-load.iscor.me
+tagline:
+  en: Who carries this decision?
+  fr: Qui porte cette décision ?
+summary:
+  en: >-
+    A real-time app for couples and groups to share the mental load of decisions. Everyone rates
+    how heavy a decision feels, and the app picks a ritual to match: a roulette for light choices,
+    an explicit contract for the real ones. You join by link, with no account.
+  fr: >-
+    Une application en temps réel pour partager, à deux ou en groupe, la charge mentale des décisions.
+    Chacun évalue le poids d’une décision, et l’application choisit le rituel adapté : une roulette
+    pour les choix légers, un contrat explicite pour les vrais. On rejoint par lien, sans compte.
+stack: [TypeScript, Cloudflare Workers, Durable Objects, WebSockets]

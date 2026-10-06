@@ -1,0 +1,44 @@
+name: Games
+section: personal
+order: 2
+featured: true
+status: live
+url: https://games.iscor.me
+tagline:
+  en: Small games made for fun.
+  fr: De petits jeux faits pour le plaisir.
+summary:
+  en: Small browser games. Pick one and play, with no install and no account.
+  fr: De petits jeux dans le navigateur. Choisissez-en un et jouez, sans installation ni compte.
+stack: [TypeScript, Three.js, React]
+items:
+  - name: Clock Out
+    url: https://games.iscor.me/clock-out/
+    cover: ../../assets/projects/clock-out.jpg
+    blurb:
+      en: >-
+        A 3D stealth game. The workday ends at six; your manager’s does not. Get from your desk
+        to the street without anyone handing you “just five minutes” of work.
+      fr: >-
+        Un jeu d’infiltration en 3D. La journée finit à dix-huit heures, pas celle de votre manager.
+        Rejoignez la rue sans que personne ne vous confie « juste cinq minutes » de travail.
+  - name: Conspiracy
+    url: https://games.iscor.me/conspiracy/
+    cover: ../../assets/projects/conspiracy.jpg
+    blurb:
+      en: >-
+        A card game where secret societies scheme for world domination. Build a power structure,
+        seize groups, bribe, betray. Hot-seat and bots.
+      fr: >-
+        Un jeu de cartes où des sociétés secrètes complotent pour dominer le monde. Bâtissez une structure
+        de pouvoir, emparez-vous de groupes, corrompez, trahissez. À plusieurs sur le même écran, ou contre des bots.
+  - name: Unmade
+    url: https://games.iscor.me/unmade/
+    cover: ../../assets/projects/unmade.jpg
+    blurb:
+      en: >-
+        A sandbox with a robot and a time machine. Erase a discovery from the past and watch
+        the present rearrange itself.
+      fr: >-
+        Un bac à sable avec un robot et une machine à remonter le temps. Effacez une découverte du passé
+        et regardez le présent se réorganiser.

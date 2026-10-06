@@ -1,0 +1,13 @@
+name: webpack-content-replacer-plugin
+section: earlier
+order: 2
+status: archived
+period: "2018"
+repo: iGitScor/webpack-content-replacer-plugin
+tagline:
+  en: Replace content in files during a webpack build.
+  fr: Remplacer du contenu dans des fichiers pendant un build webpack.
+summary:
+  en: A webpack plugin that replaces content in files as part of the build.
+  fr: Un plugin webpack qui remplace du contenu dans des fichiers au cours du build.
+stack: [JavaScript, webpack]

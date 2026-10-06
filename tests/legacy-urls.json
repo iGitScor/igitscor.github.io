@@ -1,9 +1,9 @@
 [
   { "path": "/", "status": 200 },
   { "path": "/feed.xml", "status": 200 },
-  { "path": "/about", "status": 301, "pending": true },
-  { "path": "/about/", "status": 200, "pending": true },
-  { "path": "/projects.html", "status": 200, "pending": true },
+  { "path": "/about", "status": 301 },
+  { "path": "/about/", "status": 200 },
+  { "path": "/projects.html", "status": 200 },
   { "path": "/tags.html", "status": 200 },
   { "path": "/categories.html", "status": 200 },
 

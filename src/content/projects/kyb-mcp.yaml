@@ -1,0 +1,20 @@
+name: kyb-mcp
+section: ai
+order: 1
+featured: true
+status: source
+repo: iGitScor/kyb-mcp
+tagline:
+  en: A KYB (Know Your Business) workbench exposed over the Model Context Protocol.
+  fr: Un atelier KYB (Know Your Business) exposé via le Model Context Protocol.
+summary:
+  en: >-
+    An MCP server that searches the French company registry and keeps reviewable KYB dossiers,
+    for Claude or any other MCP client. A learning project that uses every MCP primitive:
+    tools, resources, prompts, completions, elicitation and sampling.
+  fr: >-
+    Un serveur MCP qui interroge le registre français des entreprises et tient des dossiers KYB révisables,
+    pour Claude ou tout autre client MCP. Un projet d’apprentissage qui utilise toutes les primitives MCP :
+    outils, ressources, prompts, complétions, élicitation et sampling.
+stack: [Python, MCP, PostgreSQL, Docker]
+tags: [ai]

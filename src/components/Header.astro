@@ -12,6 +12,10 @@ interface Props {
 
 const { locale, path } = Astro.props;
 const t = useTranslations(locale);
+const links = [
+  { path: '/projects/', label: t('nav.projects') },
+  { path: '/about/', label: t('nav.about') },
+];
 ---
 
 <header class="site-header">
@@ -20,6 +24,15 @@ const t = useTranslations(locale);
       <span class="brand-mark" aria-hidden="true">S</span>
       iScor
     </a>
+    <nav class="site-nav" aria-label={t('nav.label')}>
+      {
+        links.map((link) => (
+          <a href={localizePath(link.path, locale)} aria-current={link.path === path ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
     {path && <LangSwitch locale={locale} path={path} />}
   </div>
 </header>

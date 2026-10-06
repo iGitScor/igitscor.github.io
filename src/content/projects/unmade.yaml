@@ -1,0 +1,23 @@
+name: Unmade
+section: modernised
+order: 1
+status: live
+period: 2016 → 2026
+url: https://games.iscor.me/unmade/
+tagline:
+  en: A 2016 js13k entry, rebuilt.
+  fr: Un jeu js13k de 2016, reconstruit.
+summary:
+  en: >-
+    In 2016 I wrote Robot time machine for the js13kGames contest: a time-travel quiz made of
+    CSS checkboxes, with no JavaScript at all. Unmade is its modern remake, with 62 endings and
+    156 real events, in English and French.
+  fr: >-
+    En 2016, j’ai écrit Robot time machine pour le concours js13kGames : un quiz de voyage dans le temps
+    fait de cases à cocher CSS, sans aucun JavaScript. Unmade en est le remake moderne, avec 62 fins
+    et 156 événements réels, en français et en anglais.
+stack: [React, TypeScript]
+cover: ../../assets/projects/unmade.jpg
+coverAlt:
+  en: Cover art of Unmade
+  fr: Visuel du jeu Unmade

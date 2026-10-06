@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResumeList from '../ResumeList.astro';
+import { locales, site, type Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+import { getResume } from '../../lib/resume';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const { basics } = getResume(locale);
+const other = locales.find((candidate) => candidate !== locale)!;
+---
+
+<BaseLayout locale={locale} path="/about/" title={t('about.title')} description={basics.summary}>
+  <section class="page-head">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">{basics.label}</p>
+      <h1>{basics.name}</h1>
+      <p class="lead">{basics.summary}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <div class="section-head">
+        <h2>{t('about.experience')}</h2>
+      </div>
+      <ResumeList locale={locale} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <div class="section-head">
+        <h2>{t('about.resume.title')}</h2>
+        <p>{t('about.resume.text')}</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href={site.resume[locale]} hreflang={locale}>{t('about.resume.this')}</a>
+        <a class="btn btn-secondary" href={site.resume[other]} hreflang={other}>{t('about.resume.other')}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <div class="section-head">
+        <h2>{t('about.elsewhere')}</h2>
+      </div>
+      <ul class="jump">
+        {
+          site.profiles.map((profile) => (
+            <li>
+              <a href={profile.url} rel="me">
+                {profile.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

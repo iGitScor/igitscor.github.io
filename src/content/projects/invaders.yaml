@@ -1,0 +1,17 @@
+name: Flash Invaders Tracker
+section: personal
+order: 4
+status: live
+url: https://invaders.iscor.me
+tagline:
+  en: A companion for Flash Invaders players.
+  fr: Un compagnon pour les joueurs de Flash Invaders.
+summary:
+  en: >-
+    A tracker for players of the Flash Invaders street-art game. See your gallery against a map
+    of every invader, find the ones you missed, then plan and optimise a route with GPX export.
+  fr: >-
+    Un outil de suivi pour les joueurs du jeu de street art Flash Invaders. Visualisez votre galerie
+    sur la carte de tous les invaders, retrouvez ceux qui vous manquent, puis planifiez et optimisez
+    un parcours avec export GPX.
+stack: [TypeScript, Vite, Leaflet]

@@ -1,0 +1,38 @@
+---
+import type { Locale } from '../data/site';
+import { useTranslations } from '../i18n/ui';
+import { getResume, yearOf } from '../lib/resume';
+
+interface Props {
+  locale: Locale;
+  /** Show only the first positions, for the home page. */
+  limit?: number;
+}
+
+const { locale, limit } = Astro.props;
+const t = useTranslations(locale);
+const work = getResume(locale).work.slice(0, limit);
+
+function period(start: string, end: string | null): string {
+  const from = yearOf(start);
+  const to = end === null ? t('about.present') : yearOf(end);
+  return from === to ? from : `${from} – ${to}`;
+}
+---
+
+<ol class="resume-list">
+  {
+    work.map((job) => (
+      <li>
+        <span class="resume-period">{period(job.startDate, job.endDate)}</span>
+        <div>
+          <p class="resume-role">
+            {job.position}
+            {job.name && <span class="resume-company"> · {job.name}</span>}
+          </p>
+          {job.summary && <p class="resume-summary">{job.summary}</p>}
+        </div>
+      </li>
+    ))
+  }
+</ol>

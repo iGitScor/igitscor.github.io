@@ -1,0 +1,24 @@
+name: Bucket List
+section: personal
+order: 1
+status: live
+url: https://list.iscor.me
+tagline:
+  en: More than 200 bucket-list experiences to filter, explore and track.
+  fr: Plus de 200 expériences de bucket list à filtrer, explorer et suivre.
+summary:
+  en: >-
+    A bucket-list app, in French, with a hidden 2D story view. Import any list and it is sorted
+    into themed islands by a classifier that runs in your browser; the list is stored nowhere else.
+  fr: >-
+    Une application de bucket list, avec une vue « histoire » en 2D cachée. Importez n’importe quelle liste :
+    un classifieur qui tourne dans votre navigateur la range par îles thématiques, et elle n’est stockée nulle part ailleurs.
+stack: [JavaScript, Vite, transformers.js]
+tags: [ml]
+mlNote:
+  en: >-
+    Three classifier tiers in the browser: a keyword lexicon, a 9 MB embedding model distilled
+    from multilingual-e5-small, and the full model on ONNX and WebAssembly.
+  fr: >-
+    Trois niveaux de classification dans le navigateur : un lexique de mots-clés, un modèle d’embeddings de 9 Mo
+    distillé depuis multilingual-e5-small, et le modèle complet en ONNX et WebAssembly.

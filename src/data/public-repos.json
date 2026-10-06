@@ -1,5 +1,7 @@
 [
+  "iGitScor/cypress-recorder",
   "iGitScor/igitscor.github.io",
   "iGitScor/kyb-mcp",
-  "iGitScor/resume"
+  "iGitScor/resume",
+  "iGitScor/webpack-content-replacer-plugin"
 ]

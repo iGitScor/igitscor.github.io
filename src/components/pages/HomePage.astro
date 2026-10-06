@@ -1,7 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { site, type Locale } from '../../data/site';
+import ProjectCard from '../ProjectCard.astro';
+import ResumeList from '../ResumeList.astro';
+import { projectSections } from '../../data/sections';
+import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
+import { getProjects, inSection } from '../../lib/projects';
+import { getResume } from '../../lib/resume';
+import { localizePath } from '../../lib/urls';
 
 interface Props {
   locale: Locale;
@@ -9,54 +15,72 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-
-// Sections without a page yet render as plain tiles; they become links in M2.
-const tiles = [
-  { key: 'resume', href: site.resume[locale], more: t('work.resume.more') },
-  { key: 'projects', href: undefined, more: t('work.soon') },
-  { key: 'personal', href: undefined, more: t('work.soon') },
-  { key: 'ai', href: undefined, more: t('work.soon') },
-  { key: 'ml', href: undefined, more: t('work.soon') },
-] as const;
+const { basics } = getResume(locale);
+const projects = await getProjects();
+const featured = projects.filter(({ data }) => data.featured);
+const projectsUrl = localizePath('/projects/', locale);
+const aboutUrl = localizePath('/about/', locale);
+const sections = projectSections.filter((section) => inSection(projects, section).length > 0);
 ---
 
 <BaseLayout locale={locale} path="/">
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">{t('hero.eyebrow')}</p>
+      <p class="eyebrow">{basics.label}</p>
       <h1>
         {t('hero.title.before')}<span class="mark">{t('hero.title.mark')}</span>{t('hero.title.after')}
       </h1>
       <p class="lead">{t('hero.lead')}</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#work">{t('hero.cta.work')}</a>
-        <a class="btn btn-secondary" href={site.resume[locale]}>{t('hero.cta.resume')}</a>
+        <a class="btn btn-primary" href={projectsUrl}>{t('hero.cta.work')}</a>
+        <a class="btn btn-secondary" href={aboutUrl}>{t('hero.cta.about')}</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="work">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">{t('work.eyebrow')}</p>
-        <h2>{t('work.title')}</h2>
+        <p class="eyebrow">{t('home.featured.eyebrow')}</p>
+        <h2>{t('home.featured.title')}</h2>
+      </div>
+      <div class="cards cards-featured">
+        {featured.map((project) => <ProjectCard project={project} locale={locale} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">{t('home.explore.eyebrow')}</p>
+        <h2>{t('home.explore.title')}</h2>
       </div>
       <ul class="tiles">
         {
-          tiles.map((tile) => {
-            const Tag = tile.href ? 'a' : 'div';
-            return (
-              <li>
-                <Tag class="tile" href={tile.href}>
-                  <h3>{t(`work.${tile.key}.title`)}</h3>
-                  <p>{t(`work.${tile.key}.text`)}</p>
-                  <span class="more">{tile.more}</span>
-                </Tag>
-              </li>
-            );
-          })
+          sections.map((section) => (
+            <li>
+              <a class="tile" href={`${projectsUrl}#${section}`}>
+                <h3>{t(`section.${section}.title`)}</h3>
+                <p>{t(`section.${section}.lead`)}</p>
+              </a>
+            </li>
+          ))
         }
       </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">{t('home.resume.eyebrow')}</p>
+        <h2>{basics.name}</h2>
+      </div>
+      <ResumeList locale={locale} limit={3} />
+      <p class="section-more">
+        <a class="link-arrow" href={aboutUrl}>{t('home.resume.more')}</a>
+      </p>
     </div>
   </section>
 </BaseLayout>

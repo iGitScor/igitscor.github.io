@@ -1,0 +1,13 @@
+name: cypress-recorder
+section: earlier
+order: 1
+status: archived
+period: "2017"
+repo: iGitScor/cypress-recorder
+tagline:
+  en: A Cypress scenario recorder.
+  fr: Un enregistreur de scénarios Cypress.
+summary:
+  en: A Chrome extension that records Cypress test scenarios. My most-starred repository.
+  fr: Une extension Chrome qui enregistre des scénarios de test Cypress. Mon dépôt le plus étoilé.
+stack: [JavaScript, Chrome extension, Cypress]

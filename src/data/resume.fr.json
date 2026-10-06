@@ -1,0 +1,83 @@
+{
+  "basics": {
+    "name": "Sebastien Correaud",
+    "label": "Engineering Manager, hands-on",
+    "summary": "Engineering manager hands-on. Je dirige une squad produit chez Heropay et je continue à coder. Parcours en tests, qualité et analyse de données. Je mène à bien des projets, en télétravail (France, Royaume-Uni) ou sur site.",
+    "profiles": [
+      {
+        "network": "Github",
+        "url": "https://github.com/iGitScor"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/sebastiencorreaud/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Heropay",
+      "position": "Staff Engineer",
+      "startDate": "2025-01",
+      "endDate": null,
+      "location": "Paris",
+      "summary": "Manager et contributeur au sein d’une squad dédiée à l’authentification et à l’expérience client (du tunnel d’acquisition à l’activation, compte professionnel)"
+    },
+    {
+      "name": null,
+      "position": "Pause professionnelle",
+      "startDate": "2024",
+      "endDate": "2024",
+      "location": null,
+      "summary": "Douze mois de voyage"
+    },
+    {
+      "name": "Tomorro (ex-Leeway)",
+      "position": "Développeur fullstack senior",
+      "startDate": "2021-08",
+      "endDate": "2023-10",
+      "location": "Paris",
+      "summary": "Jeune entreprise SaaS"
+    },
+    {
+      "name": "Simplifield",
+      "position": "Tech lead",
+      "startDate": "2021-03",
+      "endDate": "2021-07",
+      "location": null,
+      "summary": null
+    },
+    {
+      "name": "You2You (Yper)",
+      "position": "Lead developer + Data analyst",
+      "startDate": "2017-12",
+      "endDate": "2020-11",
+      "location": "Télétravail complet depuis Montpellier et Oxford",
+      "summary": "Suivi en temps réel, performances de la plateforme et analyse de données"
+    },
+    {
+      "name": "Université de Montpellier",
+      "position": "Conférencier",
+      "startDate": "2019-02",
+      "endDate": "2021-03",
+      "location": null,
+      "summary": "Cours de méthode agile et de QA en licence et en master"
+    },
+    {
+      "name": "1001Pharmacies",
+      "position": "Développeur Fullstack + responsable QA",
+      "startDate": "2014-12-08",
+      "endDate": "2017-11",
+      "location": "Montpellier",
+      "summary": "Refonte complète d'une marketplace à forte audience"
+    },
+    {
+      "name": "CGI (+ Logica)",
+      "position": "Ingénieur NTI",
+      "startDate": "2010-06-20",
+      "endDate": "2014-11-30",
+      "location": "Montpellier",
+      "summary": "Conception et développement d'applications mobiles et web (PHP, JavaScript, iOS et Android)"
+    }
+  ]
+}

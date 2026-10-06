@@ -1,0 +1,29 @@
+---
+import ArchiveLayout from '../layouts/ArchiveLayout.astro';
+import { locales } from '../data/site';
+import { useTranslations } from '../i18n/ui';
+import { localizePath } from '../lib/urls';
+
+// GitHub Pages serves one 404 for the whole domain, so it speaks both languages.
+const en = useTranslations('en');
+---
+
+<ArchiveLayout lang="en" title={en('notfound.title')} description={en('notfound.text')} permalink="/404.html">
+  <section class="post">
+    {
+      locales.map((locale, index) => {
+        const t = useTranslations(locale);
+        const Heading = index === 0 ? 'h1' : 'h2';
+        return (
+          <div class="post-head" lang={locale}>
+            <Heading class="notfound-title">{t('notfound.title')}</Heading>
+            <p class="lead">{t('notfound.text')}</p>
+            <p class="post-foot">
+              <a href={localizePath('/', locale)}>{t('notfound.home')} →</a>
+            </p>
+          </div>
+        );
+      })
+    }
+  </section>
+</ArchiveLayout>

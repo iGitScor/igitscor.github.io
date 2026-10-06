@@ -3,7 +3,7 @@ export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = 'en';
 
 export const site = {
-  name: 'Sébastien Correaud',
+  name: 'Sebastien Correaud',
   url: 'https://iscor.me',
   // The resume site has no HTTPS certificate yet; switch to https:// once it does.
   resume: {

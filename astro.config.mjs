@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 // The archive stays reachable at its old URLs but is kept out of the sitemap.
 const hubPaths = new Set(['/', '/projects', '/about', '/fr', '/fr/projects', '/fr/about']);
 const isHubUrl = (page) => hubPaths.has(new URL(page).pathname.replace(/(.)\/$/, '$1'));
+// GitHub Pages answers /fr with a redirect, so the sitemap lists /fr/.
+const withSlash = (url) => url.replace(/([^/])$/, '$1/');
 
 export default defineConfig({
   site: 'https://iscor.me',
@@ -20,8 +22,11 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: isHubUrl,
-      // List /fr/ rather than /fr: GitHub Pages answers the slashless form with a redirect.
-      serialize: (item) => ({ ...item, url: item.url.replace(/([^/])$/, '$1/') }),
+      serialize: (item) => ({
+        ...item,
+        url: withSlash(item.url),
+        links: item.links?.map((link) => ({ ...link, url: withSlash(link.url) })),
+      }),
       i18n: { defaultLocale: 'en', locales: { en: 'en', fr: 'fr' } },
     }),
   ],

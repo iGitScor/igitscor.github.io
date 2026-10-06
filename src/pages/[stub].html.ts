@@ -6,6 +6,7 @@ import { site } from '../data/site';
 // redirect_from did. Each one is emitted as `<name>.html`, which GitHub Pages
 // also serves at `/<name>`.
 const legacyPages: Record<string, string> = {
+  projects: '/projects/',
   tags: '/blog/',
   categories: '/blog/',
 };

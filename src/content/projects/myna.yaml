@@ -1,0 +1,25 @@
+name: Myna
+section: projects
+order: 1
+featured: true
+status: live
+url: https://podcast.iscor.me
+tagline:
+  en: You write. Myna says it in your voice.
+  fr: Écrivez. Myna le dit avec votre voix.
+summary:
+  en: >-
+    Turns written scripts into podcast episodes spoken in your own voice, right in the browser.
+    It works offline and needs no account: nothing leaves your devices.
+  fr: >-
+    Transforme vos scripts en épisodes de podcast dits avec votre propre voix, directement dans le navigateur.
+    Fonctionne hors ligne et sans compte : rien ne quitte vos appareils.
+stack: [React, TypeScript, ONNX Runtime Web, PyTorch, Tauri]
+tags: [ml]
+mlNote:
+  en: >-
+    Neural voices (Piper VITS) run in the browser with ONNX Runtime Web, and a companion tool
+    fine-tunes a voice from your own recordings with PyTorch, on your machine.
+  fr: >-
+    Les voix neuronales (Piper VITS) tournent dans le navigateur avec ONNX Runtime Web, et un outil compagnon
+    entraîne une voix à partir de vos enregistrements avec PyTorch, sur votre machine.

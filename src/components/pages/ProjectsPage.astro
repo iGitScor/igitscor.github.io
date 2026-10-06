@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { projectSections } from '../../data/sections';
+import type { Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+import { getProjects, inSection } from '../../lib/projects';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const projects = await getProjects();
+const sections = projectSections
+  .map((section) => ({ section, entries: inSection(projects, section) }))
+  .filter(({ entries }) => entries.length > 0);
+---
+
+<BaseLayout locale={locale} path="/projects/" title={t('projects.title')} description={t('projects.lead')}>
+  <section class="page-head">
+    <div class="wrap">
+      <h1>{t('projects.title')}</h1>
+      <p class="lead">{t('projects.lead')}</p>
+      <ul class="jump">
+        {
+          sections.map(({ section }) => (
+            <li>
+              <a href={`#${section}`}>{t(`section.${section}.title`)}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  {
+    sections.map(({ section, entries }) => (
+      <section class="section" id={section}>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>{t(`section.${section}.title`)}</h2>
+            <p>{t(`section.${section}.lead`)}</p>
+          </div>
+          <div class:list={['cards', { 'cards-wide': entries.some(({ data }) => data.items.length > 0) }]}>
+            {entries.map((project) =>
+              // A project that lives in another section appears here only for its ML part.
+              section === 'ml' && project.data.section !== 'ml' && project.data.mlNote ? (
+                <article class="card">
+                  <div class="card-body">
+                    <header class="card-head">
+                      <h3>{project.data.name}</h3>
+                    </header>
+                    <p class="card-summary">{project.data.mlNote[locale]}</p>
+                    <p class="card-links">
+                      <a class="link-arrow" href={`#${project.data.section}`}>
+                        {t('card.details')}
+                        <span class="visually-hidden"> {project.data.name}</span>
+                      </a>
+                    </p>
+                  </div>
+                </article>
+              ) : (
+                <ProjectCard project={project} locale={locale} />
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>
