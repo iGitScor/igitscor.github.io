@@ -10,6 +10,7 @@ kind: post
 permalink: /blog/how-to-migrate-front-technologies
 redirectFrom:
   - /how-to-migrate-front-technologies.html
+  - /technical/2016/06/08/how-to-migrate-front-technologies.html
 tags:
   - front
   - migration

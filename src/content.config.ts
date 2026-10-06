@@ -73,8 +73,8 @@ const archive = defineCollection({
     kind: z.enum(['post', 'article']),
     /** Canonical legacy path, for example `/blog/<slug>` or `/<slug>.html`. */
     permalink: z.string().regex(/^\/[a-z0-9/-]+(\.html)?$/),
-    /** Older root-level paths that redirect to `permalink`. */
-    redirectFrom: z.array(z.string().regex(/^\/[a-z0-9-]+\.html$/)).default([]),
+    /** Older paths that redirect to `permalink`: root-level, or the dated 2016 ones. */
+    redirectFrom: z.array(z.string().regex(/^\/[a-z0-9/-]+\.html$/)).default([]),
     type: z.string().optional(),
     tagline: z.string().optional(),
     tags: z.array(z.string()).default([]),

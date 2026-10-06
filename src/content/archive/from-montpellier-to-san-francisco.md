@@ -8,7 +8,7 @@ lang: en
 date: 2016-03-28
 kind: post
 permalink: /blog/from-montpellier-to-san-francisco
-redirectFrom: ["/from-montpellier-to-san-francisco.html"]
+redirectFrom: ["/from-montpellier-to-san-francisco.html", "/travel/2016/03/28/from-montpellier-to-san-francisco.html"]
 tags: [flight, montpellier, sanfrancisco, javascript community, meteor]
 ---
 ## Objective California : San Francisco

@@ -9,6 +9,7 @@ kind: post
 permalink: /blog/user-experience-workshop
 redirectFrom:
   - /user-experience-workshop.html
+  - /workshop/2016/05/06/user-experience-workshop.html
 tags:
   - user experience
   - ux community

@@ -1,11 +1,16 @@
 [
   { "path": "/", "status": 200 },
   { "path": "/feed.xml", "status": 200 },
-  { "path": "/about", "status": 301 },
+  { "path": "/about", "status": 200 },
   { "path": "/about/", "status": 200 },
   { "path": "/projects.html", "status": 200 },
   { "path": "/tags.html", "status": 200 },
   { "path": "/categories.html", "status": 200 },
+  { "path": "/about.html", "status": 200 },
+
+  { "path": "/travel/2016/03/28/from-montpellier-to-san-francisco.html", "status": 200 },
+  { "path": "/workshop/2016/05/06/user-experience-workshop.html", "status": 200 },
+  { "path": "/technical/2016/06/08/how-to-migrate-front-technologies.html", "status": 200 },
 
   { "path": "/blog/from-montpellier-to-san-francisco", "status": 200 },
   { "path": "/blog/from-montpellier-to-san-francisco.html", "status": 200 },

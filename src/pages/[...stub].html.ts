@@ -2,10 +2,11 @@ import type { APIRoute, GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 
-// Old root-level URLs keep answering with a client-side redirect, as Jekyll's
-// redirect_from did. Each one is emitted as `<name>.html`, which GitHub Pages
-// also serves at `/<name>`.
+// Old URLs keep answering with a client-side redirect, as Jekyll's
+// redirect_from did. Each one is emitted as `<path>.html`, which GitHub Pages
+// also serves at `/<path>`. Paths may be nested, like the dated 2016 ones.
 const legacyPages: Record<string, string> = {
+  about: '/about/',
   projects: '/projects/',
   tags: '/blog/',
   categories: '/blog/',
