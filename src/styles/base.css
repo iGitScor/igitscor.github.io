@@ -398,6 +398,28 @@ a:hover {
   margin-top: 32px;
 }
 
+/* A section with a single project gives it the full row, cover beside the text. */
+.cards:has(> .card:only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cards > .card:only-child .card-summary {
+  max-width: 68ch;
+}
+
+@media (min-width: 760px) {
+  .cards > .card:only-child:has(> .card-cover) {
+    flex-direction: row;
+  }
+
+  .cards > .card:only-child > .card-cover {
+    width: 46%;
+    aspect-ratio: auto;
+    border-right: 1px solid var(--border);
+    border-bottom: 0;
+  }
+}
+
 /* A project with sub-items (the games) takes the full row. */
 .card-wide {
   grid-column: 1 / -1;

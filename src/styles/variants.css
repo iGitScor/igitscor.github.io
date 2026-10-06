@@ -64,6 +64,10 @@
   background: none;
 }
 
+[data-variant='b'] .cards > .card:only-child > .card-cover {
+  border-right-color: var(--border);
+}
+
 [data-variant='b'] :is(a.tile, .item):hover {
   background: var(--accent);
   color: var(--on-accent);
