@@ -20,6 +20,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: isHubUrl,
+      // List /fr/ rather than /fr: GitHub Pages answers the slashless form with a redirect.
+      serialize: (item) => ({ ...item, url: item.url.replace(/([^/])$/, '$1/') }),
       i18n: { defaultLocale: 'en', locales: { en: 'en', fr: 'fr' } },
     }),
   ],

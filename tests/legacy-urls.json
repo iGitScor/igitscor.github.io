@@ -1,0 +1,43 @@
+[
+  { "path": "/", "status": 200 },
+  { "path": "/feed.xml", "status": 200 },
+  { "path": "/about", "status": 301, "pending": true },
+  { "path": "/about/", "status": 200, "pending": true },
+  { "path": "/projects.html", "status": 200, "pending": true },
+  { "path": "/tags.html", "status": 200 },
+  { "path": "/categories.html", "status": 200 },
+
+  { "path": "/blog/from-montpellier-to-san-francisco", "status": 200 },
+  { "path": "/blog/from-montpellier-to-san-francisco.html", "status": 200 },
+  { "path": "/from-montpellier-to-san-francisco.html", "status": 200 },
+  { "path": "/from-montpellier-to-san-francisco", "status": 200 },
+
+  { "path": "/blog/user-experience-workshop", "status": 200, "pending": true },
+  { "path": "/blog/user-experience-workshop.html", "status": 200, "pending": true },
+  { "path": "/user-experience-workshop.html", "status": 200, "pending": true },
+  { "path": "/user-experience-workshop", "status": 200, "pending": true },
+
+  { "path": "/blog/smashing-conf-san-francisco", "status": 200, "pending": true },
+  { "path": "/blog/smashing-conf-san-francisco.html", "status": 200, "pending": true },
+  { "path": "/smashing-conf-san-francisco.html", "status": 200, "pending": true },
+  { "path": "/smashing-conf-san-francisco", "status": 200, "pending": true },
+
+  { "path": "/blog/how-to-migrate-front-technologies", "status": 200, "pending": true },
+  { "path": "/blog/how-to-migrate-front-technologies.html", "status": 200, "pending": true },
+  { "path": "/how-to-migrate-front-technologies.html", "status": 200, "pending": true },
+  { "path": "/how-to-migrate-front-technologies", "status": 200, "pending": true },
+
+  { "path": "/blog/js13k-why-you-should-participate-to-contest", "status": 200, "pending": true },
+  { "path": "/blog/js13k-why-you-should-participate-to-contest.html", "status": 200, "pending": true },
+  { "path": "/js13k-why-you-should-participate-to-contest.html", "status": 200, "pending": true },
+  { "path": "/js13k-why-you-should-participate-to-contest", "status": 200, "pending": true },
+
+  { "path": "/blog/personal-growth-hacking", "status": 200, "pending": true },
+  { "path": "/blog/personal-growth-hacking.html", "status": 200, "pending": true },
+
+  { "path": "/angularisation-du-web.html", "status": 200, "pending": true },
+  { "path": "/industrialisation-environnement-front.html", "status": 200, "pending": true },
+
+  { "path": "/slides/web-performance.html", "status": 200, "pending": true },
+  { "path": "/slides/kickstarter.html", "status": 200, "pending": true }
+]
