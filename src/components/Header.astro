@@ -1,0 +1,24 @@
+---
+import LangSwitch from './LangSwitch.astro';
+import { site, type Locale } from '../data/site';
+import { useTranslations } from '../i18n/ui';
+import { localizePath } from '../lib/urls';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href={localizePath('/', locale)} aria-label={`${site.name}, ${t('nav.home')}`}>
+      <span class="brand-mark" aria-hidden="true">S</span>
+      iScor
+    </a>
+    <LangSwitch locale={locale} path={path} />
+  </div>
+</header>

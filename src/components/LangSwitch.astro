@@ -1,0 +1,32 @@
+---
+import { locales, type Locale } from '../data/site';
+import { useTranslations } from '../i18n/ui';
+import { localizePath } from '../lib/urls';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const t = useTranslations(locale);
+const names: Record<Locale, string> = { en: 'English', fr: 'Français' };
+---
+
+<nav class="lang-switch" aria-label={t('lang.label')}>
+  {
+    locales.map((target) =>
+      target === locale ? (
+        <span aria-current="true" lang={target}>
+          <span aria-hidden="true">{target.toUpperCase()}</span>
+          <span class="visually-hidden">{names[target]}</span>
+        </span>
+      ) : (
+        <a href={localizePath(path, target)} hreflang={target} lang={target}>
+          <span aria-hidden="true">{target.toUpperCase()}</span>
+          <span class="visually-hidden">{names[target]}</span>
+        </a>
+      ),
+    )
+  }
+</nav>

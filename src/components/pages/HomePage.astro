@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, type Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+// Sections without a page yet render as plain tiles; they become links in M2.
+const tiles = [
+  { key: 'resume', href: site.resume[locale], more: t('work.resume.more') },
+  { key: 'projects', href: undefined, more: t('work.soon') },
+  { key: 'personal', href: undefined, more: t('work.soon') },
+  { key: 'ai', href: undefined, more: t('work.soon') },
+  { key: 'ml', href: undefined, more: t('work.soon') },
+] as const;
+---
+
+<BaseLayout locale={locale} path="/">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">{t('hero.eyebrow')}</p>
+      <h1>
+        {t('hero.title.before')}<span class="mark">{t('hero.title.mark')}</span>{t('hero.title.after')}
+      </h1>
+      <p class="lead">{t('hero.lead')}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#work">{t('hero.cta.work')}</a>
+        <a class="btn btn-secondary" href={site.resume[locale]}>{t('hero.cta.resume')}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">{t('work.eyebrow')}</p>
+        <h2>{t('work.title')}</h2>
+      </div>
+      <ul class="tiles">
+        {
+          tiles.map((tile) => {
+            const Tag = tile.href ? 'a' : 'div';
+            return (
+              <li>
+                <Tag class="tile" href={tile.href}>
+                  <h3>{t(`work.${tile.key}.title`)}</h3>
+                  <p>{t(`work.${tile.key}.text`)}</p>
+                  <span class="more">{tile.more}</span>
+                </Tag>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

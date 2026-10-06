@@ -1,8 +1,4 @@
-# Jekyll ignore files
-_site
-.sass-cache
-.jekyll-metadata
-
-# Website ignore files
 node_modules
-bower
+dist
+.astro
+.DS_Store

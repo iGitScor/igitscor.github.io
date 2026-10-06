@@ -1,30 +1,30 @@
 {
-  "name": "igitscor.github.io",
-  "version": "1.0.0",
-  "description": "> Notes, thoughts and Open-source web development",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "bower install",
-    "test": "node scripts/markdown-linter",
-    "deploy": "node scripts/gh-deploy"
-  },
+  "name": "iscor.me",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sébastien Correaud's hub: resume, projects and archive, served at iscor.me",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iGitScor/igitscor.github.io.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/iGitScor/igitscor.github.io/issues"
+  "engines": {
+    "node": ">=22.12.0"
   },
-  "homepage": "https://github.com/iGitScor/igitscor.github.io#readme",
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
+  },
   "dependencies": {
-    "bower": "1.8.x"
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/outfit": "^5.3.0",
+    "astro": "^7.3.6"
   },
   "devDependencies": {
-    "gh-pages": "0.12.x",
-    "glob": "7.1.x",
-    "markdownlint": "0.3.x"
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
   }
 }
