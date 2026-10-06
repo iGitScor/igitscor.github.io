@@ -117,20 +117,25 @@ a:hover {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
   width: 32px;
   height: 32px;
-  border-radius: 9px;
-  background: var(--ink);
-  color: var(--accent);
-  font-size: 0.95rem;
+}
+
+.brand-mark rect {
+  fill: var(--ink);
+}
+
+.brand-mark path {
+  stroke: var(--accent);
 }
 
 @media (prefers-color-scheme: dark) {
-  .brand-mark {
-    background: var(--accent);
-    color: var(--on-accent);
+  .brand-mark rect {
+    fill: var(--accent);
+  }
+
+  .brand-mark path {
+    stroke: var(--on-accent);
   }
 }
 

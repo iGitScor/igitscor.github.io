@@ -43,10 +43,6 @@
   font-size: 0.8rem;
 }
 
-[data-variant='b'] .brand-mark {
-  border-radius: 8px;
-}
-
 [data-variant='b'] .site-header {
   border-bottom-color: var(--border);
 }

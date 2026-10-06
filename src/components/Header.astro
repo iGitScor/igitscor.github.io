@@ -1,5 +1,6 @@
 ---
 import LangSwitch from './LangSwitch.astro';
+import Mark from './Mark.astro';
 import { site, type Locale } from '../data/site';
 import { useTranslations } from '../i18n/ui';
 import { localizePath } from '../lib/urls';
@@ -21,7 +22,7 @@ const links = [
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href={localizePath('/', locale)} aria-label={`${site.name}, ${t('nav.home')}`}>
-      <span class="brand-mark" aria-hidden="true">S</span>
+      <Mark />
       iScor
     </a>
     <nav class="site-nav" aria-label={t('nav.label')}>

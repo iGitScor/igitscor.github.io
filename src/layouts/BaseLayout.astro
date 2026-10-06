@@ -10,6 +10,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { locales, site, type Locale } from '../data/site';
 import { useTranslations } from '../i18n/ui';
+import { getResume } from '../lib/resume';
 import { localizePath } from '../lib/urls';
 
 interface Props {
@@ -18,12 +19,23 @@ interface Props {
   path: string;
   title?: string;
   description?: string;
+  /** Adds structured data describing the owner; set on the home and About pages. */
+  person?: boolean;
 }
 
-const { locale, path, title, description } = Astro.props;
+const { locale, path, title, description, person = false } = Astro.props;
 const t = useTranslations(locale);
 const pageTitle = title ? `${title} · ${site.name}` : site.name;
 const absolute = (target: Locale) => new URL(localizePath(path, target), site.url).href;
+const image = new URL(`/og.${locale}.png`, site.url).href;
+const personData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: getResume(locale).basics.label,
+  url: site.url,
+  sameAs: site.profiles.map((profile) => profile.url),
+};
 ---
 
 <!doctype html>
@@ -38,6 +50,7 @@ const absolute = (target: Locale) => new URL(localizePath(path, target), site.ur
     <link rel="alternate" hreflang="x-default" href={absolute('en')} />
     <meta name="theme-color" content="#f0f0e8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0e0e14" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:title" content={pageTitle} />
@@ -45,6 +58,11 @@ const absolute = (target: Locale) => new URL(localizePath(path, target), site.ur
     <meta property="og:type" content="website" />
     <meta property="og:url" content={absolute(locale)} />
     <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {person && <script type="application/ld+json" set:html={JSON.stringify(personData)} />}
   </head>
   <body>
     <a class="skip-link" href="#main">{t('skip.label')}</a>

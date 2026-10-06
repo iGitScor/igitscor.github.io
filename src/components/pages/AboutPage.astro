@@ -16,7 +16,7 @@ const { basics } = getResume(locale);
 const other = locales.find((candidate) => candidate !== locale)!;
 ---
 
-<BaseLayout locale={locale} path="/about/" title={t('about.title')} description={basics.summary}>
+<BaseLayout locale={locale} path="/about/" title={t('about.title')} description={basics.summary} person>
   <section class="page-head">
     <div class="wrap wrap-narrow">
       <p class="eyebrow">{basics.label}</p>

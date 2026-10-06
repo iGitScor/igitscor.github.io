@@ -109,11 +109,11 @@ for (const { url, html } of pages) {
   }
 }
 
-// 7. Hub pages: no script, and each has its twin in the other language
+// 7. Hub pages: no executable script (structured data is allowed), and each has its twin in the other language
 const hubPages = pages.filter(({ html }) => /<link rel="alternate" hreflang=/.test(html));
 const hubUrls = new Set(hubPages.map(({ url }) => url));
 for (const { url, html } of hubPages) {
-  if (/<script\b/i.test(html)) fail(`${url}: hub pages must not ship a <script>`);
+  if (/<script\b(?![^>]*type="application\/ld\+json")/i.test(html)) fail(`${url}: hub pages must not ship a <script>`);
   const twin = url.startsWith('/fr/') ? url.slice('/fr'.length) : `/fr${url}`;
   if (!hubUrls.has(twin)) fail(`${url}: missing twin page ${twin}`);
   for (const target of [url, twin]) {

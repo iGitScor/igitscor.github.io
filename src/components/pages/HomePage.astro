@@ -28,7 +28,7 @@ const aboutUrl = localizePath('/about/', locale);
 const sections = projectSections.filter((section) => inSection(projects, section).length > 0);
 ---
 
-<BaseLayout locale={locale} path="/">
+<BaseLayout locale={locale} path="/" person>
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">{basics.label}</p>
