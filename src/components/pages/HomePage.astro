@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactBlock from '../ContactBlock.astro';
 import ProjectCard from '../ProjectCard.astro';
 import ResumeList from '../ResumeList.astro';
 import { projectSections } from '../../data/sections';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
 import { getProjects, inSection } from '../../lib/projects';
-import { getResume } from '../../lib/resume';
+import { getResume, yearOf } from '../../lib/resume';
 import { localizePath } from '../../lib/urls';
 
 interface Props {
@@ -15,7 +16,9 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const { basics } = getResume(locale);
+const { basics, work } = getResume(locale);
+// The first position without an end date is the current one.
+const current = work.find((job) => job.endDate === null);
 const projects = await getProjects();
 const featured = projects.filter(({ data }) => data.featured);
 const projectsUrl = localizePath('/projects/', locale);
@@ -30,7 +33,16 @@ const sections = projectSections.filter((section) => inSection(projects, section
       <h1>
         {t('hero.title.before')}<span class="mark">{t('hero.title.mark')}</span>{t('hero.title.after')}
       </h1>
-      <p class="lead">{t('hero.lead')}</p>
+      <p class="lead">{basics.summary}</p>
+      {
+        current && (
+          <p class="now">
+            <span class="badge">{t('hero.now')}</span>
+            {current.position}
+            {current.name && ` · ${current.name}`}, {yearOf(current.startDate)} – {t('about.present')}
+          </p>
+        )
+      }
       <div class="actions">
         <a class="btn btn-primary" href={projectsUrl}>{t('hero.cta.work')}</a>
         <a class="btn btn-secondary" href={aboutUrl}>{t('hero.cta.about')}</a>
@@ -83,4 +95,6 @@ const sections = projectSections.filter((section) => inSection(projects, section
       </p>
     </div>
   </section>
+
+  <ContactBlock locale={locale} />
 </BaseLayout>

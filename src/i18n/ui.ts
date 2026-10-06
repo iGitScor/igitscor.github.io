@@ -12,7 +12,7 @@ const en = {
   'hero.title.before': 'I build things to make life ',
   'hero.title.mark': 'easier',
   'hero.title.after': '.',
-  'hero.lead': 'This is where my resume, my projects and my experiments live.',
+  'hero.now': 'Now',
   'hero.cta.work': 'See what I build',
   'hero.cta.about': 'About me',
 
@@ -53,7 +53,9 @@ const en = {
   'about.resume.text': 'Skills, education and the complete history are on the resume site.',
   'about.resume.this': 'Read it in English',
   'about.resume.other': 'Read it in French',
-  'about.elsewhere': 'Elsewhere',
+  'contact.eyebrow': 'Contact',
+  'contact.title': 'Get in touch',
+  'contact.text': 'The quickest way to reach me is a message on LinkedIn.',
 
   'notfound.title': 'Page not found',
   'notfound.text': 'This page does not exist, or it has moved.',
@@ -81,7 +83,7 @@ const fr: Record<UiKey, string> = {
   'hero.title.before': 'Je construis des outils qui rendent la vie plus ',
   'hero.title.mark': 'simple',
   'hero.title.after': '.',
-  'hero.lead': 'Vous trouverez ici mon CV, mes projets et mes expérimentations.',
+  'hero.now': 'En ce moment',
   'hero.cta.work': 'Voir ce que je construis',
   'hero.cta.about': 'À propos de moi',
 
@@ -123,7 +125,9 @@ const fr: Record<UiKey, string> = {
   'about.resume.text': 'Les compétences, la formation et le parcours complet sont sur le site du CV.',
   'about.resume.this': 'Le lire en français',
   'about.resume.other': 'Le lire en anglais',
-  'about.elsewhere': 'Ailleurs',
+  'contact.eyebrow': 'Contact',
+  'contact.title': 'Me contacter',
+  'contact.text': 'Le plus simple pour me joindre est un message sur LinkedIn.',
 
   'notfound.title': 'Page introuvable',
   'notfound.text': 'Cette page n’existe pas, ou elle a été déplacée.',

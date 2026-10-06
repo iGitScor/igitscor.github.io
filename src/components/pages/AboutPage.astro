@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactBlock from '../ContactBlock.astro';
 import ResumeList from '../ResumeList.astro';
 import { locales, site, type Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
@@ -46,22 +47,5 @@ const other = locales.find((candidate) => candidate !== locale)!;
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap wrap-narrow">
-      <div class="section-head">
-        <h2>{t('about.elsewhere')}</h2>
-      </div>
-      <ul class="jump">
-        {
-          site.profiles.map((profile) => (
-            <li>
-              <a href={profile.url} rel="me">
-                {profile.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
+  <ContactBlock locale={locale} narrow />
 </BaseLayout>

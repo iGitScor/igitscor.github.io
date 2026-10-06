@@ -270,6 +270,21 @@ a:hover {
   font-size: clamp(18px, 1.6vw, 21px);
 }
 
+.hero .now {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 22px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.hero .now .badge {
+  border-color: var(--accent-deep);
+  color: var(--accent-text);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;

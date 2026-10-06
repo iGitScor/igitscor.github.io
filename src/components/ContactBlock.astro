@@ -1,0 +1,35 @@
+---
+import { site, type Locale } from '../data/site';
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  /** Narrow column, to line up with the About page. */
+  narrow?: boolean;
+}
+
+const { locale, narrow = false } = Astro.props;
+const t = useTranslations(locale);
+// No email address is published: LinkedIn is the contact route, GitHub sits beside it.
+const [primary, ...others] = [...site.profiles].sort((a, b) => Number(b.name === 'LinkedIn') - Number(a.name === 'LinkedIn'));
+---
+
+<section class="section" id="contact">
+  <div class:list={['wrap', { 'wrap-narrow': narrow }]}>
+    <div class="section-head">
+      <p class="eyebrow">{t('contact.eyebrow')}</p>
+      <h2>{t('contact.title')}</h2>
+      <p>{t('contact.text')}</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href={primary.url} rel="me">{primary.name}</a>
+      {
+        others.map((profile) => (
+          <a class="btn btn-secondary" href={profile.url} rel="me">
+            {profile.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
