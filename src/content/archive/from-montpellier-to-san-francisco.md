@@ -24,7 +24,7 @@ I arrived in San Francisco at the beginning of the evening. By the way, I haven'
 ### Where I come
 
 <figure>
-  <img src="/assets/images/map__sfo-mpl.png" alt="Map from Montpellier to San Francisco" loading="lazy" />
+  <img src="/assets/images/map__sfo-mpl.png" alt="Map from Montpellier to San Francisco" width="600" height="198" loading="lazy" />
   <figcaption>Montpellier - San Francisco</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ I have many objectives in my career in San Francisco.
 I really aim to focus on teaching in the future, to share knowledge about development or about different domains.
 
 <figure>
-  <img src="/assets/images/picture__sfo--mini.jpg" alt="San Francisco break" loading="lazy" />
+  <img src="/assets/images/picture__sfo--mini.jpg" alt="San Francisco break" width="206" height="280" loading="lazy" />
   <figcaption>Sunny evening near Levi's Plaza</figcaption>
 </figure>
 

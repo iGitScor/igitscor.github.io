@@ -39,7 +39,7 @@ Patty Toland is the founder and a partner at Filament Group in Boston.
 You can follow her *[on Twitter][pt-twitter]* or see her at conferences all around the world.
 
 <figure>
-  <img src="/assets/images/patty-toland-smashing-conf.jpg" alt="Patty Toland" loading="lazy" />
+  <img src="/assets/images/patty-toland-smashing-conf.jpg" alt="Patty Toland" width="800" height="450" loading="lazy" />
   <figcaption>Patty Toland's conference</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ The conference talks about :
 > Make the web work for everyone
 
 <figure>
-  <img src="/assets/images/train-performance.jpg" alt="Web performance" loading="lazy" />
+  <img src="/assets/images/train-performance.jpg" alt="Web performance" width="640" height="358" loading="lazy" />
   <figcaption>Slide preview</figcaption>
 </figure>
 

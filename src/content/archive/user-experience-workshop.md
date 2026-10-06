@@ -20,7 +20,7 @@ tags:
 During weeks, I went to workshops about user experience or front-end development... and I learned a lot !
 
 <figure>
-  <img src="/assets/images/intro_flupa.jpg" alt="FLUPA Workshop" loading="lazy" />
+  <img src="/assets/images/intro_flupa.jpg" alt="FLUPA Workshop" width="800" height="600" loading="lazy" />
   <figcaption>User experience workshop presentation</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ For this user test we prepared a unique scenario in order to compare behavior an
 This time there was a test subject and several observers. They were not to influence the tester, only get his impressions, whether good or bad and help him only if he did not find a way to resolve the scenario.
 
 <figure>
-  <img src="/assets/images/ux-scenario.jpg" alt="Workshop" loading="lazy" />
+  <img src="/assets/images/ux-scenario.jpg" alt="Workshop" width="800" height="878" loading="lazy" />
 </figure>
 
 #### Review

@@ -57,7 +57,7 @@ My SCSS is split up in different files or so called Sass partials. Working with 
 I split things up like this :
 
 <figure>
-  <img src="/assets/images/itcss.png" alt="ITCSS structure: Assets + Scripts, Settings, Tools, Generic, Elements, Objects, Components and Trumps" loading="lazy" />
+  <img src="/assets/images/itcss.png" alt="ITCSS structure: Assets + Scripts, Settings, Tools, Generic, Elements, Objects, Components and Trumps" width="300" height="484" loading="lazy" />
 </figure>
 
 My `main` CSS file is `styles.scss`. The only lines of code, in this file, imports the other files. Example :
@@ -151,8 +151,8 @@ In this case, I don't minify assets and use the dev version of the webpack bundl
 
 I also generate automatically a styleguide directly with dev source code.
 
-![Styleguide menu](/assets/images/styleguide_index.png)
-![Styleguide example](/assets/images/styleguide_example.png)
+<img src="/assets/images/styleguide_index.png" alt="Styleguide menu" width="156" height="417" loading="lazy" />
+<img src="/assets/images/styleguide_example.png" alt="Styleguide example" width="246" height="417" loading="lazy" />
 
 ### Github
 

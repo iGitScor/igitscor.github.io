@@ -32,7 +32,7 @@ Le choix de *Gulp* plutôt que *Grunt*, *npm* ou *Broccoli* s'est fait naturelle
 Obtenir un environnement de développement propre et fonctionnel. Il permettra la création de landing pages.
 
 <figure>
-  <img src="/assets/images/kickstarter/landings.jpg" alt="Landing pages" loading="lazy" />
+  <img src="/assets/images/kickstarter/landings.jpg" alt="Landing pages" width="700" height="196" loading="lazy" />
   <figcaption>Figure 1: Landing pages</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ $ Kickstarter start --open
 ### Démonstration
 
 <figure>
-  <img src="/assets/images/kickstarter/kickstarter_launch.gif" alt="Démonstration kickstarter" loading="lazy" />
+  <img src="/assets/images/kickstarter/kickstarter_launch.gif" alt="Démonstration kickstarter" width="469" height="442" loading="lazy" />
   <figcaption>Figure 2: Démonstration kickstarter</figcaption>
 </figure>
 

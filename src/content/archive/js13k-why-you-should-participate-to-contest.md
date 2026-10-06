@@ -31,7 +31,7 @@ A few years ago, I started web development in a professional way, but for me I m
 The first contest was JS1K. **Javascript, performance, limits!** I finally found my challenge ... yes but here, I had not enough confidence in myself and especially too little experience in the development to begin this project. The second contest was JS13k. Always Javascript, less limit and an opportunity to create a video game with a small team. The first attempt was not successful, we were so busy by our work (the paid one) that we could not carry out this project. That was in 2014.
 
 <figure>
-  <img src="/assets/images/js1k-logo.png" alt="js1k" loading="lazy" />
+  <img src="/assets/images/js1k-logo.png" alt="js1k" width="150" height="151" loading="lazy" />
 </figure>
 
 ### Second contest
@@ -41,7 +41,7 @@ The crew behind this contest is friendly with a respectful jury. A bargain to pr
 In 2016, the contest was an opportunity for me to take a new direction with this competition. And this direction is the subject of this article.
 
 <figure>
-  <img src="/assets/images/js13k-logo.png" alt="js13k" loading="lazy" />
+  <img src="/assets/images/js13k-logo.png" alt="js13k" width="150" height="150" loading="lazy" />
 </figure>
 
 ### Why should a front-end integrator / developer participate in these contests?
@@ -63,13 +63,13 @@ During centuries, human has always wanted to travel in time with Javascript, to 
 For example, if the city of [Lublin][Lublin map] (in Poland) had never been founded, the contest's creator would never have been born (or at least would have had a different life). Therefore the developed game could never have been done. It is therefore a temporal anomaly.
 
 <figure>
-  <img src="/assets/images/lublin.jpg" alt="Lublin" loading="lazy" />
+  <img src="/assets/images/lublin.jpg" alt="Lublin" width="600" height="450" loading="lazy" />
 </figure>
 
 The concept of the game is neither revolutionary nor addictive, perhaps a bit cute when seeing the little robot. No. The game was primarily intended as a proof of concept, a POC. I wanted to develop a game with a complex HTML page and advanced CSS concepts. To simplify, when the player answers, it activates the next question, and a checkbox system (yes, like in a form) "stored" the logic of the game and thus the user's answers. So yes, of course, when you look at the page itself, the code is just illegible.
 
 <figure>
-  <img src="/assets/images/js13k.jpg" alt="Game" loading="lazy" />
+  <img src="/assets/images/js13k.jpg" alt="Game" width="500" height="280" loading="lazy" />
 </figure>
 
 ### So, why?
@@ -90,7 +90,7 @@ For all the reasons mentioned in this article, namely:
 A few months after submitting my game, I came across an article in the Algolia solution, which featured a CSS API (without Javascript). Intrigued, I took a look at what they meant by API CSS. Using Algolia with 1001pharmacies, and being satisfied and impressed by their libraries, I had to break through the secret. And what I discovered was simply that they use the same technique as for my game.
 
 <figure>
-  <img src="/assets/images/algolia-css-client.png" alt="CSS API demo" loading="lazy" />
+  <img src="/assets/images/algolia-css-client.png" alt="CSS API demo" width="271" height="480" loading="lazy" />
 </figure>
 
 Here, in this screenshot, we can see that each chip (e.g Sales, Engineering, ...) is a label and linked (in HTML) to a radio button. These radio buttons display or hide elements in the list. In other terms, each person in the list is attached to a job and if the job is selected, the information are readable... by human.
@@ -100,7 +100,7 @@ The main problem of this approach is that the component is not accessible. When 
 #### Demo
 
 <figure>
-  <img src="/assets/images/algolia-css-client.gif" alt="CSS API demo" loading="lazy" />
+  <img src="/assets/images/algolia-css-client.gif" alt="CSS API demo" width="305" height="546" loading="lazy" />
 </figure>
 
 ### Links

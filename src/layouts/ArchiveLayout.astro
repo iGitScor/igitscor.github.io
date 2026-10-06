@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/outfit';
+import outfitLatin from '@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url';
 import '@fontsource-variable/space-grotesk';
 import '../styles/tokens.css';
 import '../styles/base.css';
@@ -36,6 +37,7 @@ const t = useTranslations(lang);
     <link rel="canonical" href={new URL(permalink, site.url).href} />
     <meta name="theme-color" content="#f0f0e8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0e0e14" media="(prefers-color-scheme: dark)" />
+    <link rel="preload" as="font" type="font/woff2" href={outfitLatin} crossorigin />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>

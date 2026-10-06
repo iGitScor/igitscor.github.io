@@ -90,6 +90,11 @@ for (const { url, html } of pages) {
     if (status !== 200) fail(`${url}: ${attribute}="${value}" resolves to ${status}`);
   }
 
+  // Images declare their size, so the page does not shift while they load
+  for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\swidth=/.test(tag) || !/\sheight=/.test(tag)) fail(`${url}: image without width and height: ${tag.slice(0, 80)}`);
+  }
+
   // 5. Only public repositories are linked
   for (const [, repo] of html.matchAll(/github\.com\/(iGitScor\/[\w.-]+)/gi)) {
     if (!publicRepos.has(repo.toLowerCase())) fail(`${url}: links to ${repo}, which is not in public-repos.json`);
