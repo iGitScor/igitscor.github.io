@@ -5,10 +5,9 @@ export const defaultLocale: Locale = 'en';
 export const site = {
   name: 'Sebastien Correaud',
   url: 'https://iscor.me',
-  // The resume site has no HTTPS certificate yet; switch to https:// once it does.
   resume: {
-    en: 'http://cv.iscor.me/',
-    fr: 'http://cv.iscor.me/fr/',
+    en: 'https://cv.iscor.me/',
+    fr: 'https://cv.iscor.me/fr/',
   },
   profiles: [
     { name: 'GitHub', url: 'https://github.com/iGitScor' },
