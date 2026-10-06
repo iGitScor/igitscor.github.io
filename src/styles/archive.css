@@ -140,6 +140,104 @@
   font-weight: 600;
 }
 
+.prose .float-right {
+  float: right;
+  margin: 0 0 12px 20px;
+  border-radius: 0;
+}
+
+.prose .with-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-text);
+}
+
+.prose .with-icon img {
+  flex: none;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* The boarding pass that closes the growth-hacking post. It is a printed
+   object, so it keeps its own colours in both themes. */
+
+.boarding-pass {
+  max-width: 520px;
+  margin-top: 2em;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #eee;
+  color: #222;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.boarding-pass > * {
+  margin: 0;
+}
+
+.bp-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #bf4e6c;
+  color: #fff;
+  font-size: 20px;
+}
+
+.bp-head span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+}
+
+.bp-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 0;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.bp-plane {
+  font-size: 30px;
+}
+
+.bp-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px 16px;
+  padding: 12px 16px 16px;
+}
+
+.bp-fields dt {
+  color: #6b6b6b;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.bp-fields dd {
+  margin: 0;
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.bp-barcode {
+  height: 34px;
+  padding: 0;
+  border-top: 8px solid #bf4e6c;
+  border-bottom: 8px solid #bf4e6c;
+  background:
+    repeating-linear-gradient(90deg, #222 0 2px, transparent 2px 5px, #222 5px 6px, transparent 6px 10px, #222 10px 13px, transparent 13px 15px)
+      16px 0 / 110px 100% no-repeat,
+    #bf4e6c;
+}
+
 /* Archive index */
 
 .archive-list {

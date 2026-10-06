@@ -1,56 +1,62 @@
 ---
-layout: post
+title: Smashing Conf' San Francisco
 type: Workshop
-title:  "Smashing Conf' San Francisco"
-tagline: ""
-description: >
-  Summary of a specific conference at the Smashing Conf located in San Francisco (April 2016)
-categories: [workshop]
-tags: [web performance, smashing conf, sanfrancisco, accessibility]
-author: iScor
-image: ux.svg
-location: sfo
-redirect_from: "/smashing-conf-san-francisco"
+description: Summary of a specific conference at the Smashing Conf located in
+  San Francisco (April 2016)
+lang: en
+date: 2016-06-01
+kind: post
+permalink: /blog/smashing-conf-san-francisco
+redirectFrom:
+  - /smashing-conf-san-francisco.html
+tags:
+  - web performance
+  - smashing conf
+  - sanfrancisco
+  - accessibility
 ---
-# April - Workshop month
+## April - Workshop month
 
 During weeks, I went to workshops about user experience or front-end development... and I learned a lot !
 
-![Patty Toland](http://smashingconf.com/sf-2016/content/01-home/sf16.png){: .center-block .img-fluid}
-<legend class="mark text-xs-center">Smashing Conference - San Francisco 2016</legend>
+*Smashing Conference - San Francisco 2016*
 
-## Introduction
+### Introduction
 
-<blockquote class="post-blockquote">
+<blockquote class="quote">
   <p>
   As the numbers of people who access the internet continually grow, and the devices they use diversify, one thing is clear: speed and performance are a top priority.
   Despite this, the average web page size has more than tripled in the past 5 years, and many web techniques, platforms, tools and practices don’t seem to champion performance, or consider its implications. One of the biggest challenges, especially in the early days of mobile and responsive, was simply the absence of good information to build awareness about performance impacts.
   Luckily, our conversations about performance-related choices are getting better-informed: in the past few years especially, compelling tools and data are being shared that help us measure, track and understand the real state of performance and how it affects our audiences; and techniques are emerging to help make insightful and responsible design and coding choices.
   </p>
-  <span class="blockquote-author">Smashing Conference - San Francisco 2016</span>
+  <footer>Smashing Conference - San Francisco 2016</footer>
 </blockquote>
 
-## Speaker
+### Speaker
 
 Patty Toland is the founder and a partner at Filament Group in Boston.
 
-You can follow her *[on Twitter][pt-twitter]{:target="_blank"}* or see her at conferences all around the world.
+You can follow her *[on Twitter][pt-twitter]* or see her at conferences all around the world.
 
-![Patty Toland](/assets/images/patty-toland-smashing-conf.jpg){: .center-block .img-fluid}
-<legend class="mark text-xs-center">Patty Toland's conference</legend>
+<figure>
+  <img src="/assets/images/patty-toland-smashing-conf.jpg" alt="Patty Toland" loading="lazy" />
+  <figcaption>Patty Toland's conference</figcaption>
+</figure>
 
-## Conference
+### Conference
 
 The conference talks about :
 
 > Make the web work for everyone
 
-![Web performance](/assets/images/train-performance.jpg){: .center-block .img-fluid}
-<legend class="mark text-xs-center">Slide preview</legend>
+<figure>
+  <img src="/assets/images/train-performance.jpg" alt="Web performance" loading="lazy" />
+  <figcaption>Slide preview</figcaption>
+</figure>
 
-I won't speak about the conference content (you can **[watch it here][conf]{:target="_blank"}**)
+I won't speak about the conference content (you can **[watch it here][conf]**)
 
-## My opinion
+### My opinion
 
 I really enjoyed this talk because Patty is a good speaker, who know perfectly her subject.
 I usually don't like conference which topic is about my job especially when the conference is in a generic event about the web.
@@ -65,7 +71,7 @@ Indeed, the SNCF in France, has always faced these user requests for access to a
 
 The web performance suffers from the same problem as accessibility. Stereotypes come, all make the link between accessibility and handicapped people, poor neighborhoods and access performance.
 
-## Going further
+### Going further
 
 I would add a review to conclude this article.
 
