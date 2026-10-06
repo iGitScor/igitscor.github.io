@@ -1,0 +1,9 @@
+---
+import { getEntry } from 'astro:content';
+import ArchiveEntry from '../components/ArchiveEntry.astro';
+
+// Published at the site root in 2016, before posts moved under /blog/.
+const entry = (await getEntry('archive', 'industrialisation-environnement-front'))!;
+---
+
+<ArchiveEntry entry={entry} />

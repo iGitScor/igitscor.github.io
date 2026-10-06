@@ -267,3 +267,20 @@
   font-size: 1.1rem;
   font-weight: 600;
 }
+
+/* Slide decks */
+
+.deck {
+  margin-top: 32px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  aspect-ratio: 16 / 10;
+}
+
+.deck iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

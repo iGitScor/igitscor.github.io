@@ -35,9 +35,9 @@
   { "path": "/blog/personal-growth-hacking", "status": 200 },
   { "path": "/blog/personal-growth-hacking.html", "status": 200 },
 
-  { "path": "/angularisation-du-web.html", "status": 200, "pending": true },
-  { "path": "/industrialisation-environnement-front.html", "status": 200, "pending": true },
+  { "path": "/angularisation-du-web.html", "status": 200 },
+  { "path": "/industrialisation-environnement-front.html", "status": 200 },
 
-  { "path": "/slides/web-performance.html", "status": 200, "pending": true },
-  { "path": "/slides/kickstarter.html", "status": 200, "pending": true }
+  { "path": "/slides/web-performance.html", "status": 200 },
+  { "path": "/slides/kickstarter.html", "status": 200 }
 ]
