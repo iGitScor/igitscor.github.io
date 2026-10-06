@@ -46,8 +46,9 @@ const absolute = (target: Locale) => new URL(localizePath(path, target), site.ur
     <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
   </head>
   <body>
+    <a class="skip-link" href="#main">{t('skip.label')}</a>
     <Header locale={locale} path={path} />
-    <main>
+    <main id="main">
       <slot />
     </main>
     <Footer />

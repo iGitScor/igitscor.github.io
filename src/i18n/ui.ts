@@ -2,6 +2,7 @@ import type { Locale } from '../data/site';
 
 const en = {
   'meta.description': 'Sebastien Correaud: resume, projects, personal projects, and AI and ML work.',
+  'skip.label': 'Skip to content',
   'nav.label': 'Main',
   'nav.home': 'Home',
   'nav.projects': 'Projects',
@@ -70,6 +71,7 @@ export type UiKey = keyof typeof en;
 
 const fr: Record<UiKey, string> = {
   'meta.description': 'Sebastien Correaud : CV, projets, projets personnels, et travaux en IA et en ML.',
+  'skip.label': 'Aller au contenu',
   'nav.label': 'Principale',
   'nav.home': 'Accueil',
   'nav.projects': 'Projets',

@@ -9,6 +9,7 @@ import DevVariantSwitch from '../components/DevVariantSwitch.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site, type Locale } from '../data/site';
+import { useTranslations } from '../i18n/ui';
 
 interface Props {
   /** Language of the archived content, which is not the hub locale of the URL. */
@@ -20,6 +21,7 @@ interface Props {
 }
 
 const { lang, title, description, permalink } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -36,8 +38,9 @@ const { lang, title, description, permalink } = Astro.props;
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
   <body>
+    <a class="skip-link" href="#main">{t('skip.label')}</a>
     <Header locale={lang} />
-    <main>
+    <main id="main">
       <slot />
     </main>
     <Footer />

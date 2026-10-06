@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://iscor.me/sitemap-index.xml
