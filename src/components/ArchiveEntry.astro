@@ -20,8 +20,8 @@ const published = new Intl.DateTimeFormat(data.lang, { month: 'long', year: 'num
     <p class="archive-note">
       <strong>{t('archive.label')}</strong>
       <span>
-        {t('archive.published')}
-        <time datetime={data.date.toISOString().slice(0, 10)}>{published}</time>.
+        {t('archive.published')}{' '}
+        <time datetime={data.date.toISOString().slice(0, 10)}>{published}</time>.{' '}
         {t('archive.note')}
       </span>
     </p>

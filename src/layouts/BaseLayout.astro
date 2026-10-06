@@ -1,7 +1,10 @@
 ---
 import '@fontsource-variable/outfit';
+import '@fontsource-variable/space-grotesk';
 import '../styles/tokens.css';
 import '../styles/base.css';
+import '../styles/variants.css';
+import DevVariantSwitch from '../components/DevVariantSwitch.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { locales, site, type Locale } from '../data/site';
@@ -48,5 +51,6 @@ const absolute = (target: Locale) => new URL(localizePath(path, target), site.ur
       <slot />
     </main>
     <Footer />
+    <DevVariantSwitch />
   </body>
 </html>

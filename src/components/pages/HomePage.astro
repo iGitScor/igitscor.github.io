@@ -44,8 +44,8 @@ const sections = projectSections.filter((section) => inSection(projects, section
         <p class="eyebrow">{t('home.featured.eyebrow')}</p>
         <h2>{t('home.featured.title')}</h2>
       </div>
-      <div class="cards cards-featured">
-        {featured.map((project) => <ProjectCard project={project} locale={locale} />)}
+      <div class="cards">
+        {featured.map((project) => <ProjectCard project={project} locale={locale} compact />)}
       </div>
     </div>
   </section>

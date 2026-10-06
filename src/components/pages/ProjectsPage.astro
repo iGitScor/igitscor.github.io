@@ -43,7 +43,7 @@ const sections = projectSections
             <h2>{t(`section.${section}.title`)}</h2>
             <p>{t(`section.${section}.lead`)}</p>
           </div>
-          <div class:list={['cards', { 'cards-wide': entries.some(({ data }) => data.items.length > 0) }]}>
+          <div class="cards">
             {entries.map((project) =>
               // A project that lives in another section appears here only for its ML part.
               section === 'ml' && project.data.section !== 'ml' && project.data.mlNote ? (

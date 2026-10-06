@@ -9,17 +9,20 @@ interface Props {
   locale: Locale;
   /** Heading level of the project name; game items sit one level below. */
   level?: 2 | 3;
+  /** Leave the sub-items out, for the home page. */
+  compact?: boolean;
 }
 
-const { project, locale, level = 3 } = Astro.props;
+const { project, locale, level = 3, compact = false } = Astro.props;
 const { data } = project;
 const t = useTranslations(locale);
 const Heading = `h${level}` as 'h2' | 'h3';
 const ItemHeading = `h${level + 1}` as 'h3' | 'h4';
 const badge = data.period ?? (data.status === 'live' ? undefined : t(`status.${data.status}`));
+const items = compact ? [] : data.items;
 ---
 
-<article class="card">
+<article class:list={['card', { 'card-wide': items.length > 0 }]}>
   {
     data.cover && data.coverAlt && (
       <Image class="card-cover" src={data.cover} alt={data.coverAlt[locale]} width={720} />
@@ -34,9 +37,9 @@ const badge = data.period ?? (data.status === 'live' ? undefined : t(`status.${d
     <p class="card-summary">{data.summary[locale]}</p>
 
     {
-      data.items.length > 0 && (
+      items.length > 0 && (
         <ul class="card-items">
-          {data.items.map((item) => (
+          {items.map((item) => (
             <li>
               <a class="item" href={item.url}>
                 <Image src={item.cover} alt="" width={480} />

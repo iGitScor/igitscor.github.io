@@ -1,0 +1,243 @@
+/* Design checkpoint: two alternatives to the default look (A, after Myna),
+   over the same markup and the same palette. Once a direction is chosen, the
+   winner moves into base.css and this file is deleted with the dev switch. */
+
+/* B — after Bucket List: Space Grotesk, uppercase headings, hairline bento grid. */
+
+[data-variant='b'] {
+  --font: 'Space Grotesk Variable', system-ui, -apple-system, sans-serif;
+  --r-md: 10px;
+  --r-lg: 0px;
+}
+
+[data-variant='b'] :is(h1, h2) {
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+[data-variant='b'] .hero h1 {
+  max-width: 16ch;
+  font-size: clamp(40px, 6vw, 80px);
+}
+
+[data-variant='b'] .page-head h1 {
+  font-size: clamp(38px, 5.6vw, 68px);
+}
+
+[data-variant='b'] .post-head h1 {
+  font-size: clamp(30px, 4.4vw, 48px);
+}
+
+[data-variant='b'] .prose :is(h2, h3) {
+  text-transform: none;
+  line-height: 1.1;
+}
+
+[data-variant='b'] :is(.site-nav, .brand, .jump a, .badge, .chips li, .lang-switch, .link-arrow, .btn) {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-variant='b'] :is(.site-nav, .jump a, .link-arrow, .btn) {
+  font-size: 0.8rem;
+}
+
+[data-variant='b'] .brand-mark {
+  border-radius: 8px;
+}
+
+[data-variant='b'] .site-header {
+  border-bottom-color: var(--border);
+}
+
+[data-variant='b'] .section {
+  border-top-color: var(--border);
+}
+
+[data-variant='b'] :is(.cards, .tiles) {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+[data-variant='b'] :is(.card, .tile) {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: none;
+}
+
+[data-variant='b'] :is(a.tile, .item):hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+[data-variant='b'] a.tile:hover p,
+[data-variant='b'] .item:hover .item-text,
+[data-variant='b'] .item:hover :is(h3, h4) {
+  color: var(--on-accent);
+}
+
+[data-variant='b'] .card-head :is(h2, h3),
+[data-variant='b'] .tile h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+[data-variant='b'] .chips li {
+  border-radius: 6px;
+  font-size: 0.68rem;
+}
+
+[data-variant='b'] .badge {
+  border-radius: 6px;
+  font-size: 0.66rem;
+}
+
+[data-variant='b'] .eyebrow {
+  letter-spacing: 0.08em;
+}
+
+/* C — minimal, text first: system font, one narrow column, no boxes. */
+
+[data-variant='c'] {
+  --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --wrap: 760px;
+}
+
+[data-variant='c'] .site-header {
+  position: static;
+  background: none;
+  backdrop-filter: none;
+}
+
+[data-variant='c'] .brand-mark {
+  display: none;
+}
+
+[data-variant='c'] :is(h1, h2, h3) {
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+[data-variant='c'] .hero {
+  padding-block: clamp(48px, 7vw, 80px) clamp(32px, 5vw, 48px);
+}
+
+[data-variant='c'] :is(.hero h1, .page-head h1, .post-head h1) {
+  max-width: none;
+  font-size: clamp(32px, 4.6vw, 46px);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+[data-variant='c'] .section-head h2 {
+  font-size: clamp(22px, 2.6vw, 27px);
+}
+
+[data-variant='c'] .mark {
+  padding: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-deep);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.12em;
+}
+
+[data-variant='c'] .eyebrow::before {
+  display: none;
+}
+
+[data-variant='c'] .btn {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+[data-variant='c'] .actions {
+  gap: 8px 28px;
+  margin-top: 24px;
+}
+
+[data-variant='c'] :is(.cards, .tiles) {
+  display: block;
+  margin-top: 16px;
+}
+
+[data-variant='c'] :is(.card, .tile) {
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: none;
+}
+
+[data-variant='c'] .card-body,
+[data-variant='c'] .tile {
+  padding: 22px 0;
+}
+
+[data-variant='c'] .card-cover {
+  display: none;
+}
+
+[data-variant='c'] .card-head :is(h2, h3),
+[data-variant='c'] .tile h3 {
+  font-size: 19px;
+}
+
+[data-variant='c'] .chips li {
+  padding: 0;
+  background: none;
+  color: var(--muted);
+}
+
+[data-variant='c'] .chips li:not(:last-child)::after {
+  content: ' ·';
+}
+
+[data-variant='c'] .item {
+  flex-direction: row;
+  align-items: flex-start;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+[data-variant='c'] .item img {
+  width: 96px;
+  border-radius: 6px;
+}
+
+[data-variant='c'] .item-text {
+  padding: 0 0 0 16px;
+}
+
+[data-variant='c'] .card-items {
+  grid-template-columns: 1fr;
+}
+
+[data-variant='c'] .jump {
+  gap: 4px 20px;
+  margin-top: 20px;
+}
+
+[data-variant='c'] .jump a {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+[data-variant='c'] .section {
+  padding-block: clamp(28px, 4vw, 44px);
+}

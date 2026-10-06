@@ -192,8 +192,8 @@ a:hover {
 }
 
 .mark {
-  padding-inline: 0.12em;
-  border-radius: 0.18em;
+  padding-inline: 0.08em;
+  border-radius: 0.16em;
   background: var(--accent);
   color: var(--on-accent);
   box-decoration-break: clone;
@@ -360,8 +360,9 @@ a:hover {
   margin-top: 32px;
 }
 
-.cards-wide {
-  grid-template-columns: 1fr;
+/* A project with sub-items (the games) takes the full row. */
+.card-wide {
+  grid-column: 1 / -1;
 }
 
 .card {
@@ -452,7 +453,7 @@ a:hover {
 
 .card-items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 12px;
   margin: 6px 0;
   padding: 0;
