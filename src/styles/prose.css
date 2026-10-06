@@ -145,3 +145,10 @@
     padding: 8px 6px;
   }
 }
+
+/* Long-form headings stay in sentence case. */
+
+.prose :is(h2, h3) {
+  text-transform: none;
+  line-height: 1.1;
+}

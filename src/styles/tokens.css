@@ -1,4 +1,5 @@
-/* Design tokens, shared with Myna (podcast/brand/tokens.css) and Bucket List.
+/* Design tokens: the palette shared with Bucket List and Myna, with the type
+   and shapes of Bucket List (list/src/style.css).
    Palette: off-white, black, one lime accent. Lime is only ever a fill (with
    --on-accent text on it) or text on dark surfaces: on light backgrounds it has
    no contrast, so accent text there uses --accent-text. */
@@ -20,11 +21,11 @@
   --on-accent: #111111;
   --focus: #111111;
   --r-xl: 34px;
-  --r-lg: 26px;
-  --r-md: 18px;
+  --r-lg: 0px;
+  --r-md: 10px;
   --r-pill: 999px;
   --wrap: 1180px;
-  --font: 'Outfit Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font: 'Space Grotesk Variable', system-ui, -apple-system, sans-serif;
   --mono: ui-monospace, 'SF Mono', Menlo, monospace;
   color-scheme: light;
 }

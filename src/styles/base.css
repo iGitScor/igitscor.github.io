@@ -685,3 +685,89 @@ a.tile:hover {
   padding: 0;
   list-style: none;
 }
+
+/* Bucket List treatment: uppercase display type, hairline bento grid, lime hover. */
+
+/* Listed with the page-specific heading rules so it wins over their tracking. */
+:is(h1, h2),
+.hero h1,
+.page-head h1 {
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  max-width: 16ch;
+  font-size: clamp(40px, 6vw, 80px);
+}
+
+.page-head h1 {
+  font-size: clamp(38px, 5.6vw, 68px);
+}
+
+:is(.site-nav, .brand, .jump a, .badge, .chips li, .lang-switch, .link-arrow, .btn) {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+:is(.site-nav, .jump a, .link-arrow, .btn) {
+  font-size: 0.8rem;
+}
+
+.site-header {
+  border-bottom-color: var(--border);
+}
+
+.section {
+  border-top-color: var(--border);
+}
+
+:is(.cards, .tiles) {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+:is(.card, .tile) {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: none;
+}
+
+.cards > .card:only-child > .card-cover {
+  border-right-color: var(--border);
+}
+
+:is(a.tile, .item):hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+a.tile:hover p,
+.item:hover .item-text,
+.item:hover :is(h3, h4) {
+  color: var(--on-accent);
+}
+
+.card-head :is(h2, h3),
+.tile h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.chips li {
+  border-radius: 6px;
+  font-size: 0.68rem;
+}
+
+.badge {
+  border-radius: 6px;
+  font-size: 0.66rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+}

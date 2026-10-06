@@ -185,3 +185,12 @@
   height: 100%;
   border: 0;
 }
+
+/* Archive titles share the uppercase display treatment of base.css. */
+
+.post-head h1 {
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-size: clamp(30px, 4.4vw, 48px);
+}

@@ -14,7 +14,7 @@ const { name } = JSON.parse(readFileSync(`${root}src/data/resume.en.json`, 'utf8
 // Everything but the mark, the title line and the slogan is hidden, and the
 // slogan is enlarged to fill the card.
 const css = `
-  .skip-link, .site-nav, .lang-switch, .variant-switch, .hero .lead, .hero .now, .hero .actions,
+  .skip-link, .site-nav, .lang-switch, .hero .lead, .hero .now, .hero .actions,
   main > :not(.hero), .site-footer { display: none !important; }
   html { overflow: hidden; }
   .site-header { position: static; border: 0; background: none; backdrop-filter: none; }
