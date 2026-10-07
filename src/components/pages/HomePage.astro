@@ -4,10 +4,10 @@ import ContactBlock from '../ContactBlock.astro';
 import NoteList from '../NoteList.astro';
 import ProjectCard from '../ProjectCard.astro';
 import ResumeList from '../ResumeList.astro';
-import { projectSections } from '../../data/sections';
+import { now } from '../../data/now';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
-import { getProjects, inSection } from '../../lib/projects';
+import { getProjects } from '../../lib/projects';
 import { caseStudyUrls } from '../../lib/case-studies';
 import { getNotes } from '../../lib/notes';
 import { getResume, yearOf } from '../../lib/resume';
@@ -28,7 +28,14 @@ const projectsUrl = localizePath('/projects/', locale);
 const studies = await caseStudyUrls(locale);
 const aboutUrl = localizePath('/about/', locale);
 const notes = (await getNotes(locale)).slice(0, 3);
-const sections = projectSections.filter((section) => inSection(projects, section).length > 0);
+const building = now.building.map((id) => {
+  const project = projects.find((candidate) => candidate.id === id);
+  if (!project) throw new Error(`src/data/now.ts names an unknown project "${id}"`);
+  return { name: project.data.name, href: studies.get(id) ?? project.data.url ?? projectsUrl };
+});
+const updated = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(
+  new Date(now.updated),
+);
 ---
 
 <BaseLayout locale={locale} path="/" person>
@@ -75,21 +82,31 @@ const sections = projectSections.filter((section) => inSection(projects, section
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">{t('home.explore.eyebrow')}</p>
-        <h2>{t('home.explore.title')}</h2>
+        <p class="eyebrow">{t('home.now.eyebrow')}</p>
+        <h2>{t('home.now.title')}</h2>
       </div>
-      <ul class="tiles">
-        {
-          sections.map((section) => (
-            <li>
-              <a class="tile" href={`${projectsUrl}#${section}`}>
-                <h3>{t(`section.${section}.title`)}</h3>
-                <p>{t(`section.${section}.lead`)}</p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <dl class="now-list">
+        <div>
+          <dt>{t('home.now.building')}</dt>
+          <dd>
+            {
+              building.map(({ name, href }, index) => (
+                <>
+                  {index > 0 && ', '}
+                  <a href={href}>{name}</a>
+                </>
+              ))
+            }
+          </dd>
+        </div>
+        <div>
+          <dt>{t('home.now.learning')}</dt>
+          <dd>{now.learning[locale]}</dd>
+        </div>
+      </dl>
+      <p class="now-updated">
+        {t('home.now.updated')} <time datetime={now.updated}>{updated}</time>
+      </p>
     </div>
   </section>
 
