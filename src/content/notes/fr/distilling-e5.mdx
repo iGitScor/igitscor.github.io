@@ -5,9 +5,9 @@ date: 2026-10-07
 draft: true
 project: bucket-list
 ---
-Bucket List range une liste importée en îles thématiques, dans le navigateur. Le modèle évident pour cette tâche est multilingual-e5-small : il comprend le français et l’anglais et produit de bons embeddings de phrases. Il pèse aussi environ 140 Mo à télécharger et met de quelques secondes à quelques minutes à tourner sur un téléphone. Personne n’attend aussi longtemps pour voir une liste.
+J’ai construit Bucket List en partie pour progresser en machine learning, sur un périmètre restreint. L’application range une liste en îles thématiques, dans le navigateur, et le modèle évident pour ça, c’est multilingual-e5-small : il comprend le français et l’anglais et sait bien comparer des phrases. Sauf qu’il pèse environ 140 Mo, et qu’il met de quelques secondes à quelques minutes à tourner sur un téléphone. Personne n’attend aussi longtemps pour voir une liste.
 
-L’application a donc trois niveaux : un lexique de mots-clés, un modèle léger et le modèle e5 complet. Cette note parle de celui du milieu.
+L’application fonctionne donc en trois étapes : les mots-clés, un modèle léger, et le modèle complet. Cette note parle du modèle léger, et de la façon dont je l’ai fabriqué.
 
 <Callout title="Qu’est-ce qu’un embedding ?">
 
@@ -17,9 +17,9 @@ Une façon de transformer une phrase en liste de nombres, de sorte que des phras
 
 ## La recette
 
-Le modèle léger suit la méthode Model2Vec. Au lieu de faire tourner un transformer au moment de l’inférence, on le fait tourner une seule fois, à l’avance, sur un vocabulaire, et on garde un vecteur statique par fragment de mot. À l’inférence, une phrase n’est plus que la moyenne pondérée des vecteurs de ses fragments : une lecture dans une table et une moyenne.
+J’ai suivi une méthode qui s’appelle Model2Vec. Le principe est simple : au lieu de faire tourner le gros modèle à chaque fois, on le fait tourner une seule fois, à l’avance, sur chaque fragment de mot, et on garde le résultat dans une table. Ensuite, lire une phrase, c’est juste retrouver ses mots dans la table et en faire la moyenne.
 
-Le script, `distill-m2v.py`, fait cinq choses :
+Mon script, `distill-m2v.py`, fait cinq choses :
 
 1. Il lit en flux environ 6 millions de tokens par langue, tirés de Wikipédia en français et en anglais.
 2. Il garde les fragments de mots qui couvrent 99,5 % de ce texte, plus tous ceux des textes que l’application classe elle-même : 30 286 au total.
@@ -47,7 +47,7 @@ La projection atteint un cosinus de 0,903. Le fichier pèse 8,66 Mo, assez peu p
 
 ## Ce que cela coûte
 
-Un modèle ne vaut que par son évaluation. Sur 757 éléments que le modèle léger n’a jamais vus :
+Je voulais des chiffres, pas des impressions. Je l’ai donc testé sur 757 éléments que le modèle léger n’avait jamais vus :
 
 | Niveau | Accord avec le modèle complet | Accord avec la liste triée à la main |
 |---|---|---|
@@ -65,11 +65,11 @@ Un modèle ne vaut que par son évaluation. Sur 757 éléments que le modèle l�
   ]}
 />
 
-Deux lectures du même tableau. Le modèle léger bat les mots-clés, mais de peu face au tri manuel : 1,3 point. Et il reste 6,5 points sous le modèle complet. Pour une première réponse qui arrive en quelques millisecondes, c’est un bon compromis ; pour la réponse finale, non, et c’est pourquoi le modèle complet se télécharge quand même en arrière-plan quand l’appareil peut se le permettre.
+Je lis ce tableau de deux façons. Le modèle léger bat les mots-clés, mais d’un petit 1,3 point face au tri manuel. Et il reste 6,5 points sous le modèle complet. Pour une première réponse en quelques millisecondes, c’est un bon compromis. Pour la réponse finale, non : le modèle complet se télécharge donc quand même en arrière-plan, quand l’appareil peut se le permettre.
 
-## Ce que je me dirais avant de commencer
+## Ce que je referais pareil
 
-- **Évaluer face à des humains, pas seulement face au professeur.** L’accord avec le modèle complet flatte l’élève ; c’est la colonne du tri manuel que les utilisateurs ressentent.
-- **Les mots-clés sont une base solide.** Sur des éléments de liste courts, un bon lexique est à moins de deux points d’un modèle appris. Mesurez-le avant de construire plus lourd.
-- **Figer le professeur.** Le hash de révision fait partie du nom du fichier du modèle. Une mise à jour silencieuse en amont ferait diverger l’élève et le modèle complet sans raison visible.
-- **La distillation coûte assez peu pour être refaite.** Quinze minutes sur un portable : essayer une autre taille de vocabulaire ou un autre corpus prend un après-midi, pas un projet.
+- **Comparer avec des humains, pas seulement avec le gros modèle.** Être d’accord avec le modèle complet, c’est flatteur ; trier comme une personne, c’est ce que les utilisateurs ressentent.
+- **Mesurer les mots-clés d’abord.** Sur des éléments de liste courts, une bonne liste de mots-clés arrive à moins de deux points d’un modèle entraîné. J’aurais dû le mesurer avant de construire plus lourd.
+- **Figer la version du gros modèle.** Elle fait partie du nom du fichier du modèle léger. Si elle changeait en douce, les deux modèles ne seraient plus d’accord, sans raison visible.
+- **Recommencer, ça ne coûte pas cher.** Quinze minutes sur un portable : tester une autre taille de vocabulaire, c’est un après-midi, pas un projet.

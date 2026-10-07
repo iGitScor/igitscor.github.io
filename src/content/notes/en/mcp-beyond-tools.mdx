@@ -5,7 +5,7 @@ date: 2026-10-07
 draft: true
 project: kyb-mcp
 ---
-Most Model Context Protocol servers expose tools and nothing else. kyb-mcp, a workbench that searches the French company registry and keeps KYB dossiers, was built to use every primitive on purpose. Tools and resources are well documented. These three are less known, and each solves a real problem.
+I built kyb-mcp to improve my skills in AI. It is a server that searches the French company registry and keeps KYB review files, and I made it use every building block of the Model Context Protocol on purpose. Most servers only offer tools. Here are three blocks that most examples skip, and the real problem each one solved for me.
 
 <Callout title="What is MCP?">
 
@@ -60,9 +60,9 @@ The server remembers nothing between two requests: each one carries everything n
 
 </Callout>
 
-## Takeaways
+## What I keep from it
 
-- Use elicitation for consent and for destructive actions: the human answers, not the model.
-- Use sampling when the server needs language but should not hold a key or pay for a model.
-- Add completions wherever a person types an identifier.
-- Most tutorials still show the pre-2026 SDK. Read the SDK reference, not blog posts.
+- Elicitation is for consent and for anything destructive: the person answers, not the model.
+- Sampling is for when the server needs words but shouldn't hold a key or pay for a model.
+- Completions belong wherever a person has to type an identifier.
+- Most tutorials still show the version from before July 2026. The official reference saved me.

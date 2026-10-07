@@ -1,12 +1,12 @@
 ---
 title: "Bucket List : trier n’importe quelle liste dans le navigateur"
-description: Comment Bucket List range une liste importée en îles thématiques avec un modèle de 9 Mo distillé pour le navigateur, et ne passe au modèle complet que si l’appareil peut se le permettre.
+description: Pourquoi j’ai construit Bucket List, et comment un petit modèle, entraîné pour le navigateur, range une liste en îles thématiques sans qu’elle n’en sorte jamais.
 ---
-## Le problème
+## Pourquoi je l’ai construite
 
-Une bucket list, c’est personnel, et une longue liste se lit mal. La trier par thème est un travail pour un modèle de langage, mais l’envoyer à un serveur pour la faire trier irait contre l’idée même.
+J’ai construit Bucket List pour garder une trace de deux choses : ce que j’ai déjà accompli, et ce dont je rêve encore.
 
-Bucket List se donne une contrainte : la liste ne quitte jamais le navigateur. La classification, le stockage et la vue « histoire » tournent tous sur l’appareil.
+Je voulais aussi progresser en machine learning, sur un périmètre restreint. Une liste, c’est un bon terrain de jeu pour ça : ranger des éléments par thème est un vrai problème de ML, mais assez petit pour tourner entièrement dans le navigateur. Je me suis donc fixé une règle : la liste ne quitte jamais le navigateur.
 
 <Callout title="Qu’est-ce qu’un classifieur ?">
 
@@ -16,17 +16,17 @@ Un programme qui range des choses dans des boîtes. Ici, il lit chaque élément
 
 ## Ce que j’ai construit
 
-- **Une application centrée sur la liste**, en français, pour filtrer, explorer et suivre une bucket list. Elle importe presque tout : JSON, CSV, TSV, listes à cocher Markdown ou un élément par ligne. Elle devine quelle colonne contient le texte, le statut, la catégorie et le lien, et retire les marqueurs comme `[x]` ou ✅.
-- **Une vue « histoire » cachée** : un carnet en 2D où la liste devient 1 à 8 îles thématiques, choisies parmi 14 archétypes, et où le ciel suit l’heure au fil d’une journée, de 6 h à 22 h.
-- **Un classifieur à trois niveaux** qui tourne dans le navigateur, et le script qui distille son niveau intermédiaire.
+- **La liste elle-même**, pour filtrer, explorer et suivre. On peut importer à peu près n’importe quelle liste : un export de tableur, une liste à cocher en Markdown, ou un élément par ligne. L’application devine quelle colonne contient quoi.
+- **Une vue « histoire » cachée** : un carnet en 2D où la liste devient des îles thématiques, et où le ciel suit l’heure au fil de la journée.
+- **Un classifieur en trois étapes**, du plus simple au plus précis, qui tourne entièrement dans le navigateur.
 
 ## Comment ça marche
 
-**Trois niveaux, du moins coûteux au plus coûteux.** Un lexique de mots-clés répond instantanément, sans téléchargement. Un modèle léger livré avec le site, de 8,66 Mo, répond en quelques millisecondes. Le modèle complet multilingual-e5-small, d’environ 140 Mo, tourne en ONNX et WebAssembly avec transformers.js et prend de quelques secondes à quelques minutes. Les mots-clés couvrent aussi les listes qui ne sont ni en français ni en anglais.
+**Trois étapes, de la moins coûteuse à la plus coûteuse.** Une liste de mots-clés répond tout de suite. Ensuite, un modèle léger livré avec le site répond en quelques millisecondes. Le modèle complet est bien plus gros : il met de quelques secondes à quelques minutes, donc il n’arrive qu’après.
 
 <Bars
   max={140}
-  caption="Ce que chaque niveau coûte à télécharger. Le modèle léger est 16 fois plus petit que le modèle complet."
+  caption="Ce que chaque étape coûte à télécharger. Le modèle léger est 16 fois plus petit que le modèle complet."
   rows={[
     { label: "Mots-clés", note: "instantané", value: 0, display: "0 Mo" },
     { label: "Modèle léger", note: "quelques millisecondes", value: 8.66, display: "8,66 Mo", highlight: true },
@@ -34,7 +34,7 @@ Un programme qui range des choses dans des boîtes. Ici, il lit chaque élément
   ]}
 />
 
-**Un modèle distillé pour la tâche.** Le modèle léger suit la recette Model2Vec, avec multilingual-e5-small comme professeur. Il garde 30 286 fragments de mots, ceux qui couvrent 99,5 % d’un échantillon de Wikipédia en français et en anglais et ceux des textes de l’application, calcule l’embedding de chacun, les réduit à 256 dimensions, puis apprend une projection linéaire vers les 384 du professeur. L’ajustement atteint un cosinus de 0,903, et l’ensemble prend environ 15 minutes sur le processeur d’un ordinateur portable.
+**Un petit modèle, formé par un grand.** Le modèle léger a appris du modèle complet (multilingual-e5-small) en recopiant ses réponses sur un échantillon de Wikipédia en français et en anglais. L’entraînement prend environ 15 minutes sur un portable.
 
 <Callout title="Embeddings et distillation, en deux phrases chacun">
 
@@ -44,9 +44,9 @@ La distillation, c’est un grand modèle qui en forme un petit. Le petit appren
 
 </Callout>
 
-**Mesuré, pas supposé.** Sur 757 éléments que le modèle léger n’a jamais vus à l’entraînement :
+**Mesuré, pas deviné.** J’ai testé les trois étapes sur 757 éléments que le modèle léger n’avait jamais vus :
 
-| Niveau | Accord avec le modèle complet | Accord avec la liste triée à la main |
+| Étape | Accord avec le modèle complet | Accord avec la liste triée à la main |
 |---|---|---|
 | Mots-clés | 72,0 % | 78,2 % |
 | Modèle léger | 77,5 % | 79,5 % |
@@ -54,13 +54,13 @@ La distillation, c’est un grand modèle qui en forme un petit. Le petit appren
 
 <Callout title="Comment lire ce tableau">
 
-La première colonne compare chaque niveau au modèle complet. La seconde, plus importante, le compare à la façon dont une personne a trié les mêmes éléments à la main.
+La première colonne compare chaque étape au modèle complet. La seconde, plus importante, la compare à la façon dont une personne a trié les mêmes éléments à la main.
 
 </Callout>
 
-**Monter en gamme seulement si l’appareil le permet.** Le modèle complet se télécharge en arrière-plan quand le navigateur est inactif et en ligne, sans économiseur de données, avec une connexion rapide et plus de 400 Mo de stockage libre. Une fois prêt, les listes enregistrées sont triées à nouveau et vos corrections sont conservées.
+**Le modèle complet n’arrive que si l’appareil peut se le permettre** : navigateur inactif, en ligne, connexion rapide et assez de place libre. Une fois prêt, les listes sont triées à nouveau, et vos corrections sont gardées.
 
-**Le même résultat sur chaque appareil.** L’identifiant d’une liste est un SHA-256 de son contenu, et il sert de graine à chaque choix aléatoire. Les révisions du modèle et les versions du moteur sont figées, et le modèle complet tourne sur un seul thread en WebAssembly : deux navigateurs trient donc la même liste de la même façon. Des tests par instantanés le vérifient, y compris pour des fichiers avec des fins de ligne Windows ou une marque d’ordre des octets.
+**Le même résultat sur chaque appareil.** La même liste donne les mêmes îles sur mon téléphone et sur mon ordinateur, et des tests le vérifient.
 
 <Callout title="Pourquoi le même résultat sur chaque appareil ?">
 
@@ -68,13 +68,12 @@ Certaines étapes font intervenir le hasard, comme la disposition des îles. Si 
 
 </Callout>
 
-**Stockée nulle part ailleurs.** Les listes, les corrections et les scores restent dans IndexedDB, dans ce navigateur uniquement.
+**Stockée nulle part ailleurs.** Les listes, les corrections et les scores restent dans le navigateur.
 
-## Ce que j’ai appris
+## Ce qui a été difficile
 
-- Une conception progressive vaut mieux qu’un modèle unique : afficher tout de suite la réponse bon marché, récupérer discrètement le gros modèle, puis monter en gamme.
-- Un modèle statique de 9 Mo arrive à 6,5 points du modèle complet sur les éléments triés à la main, et c’est assez pour rendre le modèle complet facultatif.
-- Le ML dans le navigateur exige de tout figer : révision du modèle, poids, moteur et nombre de threads, sinon deux appareils ne sont pas d’accord.
-- Les limites de l’hébergeur façonnent l’architecture : le moteur ONNX dépasse la limite de 25 Mio par fichier, il se charge donc depuis un CDN.
-- Certaines règles relèvent du code, pas du modèle : les éléments personnels vont toujours sur une île verrouillée, quoi qu’en dise le classifieur.
-- Réduire le périmètre est une fonctionnalité. Une première version était un monde en 3D ; l’application centrée sur la liste, avec sa vue « histoire » en 2D, l’a remplacée.
+- Choisir quoi mesurer. Être d’accord avec le gros modèle, c’est flatteur, mais ce qui compte, c’est de trier comme une personne. Et là, le modèle léger ne fait qu’un tout petit peu mieux que les mots-clés.
+- Obtenir le même résultat partout : il a fallu figer toutes les versions, du modèle, de ses poids et du moteur.
+- L’hébergeur refuse les fichiers de plus de 25 Mio, et le moteur qui fait tourner le modèle complet est plus gros : il se charge donc depuis un CDN.
+- Certaines règles ne doivent pas dépendre d’un modèle : les éléments personnels vont toujours sur une île verrouillée, quoi qu’en dise le classifieur.
+- Réduire le périmètre. Ma première version était un monde en 3D. Je l’ai abandonnée pour la liste et une simple vue « histoire » en 2D, et l’application s’en porte mieux.

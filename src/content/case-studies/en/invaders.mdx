@@ -1,25 +1,25 @@
 ---
 title: "Flash Invaders Tracker: planning a hunt on foot"
-description: How Flash Invaders Tracker finds the invaders you walked past and plans a walking route to the ones you are missing, entirely in the browser.
+description: Why I built Flash Invaders Tracker as a player, and how it plans a walking route and finds the invaders I walked past without flashing.
 ---
-## The problem
+## Why I built it
 
-Flash Invaders is a game where players photograph the mosaics that the street artist Invader has placed in cities around the world. The official app shows what you have flashed, but not what you missed, nor how to get to it.
+I'm a Flash Invaders player. The game is about photographing the mosaics that the street artist Invader has placed in cities around the world.
 
-The tracker answers two questions: which invaders did I walk right past, and what is the best walk to collect the ones I am missing?
+The raw map of every invader exists already, but that is not what I wanted. I wanted two things: a route to collect the ones I'm missing, and the number of invaders I walked right past during a walk without flashing them.
 
 ## What I built
 
-- **A gallery against the map**: your flashes, loaded by player id, shown over a map of 4,415 invaders in 89 cities.
-- **Missed invaders**: import a GPX track from Strava or an Apple Health export, and see every invader you came within 50 metres of without flashing it.
-- **A route planner** that picks the invaders worth a detour within a distance budget, orders them, and exports the walk as a GPX file or a Google Maps link.
-- **A hunt generator** that turns a set of invaders into a puzzle trail with riddles drawn from the neighbourhood.
+- **My gallery on the map**: my flashes, shown over a map of 4,415 invaders in 89 cities.
+- **Missed invaders**: import a walk recorded on Strava or Apple Health, and see every invader you passed within 50 metres without flashing it.
+- **A route planner**: give it a distance, and it picks the invaders worth a detour, puts them in a good order, and exports the walk as a GPX file or a Google Maps link.
+- **A hunt generator** that turns a few invaders into a treasure hunt, with riddles about the neighbourhood.
 
-There is no backend: the app is a static site, and your tracks and settings stay in the browser.
+There is no server behind it: the app is a static site, and your walks and settings stay in your browser.
 
 ## How it works
 
-**A grid instead of every pair.** Comparing every point of a long walk with every invader is slow. Invaders are bucketed into a grid of cells about 111 metres wide, so each track point only checks the cells around it.
+**Finding the invaders you walked past.** The map is cut into squares of about 111 metres, and each point of your walk only looks at the squares around it.
 
 <Callout title="Why a grid?">
 
@@ -27,7 +27,7 @@ A long walk has thousands of GPS points. Checking each one against 4,415 invader
 
 </Callout>
 
-**Choose first, then order.** Google Maps accepts at most 8 waypoints, so the planner first chooses which invaders to visit: unflashed ones within 80% of the distance budget, nearest first, plus any that cost a detour of less than 150 metres. It then orders them by cheapest insertion and improves the order with 2-opt and Or-opt passes. Walking directions come from OSRM.
+**Choose first, then order.** Google Maps accepts at most 8 stops, so the planner first chooses which invaders to visit, starting with the nearest ones, then adds any that cost less than 150 metres of detour. Then it puts them in order and improves that order until the walk stops crossing itself. Walking directions come from OSRM.
 
 <TwoOpt
   before="Before"
@@ -42,7 +42,7 @@ Cheapest insertion builds the walk one stop at a time, slipping each new stop in
 
 </Callout>
 
-**Puzzles from open data.** The hunt generator describes each location with Nominatim, Overpass, Wikidata and Wikipedia, and picks from more than 40 puzzle types. A five-invader hunt takes 30 to 50 seconds the first time and under 2 seconds once the place data is cached.
+**Riddles from open data.** The hunt generator describes each place using OpenStreetMap, Wikidata and Wikipedia, and picks from more than 40 kinds of riddles. A hunt of five invaders takes 30 to 50 seconds the first time, and under 2 seconds once the places are cached.
 
 <Callout title="What is a cache?">
 
@@ -50,12 +50,11 @@ A copy of an answer kept for later. The first time the app asks the open-data se
 
 </Callout>
 
-**Community data, kept in sync.** The invader list comes from a community-maintained dataset and metro stations from OpenStreetMap, each refreshed by a script.
+**Data from the community.** The list of invaders comes from a dataset maintained by other players, and the metro stations from OpenStreetMap. A script refreshes each of them.
 
-## What I learned
+## What was hard
 
-- Real constraints pick the algorithm: an 8-waypoint limit turns "solve the route" into "choose, then order".
-- At this size, cheap local search is enough: cheapest insertion plus 2-opt and Or-opt gives good walks.
-- A spatial grid turns a quadratic comparison into near-constant lookups, with a few lines of code.
-- With free public APIs, rate limits set the pace, so caching and fallbacks matter more than the algorithm.
-- Building on community data means owning the sync: the update scripts are part of the product.
+- The 8-stop limit of Google Maps decided the whole design: I couldn't just “solve the route”, I had to choose the stops first, then order them.
+- I expected to need a clever algorithm. A simple one, then tidying up the crossings, turned out to be enough for walks of this size.
+- The free services I rely on limit how often you can call them. Caching the answers mattered more than the algorithm.
+- Relying on community data means keeping it in sync myself: the update scripts are part of the product.

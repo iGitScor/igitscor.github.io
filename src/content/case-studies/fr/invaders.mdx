@@ -1,25 +1,25 @@
 ---
 title: "Flash Invaders Tracker : préparer une chasse à pied"
-description: Comment Flash Invaders Tracker retrouve les invaders devant lesquels vous êtes passé et planifie un parcours à pied vers ceux qui vous manquent, entièrement dans le navigateur.
+description: Pourquoi j’ai construit Flash Invaders Tracker en tant que joueur, et comment il planifie un parcours à pied et retrouve les invaders devant lesquels je suis passé sans les flasher.
 ---
-## Le problème
+## Pourquoi je l’ai construit
 
-Flash Invaders est un jeu où l’on photographie les mosaïques que l’artiste de rue Invader a posées dans des villes du monde entier. L’application officielle montre ce que vous avez flashé, mais pas ce que vous avez manqué, ni comment y aller.
+Je joue à Flash Invaders. Le jeu consiste à photographier les mosaïques que l’artiste de rue Invader a posées dans des villes du monde entier.
 
-Cet outil répond à deux questions : devant quels invaders suis-je passé sans les voir, et quelle est la meilleure balade pour récupérer ceux qui me manquent ?
+La carte brute de tous les invaders existe déjà, mais ce n’est pas ce que je voulais. Je voulais deux choses : un parcours pour récupérer ceux qui me manquent, et le nombre d’invaders devant lesquels je suis passé pendant une balade sans les flasher.
 
 ## Ce que j’ai construit
 
-- **Une galerie face à la carte** : vos flashs, chargés à partir de votre identifiant de joueur, affichés sur une carte de 4 415 invaders dans 89 villes.
-- **Les invaders manqués** : importez une trace GPX depuis Strava ou un export Apple Santé, et voyez chaque invader passé à moins de 50 mètres sans être flashé.
-- **Un planificateur de parcours** qui choisit les invaders qui valent un détour dans une distance donnée, les ordonne et exporte la balade en fichier GPX ou en lien Google Maps.
-- **Un générateur de chasses** qui transforme un ensemble d’invaders en jeu de piste, avec des énigmes tirées du quartier.
+- **Ma galerie sur la carte** : mes flashs, affichés sur une carte de 4 415 invaders dans 89 villes.
+- **Les invaders manqués** : on importe une balade enregistrée avec Strava ou Apple Santé, et on voit chaque invader passé à moins de 50 mètres sans être flashé.
+- **Un planificateur de parcours** : on lui donne une distance, il choisit les invaders qui valent le détour, les met dans un bon ordre et exporte la balade en fichier GPX ou en lien Google Maps.
+- **Un générateur de chasses** qui transforme quelques invaders en chasse au trésor, avec des énigmes sur le quartier.
 
-Il n’y a pas de serveur applicatif : l’application est un site statique, et vos traces et réglages restent dans le navigateur.
+Il n’y a pas de serveur derrière : l’application est un site statique, et vos balades et réglages restent dans votre navigateur.
 
 ## Comment ça marche
 
-**Une grille plutôt que toutes les paires.** Comparer chaque point d’une longue marche à chaque invader est lent. Les invaders sont répartis dans une grille de cases d’environ 111 mètres de côté : chaque point de la trace ne consulte que les cases voisines.
+**Retrouver les invaders devant lesquels on est passé.** La carte est découpée en carrés d’environ 111 mètres, et chaque point de la balade ne regarde que les carrés autour de lui.
 
 <Callout title="Pourquoi une grille ?">
 
@@ -27,7 +27,7 @@ Une longue marche compte des milliers de points GPS. Comparer chacun aux 4 415 i
 
 </Callout>
 
-**Choisir d’abord, ordonner ensuite.** Google Maps accepte au plus 8 étapes : le planificateur choisit donc d’abord les invaders à visiter, ceux non flashés à moins de 80 % de la distance prévue, du plus proche au plus lointain, plus ceux qui coûtent un détour de moins de 150 mètres. Il les ordonne ensuite par insertion au moindre coût, puis améliore l’ordre avec des passes 2-opt et Or-opt. L’itinéraire à pied vient d’OSRM.
+**Choisir d’abord, ordonner ensuite.** Google Maps accepte au plus 8 étapes : le planificateur choisit donc d’abord les invaders à visiter, en commençant par les plus proches, puis ajoute ceux qui coûtent moins de 150 mètres de détour. Ensuite, il les met dans l’ordre et améliore cet ordre jusqu’à ce que la balade ne se croise plus. L’itinéraire à pied vient d’OSRM.
 
 <TwoOpt
   before="Avant"
@@ -42,7 +42,7 @@ L’insertion au moindre coût construit la balade un arrêt à la fois, en glis
 
 </Callout>
 
-**Des énigmes tirées des données ouvertes.** Le générateur de chasses décrit chaque lieu avec Nominatim, Overpass, Wikidata et Wikipédia, et choisit parmi plus de 40 types d’énigmes. Une chasse de cinq invaders prend 30 à 50 secondes la première fois, et moins de 2 secondes une fois les données des lieux en cache.
+**Des énigmes tirées des données ouvertes.** Le générateur décrit chaque lieu avec OpenStreetMap, Wikidata et Wikipédia, et pioche parmi plus de 40 types d’énigmes. Une chasse de cinq invaders prend 30 à 50 secondes la première fois, et moins de 2 secondes une fois les lieux en cache.
 
 <Callout title="Qu’est-ce qu’un cache ?">
 
@@ -50,12 +50,11 @@ Une copie d’une réponse gardée pour plus tard. La première fois que l’app
 
 </Callout>
 
-**Des données communautaires, tenues à jour.** La liste des invaders vient d’un jeu de données maintenu par la communauté, et les stations de métro d’OpenStreetMap ; un script rafraîchit chacune.
+**Des données de la communauté.** La liste des invaders vient d’un jeu de données tenu par d’autres joueurs, et les stations de métro d’OpenStreetMap. Un script rafraîchit chacune.
 
-## Ce que j’ai appris
+## Ce qui a été difficile
 
-- Les contraintes réelles choisissent l’algorithme : une limite de 8 étapes transforme « résoudre le parcours » en « choisir, puis ordonner ».
-- À cette échelle, une recherche locale simple suffit : l’insertion au moindre coût suivie de 2-opt et Or-opt donne de bonnes balades.
-- Une grille spatiale transforme une comparaison quadratique en recherches quasi constantes, en quelques lignes de code.
-- Avec des API publiques gratuites, les limites de débit donnent le rythme : le cache et les solutions de repli comptent plus que l’algorithme.
-- S’appuyer sur des données communautaires, c’est assumer leur synchronisation : les scripts de mise à jour font partie du produit.
+- La limite de 8 étapes de Google Maps a décidé de toute la conception : impossible de simplement « résoudre le parcours », il fallait d’abord choisir les étapes, puis les ordonner.
+- Je pensais avoir besoin d’un algorithme malin. Un algorithme simple, suivi d’un peu de ménage sur les croisements, a suffi pour des balades de cette taille.
+- Les services gratuits que j’utilise limitent la fréquence des appels. Mettre les réponses en cache a compté plus que l’algorithme.
+- S’appuyer sur des données communautaires, c’est les tenir à jour soi-même : les scripts de mise à jour font partie du produit.

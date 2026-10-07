@@ -5,9 +5,9 @@ date: 2026-10-07
 draft: true
 project: bucket-list
 ---
-Bucket List sorts an imported list into themed islands, in the browser. The obvious model for the job is multilingual-e5-small: it understands French and English and produces good sentence embeddings. It is also about 140 MB to download and takes seconds to minutes to run on a phone. Nobody waits that long to see a list.
+I built Bucket List partly to improve my skills in machine learning, on a small scope. The app sorts a list into themed islands, in the browser, and the obvious model for that is multilingual-e5-small: it understands French and English and is good at comparing sentences. But it is about 140 MB to download, and it takes seconds to minutes to run on a phone. Nobody waits that long to see a list.
 
-So the app has three tiers: a keyword lexicon, a light model, and the full e5. This note is about the middle one.
+So the app works in three steps: keywords, a light model, and the full model. This note is about the light one, and how I made it.
 
 <Callout title="What is an embedding?">
 
@@ -17,9 +17,9 @@ A way to turn a sentence into a list of numbers, so that sentences with close me
 
 ## The recipe
 
-The light model follows Model2Vec. Instead of running a transformer at inference time, you run it once, ahead of time, over a vocabulary, and keep a static vector for each word piece. At inference a sentence is just the weighted mean of its pieces' vectors: a table lookup and an average.
+I followed a method called Model2Vec. The idea is simple: instead of running the big model every time, you run it once, ahead of time, on every word piece, and keep the result in a table. After that, reading a sentence is just looking up its words in the table and averaging them.
 
-The script, `distill-m2v.py`, does five things:
+My script, `distill-m2v.py`, does five things:
 
 1. Streams about 6 million tokens per language from French and English Wikipedia.
 2. Keeps the word pieces that cover 99.5% of that text, plus every piece of the texts the app itself classifies: 30,286 in all.
@@ -47,7 +47,7 @@ The map fits with a cosine of 0.903. The file is 8.66 MB, small enough to ship w
 
 ## What it costs
 
-A model is only as good as its evaluation. On 757 items the light model never saw:
+I wanted numbers, not impressions. So I tested it on 757 items the light model had never seen:
 
 | Tier | Agrees with the full model | Matches the hand-sorted list |
 |---|---|---|
@@ -65,11 +65,11 @@ A model is only as good as its evaluation. On 757 items the light model never sa
   ]}
 />
 
-Two readings of the same table. The light model beats keywords, but not by much on hand-sorted labels: 1.3 points. And it sits 6.5 points under the full model. For a first answer that arrives in milliseconds, that is a good trade; for the final answer, it is not, which is why the full model still downloads in the background when the device can afford it.
+I read this table two ways. The light model beats keywords, but only by 1.3 points against the list sorted by hand. And it stays 6.5 points under the full model. For a first answer in milliseconds, it is a good deal. For the final answer, it is not, so the full model still downloads in the background when the device can afford it.
 
-## What I would tell myself before starting
+## What I would do the same way next time
 
-- **Evaluate against people, not only against the teacher.** Agreement with the full model flatters the student; the hand-sorted column is the one users feel.
-- **Keywords are a strong baseline.** On short list items, a good lexicon is within two points of a learned model. Measure it before building anything heavier.
-- **Pin the teacher.** The revision hash is part of the model file's name. A silent upstream update would make the student and the full model disagree for no visible reason.
-- **Distillation is cheap enough to repeat.** Fifteen minutes on a laptop means trying a different vocabulary size or corpus is an afternoon, not a project.
+- **Compare with people, not only with the big model.** Agreeing with the full model looks good; matching the list sorted by hand is what users feel.
+- **Measure keywords first.** On short list items, a good list of keywords came within two points of a trained model. I should have measured that before building anything heavier.
+- **Pin the big model's version.** Its version is in the name of the light model's file. If it changed quietly, the two models would disagree for no visible reason.
+- **Try again, it's cheap.** Fifteen minutes on a laptop means testing another vocabulary size is an afternoon, not a project.

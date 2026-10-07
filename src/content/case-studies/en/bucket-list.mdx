@@ -1,12 +1,12 @@
 ---
 title: "Bucket List: sorting any list in the browser"
-description: How Bucket List sorts an imported list into themed islands with a 9 MB model distilled for the browser, and upgrades to the full model only when the device can afford it.
+description: Why I built Bucket List, and how a small model, trained for the browser, sorts a list into themed islands without the list ever leaving it.
 ---
-## The problem
+## Why I built it
 
-A bucket list is a personal thing, and a long one is hard to read. Sorting it by theme is a job for a language model, but sending the list to a server to get it sorted defeats the point.
+I built Bucket List to keep track of two things: what I have achieved, and what I still dream of doing.
 
-Bucket List sets one constraint: the list never leaves the browser. Classification, storage and the story view all run on the device.
+I also wanted to improve my skills in machine learning, on a small scope. A list is a good playground for that: sorting items by theme is a real machine-learning task, but small enough to run entirely in the browser. So I set myself one rule: the list never leaves the browser.
 
 <Callout title="What is a classifier?">
 
@@ -16,17 +16,17 @@ A program that puts things into boxes. Here, it reads each item of your list, su
 
 ## What I built
 
-- **A list-first app**, in French, to filter, explore and track a bucket list. It imports almost anything: JSON, CSV, TSV, Markdown checklists or one item per line. It guesses which column holds the text, the status, the category and the link, and strips markers like `[x]` or ✅.
-- **A hidden story view**: a 2D notebook where the list becomes 1 to 8 themed islands, chosen from 14 archetypes, and the sky follows the hour as you scroll through a day from 06:00 to 22:00.
-- **A three-tier classifier** that runs in the browser, and the script that distils its middle tier.
+- **The list itself**, in French, to filter, explore and track. You can import almost any list: a spreadsheet export, a Markdown checklist, or one item per line. The app works out which column holds what.
+- **A hidden story view**: a 2D notebook where the list becomes themed islands, and the sky follows the hour as you scroll through the day.
+- **A classifier in three steps**, from the simplest to the most accurate, all running in the browser.
 
 ## How it works
 
-**Three tiers, cheapest first.** A keyword lexicon answers instantly with no download. A light model shipped with the site, 8.66 MB, answers in milliseconds. The full multilingual-e5-small model, about 140 MB, runs on ONNX and WebAssembly through transformers.js and takes seconds to minutes. Keywords also cover lists that are neither in French nor in English.
+**Three steps, cheapest first.** A list of keywords answers instantly. Then a light model, shipped with the site, answers in milliseconds. The full model is much bigger: it takes seconds to minutes, so it only comes later.
 
 <Bars
   max={140}
-  caption="What each tier costs to download. The light model is 16 times smaller than the full one."
+  caption="What each step costs to download. The light model is 16 times smaller than the full one."
   rows={[
     { label: "Keywords", note: "instant", value: 0, display: "0 MB" },
     { label: "Light model", note: "milliseconds", value: 8.66, display: "8.66 MB", highlight: true },
@@ -34,7 +34,7 @@ A program that puts things into boxes. Here, it reads each item of your list, su
   ]}
 />
 
-**A model distilled for the job.** The light model follows the Model2Vec recipe with multilingual-e5-small as the teacher. It keeps 30,286 word pieces, those that cover 99.5% of a French and English Wikipedia sample plus those of the app's own texts, embeds each one, reduces them to 256 dimensions, then fits a linear map back to the teacher's 384. The fit reaches a cosine of 0.903, and the whole run takes about 15 minutes on a laptop CPU.
+**A small model, trained from a big one.** The light model learned from the full one (multilingual-e5-small) by copying its answers on a sample of French and English Wikipedia. The training runs in about 15 minutes on a laptop.
 
 <Callout title="Embeddings and distillation, in two sentences each">
 
@@ -44,9 +44,9 @@ Distillation is a big model teaching a small one. The small model learns to give
 
 </Callout>
 
-**Measured, not assumed.** On 757 items the light model never saw during training:
+**Measured, not guessed.** I tested the three steps on 757 items the light model had never seen:
 
-| Tier | Agrees with the full model | Matches the hand-sorted list |
+| Step | Agrees with the full model | Matches the list sorted by hand |
 |---|---|---|
 | Keywords | 72.0% | 78.2% |
 | Light model | 77.5% | 79.5% |
@@ -54,13 +54,13 @@ Distillation is a big model teaching a small one. The small model learns to give
 
 <Callout title="How to read this table">
 
-The first column compares each tier with the full model. The second, which matters more, compares it with the way a person sorted the same items by hand.
+The first column compares each step with the full model. The second, which matters more, compares it with the way a person sorted the same items by hand.
 
 </Callout>
 
-**Upgrades only when the device can afford it.** The full model downloads in the background when the browser is idle and online, without Data Saver, on a fast connection, and with more than 400 MB of storage free. Once it is ready, stored lists are sorted again and your own corrections are kept.
+**The full model only comes when the device can afford it:** when the browser is idle, online, on a fast connection, and has enough free space. Once it is ready, the lists are sorted again, and your own corrections are kept.
 
-**The same result on every device.** A list's id is a SHA-256 of its content and seeds every random choice. Model revisions and runtime versions are pinned, and the full model runs single-threaded on WebAssembly, so two browsers sort the same list the same way. Snapshot tests check it, including files with Windows line endings or a byte-order mark.
+**The same result on every device.** The same list gives the same islands on my phone and on my laptop, and tests check it.
 
 <Callout title="Why does the same result on every device matter?">
 
@@ -68,13 +68,12 @@ Some steps involve chance, such as how the islands are laid out. If each browser
 
 </Callout>
 
-**Stored nowhere else.** Lists, corrections and scores live in IndexedDB, in that browser only.
+**Stored nowhere else.** Lists, corrections and scores stay in the browser.
 
-## What I learned
+## What was hard
 
-- A progressive design beats a single model: show the cheap answer at once, fetch the heavy model quietly, then upgrade.
-- A 9 MB static model came within 6.5 points of the full model on hand-sorted items, and that was enough to make the full model optional.
-- In-browser ML needs pinning everywhere: model revision, weights, runtime and thread count, or two devices disagree.
-- Hosting limits shape the architecture: the ONNX runtime is larger than the host's 25 MiB per-file limit, so it loads from a CDN.
-- Some rules belong in code, not in a model: personal items always go to a locked island, whatever the classifier says.
-- Cutting scope is a feature. A first version was a 3D world; the list-first app with a 2D story view replaced it.
+- Choosing what to measure. Agreeing with the big model looks good, but what counts is matching how a person sorts. On that, the light model is only a little better than keywords.
+- Getting the same result everywhere: I had to pin every version, of the model, its weights and the engine.
+- The host refuses files over 25 MiB, and the engine that runs the full model is bigger, so it loads from a CDN instead.
+- Some rules should not depend on a model: personal items always go to a locked island, whatever the classifier says.
+- Cutting scope. My first version was a 3D world. I dropped it for the list and a simple 2D story view, and the app is better for it.

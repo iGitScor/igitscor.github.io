@@ -5,7 +5,7 @@ date: 2026-10-07
 draft: true
 project: myna
 ---
-Myna reads a podcast script aloud in a neural voice with no server at all. The voice is a Piper VITS model; ONNX Runtime Web runs it inside a Web Worker. Getting a model to produce sound in a browser is the easy part. These are the parts that took the time.
+I built Myna to have a podcast without speaking into a microphone: it reads my scripts aloud, in a neural voice, with no server at all. Before this project, I had never worked with speech models. Getting a model to make a sound in the browser turned out to be the easy part. These are the parts that took me time.
 
 <Callout title="VITS, ONNX, WebAssembly: what do these words mean?">
 
@@ -59,6 +59,6 @@ Working offline means precaching the runtime and the phonemizer: 13.6 MB for the
 
 The end-to-end tests run the real pipeline (real worker, real espeak-ng, real ONNX Runtime) with a 1 KB stand-in voice. They need no network and no 63 MB download, and they still catch the integration bugs that unit tests miss.
 
-## In short
+## Looking back
 
-Running a model in the browser moves the work from servers to packaging: headers, workers, caching and file sizes. The model is the smallest part of the problem.
+I thought the model would be the hard part. It was the smallest one. Most of the work was packaging: headers, workers, caching and file sizes. Next, I want the voices to sound less robotic.

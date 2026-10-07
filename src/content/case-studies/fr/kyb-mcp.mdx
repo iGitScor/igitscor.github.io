@@ -1,10 +1,12 @@
 ---
 title: "kyb-mcp : apprendre le Model Context Protocol en l’utilisant en entier"
-description: Un serveur MCP pour les vérifications KYB (Know Your Business) d’entreprises françaises, conçu comme un projet d’apprentissage qui utilise toutes les primitives du protocole.
+description: Pourquoi j’ai construit un serveur MCP de vérifications KYB sur les entreprises françaises, et comment il utilise chaque brique du protocole.
 ---
-## Le problème
+## Pourquoi je l’ai construit
 
-Une vérification KYB (Know Your Business) commence toujours par les mêmes recherches : l’entreprise existe-t-elle, qui la dirige, que fait-elle, et qu’avions-nous conclu la dernière fois ?
+Je voulais progresser en IA, alors j’ai choisi le Model Context Protocol. La plupart des exemples n’utilisent qu’une seule de ses briques, les outils. Je voulais un projet qui ait besoin de toutes, pour une vraie raison.
+
+Pour le sujet, j’ai choisi le KYB. C’était un de mes sujets chez Heropay, et c’est un domaine dont beaucoup d’entreprises différentes ont besoin. Le projet est donc lié à mon travail, mais il est surtout né de ma curiosité pour l’IA.
 
 <Callout title="Qu’est-ce que le KYB ?">
 
@@ -12,7 +14,7 @@ Know Your Business, « connaître son client entreprise » : les vérifications 
 
 </Callout>
 
-Le Model Context Protocol compte plus de primitives que les seuls outils. Je voulais un projet qui ait besoin de chacune pour une vraie raison ; je l’ai donc construit autour de ces recherches.
+Une vérification KYB commence toujours par les mêmes recherches : l’entreprise existe-t-elle, qui la dirige, que fait-elle, et qu’avait-on conclu la dernière fois ? C’est ce que fait le serveur.
 
 <Callout title="Qu’est-ce que MCP ?">
 
@@ -22,7 +24,7 @@ Le Model Context Protocol est une prise commune entre les assistants IA et les a
 
 ## Ce que j’ai construit
 
-Un serveur MCP qui interroge le registre français des entreprises, via l’API publique [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/), et tient des dossiers de revue. Claude Code, claude.ai ou tout autre client MCP peut s’en servir, en stdio ou en Streamable HTTP.
+Un serveur MCP qui interroge le registre français des entreprises, via l’API publique [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/), et tient un dossier d’examen pour chaque entreprise. Claude Code, claude.ai ou tout autre client MCP peut l’utiliser, sur le même ordinateur ou via Internet.
 
 <Flow
   caption="Qui parle à qui : l’assistant n’appelle jamais le registre lui-même."
@@ -34,15 +36,17 @@ Un serveur MCP qui interroge le registre français des entreprises, via l’API 
   ]}
 />
 
-| Primitive | Noms | À quoi elle sert |
+| Brique | Noms | À quoi elle sert |
 |---|---|---|
-| Outils | `search_companies`, `get_company`, `find_by_person` | Recherches typées dans le registre |
-| Outils | `create_dossier`, `add_note`, `set_status`, `list_dossiers`, `get_dossier` | Le dossier de revue et ses notes |
-| Outil | `archive_dossier` | Demande d’abord confirmation à l’utilisateur (élicitation) |
-| Outil | `draft_risk_summary` | Demande au modèle du client de rédiger la synthèse (sampling) |
-| Outil | `bulk_check` | Indique sa progression et peut être annulé |
-| Ressources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Des vues en lecture seule qu’un client peut joindre |
-| Prompts | `kyb_review`, `compare_companies` | Un déroulé prêt à l’emploi, avec l’entreprise jointe |
+| Outils | `search_companies`, `get_company`, `find_by_person` | Interroger le registre |
+| Outils | `create_dossier`, `add_note`, `set_status`, `list_dossiers`, `get_dossier` | Le dossier d’examen et ses notes |
+| Outil | `archive_dossier` | Vous demande de confirmer d’abord (élicitation) |
+| Outil | `draft_risk_summary` | Demande au modèle de votre assistant de rédiger la synthèse (sampling) |
+| Outil | `bulk_check` | Vérifie de nombreuses entreprises, affiche sa progression et peut être arrêté |
+| Ressources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Des documents qu’un assistant peut lire |
+| Prompts | `kyb_review`, `compare_companies` | Des examens tout prêts, à choisir dans un menu |
+
+## Comment ça marche
 
 <Callout title="Outils, ressources, prompts : quelle différence ?">
 
@@ -50,15 +54,13 @@ Les outils sont des actions que l’assistant peut lancer, comme rechercher une 
 
 </Callout>
 
-## Comment ça marche
+**Poli avec le registre public.** Chaque appel passe par un seul point, limité à 5 requêtes par seconde (la limite publique est de 7), avec un cache d’une minute. Les dates de naissance des dirigeants sont retirées avant que quoi que ce soit ne sorte du serveur.
 
-**Un client respectueux d’une API publique.** Chaque appel au registre passe par un seul client HTTP, limité à 5 requêtes par seconde, sous la limite publique de 7, avec un cache de 60 secondes. Les dates de naissance des dirigeants sont retirées avant que quoi que ce soit ne sorte du processus.
+**Avec ou sans base de données.** Les dossiers sont gardés en mémoire, pour que le serveur tourne sans aucune installation, ou dans PostgreSQL pour les conserver.
 
-**Un stockage derrière un port.** Les dossiers sont derrière une interface de dépôt avec deux adaptateurs : en mémoire, pour que le serveur tourne sans aucune configuration, et PostgreSQL pour un usage durable.
+**Pas de modèle à lui.** Quand une synthèse est nécessaire, le serveur demande au modèle de l’assistant de la rédiger, puis l’enregistre comme une note.
 
-**Pas de modèle embarqué.** Quand une synthèse est nécessaire, le serveur demande au modèle du client connecté de la rédiger, puis l’enregistre comme une note.
-
-**Un HTTP sans état.** Le transport Streamable HTTP ne garde aucune session, ce qui convient à un hébergement serverless, et il contrôle l’en-tête `Host` contre le DNS rebinding.
+**Rien de gardé entre deux requêtes.** Via Internet, le serveur ne retient rien d’un appel à l’autre, et c’est ce qui lui permet de tourner chez un hébergeur serverless.
 
 <Callout title="Que veut dire « sans état » ?">
 
@@ -66,12 +68,14 @@ Le serveur ne retient rien entre deux requêtes : chacune apporte tout ce qu’i
 
 </Callout>
 
-Le serveur a 23 tests hors ligne, et chaque version étiquetée publie une image Docker.
+Il a 23 tests qui tournent sans réseau, et chaque version publie une image Docker.
 
-## Ce que j’ai appris
+## Ce qui a été difficile
 
-- Chaque primitive a un rôle distinct. Les outils agissent, les ressources se lisent, les prompts emballent un déroulé, et l’élicitation comme le sampling rendent une décision à l’utilisateur ou au modèle du client.
-- Les contraintes d’hébergement remontent jusqu’aux choix de protocole : c’est un transport sans état qui rend possible un déploiement serverless.
-- Les compromis méritent d’être écrits : chacun a son compte rendu de décision dans le dépôt.
+- Comprendre à quoi sert chaque brique. Une fois que ça a fait tilt, c’était simple : les outils agissent, les ressources se lisent, les prompts emballent une démarche, et l’élicitation et le sampling rendent la main à vous ou au modèle de votre assistant.
+- Le protocole a changé en juillet 2026, et la plupart des tutoriels montrent encore l’ancienne façon de faire. J’ai dû m’appuyer sur la référence officielle.
+- L’hébergement a pesé sur la conception : tourner en serverless n’est possible que parce que le serveur ne garde rien entre deux requêtes.
 
-Reste à faire avant d’exposer publiquement les outils d’écriture : OAuth 2.1, la télémétrie, et la publication dans le registre MCP.
+## Ce qui manque encore
+
+Avant d’ouvrir les outils d’écriture au public, il faut au serveur une vraie connexion (OAuth 2.1) et du suivi, et il devrait être publié dans le registre MCP.

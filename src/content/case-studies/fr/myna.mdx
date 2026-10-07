@@ -1,12 +1,14 @@
 ---
 title: "Myna : un studio de podcast qui parle avec votre voix"
-description: Comment Myna transforme un script écrit en épisode de podcast masterisé, avec une voix neuronale qui tourne entièrement dans le navigateur.
+description: Pourquoi j’ai construit Myna, et comment il transforme un script écrit en épisode de podcast dit avec ma propre voix, entièrement sur mon ordinateur.
 ---
-## Le problème
+## Pourquoi je l’ai construit
 
-Transformer un script en épisode fini oblige d’ordinaire à l’enregistrer soi-même, ou à envoyer le texte, et parfois des enregistrements de sa voix, à un service en ligne.
+J’ai créé Myna pour pouvoir avoir un podcast.
 
-Myna se donne deux contraintes. Rien ne quitte l’appareil : pas d’envoi, pas de compte, et tout fonctionne hors ligne. Et parce qu’une voix est une chose puissante à copier, aucune voix ne peut être utilisée sans le consentement enregistré de la personne qui parle.
+Je suis convaincu que le podcast est un excellent outil de communication, mais il demande beaucoup de travail. Et je suis plus à l’aise à l’écrit que devant un micro. Avec ces deux constats en tête, je me suis lancé dans deux applications : une qui transforme le texte en voix, et une qui entraîne une voix à ressembler à la mienne.
+
+Je me suis fixé deux règles dès le départ. Rien ne quitte l’appareil : pas d’envoi, pas de compte, et tout marche hors ligne. Et comme une voix, ça se copie facilement, aucune voix ne peut servir sans le consentement enregistré de la personne qui parle.
 
 <Callout title="Qu’est-ce qu’une voix neuronale ?">
 
@@ -16,10 +18,9 @@ Une voix neuronale est un programme qui a écouté des heures d’enregistrement
 
 ## Ce que j’ai construit
 
-- **Myna**, une application web installable où l’on écrit le script, le fait lire, masterise l’audio et exporte un MP3 chapitré, avec ce qu’il faut pour publier le flux.
-- **Myna Atelier**, une application de bureau pour Mac, Windows et Linux qui entraîne votre propre voix à partir de 30 à 60 minutes d’enregistrements, sur votre machine.
-- **voicelab**, l’outil en ligne de commande que pilote Atelier : il vérifie le jeu de données, affine la voix et l’exporte dans un fichier `.voice` unique.
-- **Des schémas partagés** pour tous les fichiers que ces briques échangent.
+- **Myna**, une application qui s’installe depuis le navigateur. On écrit le script, Myna le lit, masterise le son et exporte un MP3 chapitré, avec ce qu’il faut pour publier le flux.
+- **Myna Atelier**, une application pour Mac, Windows et Linux qui entraîne votre propre voix à partir de 30 à 60 minutes d’enregistrements, sur votre machine.
+- **voicelab**, l’outil en ligne de commande derrière Atelier : il vérifie les enregistrements, entraîne la voix et l’exporte dans un fichier `.voice` unique.
 
 ## Comment ça marche
 
@@ -35,7 +36,7 @@ Une voix neuronale est un programme qui a écouté des heures d’enregistrement
   ]}
 />
 
-**La synthèse dans un Web Worker.** Les modèles Piper VITS tournent avec ONNX Runtime Web, et espeak-ng, compilé en WebAssembly, produit les phonèmes. Sur un Mac de série M, le rendu est 15 à 20 fois plus rapide que le temps réel. Le détail est dans la page [architecture TTS](https://podcast.iscor.me/docs/architecture/tts).
+**La voix tourne dans le navigateur.** Les voix sont des modèles Piper, que ONNX Runtime Web fait tourner dans un Web Worker. Sur un Mac à puce M, un épisode se génère 15 à 20 fois plus vite que le temps réel. Le détail est dans la page [architecture TTS](https://podcast.iscor.me/docs/architecture/tts).
 
 <Callout title="Qu’est-ce qu’un Web Worker ?">
 
@@ -43,13 +44,13 @@ Une page web fait normalement tout sur une seule voie : un travail lourd la fige
 
 </Callout>
 
-**Un traitement audio de niveau broadcast, en TypeScript.** Le volume est mesuré selon la norme EBU R128, puis un compresseur, un limiteur et l’atténuation de la musique sous la voix produisent le mixage final, encodé en MP3 avec des chapitres ID3. Voir le [pipeline audio](https://podcast.iscor.me/docs/architecture/audio-pipeline).
+**Le son d’une vraie émission.** Le volume est mesuré selon la norme de la radio (EBU R128), puis compressé et limité, et la musique s’efface sous la voix. Voir le [pipeline audio](https://podcast.iscor.me/docs/architecture/audio-pipeline).
 
-**Un consentement vérifié à partir de l’audio.** Chaque voix contient un enregistrement de la personne lisant une phrase de consentement avec un code aléatoire. Whisper et une empreinte vocale le vérifient avant l’entraînement, et l’application refuse une voix qui n’en a pas. Voir [consentement et provenance](https://podcast.iscor.me/docs/architecture/consent).
+**Un consentement vérifié dans l’enregistrement.** Chaque voix contient un enregistrement de la personne qui lit une phrase de consentement avec un code aléatoire. Atelier le vérifie avant l’entraînement, et Myna refuse une voix qui n’en a pas. Voir [consentement et provenance](https://podcast.iscor.me/docs/architecture/consent).
 
-**Un stockage local d’abord.** Les épisodes sont conservés dans IndexedDB et dans l’Origin Private File System, et un service worker garde le moteur vocal disponible hors ligne.
+**Tout reste en local.** Les épisodes sont stockés dans le navigateur, et le moteur vocal reste disponible hors ligne.
 
-**Un contrat, quatre lecteurs.** Les formats de fichiers sont des JSON Schemas, vérifiés avec les mêmes jeux d’essai par l’application web, l’entraîneur Python, l’application Mac et l’application Windows et Linux.
+**Un format, quatre programmes.** L’application web, l’outil d’entraînement, l’application Mac et celle pour Windows et Linux lisent les mêmes fichiers, décrits par des schémas communs et testés avec les mêmes exemples.
 
 <Callout title="Qu’est-ce qu’un JSON Schema ?">
 
@@ -57,9 +58,16 @@ Une règle écrite qui dit ce qu’un fichier doit contenir : quels champs, et d
 
 </Callout>
 
-## Ce que j’ai appris
+## Ce qui a été difficile
 
-- Faire tourner le modèle dans le navigateur déplace la difficulté des serveurs vers le packaging : le multithreading exige l’isolation cross-origin, et le hors-ligne suppose de mettre en cache environ 33 Mo.
-- Un format partagé par quatre bases de code ne reste fiable que si chaque lecteur est testé avec les mêmes jeux d’essai.
-- Le consentement doit être vérifié dans l’enregistrement lui-même : des métadonnées se modifient.
-- Les tests de bout en bout peuvent exécuter le vrai pipeline quand le modèle est minuscule : une voix de substitution de 1 Ko leur évite le réseau et un téléchargement de 63 Mo.
+J’ai travaillé avec des outils et des technologies dont je n’avais jamais entendu parler : modèles de voix, mastering audio, applications de bureau. C’est en le construisant que j’ai compris les concepts derrière mon idée de départ, toute simple.
+
+- Faire tourner le modèle dans le navigateur déplace la difficulté des serveurs vers le packaging : utiliser plusieurs cœurs du processeur demande des en-têtes particuliers, et le hors-ligne oblige à mettre en cache environ 33 Mo.
+- Avec quatre programmes qui lisent les mêmes fichiers, la seule façon de les garder d’accord, c’est de tester chacun avec les mêmes exemples.
+- Le consentement doit se vérifier dans l’enregistrement lui-même, parce que n’importe qui peut modifier les informations d’un fichier.
+
+Après quelques itérations, j’ai réorganisé le projet pour le rendre plus professionnel, et je lui ai donné un vrai design.
+
+## La suite
+
+Je suis très fier du rendu, et j’ai hâte de l’améliorer : rendre les voix moins robotiques, et aider à préparer les scripts des épisodes.

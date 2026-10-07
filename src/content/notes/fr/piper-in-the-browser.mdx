@@ -5,7 +5,7 @@ date: 2026-10-07
 draft: true
 project: myna
 ---
-Myna lit un script de podcast à voix haute avec une voix neuronale, sans aucun serveur. La voix est un modèle Piper VITS, que ONNX Runtime Web fait tourner dans un Web Worker. Obtenir du son d’un modèle dans un navigateur, c’est la partie facile. Voici celles qui ont pris du temps.
+J’ai construit Myna pour avoir un podcast sans parler devant un micro : il lit mes scripts à voix haute, avec une voix neuronale, sans aucun serveur. Avant ce projet, je n’avais jamais travaillé avec des modèles de voix. Faire sortir un son d’un modèle dans le navigateur, ça a été la partie facile. Voici celles qui m’ont pris du temps.
 
 <Callout title="VITS, ONNX, WebAssembly : que veulent dire ces mots ?">
 
@@ -59,6 +59,6 @@ Fonctionner hors ligne implique de mettre en cache le moteur et le phonémiseur 
 
 Les tests de bout en bout font tourner le vrai pipeline (vrai worker, vrai espeak-ng, vrai ONNX Runtime) avec une voix de substitution de 1 Ko. Ils n’ont besoin ni du réseau ni d’un téléchargement de 63 Mo, et ils attrapent quand même les bugs d’intégration que les tests unitaires ratent.
 
-## En bref
+## Avec le recul
 
-Faire tourner un modèle dans le navigateur déplace le travail des serveurs vers le packaging : en-têtes, workers, cache et tailles de fichiers. Le modèle est la plus petite partie du problème.
+Je pensais que le modèle serait le plus dur. C’était le plus petit morceau. L’essentiel du travail, c’était le packaging : en-têtes, workers, cache et tailles de fichiers. Prochaine étape : rendre les voix moins robotiques.

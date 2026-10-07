@@ -1,12 +1,14 @@
 ---
 title: "Myna: a podcast studio that speaks in your voice"
-description: How Myna turns a written script into a mastered podcast episode, with a neural voice that runs entirely in the browser.
+description: Why I built Myna, and how it turns a written script into a podcast episode spoken in my own voice, entirely on my computer.
 ---
-## The problem
+## Why I built it
 
-Turning a script into a finished episode usually means recording it yourself, or sending the text, and sometimes recordings of your voice, to a cloud service.
+I created Myna to be able to have a podcast.
 
-Myna sets itself two constraints. Nothing leaves the device: no upload, no account, and it works offline. And because a voice is a powerful thing to copy, no voice can be used without its speaker's recorded consent.
+I'm convinced that a podcast is a great way to communicate, but it takes a lot of work. And I'm better at writing than at speaking in front of a microphone. With these two facts in mind, I started building two things: an app that turns text into speech, and an app that trains a voice to sound like my own.
+
+I set two rules from the start. Nothing leaves the device: no upload, no account, and it works offline. And since a voice is a powerful thing to copy, no voice can be used without its speaker's recorded consent.
 
 <Callout title="What is a neural voice?">
 
@@ -16,10 +18,9 @@ A neural voice is a program that has listened to hours of one person speaking an
 
 ## What I built
 
-- **Myna**, an installable web app where you write the script, render it, master the audio and export an MP3 with chapters, plus what you need to publish the feed.
+- **Myna**, an app you install from the browser. You write the script, Myna reads it, masters the audio and exports an MP3 with chapters, plus what you need to publish the feed.
 - **Myna Atelier**, a desktop app for Mac, Windows and Linux that trains your own voice from 30 to 60 minutes of recordings, on your machine.
-- **voicelab**, the command-line tool Atelier drives: it checks the dataset, fine-tunes the voice and exports it as a single `.voice` file.
-- **Shared schemas** for every file these parts exchange.
+- **voicelab**, the command-line tool behind Atelier: it checks the recordings, trains the voice and exports it as a single `.voice` file.
 
 ## How it works
 
@@ -35,7 +36,7 @@ A neural voice is a program that has listened to hours of one person speaking an
   ]}
 />
 
-**Speech in a Web Worker.** Piper VITS models run through ONNX Runtime Web, with espeak-ng compiled to WebAssembly producing the phonemes. On an M-series Mac, rendering is about 15 to 20 times faster than real time. Details are in the [TTS architecture](https://podcast.iscor.me/docs/architecture/tts) page.
+**The voice runs in the browser.** The voices are Piper models, run by ONNX Runtime Web in a Web Worker. On an M-series Mac, an episode renders 15 to 20 times faster than real time. The details are in the [TTS architecture](https://podcast.iscor.me/docs/architecture/tts) page.
 
 <Callout title="What is a Web Worker?">
 
@@ -43,13 +44,13 @@ A web page normally does everything on a single track, so heavy work makes it fr
 
 </Callout>
 
-**Broadcast audio in plain TypeScript.** Loudness is measured to EBU R128, then a compressor, a lookahead limiter and ducking of the music under the voice produce the final mix, encoded as MP3 with ID3 chapters. See the [audio pipeline](https://podcast.iscor.me/docs/architecture/audio-pipeline).
+**The sound of a real show.** The volume is measured to the broadcast standard (EBU R128), then compressed and limited, and the music fades under the voice. See the [audio pipeline](https://podcast.iscor.me/docs/architecture/audio-pipeline).
 
-**Consent checked from the audio.** Every voice carries a recording of its speaker reading a consent sentence with a random code. Whisper and a speaker fingerprint check it before training, and the app refuses a voice that does not have it. See [consent and provenance](https://podcast.iscor.me/docs/architecture/consent).
+**Consent, checked in the recording itself.** Every voice includes a recording of its speaker reading a consent sentence with a random code. Atelier checks it before training, and Myna refuses a voice without it. See [consent and provenance](https://podcast.iscor.me/docs/architecture/consent).
 
-**Local-first storage.** Episodes live in IndexedDB and the Origin Private File System, and a service worker keeps the speech engine available offline.
+**Everything stays local.** Episodes are stored in the browser, and the voice engine stays available offline.
 
-**One contract, four readers.** The file formats are JSON Schemas, checked against the same fixtures by the web app, the Python trainer, the Mac app and the Windows and Linux app.
+**One format, four programs.** The web app, the trainer, the Mac app and the Windows and Linux app all read the same files, described by shared schemas and tested against the same examples.
 
 <Callout title="What is a JSON Schema?">
 
@@ -57,9 +58,16 @@ A written rule for what a file must contain: which fields, and of which type. Fo
 
 </Callout>
 
-## What I learned
+## What was hard
 
-- Running the model in the browser moves the hard part from servers to packaging: multithreading needs cross-origin isolation, and offline use means precaching about 33 MB.
-- A format shared by four codebases stays honest only when every reader is tested against the same fixtures.
-- Consent has to be verified from the recording itself; metadata can be edited.
-- End-to-end tests can run the real pipeline when the model is tiny: a 1 KB stand-in voice lets them run without the network and without a 63 MB download.
+I worked with tools and technologies I had never heard of before: speech models, audio mastering, desktop apps. Building it is how I understood the concepts behind my first, simple idea.
+
+- Running the model in the browser moved the hard part from servers to packaging. Using several processor cores needs special headers, and working offline means caching about 33 MB.
+- With four programs reading the same files, the only way to keep them honest was to test each one against the same examples.
+- Consent has to be checked in the recording itself, because anyone can edit a file's details.
+
+After some iterations, I reorganised the project to make it more professional, and gave it a proper design.
+
+## What's next
+
+I'm very proud of the result, and I can't wait to improve it: make the voices sound less robotic, and help prepare the scripts of the episodes.

@@ -1,10 +1,12 @@
 ---
 title: "kyb-mcp: learning the Model Context Protocol by using all of it"
-description: An MCP server for Know Your Business checks on French companies, built as a learning project that uses every primitive of the protocol.
+description: Why I built an MCP server for Know Your Business checks on French companies, and how it uses every part of the protocol.
 ---
-## The problem
+## Why I built it
 
-A Know Your Business check starts with the same lookups every time: does the company exist, who runs it, what does it do, and what did we conclude last time?
+I wanted to improve my skills in AI, so I picked the Model Context Protocol. Most examples only use one of its building blocks, the tools. I wanted a project that needed every one of them, for a real reason.
+
+For the subject, I chose KYB. It was one of my focus areas at Heropay, and it is a domain that many different businesses need. So the project is related to my work, but it was mostly built out of curiosity about AI.
 
 <Callout title="What is KYB?">
 
@@ -12,7 +14,7 @@ Know Your Business: the checks a bank or a payment company must run before worki
 
 </Callout>
 
-The Model Context Protocol has more primitives than tools. I wanted a project that needed each of them for a real reason, so I built one around those lookups.
+A KYB check always starts with the same lookups: does the company exist, who runs it, what does it do, and what did we conclude last time? That is what the server does.
 
 <Callout title="What is MCP?">
 
@@ -22,7 +24,7 @@ The Model Context Protocol is a common plug between AI assistants and other soft
 
 ## What I built
 
-An MCP server that searches the French company registry, through the public [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/) API, and keeps review dossiers. Claude Code, claude.ai or any other MCP client can use it, over stdio or Streamable HTTP.
+An MCP server that searches the French company registry, through the public [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/) API, and keeps a review file for each company. Claude Code, claude.ai or any other MCP client can use it, on the same computer or over the internet.
 
 <Flow
   caption="Who talks to whom: the assistant never calls the registry itself."
@@ -34,15 +36,17 @@ An MCP server that searches the French company registry, through the public [rec
   ]}
 />
 
-| Primitive | Names | What it is for |
+| Building block | Names | What it is for |
 |---|---|---|
-| Tools | `search_companies`, `get_company`, `find_by_person` | Typed lookups in the registry |
-| Tools | `create_dossier`, `add_note`, `set_status`, `list_dossiers`, `get_dossier` | The review dossier and its notes |
-| Tool | `archive_dossier` | Asks the user to confirm first (elicitation) |
-| Tool | `draft_risk_summary` | Asks the client's model to write the summary (sampling) |
-| Tool | `bulk_check` | Reports progress and can be cancelled |
-| Resources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Read-only views a client can attach |
-| Prompts | `kyb_review`, `compare_companies` | A packaged workflow, with the company attached |
+| Tools | `search_companies`, `get_company`, `find_by_person` | Looking up the registry |
+| Tools | `create_dossier`, `add_note`, `set_status`, `list_dossiers`, `get_dossier` | The review file and its notes |
+| Tool | `archive_dossier` | Asks you to confirm first (elicitation) |
+| Tool | `draft_risk_summary` | Asks your assistant’s model to write the summary (sampling) |
+| Tool | `bulk_check` | Checks many companies, shows progress, and can be stopped |
+| Resources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Documents an assistant can read |
+| Prompts | `kyb_review`, `compare_companies` | Ready-made reviews you pick from a menu |
+
+## How it works
 
 <Callout title="Tools, resources, prompts: what is the difference?">
 
@@ -50,15 +54,13 @@ Tools are actions the assistant can run, like searching for a company. Resources
 
 </Callout>
 
-## How it works
+**Polite with the public registry.** Every call goes through one place, limited to 5 requests per second (the public limit is 7), with a one-minute cache. Directors’ birth dates are removed before anything leaves the server.
 
-**A polite client of a public API.** Every registry call goes through one HTTP client with a rate limit of 5 requests per second, under the public limit of 7, and a 60-second cache. Directors' birth dates are dropped before anything leaves the process.
+**Works with or without a database.** Review files are kept in memory, so the server runs with no setup at all, or in PostgreSQL to keep them.
 
-**Storage behind a port.** Dossiers sit behind a repository interface with two adapters: in memory, so the server runs with no setup, and PostgreSQL for durable use.
+**No model of its own.** When a summary is needed, the server asks the assistant’s own model to write it, and saves the result as a note.
 
-**No model of its own.** When a summary is needed, the server asks the connected client's model to write it and stores the result as a note.
-
-**Stateless HTTP.** The Streamable HTTP transport keeps no session, which suits serverless hosting, and it checks the `Host` header against DNS rebinding.
+**Nothing kept between requests.** Over the internet, the server remembers nothing between two calls, which is what lets it run on a serverless host.
 
 <Callout title="What does stateless mean?">
 
@@ -66,12 +68,14 @@ The server remembers nothing between two requests: each one carries everything n
 
 </Callout>
 
-The server has 23 offline tests, and tagged releases publish a Docker image.
+It has 23 tests that run without the network, and each release publishes a Docker image.
 
-## What I learned
+## What was hard
 
-- Each primitive has a distinct job. Tools act, resources are read, prompts package a workflow, and elicitation and sampling hand a decision back to the user or to the client's model.
-- Hosting constraints reach into protocol choices: a stateless transport is what makes a serverless deployment possible.
-- The trade-offs are worth writing down: each one has a decision record in the repository.
+- Understanding what each building block is for. Once it clicked, it was simple: tools act, resources are read, prompts package a workflow, and elicitation and sampling hand a decision back to you or to your assistant’s model.
+- The protocol changed in July 2026, and most tutorials still show the old way. I had to rely on the official reference instead.
+- Hosting reached into the design: running on a serverless host is only possible because the server keeps nothing between requests.
 
-Still to do before exposing the write tools publicly: OAuth 2.1, telemetry, and publication to the MCP Registry.
+## What's still missing
+
+Before opening the write tools to the public, the server needs proper sign-in (OAuth 2.1) and monitoring, and it should be published to the MCP Registry.
