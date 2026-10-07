@@ -9,6 +9,12 @@ Bucket List range une liste importée en îles thématiques, dans le navigateur.
 
 L’application a donc trois niveaux : un lexique de mots-clés, un modèle léger et le modèle e5 complet. Cette note parle de celui du milieu.
 
+<Callout title="Qu’est-ce qu’un embedding ?">
+
+Une façon de transformer une phrase en liste de nombres, de sorte que des phrases de sens proche obtiennent des nombres proches. « Gravir le Kilimandjaro » et « randonner dans les Alpes » se retrouvent voisins ; « apprendre à faire du pain » atterrit loin. Trier une liste par thème revient alors à comparer des nombres.
+
+</Callout>
+
 ## La recette
 
 Le modèle léger suit la méthode Model2Vec. Au lieu de faire tourner un transformer au moment de l’inférence, on le fait tourner une seule fois, à l’avance, sur un vocabulaire, et on garde un vecteur statique par fragment de mot. À l’inférence, une phrase n’est plus que la moyenne pondérée des vecteurs de ses fragments : une lecture dans une table et une moyenne.
@@ -21,6 +27,22 @@ Le script, `distill-m2v.py`, fait cinq choses :
 4. Il réduit les vecteurs à 256 dimensions par ACP, qui conserve 91,0 % de la variance, donne plus de poids aux fragments rares et les stocke en int8.
 5. Il apprend une projection linéaire de ces 256 dimensions vers les 384 du professeur, sur 150 000 extraits par langue, pour que la sortie du modèle léger vive dans le même espace que celle du modèle complet.
 
+<Flow
+  caption="La distillation a lieu une seule fois, à l’avance. Le navigateur ne fait que lire une table."
+  steps={[
+    { title: "Modèle professeur", text: "multilingual-e5-small, environ 140 Mo" },
+    { title: "Un seul passage", text: "Sur 30 286 fragments de mots, environ 15 minutes sur un portable" },
+    { title: "Table de nombres", text: "Une ligne par fragment, 8,66 Mo" },
+    { title: "Dans le navigateur", text: "Retrouver chaque mot, faire la moyenne des lignes" },
+  ]}
+/>
+
+<Callout title="Que sont l’ACP et le cosinus ?">
+
+L’ACP resserre beaucoup de nombres en un plus petit nombre, en perdant le moins possible : ici, les 384 nombres de chaque mot deviennent 256, et 91 % de l’information est conservée. Un cosinus mesure à quel point deux listes de nombres pointent dans la même direction, de 0 pour sans rapport à 1 pour identiques. Un ajustement de 0,903 veut dire que les nombres du petit modèle pointent presque au même endroit que ceux du professeur.
+
+</Callout>
+
 La projection atteint un cosinus de 0,903. Le fichier pèse 8,66 Mo, assez peu pour être livré avec le site. L’ensemble prend environ 15 minutes sur le processeur d’un ordinateur portable.
 
 ## Ce que cela coûte
@@ -32,6 +54,16 @@ Un modèle ne vaut que par son évaluation. Sur 757 éléments que le modèle l�
 | Mots-clés | 72,0 % | 78,2 % |
 | Modèle léger | 77,5 % | 79,5 % |
 | Modèle complet | — | 86,0 % |
+
+<Bars
+  max={100}
+  caption="Part des 757 éléments inédits rangés comme une personne les a triés à la main."
+  rows={[
+    { label: "Mots-clés", value: 78.2, display: "78,2 %" },
+    { label: "Modèle léger", note: "8,66 Mo", value: 79.5, display: "79,5 %", highlight: true },
+    { label: "Modèle complet", note: "environ 140 Mo", value: 86.0, display: "86,0 %" },
+  ]}
+/>
 
 Deux lectures du même tableau. Le modèle léger bat les mots-clés, mais de peu face au tri manuel : 1,3 point. Et il reste 6,5 points sous le modèle complet. Pour une première réponse qui arrive en quelques millisecondes, c’est un bon compromis ; pour la réponse finale, non, et c’est pourquoi le modèle complet se télécharge quand même en arrière-plan quand l’appareil peut se le permettre.
 

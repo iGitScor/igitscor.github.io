@@ -55,6 +55,7 @@ const en = {
   'card.caseStudy': 'Case study',
   'study.back': 'All projects',
   'study.notes': 'Notes about this project',
+  'callout.label': 'In plain words',
 
   'notes.title': 'Notes',
   'notes.lead': 'Short write-ups of what I learn while building, with the numbers.',
@@ -146,6 +147,7 @@ const fr: Record<UiKey, string> = {
   'card.caseStudy': 'Étude de cas',
   'study.back': 'Tous les projets',
   'study.notes': 'Notes sur ce projet',
+  'callout.label': 'En clair',
 
   'notes.title': 'Notes',
   'notes.lead': 'De courts récits de ce que j’apprends en construisant, chiffres à l’appui.',

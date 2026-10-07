@@ -54,7 +54,7 @@ const projects = defineCollection({
 // Long-form pages about a project, one file per language: `en/<project id>.md`
 // and `fr/<project id>.md`. src/lib/case-studies.ts checks that both exist.
 const caseStudies = defineCollection({
-  loader: glob({ base: './src/content/case-studies', pattern: '{en,fr}/*.md' }),
+  loader: glob({ base: './src/content/case-studies', pattern: '{en,fr}/*.{md,mdx}' }),
   schema: z.object({
     title: z.string().min(1),
     description: z.string().min(1),
@@ -64,7 +64,7 @@ const caseStudies = defineCollection({
 // Short current writing, one file per language: `en/<slug>.md` and `fr/<slug>.md`.
 // A draft is built by `npm run dev` only; src/lib/notes.ts checks the pairs.
 const notes = defineCollection({
-  loader: glob({ base: './src/content/notes', pattern: '{en,fr}/*.md' }),
+  loader: glob({ base: './src/content/notes', pattern: '{en,fr}/*.{md,mdx}' }),
   schema: z.object({
     title: z.string().min(1),
     description: z.string().min(1),

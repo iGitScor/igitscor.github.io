@@ -7,13 +7,41 @@ project: myna
 ---
 Myna lit un script de podcast à voix haute avec une voix neuronale, sans aucun serveur. La voix est un modèle Piper VITS, que ONNX Runtime Web fait tourner dans un Web Worker. Obtenir du son d’un modèle dans un navigateur, c’est la partie facile. Voici celles qui ont pris du temps.
 
+<Callout title="VITS, ONNX, WebAssembly : que veulent dire ces mots ?">
+
+Piper VITS est le modèle de voix : il transforme des sons en audio. ONNX est un format de fichier commun pour les modèles : un outil peut entraîner un modèle et un autre le faire tourner. WebAssembly permet à un navigateur d’exécuter du code écrit dans d’autres langages, comme le C++, presque aussi vite qu’une application classique.
+
+</Callout>
+
 ## Utiliser le phonémiseur exact de l’entraînement
 
 Piper ne lit pas des lettres : il lit des identifiants de phonèmes, produits par espeak-ng. Myna fait tourner le `piper_phonemize` de Piper lui-même, compilé en WebAssembly, plutôt qu’une réécriture en JavaScript. Une autre version d’espeak-ng produit des phonèmes légèrement différents, et la `phoneme_id_map` du modèle ignore sans prévenir ce qu’elle ne connaît pas. Rien ne plante ; la voix marmonne, c’est tout. Un test vérifie désormais que les identifiants du navigateur correspondent, un par un, à ceux du vrai `piper_phonemize` sur des phrases françaises de référence.
 
+<Callout title="Qu’est-ce qu’un phonème ?">
+
+La plus petite unité de son d’une langue. « Chat » en a deux : ch, a. Le modèle lit des phonèmes plutôt que des lettres, car l’orthographe et le son divergent souvent, comme dans « femme » ou « monsieur ».
+
+</Callout>
+
 ## Les threads exigent l’isolation cross-origin
 
 La version multithread d’ONNX Runtime a besoin de `SharedArrayBuffer`, que les navigateurs n’exposent qu’à une page isolée cross-origin. Cela veut dire deux en-têtes, `Cross-Origin-Opener-Policy: same-origin` et `Cross-Origin-Embedder-Policy: require-corp`, sur le serveur de développement comme chez l’hébergeur. Sans eux, l’application fonctionne quand même, sur un seul thread. Les tests de bout en bout vérifient l’isolation sur le build de production, car un en-tête manquant reste invisible jusqu’à ce que quelqu’un remarque que c’est lent.
+
+<Flow
+  frame="Dans votre navigateur"
+  caption="Où se fait le travail : la page reste réactive pendant que le worker et ses threads fabriquent la voix."
+  steps={[
+    { title: "La page", text: "Là où vous écrivez et cliquez" },
+    { title: "Web Worker", text: "Fabrique la voix, sur sa propre voie" },
+    { title: "Quatre threads", text: "Se partagent les calculs, grâce à l’isolation cross-origin" },
+  ]}
+/>
+
+<Callout title="Qu’est-ce que l’isolation cross-origin ?">
+
+Une promesse que la page fait au navigateur : elle n’intégrera pas de contenu d’autres sites sans leur permission. En échange, le navigateur débloque la mémoire partagée, dont les threads ont besoin pour travailler ensemble. Les deux en-têtes sont la façon dont la page fait cette promesse.
+
+</Callout>
 
 Un piège : ONNX Runtime lance ses workers de threads à partir du script du worker lui-même. Le worker n’installe donc son gestionnaire de messages que si son nom ne commence pas par `em-pthread`, sinon il avalerait les messages d’Emscripten et se bloquerait.
 

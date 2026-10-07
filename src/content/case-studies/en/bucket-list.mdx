@@ -8,6 +8,12 @@ A bucket list is a personal thing, and a long one is hard to read. Sorting it by
 
 Bucket List sets one constraint: the list never leaves the browser. Classification, storage and the story view all run on the device.
 
+<Callout title="What is a classifier?">
+
+A program that puts things into boxes. Here, it reads each item of your list, such as “see the northern lights”, and decides which theme it belongs to, such as travel or nature.
+
+</Callout>
+
 ## What I built
 
 - **A list-first app**, in French, to filter, explore and track a bucket list. It imports almost anything: JSON, CSV, TSV, Markdown checklists or one item per line. It guesses which column holds the text, the status, the category and the link, and strips markers like `[x]` or ✅.
@@ -18,7 +24,25 @@ Bucket List sets one constraint: the list never leaves the browser. Classificati
 
 **Three tiers, cheapest first.** A keyword lexicon answers instantly with no download. A light model shipped with the site, 8.66 MB, answers in milliseconds. The full multilingual-e5-small model, about 140 MB, runs on ONNX and WebAssembly through transformers.js and takes seconds to minutes. Keywords also cover lists that are neither in French nor in English.
 
+<Bars
+  max={140}
+  caption="What each tier costs to download. The light model is 16 times smaller than the full one."
+  rows={[
+    { label: "Keywords", note: "instant", value: 0, display: "0 MB" },
+    { label: "Light model", note: "milliseconds", value: 8.66, display: "8.66 MB", highlight: true },
+    { label: "Full model", note: "seconds to minutes", value: 140, display: "≈ 140 MB" },
+  ]}
+/>
+
 **A model distilled for the job.** The light model follows the Model2Vec recipe with multilingual-e5-small as the teacher. It keeps 30,286 word pieces, those that cover 99.5% of a French and English Wikipedia sample plus those of the app's own texts, embeds each one, reduces them to 256 dimensions, then fits a linear map back to the teacher's 384. The fit reaches a cosine of 0.903, and the whole run takes about 15 minutes on a laptop CPU.
+
+<Callout title="Embeddings and distillation, in two sentences each">
+
+An embedding turns a sentence into a list of numbers, so that sentences with close meanings get close numbers. That is how the app can tell that “climb Kilimanjaro” and “hike in the Alps” share a theme.
+
+Distillation is a big model teaching a small one. The small model learns to give the same answers on many examples, and keeps most of the skill at a fraction of the size.
+
+</Callout>
 
 **Measured, not assumed.** On 757 items the light model never saw during training:
 
@@ -28,9 +52,21 @@ Bucket List sets one constraint: the list never leaves the browser. Classificati
 | Light model | 77.5% | 79.5% |
 | Full model | — | 86.0% |
 
+<Callout title="How to read this table">
+
+The first column compares each tier with the full model. The second, which matters more, compares it with the way a person sorted the same items by hand.
+
+</Callout>
+
 **Upgrades only when the device can afford it.** The full model downloads in the background when the browser is idle and online, without Data Saver, on a fast connection, and with more than 400 MB of storage free. Once it is ready, stored lists are sorted again and your own corrections are kept.
 
 **The same result on every device.** A list's id is a SHA-256 of its content and seeds every random choice. Model revisions and runtime versions are pinned, and the full model runs single-threaded on WebAssembly, so two browsers sort the same list the same way. Snapshot tests check it, including files with Windows line endings or a byte-order mark.
+
+<Callout title="Why does the same result on every device matter?">
+
+Some steps involve chance, such as how the islands are laid out. If each browser rolled its own dice, the same list could look different on your phone and on your laptop. Using the list’s own fingerprint as the dice makes the result repeatable.
+
+</Callout>
 
 **Stored nowhere else.** Lists, corrections and scores live in IndexedDB, in that browser only.
 

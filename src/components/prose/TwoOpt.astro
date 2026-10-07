@@ -1,0 +1,43 @@
+---
+interface Props {
+  before: string;
+  after: string;
+  caption: string;
+  /** Text alternative describing both drawings. */
+  alt: string;
+}
+
+const { before, after, caption, alt } = Astro.props;
+// Six stops. The first walk crosses itself on B→E and D→C; reversing the E…D stretch
+// gives B→D and E→C, which no longer cross and are shorter.
+const stops = { A: [25, 75], B: [90, 30], C: [160, 30], D: [90, 120], E: [160, 120], F: [225, 75] } as const;
+const path = (order: (keyof typeof stops)[]) => order.map((key) => stops[key].join(',')).join(' ');
+const panels = [
+  { label: before, order: ['A', 'B', 'E', 'D', 'C', 'F'] as const, className: 'route-before' },
+  { label: after, order: ['A', 'B', 'D', 'E', 'C', 'F'] as const, className: 'route-after' },
+];
+---
+
+<figure class="diagram">
+  <div class="two-opt" role="img" aria-label={alt}>
+    {
+      panels.map((panel) => (
+        <svg viewBox="0 0 250 170" aria-hidden="true">
+          <polyline points={path([...panel.order])} class={panel.className} />
+          {Object.entries(stops).map(([name, [x, y]]) => (
+            <g>
+              <circle cx={x} cy={y} r="11" class="stop" />
+              <text x={x} y={y + 4} text-anchor="middle" class="stop-label">
+                {name}
+              </text>
+            </g>
+          ))}
+          <text x="125" y="160" text-anchor="middle" class="diagram-label">
+            {panel.label}
+          </text>
+        </svg>
+      ))
+    }
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>

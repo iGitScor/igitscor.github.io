@@ -7,13 +7,41 @@ project: myna
 ---
 Myna reads a podcast script aloud in a neural voice with no server at all. The voice is a Piper VITS model; ONNX Runtime Web runs it inside a Web Worker. Getting a model to produce sound in a browser is the easy part. These are the parts that took the time.
 
+<Callout title="VITS, ONNX, WebAssembly: what do these words mean?">
+
+Piper VITS is the voice model: it turns sounds into audio. ONNX is a common file format for models, so one tool can train a model and another can run it. WebAssembly lets a browser run code written in other languages, such as C++, almost as fast as a regular app.
+
+</Callout>
+
 ## Use the exact phonemizer the model was trained with
 
 Piper does not read letters: it reads phoneme ids, produced by espeak-ng. Myna runs Piper's own `piper_phonemize`, compiled to WebAssembly, rather than a JavaScript reimplementation. A different espeak-ng version produces slightly different phoneme strings, and the model's `phoneme_id_map` silently drops what it does not know. Nothing crashes; the voice just mumbles. A test now checks that the browser's ids match the real `piper_phonemize` id for id on reference French sentences.
 
+<Callout title="What is a phoneme?">
+
+The smallest unit of sound in a language. “Cat” has three: k, a, t. The model reads phonemes rather than letters because spelling and sound often disagree, as in “though” and “tough”.
+
+</Callout>
+
 ## Threads need cross-origin isolation
 
 ONNX Runtime's multithreaded build needs `SharedArrayBuffer`, which browsers only expose to a cross-origin isolated page. That means two headers: `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: require-corp`, in the dev server and on the host. Without them the app still works, on one thread. The end-to-end suite checks isolation on the production build, because a missing header is invisible until someone notices it is slow.
+
+<Flow
+  frame="In your browser"
+  caption="Where the work happens: the page stays responsive while the worker and its threads make the voice."
+  steps={[
+    { title: "The page", text: "Where you write and click" },
+    { title: "Web Worker", text: "Makes the voice, on its own track" },
+    { title: "Four threads", text: "Share the maths, thanks to cross-origin isolation" },
+  ]}
+/>
+
+<Callout title="What is cross-origin isolation?">
+
+A promise the page makes to the browser: it will not pull in content from other sites without their permission. In exchange, the browser unlocks shared memory, which threads need to work together. The two headers are how the page makes that promise.
+
+</Callout>
 
 One trap: ONNX Runtime spawns its thread workers from the worker's own script. The worker therefore installs its message handler only when its name does not start with `em-pthread`, or it would swallow Emscripten's messages and deadlock.
 

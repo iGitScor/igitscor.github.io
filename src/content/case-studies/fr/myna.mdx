@@ -8,6 +8,12 @@ Transformer un script en épisode fini oblige d’ordinaire à l’enregistrer s
 
 Myna se donne deux contraintes. Rien ne quitte l’appareil : pas d’envoi, pas de compte, et tout fonctionne hors ligne. Et parce qu’une voix est une chose puissante à copier, aucune voix ne peut être utilisée sans le consentement enregistré de la personne qui parle.
 
+<Callout title="Qu’est-ce qu’une voix neuronale ?">
+
+Une voix neuronale est un programme qui a écouté des heures d’enregistrements d’une personne et appris à l’imiter. On lui donne du texte, il rend du son. Dans Myna, chaque voix est un fichier d’environ 63 Mo que votre navigateur fait tourner seul : aucun serveur n’entend jamais votre script.
+
+</Callout>
+
 ## Ce que j’ai construit
 
 - **Myna**, une application web installable où l’on écrit le script, le fait lire, masterise l’audio et exporte un MP3 chapitré, avec ce qu’il faut pour publier le flux.
@@ -17,7 +23,25 @@ Myna se donne deux contraintes. Rien ne quitte l’appareil : pas d’envoi, pas
 
 ## Comment ça marche
 
+<Flow
+  frame="Tout sur votre appareil"
+  caption="Du script à l’épisode : chaque étape tourne sur votre appareil."
+  steps={[
+    { title: "Votre script", text: "Le texte que vous écrivez" },
+    { title: "Phonèmes", text: "Les sons à prononcer, calculés par espeak-ng" },
+    { title: "Modèle de voix", text: "Transforme ces sons en audio" },
+    { title: "Mastering", text: "Égalise le volume et ajoute la musique" },
+    { title: "MP3", text: "Prêt à publier, avec ses chapitres" },
+  ]}
+/>
+
 **La synthèse dans un Web Worker.** Les modèles Piper VITS tournent avec ONNX Runtime Web, et espeak-ng, compilé en WebAssembly, produit les phonèmes. Sur un Mac de série M, le rendu est 15 à 20 fois plus rapide que le temps réel. Le détail est dans la page [architecture TTS](https://podcast.iscor.me/docs/architecture/tts).
+
+<Callout title="Qu’est-ce qu’un Web Worker ?">
+
+Une page web fait normalement tout sur une seule voie : un travail lourd la fige. Un Web Worker est une seconde voie qui tourne à côté. Myna y fabrique la voix, et vous pouvez continuer à écrire pendant qu’elle parle.
+
+</Callout>
 
 **Un traitement audio de niveau broadcast, en TypeScript.** Le volume est mesuré selon la norme EBU R128, puis un compresseur, un limiteur et l’atténuation de la musique sous la voix produisent le mixage final, encodé en MP3 avec des chapitres ID3. Voir le [pipeline audio](https://podcast.iscor.me/docs/architecture/audio-pipeline).
 
@@ -26,6 +50,12 @@ Myna se donne deux contraintes. Rien ne quitte l’appareil : pas d’envoi, pas
 **Un stockage local d’abord.** Les épisodes sont conservés dans IndexedDB et dans l’Origin Private File System, et un service worker garde le moteur vocal disponible hors ligne.
 
 **Un contrat, quatre lecteurs.** Les formats de fichiers sont des JSON Schemas, vérifiés avec les mêmes jeux d’essai par l’application web, l’entraîneur Python, l’application Mac et l’application Windows et Linux.
+
+<Callout title="Qu’est-ce qu’un JSON Schema ?">
+
+Une règle écrite qui dit ce qu’un fichier doit contenir : quels champs, et de quel type. Quatre programmes lisent les fichiers de Myna, et les schémas garantissent qu’ils sont tous d’accord sur ce qu’est un fichier valide.
+
+</Callout>
 
 ## Ce que j’ai appris
 

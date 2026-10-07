@@ -1,0 +1,32 @@
+---
+interface Props {
+  rows: { label: string; value: number; display: string; note?: string; highlight?: boolean }[];
+  /** The value of a full-width bar. */
+  max: number;
+  caption: string;
+}
+
+const { rows, max, caption } = Astro.props;
+---
+
+<figure class="diagram">
+  <dl class="bars">
+    {
+      rows.map((row) => (
+        <div class:list={['bar-row', { highlight: row.highlight }]}>
+          <dt>
+            {row.label}
+            {row.note && <span>{row.note}</span>}
+          </dt>
+          <dd>
+            <span class="bar-track">
+              <span class="bar" style={`--size: ${(row.value / max) * 100}%`} />
+            </span>
+            <span class="bar-value">{row.display}</span>
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+  <figcaption>{caption}</figcaption>
+</figure>

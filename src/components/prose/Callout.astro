@@ -1,0 +1,18 @@
+---
+import type { Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  /** The question the box answers, for example "What is an embedding?" */
+  title: string;
+}
+
+const { title } = Astro.props;
+const t = useTranslations((Astro.currentLocale ?? 'en') as Locale);
+---
+
+<aside class="callout" aria-label={`${t('callout.label')}: ${title}`}>
+  <p class="callout-label">{t('callout.label')}</p>
+  <p class="callout-title">{title}</p>
+  <div class="callout-body"><slot /></div>
+</aside>

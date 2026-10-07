@@ -21,9 +21,34 @@ There is no backend: the app is a static site, and your tracks and settings stay
 
 **A grid instead of every pair.** Comparing every point of a long walk with every invader is slow. Invaders are bucketed into a grid of cells about 111 metres wide, so each track point only checks the cells around it.
 
+<Callout title="Why a grid?">
+
+A long walk has thousands of GPS points. Checking each one against 4,415 invaders means millions of comparisons. Instead, the map is cut into squares, and each invader is filed under its square. For each point of the walk, the app only looks in the squares around it: a handful of invaders instead of thousands.
+
+</Callout>
+
 **Choose first, then order.** Google Maps accepts at most 8 waypoints, so the planner first chooses which invaders to visit: unflashed ones within 80% of the distance budget, nearest first, plus any that cost a detour of less than 150 metres. It then orders them by cheapest insertion and improves the order with 2-opt and Or-opt passes. Walking directions come from OSRM.
 
+<TwoOpt
+  before="Before"
+  after="After"
+  alt="Two walks through six stops, A to F. Before: from B the walk goes down to E, back across to D, then up to C, so it crosses itself. After: from B it goes to D, then E, then C, with no crossing."
+  caption="2-opt in one picture: when a walk crosses itself, reversing the stretch between the crossing removes it, and the walk gets shorter."
+/>
+
+<Callout title="What are cheapest insertion and 2-opt?">
+
+Cheapest insertion builds the walk one stop at a time, slipping each new stop in wherever it adds the least distance. 2-opt then tidies up: wherever the walk crosses itself, it reverses the part in between, which always makes it shorter. Or-opt does the same job by moving short runs of stops elsewhere in the walk.
+
+</Callout>
+
 **Puzzles from open data.** The hunt generator describes each location with Nominatim, Overpass, Wikidata and Wikipedia, and picks from more than 40 puzzle types. A five-invader hunt takes 30 to 50 seconds the first time and under 2 seconds once the place data is cached.
+
+<Callout title="What is a cache?">
+
+A copy of an answer kept for later. The first time the app asks the open-data services about a place, it waits for them. Then it keeps the answer for a week, so the next hunt in the same area is almost instant.
+
+</Callout>
 
 **Community data, kept in sync.** The invader list comes from a community-maintained dataset and metro stations from OpenStreetMap, each refreshed by a script.
 

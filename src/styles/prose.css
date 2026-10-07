@@ -152,3 +152,213 @@
   text-transform: none;
   line-height: 1.1;
 }
+
+/* Callouts: a term explained in plain words. */
+
+.prose .callout {
+  margin-block: 1.6em;
+  padding: 18px 22px 20px;
+  border-left: 4px solid var(--accent-deep);
+  background: var(--surface);
+  font-size: 0.94em;
+}
+
+.callout-label {
+  color: var(--accent-text);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.callout-title {
+  margin-top: 4px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.callout-body {
+  margin-top: 8px;
+  color: var(--ink-soft);
+}
+
+.callout-body > * + * {
+  margin-top: 0.7em;
+}
+
+/* Diagrams: drawn with page colors, so they follow the light and dark themes. */
+
+.prose .diagram {
+  margin-block: 1.8em;
+}
+
+.diagram figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.flow-frame.framed {
+  padding: 14px;
+  border: 2px dashed var(--border);
+}
+
+.flow-frame-label {
+  margin-bottom: 10px;
+  color: var(--accent-text);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.prose .flow {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82em;
+  line-height: 1.4;
+}
+
+.prose .flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.flow li span {
+  color: var(--ink-soft);
+}
+
+.flow li + li::before {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  color: var(--accent-text);
+  font-weight: 700;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 760px) {
+  .prose .flow {
+    grid-auto-flow: row;
+    gap: 26px;
+  }
+
+  .flow li + li::before {
+    content: '↓';
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.bars {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  font-size: 0.85em;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(0, 14ch) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.bar-row dt {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.bar-row dt span {
+  display: block;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.bar-row dd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.bar-track {
+  flex: 1;
+}
+
+.bar {
+  display: block;
+  width: var(--size);
+  height: 22px;
+  background: color-mix(in srgb, var(--ink) 28%, transparent);
+}
+
+.bar-row.highlight .bar {
+  background: var(--accent-deep);
+}
+
+.bar-value {
+  min-width: 8ch;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.two-opt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 8px 24px;
+  max-width: 600px;
+}
+
+.two-opt svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.two-opt polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.two-opt .route-before {
+  stroke: var(--muted);
+  stroke-dasharray: 6 5;
+}
+
+.two-opt .route-after {
+  stroke: var(--accent-text);
+}
+
+.two-opt .stop {
+  fill: var(--card);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.two-opt .stop-label {
+  fill: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.two-opt .diagram-label {
+  fill: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}

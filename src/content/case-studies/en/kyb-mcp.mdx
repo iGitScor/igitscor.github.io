@@ -6,11 +6,33 @@ description: An MCP server for Know Your Business checks on French companies, bu
 
 A Know Your Business check starts with the same lookups every time: does the company exist, who runs it, what does it do, and what did we conclude last time?
 
+<Callout title="What is KYB?">
+
+Know Your Business: the checks a bank or a payment company must run before working with a company. Does it exist, who runs it, and what does it do?
+
+</Callout>
+
 The Model Context Protocol has more primitives than tools. I wanted a project that needed each of them for a real reason, so I built one around those lookups.
+
+<Callout title="What is MCP?">
+
+The Model Context Protocol is a common plug between AI assistants and other software. An assistant such as Claude connects to an MCP server, and the server offers it actions it can take and data it can read. Here, the server knows how to look up French companies and keep notes about them.
+
+</Callout>
 
 ## What I built
 
 An MCP server that searches the French company registry, through the public [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/) API, and keeps review dossiers. Claude Code, claude.ai or any other MCP client can use it, over stdio or Streamable HTTP.
+
+<Flow
+  caption="Who talks to whom: the assistant never calls the registry itself."
+  steps={[
+    { title: "You", text: "Ask a question in plain language" },
+    { title: "AI assistant", text: "Claude Code, claude.ai or another MCP client" },
+    { title: "kyb-mcp", text: "Runs the right lookup and keeps the dossier" },
+    { title: "Company registry", text: "The public French register" },
+  ]}
+/>
 
 | Primitive | Names | What it is for |
 |---|---|---|
@@ -22,6 +44,12 @@ An MCP server that searches the French company registry, through the public [rec
 | Resources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Read-only views a client can attach |
 | Prompts | `kyb_review`, `compare_companies` | A packaged workflow, with the company attached |
 
+<Callout title="Tools, resources, prompts: what is the difference?">
+
+Tools are actions the assistant can run, like searching for a company. Resources are documents it can read, like a dossier. Prompts are ready-made instructions a person picks from a menu, like “review this company”.
+
+</Callout>
+
 ## How it works
 
 **A polite client of a public API.** Every registry call goes through one HTTP client with a rate limit of 5 requests per second, under the public limit of 7, and a 60-second cache. Directors' birth dates are dropped before anything leaves the process.
@@ -31,6 +59,12 @@ An MCP server that searches the French company registry, through the public [rec
 **No model of its own.** When a summary is needed, the server asks the connected client's model to write it and stores the result as a note.
 
 **Stateless HTTP.** The Streamable HTTP transport keeps no session, which suits serverless hosting, and it checks the `Host` header against DNS rebinding.
+
+<Callout title="What does stateless mean?">
+
+The server remembers nothing between two requests: each one carries everything needed to answer it. That lets a hosting platform start and stop copies of the server freely, without losing anyone’s work.
+
+</Callout>
 
 The server has 23 offline tests, and tagged releases publish a Docker image.
 

@@ -6,11 +6,33 @@ description: Un serveur MCP pour les vérifications KYB (Know Your Business) d�
 
 Une vérification KYB (Know Your Business) commence toujours par les mêmes recherches : l’entreprise existe-t-elle, qui la dirige, que fait-elle, et qu’avions-nous conclu la dernière fois ?
 
+<Callout title="Qu’est-ce que le KYB ?">
+
+Know Your Business, « connaître son client entreprise » : les vérifications qu’une banque ou une société de paiement doit faire avant de travailler avec une entreprise. Existe-t-elle, qui la dirige, et que fait-elle ?
+
+</Callout>
+
 Le Model Context Protocol compte plus de primitives que les seuls outils. Je voulais un projet qui ait besoin de chacune pour une vraie raison ; je l’ai donc construit autour de ces recherches.
+
+<Callout title="Qu’est-ce que MCP ?">
+
+Le Model Context Protocol est une prise commune entre les assistants IA et les autres logiciels. Un assistant comme Claude se branche sur un serveur MCP, et le serveur lui propose des actions à faire et des données à lire. Ici, le serveur sait rechercher des entreprises françaises et tenir des notes à leur sujet.
+
+</Callout>
 
 ## Ce que j’ai construit
 
 Un serveur MCP qui interroge le registre français des entreprises, via l’API publique [recherche-entreprises](https://recherche-entreprises.api.gouv.fr/docs/), et tient des dossiers de revue. Claude Code, claude.ai ou tout autre client MCP peut s’en servir, en stdio ou en Streamable HTTP.
+
+<Flow
+  caption="Qui parle à qui : l’assistant n’appelle jamais le registre lui-même."
+  steps={[
+    { title: "Vous", text: "Posez une question en langage courant" },
+    { title: "Assistant IA", text: "Claude Code, claude.ai ou un autre client MCP" },
+    { title: "kyb-mcp", text: "Lance la bonne recherche et tient le dossier" },
+    { title: "Registre des entreprises", text: "Le registre public français" },
+  ]}
+/>
 
 | Primitive | Noms | À quoi elle sert |
 |---|---|---|
@@ -22,6 +44,12 @@ Un serveur MCP qui interroge le registre français des entreprises, via l’API 
 | Ressources | `company://{siren}`, `dossier://{id}`, `dossiers://{status}`, `naf://{code}` | Des vues en lecture seule qu’un client peut joindre |
 | Prompts | `kyb_review`, `compare_companies` | Un déroulé prêt à l’emploi, avec l’entreprise jointe |
 
+<Callout title="Outils, ressources, prompts : quelle différence ?">
+
+Les outils sont des actions que l’assistant peut lancer, comme rechercher une entreprise. Les ressources sont des documents qu’il peut lire, comme un dossier. Les prompts sont des instructions toutes prêtes qu’une personne choisit dans un menu, comme « examiner cette entreprise ».
+
+</Callout>
+
 ## Comment ça marche
 
 **Un client respectueux d’une API publique.** Chaque appel au registre passe par un seul client HTTP, limité à 5 requêtes par seconde, sous la limite publique de 7, avec un cache de 60 secondes. Les dates de naissance des dirigeants sont retirées avant que quoi que ce soit ne sorte du processus.
@@ -31,6 +59,12 @@ Un serveur MCP qui interroge le registre français des entreprises, via l’API 
 **Pas de modèle embarqué.** Quand une synthèse est nécessaire, le serveur demande au modèle du client connecté de la rédiger, puis l’enregistre comme une note.
 
 **Un HTTP sans état.** Le transport Streamable HTTP ne garde aucune session, ce qui convient à un hébergement serverless, et il contrôle l’en-tête `Host` contre le DNS rebinding.
+
+<Callout title="Que veut dire « sans état » ?">
+
+Le serveur ne retient rien entre deux requêtes : chacune apporte tout ce qu’il faut pour y répondre. Un hébergeur peut ainsi démarrer et arrêter des copies du serveur librement, sans que personne ne perde son travail.
+
+</Callout>
 
 Le serveur a 23 tests hors ligne, et chaque version étiquetée publie une image Docker.
 

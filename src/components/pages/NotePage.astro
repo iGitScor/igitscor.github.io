@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { proseComponents } from '../prose';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
 import { getProjects } from '../../lib/projects';
@@ -46,7 +47,7 @@ const projectUrl = project && (await caseStudyUrls(locale)).get(project.id);
     <div class="section">
       <div class="wrap wrap-narrow">
         <div class="prose">
-          <Content />
+          <Content components={proseComponents} />
         </div>
         <p class="section-more">
           <a href={localizePath('/notes/', locale)}>← {t('notes.back')}</a>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  /** Each step of the flow, in order. */
+  steps: { title: string; text?: string }[];
+  caption: string;
+  /** Names the boundary drawn around every step, for example "In your browser". */
+  frame?: string;
+}
+
+const { steps, caption, frame } = Astro.props;
+---
+
+<figure class="diagram">
+  <div class:list={['flow-frame', { framed: frame }]}>
+    {frame && <p class="flow-frame-label">{frame}</p>}
+    <ol class="flow">
+      {
+        steps.map((step) => (
+          <li>
+            <strong>{step.title}</strong>
+            {step.text && <span>{step.text}</span>}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>

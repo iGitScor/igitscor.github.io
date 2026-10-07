@@ -20,7 +20,9 @@ npm run test:e2e # after a build: accessibility and layout, light and dark, desk
 | What | Where |
 |---|---|
 | Projects | `src/content/projects/*.yaml`, one file per project, every text in `en` and `fr` |
-| Case studies | `src/content/case-studies/{en,fr}/<project id>.md`, one file per language |
+| Case studies | `src/content/case-studies/{en,fr}/<project id>.mdx`, one file per language |
+| Notes | `src/content/notes/{en,fr}/<slug>.mdx`, one file per language; `draft: true` (the default) builds them in `npm run dev` only, and both languages go live together |
+| Explainers and diagrams | `<Callout>`, `<Flow>`, `<Bars>` and `<TwoOpt>` from `src/components/prose/`, usable in any case study or note without an import; their text is written in each language's file |
 | Archived posts and articles | `src/content/archive/*.md` |
 | Interface strings | `src/i18n/ui.ts` |
 | Resume block | `src/data/resume.{en,fr}.json`, refreshed with `npm run sync:resume` from a checkout of the [resume repository](https://github.com/iGitScor/resume) next to this one |

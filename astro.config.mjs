@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 // The archive stays reachable at its old URLs but is kept out of the sitemap.
-const hubPath = /^(\/fr)?(|\/about|\/projects(\/[a-z0-9-]+)?)$/;
+const hubPath = /^(\/fr)?(|\/about|\/projects(\/[a-z0-9-]+)?|\/notes(\/[a-z0-9-]+)?)$/;
 const isHubUrl = (page) => hubPath.test(new URL(page).pathname.replace(/\/$/, ''));
 // GitHub Pages answers /fr with a redirect, so the sitemap lists /fr/.
 const withSlash = (url) => url.replace(/([^/])$/, '$1/');
@@ -24,6 +25,7 @@ export default defineConfig({
     shikiConfig: { themes: { light: 'github-light-default', dark: 'github-dark-default' } },
   },
   integrations: [
+    mdx(),
     sitemap({
       filter: isHubUrl,
       serialize: (item) => ({

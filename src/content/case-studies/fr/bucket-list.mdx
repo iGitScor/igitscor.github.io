@@ -8,6 +8,12 @@ Une bucket list, c’est personnel, et une longue liste se lit mal. La trier par
 
 Bucket List se donne une contrainte : la liste ne quitte jamais le navigateur. La classification, le stockage et la vue « histoire » tournent tous sur l’appareil.
 
+<Callout title="Qu’est-ce qu’un classifieur ?">
+
+Un programme qui range des choses dans des boîtes. Ici, il lit chaque élément de votre liste, comme « voir une aurore boréale », et décide à quel thème il appartient, comme le voyage ou la nature.
+
+</Callout>
+
 ## Ce que j’ai construit
 
 - **Une application centrée sur la liste**, en français, pour filtrer, explorer et suivre une bucket list. Elle importe presque tout : JSON, CSV, TSV, listes à cocher Markdown ou un élément par ligne. Elle devine quelle colonne contient le texte, le statut, la catégorie et le lien, et retire les marqueurs comme `[x]` ou ✅.
@@ -18,7 +24,25 @@ Bucket List se donne une contrainte : la liste ne quitte jamais le navigateur. L
 
 **Trois niveaux, du moins coûteux au plus coûteux.** Un lexique de mots-clés répond instantanément, sans téléchargement. Un modèle léger livré avec le site, de 8,66 Mo, répond en quelques millisecondes. Le modèle complet multilingual-e5-small, d’environ 140 Mo, tourne en ONNX et WebAssembly avec transformers.js et prend de quelques secondes à quelques minutes. Les mots-clés couvrent aussi les listes qui ne sont ni en français ni en anglais.
 
+<Bars
+  max={140}
+  caption="Ce que chaque niveau coûte à télécharger. Le modèle léger est 16 fois plus petit que le modèle complet."
+  rows={[
+    { label: "Mots-clés", note: "instantané", value: 0, display: "0 Mo" },
+    { label: "Modèle léger", note: "quelques millisecondes", value: 8.66, display: "8,66 Mo", highlight: true },
+    { label: "Modèle complet", note: "secondes à minutes", value: 140, display: "≈ 140 Mo" },
+  ]}
+/>
+
 **Un modèle distillé pour la tâche.** Le modèle léger suit la recette Model2Vec, avec multilingual-e5-small comme professeur. Il garde 30 286 fragments de mots, ceux qui couvrent 99,5 % d’un échantillon de Wikipédia en français et en anglais et ceux des textes de l’application, calcule l’embedding de chacun, les réduit à 256 dimensions, puis apprend une projection linéaire vers les 384 du professeur. L’ajustement atteint un cosinus de 0,903, et l’ensemble prend environ 15 minutes sur le processeur d’un ordinateur portable.
+
+<Callout title="Embeddings et distillation, en deux phrases chacun">
+
+Un embedding transforme une phrase en une liste de nombres, de sorte que des phrases de sens proche obtiennent des nombres proches. C’est ainsi que l’application devine que « gravir le Kilimandjaro » et « randonner dans les Alpes » ont un thème commun.
+
+La distillation, c’est un grand modèle qui en forme un petit. Le petit apprend à donner les mêmes réponses sur de nombreux exemples, et garde l’essentiel du savoir-faire pour une fraction de la taille.
+
+</Callout>
 
 **Mesuré, pas supposé.** Sur 757 éléments que le modèle léger n’a jamais vus à l’entraînement :
 
@@ -28,9 +52,21 @@ Bucket List se donne une contrainte : la liste ne quitte jamais le navigateur. L
 | Modèle léger | 77,5 % | 79,5 % |
 | Modèle complet | — | 86,0 % |
 
+<Callout title="Comment lire ce tableau">
+
+La première colonne compare chaque niveau au modèle complet. La seconde, plus importante, le compare à la façon dont une personne a trié les mêmes éléments à la main.
+
+</Callout>
+
 **Monter en gamme seulement si l’appareil le permet.** Le modèle complet se télécharge en arrière-plan quand le navigateur est inactif et en ligne, sans économiseur de données, avec une connexion rapide et plus de 400 Mo de stockage libre. Une fois prêt, les listes enregistrées sont triées à nouveau et vos corrections sont conservées.
 
 **Le même résultat sur chaque appareil.** L’identifiant d’une liste est un SHA-256 de son contenu, et il sert de graine à chaque choix aléatoire. Les révisions du modèle et les versions du moteur sont figées, et le modèle complet tourne sur un seul thread en WebAssembly : deux navigateurs trient donc la même liste de la même façon. Des tests par instantanés le vérifient, y compris pour des fichiers avec des fins de ligne Windows ou une marque d’ordre des octets.
+
+<Callout title="Pourquoi le même résultat sur chaque appareil ?">
+
+Certaines étapes font intervenir le hasard, comme la disposition des îles. Si chaque navigateur lançait ses propres dés, la même liste pourrait s’afficher différemment sur votre téléphone et sur votre ordinateur. Utiliser l’empreinte de la liste comme dés rend le résultat reproductible.
+
+</Callout>
 
 **Stockée nulle part ailleurs.** Les listes, les corrections et les scores restent dans IndexedDB, dans ce navigateur uniquement.
 

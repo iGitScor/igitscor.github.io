@@ -7,15 +7,40 @@ project: kyb-mcp
 ---
 La plupart des serveurs Model Context Protocol n’exposent que des outils. kyb-mcp, un atelier qui interroge le registre français des entreprises et tient des dossiers KYB, a été conçu pour utiliser toutes les primitives, à dessein. Les outils et les ressources sont bien documentés. Ces trois-là le sont moins, et chacune résout un vrai problème.
 
+<Callout title="Qu’est-ce que MCP ?">
+
+Le Model Context Protocol est une prise commune entre les assistants IA et les autres logiciels. Un assistant comme Claude se branche sur un serveur MCP, et le serveur lui propose des actions à faire, appelées outils, et des documents à lire, appelés ressources.
+
+</Callout>
+
 ## L’élicitation : demander à l’humain, pas au modèle
 
 Archiver un dossier est destructif. Une annotation peut marquer l’outil comme tel, mais c’est toujours le modèle qui décide de l’appeler. Avec l’élicitation, le serveur interroge directement l’utilisateur, dans son client, avec un formulaire typé. L’outil `archive_dossier` gère trois réponses : accepter, refuser et annuler. Seule une confirmation explicite change quelque chose.
+
+<Flow
+  caption="Élicitation : la confirmation vient de vous, par votre application, pas du modèle."
+  steps={[
+    { title: "Assistant", text: "Demande à archiver un dossier" },
+    { title: "Serveur", text: "Répond : une confirmation est nécessaire" },
+    { title: "Vous", text: "Confirmez dans un formulaire affiché par votre application" },
+    { title: "Serveur", text: "Archive le dossier" },
+  ]}
+/>
 
 Tout tient à qui répond. Une confirmation qui passe par le modèle peut être hallucinée ou obtenue par persuasion ; celle qui vient de l’interface du client, non.
 
 ## Le sampling : emprunter le modèle du client
 
 `draft_risk_summary` rédige un premier jet de synthèse des risques d’une entreprise. Le serveur n’a ni modèle ni clé d’API. Grâce au sampling, il demande au modèle du client d’écrire le texte, puis l’enregistre comme une note marquée `ai_summary` : un point de départ pour l’analyste, jamais une décision.
+
+<Flow
+  caption="Sampling : le serveur emprunte le modèle que vous utilisez déjà, et n’a donc besoin d’aucune clé."
+  steps={[
+    { title: "Serveur", text: "A besoin d’une synthèse mais n’a pas de modèle" },
+    { title: "Le modèle de votre assistant", text: "Rédige le brouillon" },
+    { title: "Serveur", text: "L’enregistre comme une note rédigée par l’IA" },
+  ]}
+/>
 
 Deux limites à connaître. Le sampling ne fonctionne que si le client déclare cette capacité ; sinon l’outil échoue proprement, avec une erreur claire. Et la prise en charge varie d’un client à l’autre : l’inspecteur MCP m’a servi de client de référence.
 
@@ -28,6 +53,12 @@ Les prompts et les modèles de ressources prennent des arguments, et le SIREN d�
 Depuis la révision du protocole du 28 juillet 2026, le serveur n’envoie plus de requêtes au client. Un outil qui a besoin de l’utilisateur ou du modèle du client renvoie un résultat « saisie requise » ; le client répond et rappelle l’outil. Le SDK Python v2 cache ce mécanisme derrière des paramètres de dépendance qui renvoient un `Elicit` ou un `Sample`.
 
 Cela a une conséquence pour l’hébergement. En HTTP sans état, le second appel peut arriver sur une autre instance : l’état d’un appel en plusieurs étapes est donc scellé avec une clé que toutes les instances doivent partager. Oubliez-la, et l’élicitation fonctionne sur votre portable mais échoue en production.
+
+<Callout title="Que veut dire « sans état » ?">
+
+Le serveur ne retient rien entre deux requêtes : chacune apporte tout ce qu’il faut pour y répondre. Un hébergeur peut ainsi faire tourner plusieurs copies du serveur, et les démarrer ou les arrêter librement. La clé partagée permet à n’importe quelle copie de reprendre un échange commencé par une autre.
+
+</Callout>
 
 ## À retenir
 

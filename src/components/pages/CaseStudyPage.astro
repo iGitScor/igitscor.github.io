@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { proseComponents } from '../prose';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
 import type { CaseStudyProps } from '../../lib/case-studies';
@@ -65,7 +66,7 @@ const notes = await notesAbout(project.id, locale);
           )
         }
         <div class="prose">
-          <Content />
+          <Content components={proseComponents} />
         </div>
         {
           notes.length > 0 && (

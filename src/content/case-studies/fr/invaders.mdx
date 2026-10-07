@@ -21,9 +21,34 @@ Il n’y a pas de serveur applicatif : l’application est un site statique, et 
 
 **Une grille plutôt que toutes les paires.** Comparer chaque point d’une longue marche à chaque invader est lent. Les invaders sont répartis dans une grille de cases d’environ 111 mètres de côté : chaque point de la trace ne consulte que les cases voisines.
 
+<Callout title="Pourquoi une grille ?">
+
+Une longue marche compte des milliers de points GPS. Comparer chacun aux 4 415 invaders, c’est des millions de comparaisons. À la place, la carte est découpée en carrés, et chaque invader est rangé dans le sien. Pour chaque point de la marche, l’application ne regarde que les carrés voisins : une poignée d’invaders au lieu de milliers.
+
+</Callout>
+
 **Choisir d’abord, ordonner ensuite.** Google Maps accepte au plus 8 étapes : le planificateur choisit donc d’abord les invaders à visiter, ceux non flashés à moins de 80 % de la distance prévue, du plus proche au plus lointain, plus ceux qui coûtent un détour de moins de 150 mètres. Il les ordonne ensuite par insertion au moindre coût, puis améliore l’ordre avec des passes 2-opt et Or-opt. L’itinéraire à pied vient d’OSRM.
 
+<TwoOpt
+  before="Avant"
+  after="Après"
+  alt="Deux balades par six arrêts, de A à F. Avant : depuis B, la balade descend vers E, revient en diagonale vers D, puis remonte vers C : elle se croise. Après : depuis B, elle va vers D, puis E, puis C, sans croisement."
+  caption="2-opt en une image : quand une balade se croise, inverser le tronçon entre les deux branches supprime le croisement, et la balade raccourcit."
+/>
+
+<Callout title="Que sont l’insertion au moindre coût et 2-opt ?">
+
+L’insertion au moindre coût construit la balade un arrêt à la fois, en glissant chaque nouvel arrêt là où il ajoute le moins de distance. 2-opt fait ensuite le ménage : partout où la balade se croise, il inverse le tronçon entre les deux, ce qui la raccourcit toujours. Or-opt fait le même travail en déplaçant de courtes suites d’arrêts ailleurs dans la balade.
+
+</Callout>
+
 **Des énigmes tirées des données ouvertes.** Le générateur de chasses décrit chaque lieu avec Nominatim, Overpass, Wikidata et Wikipédia, et choisit parmi plus de 40 types d’énigmes. Une chasse de cinq invaders prend 30 à 50 secondes la première fois, et moins de 2 secondes une fois les données des lieux en cache.
+
+<Callout title="Qu’est-ce qu’un cache ?">
+
+Une copie d’une réponse gardée pour plus tard. La première fois que l’application interroge les services de données ouvertes sur un lieu, elle attend leur réponse. Ensuite, elle la garde une semaine : la chasse suivante dans le même quartier est presque instantanée.
+
+</Callout>
 
 **Des données communautaires, tenues à jour.** La liste des invaders vient d’un jeu de données maintenu par la communauté, et les stations de métro d’OpenStreetMap ; un script rafraîchit chacune.
 
