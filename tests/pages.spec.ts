@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-const hubPages = ['/', '/projects/', '/projects/myna/', '/projects/kyb-mcp/', '/projects/bucket-list/', '/projects/invaders/', '/about/'];
+const hubPages = ['/', '/projects/', '/projects/myna/', '/projects/kyb-mcp/', '/projects/bucket-list/', '/projects/invaders/', '/notes/', '/notes/distilling-e5/', '/notes/piper-in-the-browser/', '/notes/mcp-beyond-tools/', '/about/'];
 const pages = [
   ...hubPages,
   ...hubPages.map((path) => `/fr${path}`),
