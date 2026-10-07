@@ -415,6 +415,11 @@ a:hover {
   margin-top: 32px;
 }
 
+/* Four cards fill two rows of two instead of leaving one alone on a row of three. */
+.cards:has(> .card:nth-child(4):last-child) {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+}
+
 /* A section with a single project gives it the full row, cover beside the text. */
 .cards:has(> .card:only-child) {
   grid-template-columns: minmax(0, 1fr);

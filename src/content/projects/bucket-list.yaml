@@ -1,6 +1,7 @@
 name: Bucket List
 section: personal
 order: 2
+featured: true
 status: live
 url: https://list.iscor.me
 tagline:
