@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { locales, type Locale } from '../data/site';
+import type { Locale } from '../data/site';
 import { getProjects, type Project } from './projects';
+import { assertTwins, inLocale, slugOf } from './twins';
 import { localizePath } from './urls';
 
 export interface CaseStudyProps {
@@ -8,23 +9,12 @@ export interface CaseStudyProps {
   project: Project;
 }
 
-/** Entry ids are `<locale>/<project id>`. */
-const slugOf = (id: string) => id.slice(id.indexOf('/') + 1);
-
 async function studiesFor(locale: Locale): Promise<Map<string, CaseStudyProps>> {
   const [studies, projects] = await Promise.all([getCollection('caseStudies'), getProjects()]);
-  const byLocale = (target: Locale) => studies.filter(({ id }) => id.startsWith(`${target}/`));
-
-  // A case study written in one language only must stop the build.
-  for (const target of locales) {
-    const other = new Set(byLocale(locales.find((candidate) => candidate !== target)!).map(({ id }) => slugOf(id)));
-    for (const { id } of byLocale(target)) {
-      if (!other.has(slugOf(id))) throw new Error(`Case study "${id}" has no translation`);
-    }
-  }
+  assertTwins(studies, 'Case study');
 
   return new Map(
-    byLocale(locale).map((study) => {
+    inLocale(studies, locale).map((study) => {
       const slug = slugOf(study.id);
       const project = projects.find(({ id }) => id === slug);
       if (!project) throw new Error(`Case study "${study.id}" matches no project`);

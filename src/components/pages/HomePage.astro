@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactBlock from '../ContactBlock.astro';
+import NoteList from '../NoteList.astro';
 import ProjectCard from '../ProjectCard.astro';
 import ResumeList from '../ResumeList.astro';
 import { projectSections } from '../../data/sections';
@@ -8,6 +9,7 @@ import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
 import { getProjects, inSection } from '../../lib/projects';
 import { caseStudyUrls } from '../../lib/case-studies';
+import { getNotes } from '../../lib/notes';
 import { getResume, yearOf } from '../../lib/resume';
 import { localizePath } from '../../lib/urls';
 
@@ -25,6 +27,7 @@ const featured = projects.filter(({ data }) => data.featured);
 const projectsUrl = localizePath('/projects/', locale);
 const studies = await caseStudyUrls(locale);
 const aboutUrl = localizePath('/about/', locale);
+const notes = (await getNotes(locale)).slice(0, 3);
 const sections = projectSections.filter((section) => inSection(projects, section).length > 0);
 ---
 
@@ -90,6 +93,23 @@ const sections = projectSections.filter((section) => inSection(projects, section
       </ul>
     </div>
   </section>
+
+  {
+    notes.length > 0 && (
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">{t('home.notes.eyebrow')}</p>
+            <h2>{t('home.notes.title')}</h2>
+          </div>
+          <NoteList locale={locale} notes={notes} />
+          <p class="section-more">
+            <a class="link-arrow" href={localizePath('/notes/', locale)}>{t('home.notes.all')}</a>
+          </p>
+        </div>
+      </section>
+    )
+  }
 
   <section class="section">
     <div class="wrap">

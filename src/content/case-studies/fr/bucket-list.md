@@ -18,7 +18,7 @@ Bucket List se donne une contrainte : la liste ne quitte jamais le navigateur. L
 
 **Trois niveaux, du moins coûteux au plus coûteux.** Un lexique de mots-clés répond instantanément, sans téléchargement. Un modèle léger livré avec le site, de 8,66 Mo, répond en quelques millisecondes. Le modèle complet multilingual-e5-small, d’environ 140 Mo, tourne en ONNX et WebAssembly avec transformers.js et prend de quelques secondes à quelques minutes. Les mots-clés couvrent aussi les listes qui ne sont ni en français ni en anglais.
 
-**Un modèle distillé pour la tâche.** Le modèle léger suit la recette Model2Vec, avec multilingual-e5-small comme professeur. Il garde les 30 286 fragments de mots qui couvrent 99,5 % des textes de Wikipédia en français et en anglais, calcule l’embedding de chacun, les réduit à 256 dimensions, puis apprend une projection linéaire vers les 384 du professeur. L’ajustement atteint un cosinus de 0,903, et l’ensemble prend environ 15 minutes sur le processeur d’un ordinateur portable.
+**Un modèle distillé pour la tâche.** Le modèle léger suit la recette Model2Vec, avec multilingual-e5-small comme professeur. Il garde 30 286 fragments de mots, ceux qui couvrent 99,5 % d’un échantillon de Wikipédia en français et en anglais et ceux des textes de l’application, calcule l’embedding de chacun, les réduit à 256 dimensions, puis apprend une projection linéaire vers les 384 du professeur. L’ajustement atteint un cosinus de 0,903, et l’ensemble prend environ 15 minutes sur le processeur d’un ordinateur portable.
 
 **Mesuré, pas supposé.** Sur 757 éléments que le modèle léger n’a jamais vus à l’entraînement :
 

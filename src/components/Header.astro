@@ -3,6 +3,7 @@ import LangSwitch from './LangSwitch.astro';
 import Mark from './Mark.astro';
 import type { Locale } from '../data/site';
 import { useTranslations } from '../i18n/ui';
+import { getNotes } from '../lib/notes';
 import { localizePath } from '../lib/urls';
 
 interface Props {
@@ -13,8 +14,10 @@ interface Props {
 
 const { locale, path } = Astro.props;
 const t = useTranslations(locale);
+const hasNotes = (await getNotes(locale)).length > 0;
 const links = [
   { path: '/projects/', label: t('nav.projects') },
+  ...(hasNotes ? [{ path: '/notes/', label: t('nav.notes') }] : []),
   { path: '/about/', label: t('nav.about') },
 ];
 ---

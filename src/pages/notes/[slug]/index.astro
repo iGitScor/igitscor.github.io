@@ -1,0 +1,10 @@
+---
+import NotePage from '../../../components/pages/NotePage.astro';
+import { notePaths, type NoteProps } from '../../../lib/notes';
+
+export const getStaticPaths = () => notePaths('en');
+
+type Props = NoteProps;
+---
+
+<NotePage locale="en" {...Astro.props} />

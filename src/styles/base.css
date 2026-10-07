@@ -168,9 +168,30 @@ a:hover {
     clip-path: inset(50%);
     white-space: nowrap;
   }
+}
+
+@media (max-width: 560px) {
+  /* The links get a row of their own under the mark and the language switch. */
+  :root {
+    --header-height: 96px;
+  }
+
+  .site-header .wrap {
+    flex-wrap: wrap;
+    row-gap: 0;
+    min-height: 0;
+    padding-block: 12px 6px;
+  }
+
+  .site-nav {
+    order: 3;
+    flex-basis: 100%;
+    margin-inline: -10px;
+  }
 
   .site-nav a {
     padding-inline: 10px;
+    white-space: nowrap;
   }
 }
 
@@ -318,7 +339,7 @@ a:hover {
   padding-block: clamp(40px, 6vw, 72px);
   border-top: 1px solid var(--line);
   /* Anchored sections must clear the sticky header. */
-  scroll-margin-top: 72px;
+  scroll-margin-top: var(--header-height, 72px);
 }
 
 .section-head h2 {
@@ -413,6 +434,55 @@ a:hover {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: 16px;
   margin-top: 32px;
+}
+
+/* Notes */
+
+.note-list {
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.note-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  .note-list li {
+    grid-template-columns: 18ch minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+.note-list time {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.note-list a {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.note-list p {
+  margin-top: 6px;
+  color: var(--ink-soft);
+}
+
+.note-project {
+  margin-top: 16px;
+  color: var(--ink-soft);
+}
+
+.study-notes {
+  margin-top: 48px;
 }
 
 /* Four cards fill two rows of two instead of leaving one alone on a row of three. */

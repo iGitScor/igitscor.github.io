@@ -1,0 +1,57 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+import { getProjects } from '../../lib/projects';
+import { caseStudyUrls } from '../../lib/case-studies';
+import type { NoteProps } from '../../lib/notes';
+import { slugOf } from '../../lib/twins';
+import { localizePath } from '../../lib/urls';
+
+interface Props extends NoteProps {
+  locale: Locale;
+}
+
+const { locale, note } = Astro.props;
+const { data } = note;
+const t = useTranslations(locale);
+const { Content } = await render(note);
+const published = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(data.date);
+const project = data.project ? (await getProjects()).find(({ id }) => id === data.project) : undefined;
+const projectUrl = project && (await caseStudyUrls(locale)).get(project.id);
+---
+
+<BaseLayout locale={locale} path={`/notes/${slugOf(note.id)}/`} title={data.title} description={data.description}>
+  <article>
+    <header class="page-head">
+      <div class="wrap wrap-narrow">
+        <p class="eyebrow">
+          <span>
+            {t('notes.label')} · <time datetime={data.date.toISOString().slice(0, 10)}>{published}</time>
+            {data.draft && ` · ${t('notes.draft')}`}
+          </span>
+        </p>
+        <h1>{data.title}</h1>
+        <p class="lead">{data.description}</p>
+        {
+          project && (
+            <p class="note-project">
+              {t('notes.about')} {projectUrl ? <a href={projectUrl}>{project.data.name}</a> : <strong>{project.data.name}</strong>}
+            </p>
+          )
+        }
+      </div>
+    </header>
+    <div class="section">
+      <div class="wrap wrap-narrow">
+        <div class="prose">
+          <Content />
+        </div>
+        <p class="section-more">
+          <a href={localizePath('/notes/', locale)}>← {t('notes.back')}</a>
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

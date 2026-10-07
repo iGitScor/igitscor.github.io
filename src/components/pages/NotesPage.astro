@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoteList from '../NoteList.astro';
+import type { Locale } from '../../data/site';
+import { useTranslations } from '../../i18n/ui';
+import { getNotes } from '../../lib/notes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const notes = await getNotes(locale);
+---
+
+<BaseLayout locale={locale} path="/notes/" title={t('notes.title')} description={t('notes.lead')}>
+  <header class="page-head">
+    <div class="wrap wrap-narrow">
+      <h1>{t('notes.title')}</h1>
+      <p class="lead">{t('notes.lead')}</p>
+    </div>
+  </header>
+  <div class="section">
+    <div class="wrap wrap-narrow">
+      <NoteList locale={locale} notes={notes} />
+    </div>
+  </div>
+</BaseLayout>

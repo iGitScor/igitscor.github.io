@@ -18,7 +18,7 @@ Bucket List sets one constraint: the list never leaves the browser. Classificati
 
 **Three tiers, cheapest first.** A keyword lexicon answers instantly with no download. A light model shipped with the site, 8.66 MB, answers in milliseconds. The full multilingual-e5-small model, about 140 MB, runs on ONNX and WebAssembly through transformers.js and takes seconds to minutes. Keywords also cover lists that are neither in French nor in English.
 
-**A model distilled for the job.** The light model follows the Model2Vec recipe with multilingual-e5-small as the teacher. It keeps the 30,286 word pieces that cover 99.5% of French and English Wikipedia text, embeds each one, reduces them to 256 dimensions, then fits a linear map back to the teacher's 384. The fit reaches a cosine of 0.903, and the whole run takes about 15 minutes on a laptop CPU.
+**A model distilled for the job.** The light model follows the Model2Vec recipe with multilingual-e5-small as the teacher. It keeps 30,286 word pieces, those that cover 99.5% of a French and English Wikipedia sample plus those of the app's own texts, embeds each one, reduces them to 256 dimensions, then fits a linear map back to the teacher's 384. The fit reaches a cosine of 0.903, and the whole run takes about 15 minutes on a laptop CPU.
 
 **Measured, not assumed.** On 757 items the light model never saw during training:
 

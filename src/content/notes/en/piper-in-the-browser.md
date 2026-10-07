@@ -1,0 +1,36 @@
+---
+title: Running Piper voices in the browser
+description: What it takes to run a VITS text-to-speech model in a web page, from the phonemizer to threads and offline caching.
+date: 2026-10-07
+draft: true
+project: myna
+---
+Myna reads a podcast script aloud in a neural voice with no server at all. The voice is a Piper VITS model; ONNX Runtime Web runs it inside a Web Worker. Getting a model to produce sound in a browser is the easy part. These are the parts that took the time.
+
+## Use the exact phonemizer the model was trained with
+
+Piper does not read letters: it reads phoneme ids, produced by espeak-ng. Myna runs Piper's own `piper_phonemize`, compiled to WebAssembly, rather than a JavaScript reimplementation. A different espeak-ng version produces slightly different phoneme strings, and the model's `phoneme_id_map` silently drops what it does not know. Nothing crashes; the voice just mumbles. A test now checks that the browser's ids match the real `piper_phonemize` id for id on reference French sentences.
+
+## Threads need cross-origin isolation
+
+ONNX Runtime's multithreaded build needs `SharedArrayBuffer`, which browsers only expose to a cross-origin isolated page. That means two headers: `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: require-corp`, in the dev server and on the host. Without them the app still works, on one thread. The end-to-end suite checks isolation on the production build, because a missing header is invisible until someone notices it is slow.
+
+One trap: ONNX Runtime spawns its thread workers from the worker's own script. The worker therefore installs its message handler only when its name does not start with `em-pthread`, or it would swallow Emscripten's messages and deadlock.
+
+With four threads on an M-series Mac, synthesis runs about 15 to 20 times faster than real time.
+
+## A worker you can kill
+
+ONNX Runtime cannot be interrupted in the middle of a run. So cancellation terminates the worker, rejects every pending request, and lets the next request start a fresh one. The same path handles a crash, such as running out of memory, so no caller waits forever. Requests are queued, because a session is not re-entrant, and the model and the audio buffers are transferred rather than copied.
+
+## Offline means megabytes
+
+Working offline means precaching the runtime and the phonemizer: 13.6 MB for the ONNX Runtime WebAssembly, 17.2 MB of espeak-ng data, and a little more. Voices are 63 to 64 MB each and are downloaded on demand into the Origin Private File System. Every rendered sentence is cached there too, so editing a script re-synthesizes only the sentences that changed.
+
+## Test with a tiny model
+
+The end-to-end tests run the real pipeline (real worker, real espeak-ng, real ONNX Runtime) with a 1 KB stand-in voice. They need no network and no 63 MB download, and they still catch the integration bugs that unit tests miss.
+
+## In short
+
+Running a model in the browser moves the work from servers to packaging: headers, workers, caching and file sizes. The model is the smallest part of the problem.

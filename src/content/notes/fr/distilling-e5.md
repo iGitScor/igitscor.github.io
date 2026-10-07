@@ -1,0 +1,43 @@
+---
+title: Distiller multilingual-e5 en 9 Mo
+description: Comment un modèle d’embeddings de 140 Mo est devenu un modèle statique de 9 Mo pour Bucket List, et ce que cela a coûté en précision.
+date: 2026-10-07
+draft: true
+project: bucket-list
+---
+Bucket List range une liste importée en îles thématiques, dans le navigateur. Le modèle évident pour cette tâche est multilingual-e5-small : il comprend le français et l’anglais et produit de bons embeddings de phrases. Il pèse aussi environ 140 Mo à télécharger et met de quelques secondes à quelques minutes à tourner sur un téléphone. Personne n’attend aussi longtemps pour voir une liste.
+
+L’application a donc trois niveaux : un lexique de mots-clés, un modèle léger et le modèle e5 complet. Cette note parle de celui du milieu.
+
+## La recette
+
+Le modèle léger suit la méthode Model2Vec. Au lieu de faire tourner un transformer au moment de l’inférence, on le fait tourner une seule fois, à l’avance, sur un vocabulaire, et on garde un vecteur statique par fragment de mot. À l’inférence, une phrase n’est plus que la moyenne pondérée des vecteurs de ses fragments : une lecture dans une table et une moyenne.
+
+Le script, `distill-m2v.py`, fait cinq choses :
+
+1. Il lit en flux environ 6 millions de tokens par langue, tirés de Wikipédia en français et en anglais.
+2. Il garde les fragments de mots qui couvrent 99,5 % de ce texte, plus tous ceux des textes que l’application classe elle-même : 30 286 au total.
+3. Il calcule l’embedding de chaque fragment avec le professeur, multilingual-e5-small à une révision figée.
+4. Il réduit les vecteurs à 256 dimensions par ACP, qui conserve 91,0 % de la variance, donne plus de poids aux fragments rares et les stocke en int8.
+5. Il apprend une projection linéaire de ces 256 dimensions vers les 384 du professeur, sur 150 000 extraits par langue, pour que la sortie du modèle léger vive dans le même espace que celle du modèle complet.
+
+La projection atteint un cosinus de 0,903. Le fichier pèse 8,66 Mo, assez peu pour être livré avec le site. L’ensemble prend environ 15 minutes sur le processeur d’un ordinateur portable.
+
+## Ce que cela coûte
+
+Un modèle ne vaut que par son évaluation. Sur 757 éléments que le modèle léger n’a jamais vus :
+
+| Niveau | Accord avec le modèle complet | Accord avec la liste triée à la main |
+|---|---|---|
+| Mots-clés | 72,0 % | 78,2 % |
+| Modèle léger | 77,5 % | 79,5 % |
+| Modèle complet | — | 86,0 % |
+
+Deux lectures du même tableau. Le modèle léger bat les mots-clés, mais de peu face au tri manuel : 1,3 point. Et il reste 6,5 points sous le modèle complet. Pour une première réponse qui arrive en quelques millisecondes, c’est un bon compromis ; pour la réponse finale, non, et c’est pourquoi le modèle complet se télécharge quand même en arrière-plan quand l’appareil peut se le permettre.
+
+## Ce que je me dirais avant de commencer
+
+- **Évaluer face à des humains, pas seulement face au professeur.** L’accord avec le modèle complet flatte l’élève ; c’est la colonne du tri manuel que les utilisateurs ressentent.
+- **Les mots-clés sont une base solide.** Sur des éléments de liste courts, un bon lexique est à moins de deux points d’un modèle appris. Mesurez-le avant de construire plus lourd.
+- **Figer le professeur.** Le hash de révision fait partie du nom du fichier du modèle. Une mise à jour silencieuse en amont ferait diverger l’élève et le modèle complet sans raison visible.
+- **La distillation coûte assez peu pour être refaite.** Quinze minutes sur un portable : essayer une autre taille de vocabulaire ou un autre corpus prend un après-midi, pas un projet.

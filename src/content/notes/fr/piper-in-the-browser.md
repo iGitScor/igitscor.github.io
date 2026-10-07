@@ -1,0 +1,36 @@
+---
+title: Faire tourner des voix Piper dans le navigateur
+description: Ce qu’il faut pour faire tourner un modèle de synthèse vocale VITS dans une page web, du phonémiseur aux threads et au cache hors ligne.
+date: 2026-10-07
+draft: true
+project: myna
+---
+Myna lit un script de podcast à voix haute avec une voix neuronale, sans aucun serveur. La voix est un modèle Piper VITS, que ONNX Runtime Web fait tourner dans un Web Worker. Obtenir du son d’un modèle dans un navigateur, c’est la partie facile. Voici celles qui ont pris du temps.
+
+## Utiliser le phonémiseur exact de l’entraînement
+
+Piper ne lit pas des lettres : il lit des identifiants de phonèmes, produits par espeak-ng. Myna fait tourner le `piper_phonemize` de Piper lui-même, compilé en WebAssembly, plutôt qu’une réécriture en JavaScript. Une autre version d’espeak-ng produit des phonèmes légèrement différents, et la `phoneme_id_map` du modèle ignore sans prévenir ce qu’elle ne connaît pas. Rien ne plante ; la voix marmonne, c’est tout. Un test vérifie désormais que les identifiants du navigateur correspondent, un par un, à ceux du vrai `piper_phonemize` sur des phrases françaises de référence.
+
+## Les threads exigent l’isolation cross-origin
+
+La version multithread d’ONNX Runtime a besoin de `SharedArrayBuffer`, que les navigateurs n’exposent qu’à une page isolée cross-origin. Cela veut dire deux en-têtes, `Cross-Origin-Opener-Policy: same-origin` et `Cross-Origin-Embedder-Policy: require-corp`, sur le serveur de développement comme chez l’hébergeur. Sans eux, l’application fonctionne quand même, sur un seul thread. Les tests de bout en bout vérifient l’isolation sur le build de production, car un en-tête manquant reste invisible jusqu’à ce que quelqu’un remarque que c’est lent.
+
+Un piège : ONNX Runtime lance ses workers de threads à partir du script du worker lui-même. Le worker n’installe donc son gestionnaire de messages que si son nom ne commence pas par `em-pthread`, sinon il avalerait les messages d’Emscripten et se bloquerait.
+
+Avec quatre threads sur un Mac de série M, la synthèse va environ 15 à 20 fois plus vite que le temps réel.
+
+## Un worker qu’on peut tuer
+
+ONNX Runtime ne peut pas être interrompu au milieu d’un calcul. L’annulation termine donc le worker, rejette toutes les requêtes en attente et laisse la requête suivante en démarrer un nouveau. Le même chemin gère un plantage, par exemple un manque de mémoire, pour qu’aucun appelant n’attende indéfiniment. Les requêtes passent par une file, car une session n’est pas réentrante, et le modèle comme les tampons audio sont transférés plutôt que copiés.
+
+## Hors ligne, c’est des mégaoctets
+
+Fonctionner hors ligne implique de mettre en cache le moteur et le phonémiseur : 13,6 Mo pour le WebAssembly d’ONNX Runtime, 17,2 Mo de données espeak-ng, et un peu plus. Les voix pèsent 63 à 64 Mo chacune et se téléchargent à la demande dans l’Origin Private File System. Chaque phrase rendue y est aussi mise en cache : modifier un script ne resynthétise que les phrases qui ont changé.
+
+## Tester avec un modèle minuscule
+
+Les tests de bout en bout font tourner le vrai pipeline (vrai worker, vrai espeak-ng, vrai ONNX Runtime) avec une voix de substitution de 1 Ko. Ils n’ont besoin ni du réseau ni d’un téléchargement de 63 Mo, et ils attrapent quand même les bugs d’intégration que les tests unitaires ratent.
+
+## En bref
+
+Faire tourner un modèle dans le navigateur déplace le travail des serveurs vers le packaging : en-têtes, workers, cache et tailles de fichiers. Le modèle est la plus petite partie du problème.

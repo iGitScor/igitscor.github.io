@@ -5,6 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { Locale } from '../../data/site';
 import { useTranslations } from '../../i18n/ui';
 import type { CaseStudyProps } from '../../lib/case-studies';
+import { notesAbout } from '../../lib/notes';
+import NoteList from '../NoteList.astro';
 import { localizePath } from '../../lib/urls';
 
 interface Props extends CaseStudyProps {
@@ -16,6 +18,7 @@ const { data } = project;
 const t = useTranslations(locale);
 const { Content } = await render(study);
 const projectsUrl = localizePath('/projects/', locale);
+const notes = await notesAbout(project.id, locale);
 ---
 
 <BaseLayout
@@ -64,6 +67,14 @@ const projectsUrl = localizePath('/projects/', locale);
         <div class="prose">
           <Content />
         </div>
+        {
+          notes.length > 0 && (
+            <section class="study-notes">
+              <h2>{t('study.notes')}</h2>
+              <NoteList locale={locale} notes={notes} />
+            </section>
+          )
+        }
         <p class="section-more">
           <a href={projectsUrl}>← {t('study.back')}</a>
         </p>

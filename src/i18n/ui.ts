@@ -7,6 +7,7 @@ const en = {
   'nav.home': 'Home',
   'nav.projects': 'Projects',
   'nav.about': 'About',
+  'nav.notes': 'Notes',
   'lang.label': 'Language',
 
   'hero.title.before': 'I build apps that ',
@@ -26,6 +27,9 @@ const en = {
   'home.featured.all': 'All projects',
   'home.explore.eyebrow': 'On this site',
   'home.explore.title': 'Where to start',
+  'home.notes.eyebrow': 'Writing',
+  'home.notes.title': 'Latest notes',
+  'home.notes.all': 'All notes',
   'home.resume.eyebrow': 'Resume',
   'home.resume.more': 'Experience and background',
 
@@ -50,6 +54,14 @@ const en = {
   'card.details': 'Details',
   'card.caseStudy': 'Case study',
   'study.back': 'All projects',
+  'study.notes': 'Notes about this project',
+
+  'notes.title': 'Notes',
+  'notes.lead': 'Short write-ups of what I learn while building, with the numbers.',
+  'notes.label': 'Note',
+  'notes.draft': 'Draft',
+  'notes.about': 'About',
+  'notes.back': 'All notes',
   'status.source': 'Code only',
   'status.archived': 'Archived',
 
@@ -85,6 +97,7 @@ const fr: Record<UiKey, string> = {
   'nav.home': 'Accueil',
   'nav.projects': 'Projets',
   'nav.about': 'À propos',
+  'nav.notes': 'Notes',
   'lang.label': 'Langue',
 
   'hero.title.before': 'Je construis des applications qui ',
@@ -104,6 +117,9 @@ const fr: Record<UiKey, string> = {
   'home.featured.all': 'Tous les projets',
   'home.explore.eyebrow': 'Sur ce site',
   'home.explore.title': 'Par où commencer',
+  'home.notes.eyebrow': 'Écrits',
+  'home.notes.title': 'Dernières notes',
+  'home.notes.all': 'Toutes les notes',
   'home.resume.eyebrow': 'CV',
   'home.resume.more': 'Expérience et parcours',
 
@@ -129,6 +145,14 @@ const fr: Record<UiKey, string> = {
   'card.details': 'Détails',
   'card.caseStudy': 'Étude de cas',
   'study.back': 'Tous les projets',
+  'study.notes': 'Notes sur ce projet',
+
+  'notes.title': 'Notes',
+  'notes.lead': 'De courts récits de ce que j’apprends en construisant, chiffres à l’appui.',
+  'notes.label': 'Note',
+  'notes.draft': 'Brouillon',
+  'notes.about': 'À propos de',
+  'notes.back': 'Toutes les notes',
   'status.source': 'Code uniquement',
   'status.archived': 'Archivé',
 

@@ -61,6 +61,20 @@ const caseStudies = defineCollection({
   }),
 });
 
+// Short current writing, one file per language: `en/<slug>.md` and `fr/<slug>.md`.
+// A draft is built by `npm run dev` only; src/lib/notes.ts checks the pairs.
+const notes = defineCollection({
+  loader: glob({ base: './src/content/notes', pattern: '{en,fr}/*.md' }),
+  schema: z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+    date: z.coerce.date(),
+    draft: z.boolean().default(true),
+    /** Id of the project the note is about; its case study links back to the note. */
+    project: z.string().optional(),
+  }),
+});
+
 // Old posts and articles, kept at their original URLs. `entry.id` is the slug.
 const archive = defineCollection({
   loader: glob({ base: './src/content/archive', pattern: '*.md' }),
@@ -81,4 +95,4 @@ const archive = defineCollection({
   }),
 });
 
-export const collections = { projects, caseStudies, archive };
+export const collections = { projects, caseStudies, notes, archive };

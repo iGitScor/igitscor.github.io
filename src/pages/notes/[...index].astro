@@ -1,0 +1,11 @@
+---
+import NotesPage from '../../components/pages/NotesPage.astro';
+import { getNotes } from '../../lib/notes';
+
+// The index exists only once a note is published, so it is never empty.
+export async function getStaticPaths() {
+  return (await getNotes('en')).length > 0 ? [{ params: { index: undefined } }] : [];
+}
+---
+
+<NotesPage locale="en" />
