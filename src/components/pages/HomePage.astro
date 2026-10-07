@@ -40,11 +40,10 @@ const sections = projectSections.filter((section) => inSection(projects, section
       </h1>
       <p class="promise">{t('hero.promise')}</p>
       <ul class="chips" aria-label={t('hero.chips.label')}>
-        <li>{t('hero.chip.management')}</li>
         <li>{t('hero.chip.quality')}</li>
+        <li>{t('hero.chip.data')}</li>
         <li>{t('hero.chip.location')}</li>
       </ul>
-      <p class="lead">{basics.summary}</p>
       {
         current && (
           <p class="now">
