@@ -19,6 +19,7 @@ const en = {
   'hero.chip.data': 'Data analysis',
   'hero.chip.location': 'Remote FR / UK or onsite',
   'hero.now': 'Now',
+  'hero.now.at': 'at',
   'hero.cta.work': 'See what I build',
   'hero.cta.about': 'About me',
 
@@ -113,6 +114,7 @@ const fr: Record<UiKey, string> = {
   'hero.chip.data': 'Analyse de données',
   'hero.chip.location': 'Télétravail FR / UK ou sur site',
   'hero.now': 'En ce moment',
+  'hero.now.at': 'chez',
   'hero.cta.work': 'Voir ce que je construis',
   'hero.cta.about': 'À propos de moi',
 

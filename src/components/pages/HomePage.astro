@@ -28,6 +28,7 @@ const projectsUrl = localizePath('/projects/', locale);
 const studies = await caseStudyUrls(locale);
 const aboutUrl = localizePath('/about/', locale);
 const notes = (await getNotes(locale)).slice(0, 3);
+const scope = current?.name === now.scope.company ? now.scope[locale] : undefined;
 const building = now.building.map((id) => {
   const project = projects.find((candidate) => candidate.id === id);
   if (!project) throw new Error(`src/data/now.ts names an unknown project "${id}"`);
@@ -56,7 +57,8 @@ const updated = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long',
           <p class="now">
             <span class="badge">{t('hero.now')}</span>
             {current.position}
-            {current.name && ` · ${current.name}`}, {yearOf(current.startDate)} – {t('about.present')}
+            {current.name && ` ${t('hero.now.at')} ${current.name}`}
+            {scope && `, ${scope}`} · {yearOf(current.startDate)} – {t('about.present')}
           </p>
         )
       }
