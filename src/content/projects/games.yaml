@@ -3,6 +3,7 @@ section: personal
 order: 1
 featured: true
 status: live
+privateSource: true
 url: https://games.iscor.me
 tagline:
   en: Small games made for fun.

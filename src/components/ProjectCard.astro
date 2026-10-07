@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import type { Locale } from '../data/site';
 import { useTranslations } from '../i18n/ui';
+import PrivateSource from './PrivateSource.astro';
 
 interface Props {
   project: CollectionEntry<'projects'>;
@@ -92,5 +93,6 @@ const items = compact ? [] : data.items;
         )
       }
     </p>
+    {data.privateSource && <PrivateSource locale={locale} />}
   </div>
 </article>

@@ -2,6 +2,7 @@ name: Flash Invaders Tracker
 section: personal
 order: 4
 status: live
+privateSource: true
 url: https://invaders.iscor.me
 tagline:
   en: A companion for Flash Invaders players.

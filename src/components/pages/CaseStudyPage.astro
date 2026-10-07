@@ -8,6 +8,7 @@ import { useTranslations } from '../../i18n/ui';
 import type { CaseStudyProps } from '../../lib/case-studies';
 import { notesAbout } from '../../lib/notes';
 import NoteList from '../NoteList.astro';
+import PrivateSource from '../PrivateSource.astro';
 import { localizePath } from '../../lib/urls';
 
 interface Props extends CaseStudyProps {
@@ -55,6 +56,7 @@ const notes = await notesAbout(project.id, locale);
             )
           }
         </p>
+        {data.privateSource && <PrivateSource locale={locale} />}
       </div>
     </header>
 

@@ -2,6 +2,7 @@ name: Unmade
 section: modernised
 order: 1
 status: live
+privateSource: true
 period: 2016 → 2026
 url: https://games.iscor.me/unmade/
 tagline:

@@ -2,6 +2,7 @@ name: Qui porte ?
 section: personal
 order: 3
 status: live
+privateSource: true
 url: https://mental-load.iscor.me
 tagline:
   en: Who carries this decision?

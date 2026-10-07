@@ -436,6 +436,12 @@ a:hover {
   margin-top: 32px;
 }
 
+.private-source {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 /* What I'm up to */
 
 .now-list {

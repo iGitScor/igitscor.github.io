@@ -1,0 +1,16 @@
+---
+import type { Locale } from '../data/site';
+import { useTranslations } from '../i18n/ui';
+import { localizePath } from '../lib/urls';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<p class="private-source">
+  {t('card.private')} · <a href={`${localizePath('/about/', locale)}#contact`}>{t('card.private.ask')}</a>
+</p>

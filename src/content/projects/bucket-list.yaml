@@ -3,6 +3,7 @@ section: personal
 order: 2
 featured: true
 status: live
+privateSource: true
 url: https://list.iscor.me
 tagline:
   en: A bucket list to filter, explore and track.

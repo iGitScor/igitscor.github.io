@@ -28,6 +28,8 @@ const projects = defineCollection({
           .string()
           .refine((repo) => publicRepos.includes(repo), { message: 'repo is not listed in src/data/public-repos.json' })
           .optional(),
+        /** The code exists but its repository is private: the card offers a walkthrough instead. */
+        privateSource: z.boolean().default(false),
         stack: z.array(z.string()).default([]),
         tags: z.array(z.enum(['ai', 'ml'])).default([]),
         /** What the ML part does; shown in the ML section for entries tagged `ml`. */
@@ -48,7 +50,8 @@ const projects = defineCollection({
       .strict()
       .refine((project) => !project.cover || project.coverAlt, { message: 'cover needs coverAlt' })
       .refine((project) => !project.tags.includes('ml') || project.mlNote, { message: 'the ml tag needs mlNote' })
-      .refine((project) => project.url || project.repo, { message: 'a project needs a url or a public repo' }),
+      .refine((project) => project.url || project.repo, { message: 'a project needs a url or a public repo' })
+      .refine((project) => !(project.privateSource && project.repo), { message: 'privateSource contradicts a public repo' }),
 });
 
 // Long-form pages about a project, one file per language: `en/<project id>.md`

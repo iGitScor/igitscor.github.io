@@ -19,7 +19,7 @@ npm run test:e2e # after a build: accessibility and layout, light and dark, desk
 
 | What | Where |
 |---|---|
-| Projects | `src/content/projects/*.yaml`, one file per project, every text in `en` and `fr` |
+| Projects | `src/content/projects/*.yaml`, one file per project, every text in `en` and `fr`. A project whose code sits in a private repository sets `privateSource: true`: its card says so and offers a walkthrough instead of a source link (refused alongside a public `repo`) |
 | Case studies | `src/content/case-studies/{en,fr}/<project id>.mdx`, one file per language |
 | Notes | `src/content/notes/{en,fr}/<slug>.mdx`, one file per language; `draft: true` (the default) builds them in `npm run dev` only, and both languages go live together |
 | Explainers and diagrams | `<Callout>`, `<Flow>`, `<Bars>` and `<TwoOpt>` from `src/components/prose/`, usable in any case study or note without an import; their text is written in each language's file |

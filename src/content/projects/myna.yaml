@@ -3,6 +3,7 @@ section: projects
 order: 1
 featured: true
 status: live
+privateSource: true
 url: https://podcast.iscor.me
 tagline:
   en: You write. Myna says it in your voice.
