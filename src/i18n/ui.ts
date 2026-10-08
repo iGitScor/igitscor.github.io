@@ -69,6 +69,7 @@ const en = {
   'notes.draft': 'Draft',
   'notes.about': 'About',
   'notes.back': 'All notes',
+  'status.building': 'In progress',
   'status.source': 'Code only',
   'status.archived': 'Archived',
 
@@ -167,6 +168,7 @@ const fr: Record<UiKey, string> = {
   'notes.draft': 'Brouillon',
   'notes.about': 'À propos de',
   'notes.back': 'Toutes les notes',
+  'status.building': 'En cours',
   'status.source': 'Code uniquement',
   'status.archived': 'Archivé',
 

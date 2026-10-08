@@ -19,8 +19,11 @@ const projects = defineCollection({
         featured: z.boolean().default(false),
         tagline: localized,
         summary: localized,
-        /** `live` has a public URL, `source` is code only, `archived` is dated work shown unchanged. */
-        status: z.enum(['live', 'source', 'archived']),
+        /**
+         * `live` has a public URL, `building` is not released yet, `source` is code only,
+         * `archived` is dated work shown unchanged.
+         */
+        status: z.enum(['live', 'building', 'source', 'archived']),
         period: z.string().optional(),
         url: z.url().optional(),
         /** `owner/name` on GitHub. Private repositories are never linked. */

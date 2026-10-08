@@ -1,0 +1,20 @@
+name: Remora
+section: projects
+order: 2
+status: building
+repo: iGitScor/triage
+tagline:
+  en: Everything that needs you, in one menu bar inbox.
+  fr: Tout ce qui vous attend, réuni dans la barre des menus.
+summary:
+  en: >-
+    A macOS menu bar inbox for code reviews, your own merge requests, Slack mentions and messages,
+    Linear tasks and your own reminders, grouped by what you have to do. Done, Pin and Snooze come
+    from Google Inbox, and Claude can brief you on what to handle first. A Windows version is on its way.
+  fr: >-
+    Une boîte de réception dans la barre des menus du Mac pour les revues de code, vos propres merge requests,
+    les mentions et messages Slack, les tâches Linear et vos rappels, rangés selon ce qu’il reste à faire.
+    Terminé, Épingler et Reporter viennent de Google Inbox, et Claude peut vous dire par quoi commencer.
+    Une version Windows est en route.
+stack: [Swift, SwiftUI, Rust, Tauri]
+tags: [ai]
