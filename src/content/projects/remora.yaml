@@ -2,6 +2,7 @@ name: Remora
 section: projects
 order: 2
 status: building
+url: https://triage.iscor.me
 repo: iGitScor/triage
 tagline:
   en: Everything that needs you, in one menu bar inbox.
