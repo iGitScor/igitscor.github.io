@@ -18,3 +18,7 @@ summary:
     Une version Windows est en route.
 stack: [Swift, SwiftUI, Rust, Tauri]
 tags: [ai]
+cover: ../../assets/projects/remora.png
+coverAlt:
+  en: "The Remora inbox with sample data: messages to reply to and code reviews, each with an estimate"
+  fr: "La boîte de Remora avec des données d’exemple : des messages auxquels répondre et des revues de code, chacune avec son estimation"
