@@ -26,6 +26,7 @@ npm run test:e2e # after a build: accessibility and layout, light and dark, desk
 | Archived posts and articles | `src/content/archive/*.md` |
 | What I'm up to (home page) | `src/data/now.ts`: project ids to link and what I'm learning; change `updated` with the content |
 | Interface strings | `src/i18n/ui.ts` |
+| Colours and design tokens | [`@iscor/design`](https://design.iscor.me), imported by `src/styles/tokens.css`, which keeps the hub's own font, corners and page width. Colours change in that package, not here |
 | Resume block | `src/data/resume.{en,fr}.json`, refreshed with `npm run sync:resume` from a checkout of the [resume repository](https://github.com/iGitScor/resume) next to this one |
 
 A missing translation fails the build.
