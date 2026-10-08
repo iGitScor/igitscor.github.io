@@ -1,0 +1,63 @@
+---
+title: "Remora : une seule boîte de réception pour tout ce qui m’attend"
+description: Pourquoi je construis Remora, une boîte de réception dans la barre des menus du Mac qui réunit revues de code, messages, tâches et rappels.
+---
+## Pourquoi je le construis
+
+Trop d’applications, trop de comptes, et une fatigue mentale à force de passer de l’une à l’autre.
+
+Il me fallait trois choses : une boîte de réception comme l’était inbox.google.com, un outil pour poser un rappel aussi facilement qu’avec Gestimer, et une application pour remplacer Trailer, qui ne gérait pas GitLab. Remora réunit les trois, dans la barre des menus. Il est pour tous ceux qui jonglent entre plusieurs boîtes de réception et plusieurs outils, et qui aimeraient avoir un assistant.
+
+Et rien ne quitte le Mac, sauf vers les outils que j’ai autorisés : Claude est désactivé par défaut, et il n’y a aucune télémétrie.
+
+## Pourquoi Remora
+
+Mes projets professionnels portent des noms de poissons, mes projets personnels des noms d’oiseaux. Le rémora est un poisson. Son nom sonne un peu comme « remémorer » en français et « ora » en italien, et j’aimais l’idée de pêcher plusieurs poissons au même endroit.
+
+Le dépôt, lui, s’appelle triage, qui contient « IA ». J’aime les noms qui dessinent bien le projet tout en restant abstraits.
+
+## Ce que je construis
+
+- **Remora pour macOS**, une application Swift et SwiftUI qui vit dans la barre des menus. Elle réunit les revues de code et mes propres merge requests (GitHub et GitLab), les mentions et messages Slack, les tickets Linear et mes rappels.
+- **Remora pour Windows**, en cours : la même application pour Windows, avec Tauri. Le cœur, avec ses règles et ses tests, est déjà porté en Rust.
+
+## Comment ça marche
+
+<Flow
+  frame="Sur votre Mac"
+  caption="De vos outils à votre liste : tout le tri se fait sur votre Mac."
+  steps={[
+    { title: "Vos outils", text: "GitHub, GitLab, Slack, Linear et vos rappels" },
+    { title: "Un verbe", text: "Chaque élément rangé selon ce qu’il reste à faire" },
+    { title: "Une priorité", text: "En retard d’abord, puis la priorité de l’outil et l’échéance" },
+    { title: "À moi ou En attente", text: "Ce qu’on attend de vous, ce que vous attendez des autres" },
+  ]}
+/>
+
+**Rangé par verbe, pas par outil.** Une revue GitHub et une mention Slack peuvent toutes deux attendre une réponse. Remora range donc selon ce qu’il reste à faire : À répondre, À relire, À corriger, Prêtes à fusionner, À faire, Rappels et À lire.
+
+**Trier les messages sans IA générative.** Pour savoir si un message attend une réponse ou peut juste être lu, Remora applique d’abord des règles de mots-clés en français et en anglais, puis compare la phrase à des exemples avec les embeddings de phrases d’Apple. En cas de doute, c’est À répondre.
+
+<Callout title="Qu’est-ce qu’un embedding de phrase ?">
+
+Une façon de transformer une phrase en une liste de nombres, de sorte que deux phrases au sens proche donnent des nombres proches. Remora compare un message à des exemples de « il faut répondre » et de « pour info », et ne tranche que quand l’écart est net. Tout se passe sur le Mac.
+
+</Callout>
+
+**Inbox, comme Google l’avait pensé.** Terminé cache un élément jusqu’à ce qu’il bouge à nouveau : un nouveau commit, une approbation, un commentaire. Épingler le garde en haut, Reporter le cache jusqu’à plus tard. Avec deux doigts sur le trackpad, on glisse à droite pour Terminé, à gauche pour Reporter.
+
+**Un rappel en tirant l’icône, comme Gestimer.** On tire l’icône de la barre des menus vers le bas : une bulle affiche l’heure, et plus on descend, plus c’est tard. On relâche, on tape ce qu’il faut retenir, Entrée. Le système programme le rappel, qui sonne même si Remora est fermée.
+
+**GitLab autant que GitHub.** Mes merge requests, celles que je dois relire, les approbations et les pipelines. Chaque demande de relecture affiche une estimation, comme « ~6 min · 4 fichiers · tests ✓ », calculée à partir des chemins et du nombre de lignes, sans lire le code.
+
+**Claude, seulement si je le veux.** Une fois connecté, ✦ résume la boîte en trois phrases et propose par quoi commencer.
+
+**Prêt pour une entreprise exigeante.** Chaque flux de données est listé dans les réglages, les secrets vont dans le trousseau macOS, et une organisation peut verrouiller la politique par MDM.
+
+## Ce qui a été simple
+
+Ça a été facile, parce que Remora règle des frictions du quotidien. Des cas d’usage, j’en ai et j’en ai eu beaucoup. Et les règles étaient strictes : ne pas surcharger, aider, rester facile à lire.
+
+## La suite
+
+Finir l’application Windows, avec les connecteurs puis l’interface. Et ajouter Notion, pour les tâches qui m’y sont assignées.

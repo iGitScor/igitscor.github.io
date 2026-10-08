@@ -1,0 +1,63 @@
+---
+title: "Remora: one inbox for everything that needs me"
+description: Why I'm building Remora, a Mac menu bar inbox that gathers code reviews, messages, tasks and reminders.
+---
+## Why I'm building it
+
+Too many apps, too many accounts, and a mental fatigue from switching between them.
+
+I needed three things: an inbox like inbox.google.com was, a tool to set a reminder as easily as with Gestimer, and an app to replace Trailer, which didn't support GitLab. Remora brings the three together, in the menu bar. It is for everyone dealing with multiple inboxes and multiple tools who would like to have an assistant.
+
+And nothing leaves the Mac except to the tools I allowed: Claude is off by default, and there is no telemetry.
+
+## Why Remora
+
+My professional projects are named after fish, my personal ones after birds. The remora is a fish. Its name sounds a bit like "remémorer" (to recall) in French and "ora" (now) in Italian, and I liked the idea of fishing several fish in the same place.
+
+The repository is called triage, which holds "IA", French for AI. I like names that picture the project well while staying abstract.
+
+## What I'm building
+
+- **Remora for macOS**, a Swift and SwiftUI app that lives in the menu bar. It gathers code reviews and my own merge requests (GitHub and GitLab), Slack mentions and messages, Linear issues and my reminders.
+- **Remora for Windows**, in progress: the same app for Windows, built with Tauri. The core, with its rules and tests, is already ported to Rust.
+
+## How it works
+
+<Flow
+  frame="On your Mac"
+  caption="From your tools to your list: all the sorting happens on your Mac."
+  steps={[
+    { title: "Your tools", text: "GitHub, GitLab, Slack, Linear and your reminders" },
+    { title: "A verb", text: "Each item grouped by what you have to do" },
+    { title: "A priority", text: "Overdue first, then the tool's priority and the due date" },
+    { title: "My turn or Waiting", text: "What others wait on you for, what you wait on others for" },
+  ]}
+/>
+
+**Grouped by verb, not by tool.** A GitHub review and a Slack mention can both be waiting on an answer. So Remora groups items by what is left to do: To reply, To review, To fix, Ready to merge, To do, Reminders and To read.
+
+**Sorting messages without generative AI.** To tell whether a message needs an answer or can just be read, Remora first applies keyword rules in English and French, then compares the sentence with examples using Apple's sentence embeddings. When unsure, it goes to To reply.
+
+<Callout title="What is a sentence embedding?">
+
+A way to turn a sentence into a list of numbers, so that two sentences with close meanings give close numbers. Remora compares a message with examples of "needs an answer" and "just so you know", and only decides when the gap is clear. It all happens on the Mac.
+
+</Callout>
+
+**Inbox, the way Google designed it.** Done hides an item until something changes on it: a new commit, an approval, a comment. Pin keeps it at the top, Snooze hides it until later. With two fingers on the trackpad, swipe right for Done, left for Snooze.
+
+**A reminder by dragging the icon, like Gestimer.** Drag the menu bar icon down: a bubble shows the time, and the further down, the later. Release, type what to remember, press Enter. The system schedules the reminder, so it fires even when Remora is closed.
+
+**GitLab as much as GitHub.** My merge requests, the ones I have to review, approvals and pipelines. Each review request shows an estimate, like "~6 min · 4 files · tests ✓", worked out from file paths and line counts, without reading the code.
+
+**Claude, only if I want it.** Once connected, ✦ sums up the inbox in three sentences and suggests what to handle first.
+
+**Ready for a strict company.** Every data flow is listed in the settings, secrets go to the macOS Keychain, and an organization can lock the policy through MDM.
+
+## What was easy
+
+It was easy, because Remora solves daily frictions. I have, and had, a lot of use cases. And the rules were strict: no overload, be helpful, stay easy to read.
+
+## What's next
+
+Finish the Windows app, with the connectors and then the interface. And add Notion, for the tasks assigned to me there.
